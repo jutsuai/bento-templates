@@ -8,7 +8,6 @@ export default function HeroSection({ props, style }) {
       className="bg-white dark:bg-slate-950"
     >
       <div
-        style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto px-8 flex flex-col py-20 sm:py-24 gap-20 items-center justify-center"
       >
         <div className="flex flex-col items-center justify-center w-full text-center  gap-8">
