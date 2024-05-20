@@ -1,0 +1,84 @@
+import { useState } from "react";
+
+export default function Navbar({ props, style }) {
+  const [showNav, setShowNav] = useState(false);
+  return (
+    <nav
+      style={{
+        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+          style?.paddingBottom || 0
+        }px ${style?.paddingLeft || 0}px`,
+        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+          style?.marginBottom || 0
+        }px ${style?.marginLeft || 0}px`,
+      }}
+      className="relative bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-slate-900"
+    >
+      <div
+        style={{ flexDirection: style?.flexDirection }}
+        className="container mx-auto flex items-center justify-between px-8 py-6"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/Black%20Jutsu.png"
+          alt="Jutsu"
+          className="h-8 inline-block dark:hidden"
+        />
+        <img
+          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/White%20Jutsu.png"
+          alt="Jutsu"
+          className="h-8 hidden dark:inline-block"
+        />
+
+        <ul className="hidden text-sm font-medium items-center gap-6 lg:flex">
+          {props.navItems.map((item, index) => (
+            <li>
+              <a
+                key={index}
+                href={item.link}
+                className="text-nowrap text-gray-700 dark:text-gray-200 hover:text-teal-600"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* </div> */}
+        <i
+          class="fa-solid fa-bars-staggered block text-black dark:text-gray-200 text-xl lg:hidden"
+          onClick={() => setShowNav(true)}
+        />
+
+        <button className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white lg:block">
+          {props.buttonText}
+        </button>
+
+        <div
+          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-slate-900 p-7 px-8 transition-all duration-200 ${
+            showNav ? "inline-block" : "hidden"
+          }`}
+        >
+          <i
+            class="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
+            onClick={() => setShowNav(false)}
+          />{" "}
+          <ul className="flex flex-col  items-center justify-center gap-6">
+            {props.navItems.map((item, index) => (
+              <li>
+                <a
+                  key={index}
+                  href={item.link}
+                  className="text-gray-700 dark:text-gray-300 hover:text-teal-600"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+            <button className="text-nowrap rounded-2xl bg-teal-600 px-4 py-1 text-sm font-medium text-white block">
+              {props.buttonText}
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
