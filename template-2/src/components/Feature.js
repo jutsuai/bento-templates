@@ -11,7 +11,7 @@ export default function Feature({ props, style }) {
         <div
           style={{ flexDirection: style?.flexDirection }}
           className={`flex aspect-auto h-full xl:min-h-96 flex-col-reverse items-center justify-between gap-8 min-h-80 overflow-hidden rounded-3xl dark:bg-gray-900 bg-slate-200 bg-opacity-70 md:w-full xl:aspect-[16/5] ${
-            isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            props.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
           }`}
         >
           <div className="xl:p-15 flex w-full flex-col gap-4 px-10 pb-10 md:gap-8 lg:w-1/2 lg:p-10">
