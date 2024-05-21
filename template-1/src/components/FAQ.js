@@ -18,7 +18,7 @@ export default function FAQ({ props, style }) {
           {props.subHeaderText}
         </p>
         <div className="my-8 flex flex-col items-start justify-center gap-6">
-          {props.faq.map((item, index) => (
+          {props.qna.map((item, index) => (
             <div key={index}>
               <h3 className="text-sm font-semibold leading-relaxed text-black dark:text-white md:text-base ">
                 {item.question}
