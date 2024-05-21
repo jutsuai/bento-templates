@@ -1,6 +1,6 @@
 export default function FAQ({ props, style, id }) {
   return (
-    <section id={id} className="bg-white dark:bg-slate-950">
+    <section id={id} className="bg-white dark:bg-slate-800">
       <div className="container mx-auto px-8 py-20 grid w-full grid-cols-1 gap-10 xl:grid-cols-2">
         <div
           style={{

@@ -6,7 +6,7 @@ export default function Gallery({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="bg-white dark:bg-gray-950"
+      className="bg-white dark:bg-gray-800"
     >
       <div
         style={{ flexDirection: style.flexDirection }}

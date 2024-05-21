@@ -13,7 +13,7 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      className="relative bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-slate-800"
+      className="relative bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-800"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}

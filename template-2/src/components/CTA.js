@@ -6,7 +6,7 @@ export default function CTA({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="bg-white dark:bg-slate-950"
+      className="bg-white dark:bg-slate-800"
     >
       <div className="container mx-auto px-8 py-20">
         <div

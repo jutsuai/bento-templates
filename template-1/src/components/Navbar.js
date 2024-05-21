@@ -10,7 +10,7 @@ export default function Navbar({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="relative border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
+      className="relative border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-800"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}

@@ -6,7 +6,7 @@ export default function HeroSection({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="bg-white dark:bg-slate-950"
+      className="bg-white dark:bg-slate-800"
     >
       <div className="container mx-auto px-8 flex flex-col py-20 sm:py-24 gap-20 items-center justify-center">
         <div className="flex flex-col items-center justify-center w-full text-center  gap-8">
@@ -22,7 +22,7 @@ export default function HeroSection({ props, style, id }) {
                 style={{
                   backgroundColor: style?.accent,
                 }}
-                className="border dark:border-slate-800 text-white rounded-2xl bg-teal-600 px-6 text-sm font-medium py-2"
+                className="text-white rounded-2xl bg-teal-600 px-6 text-sm font-medium py-2"
               >
                 {props.primaryButtonText}
               </button>
