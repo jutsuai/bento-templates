@@ -33,15 +33,7 @@ export default function Navbar({ props, style, id }) {
               <li key={index}>
                 <a
                   href={item.link}
-                  style={{
-                    ":hover": {
-                      color: style?.hoverColor,
-                    },
-                    "&:hover": {
-                      color: style?.hoverColor,
-                    },
-                  }}
-                  className="text-nowrap text-gray-700 hover:text-purple-700 dark:text-gray-300"
+                  className="text-nowrap text-gray-700 dark:text-gray-300"
                 >
                   {item.name}
                 </a>
@@ -77,15 +69,7 @@ export default function Navbar({ props, style, id }) {
               <li key={index}>
                 <a
                   href={item.link}
-                  style={{
-                    ":hover": {
-                      color: style?.hoverColor,
-                    },
-                    "&:hover": {
-                      color: style?.hoverColor,
-                    },
-                  }}
-                  className="text-gray-700 hover:text-purple-700 dark:text-gray-300"
+                  className="text-gray-700  dark:text-gray-300"
                 >
                   {item.name}
                 </a>
