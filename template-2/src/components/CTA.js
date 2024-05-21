@@ -10,8 +10,11 @@ export default function CTA({ props, style, id }) {
     >
       <div className="container mx-auto px-8 py-20">
         <div
-          style={{ flexDirection: style?.flexDirection }}
-          className="gap-6 bg-slate-100 dark:bg-slate-900 max-w-10/12 rounded-3xl border dark:border-slate-900 mx-auto flex flex-col items-center text-center justify-center p-10 md:p-20"
+          style={{
+            flexDirection: style?.flexDirection,
+            backgroundColor: style?.backgroundColor + 12,
+          }}
+          className="gap-6 dark:bg-slate-800 max-w-10/12 rounded-3xl border dark:border-slate-800 mx-auto flex flex-col items-center text-center justify-center p-10 md:p-20"
         >
           <h2 className="text-3xl text-black dark:text-white md:text-5xl font-semibold">
             {props.headerText}

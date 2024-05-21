@@ -10,8 +10,11 @@ export default function Feature({ props, style, id }) {
     >
       <div className="container mx-auto flex items-center justify-center px-8 py-20">
         <div
-          style={{ flexDirection: style?.flexDirection }}
-          className={`flex aspect-auto h-full xl:min-h-96 flex-col-reverse items-center justify-between gap-8 min-h-80 overflow-hidden rounded-3xl dark:bg-gray-900 bg-slate-200 bg-opacity-70 md:w-full xl:aspect-[16/5] ${
+          style={{
+            flexDirection: style?.flexDirection,
+            backgroundColor: style?.backgroundColor + 12,
+          }}
+          className={`flex aspect-auto h-full xl:min-h-96 flex-col-reverse items-center justify-between gap-8 min-h-80 overflow-hidden rounded-3xl md:w-full xl:aspect-[16/5] ${
             props.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
           }`}
         >

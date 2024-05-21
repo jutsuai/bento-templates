@@ -22,7 +22,7 @@ export default function HeroSection({ props, style, id }) {
                 style={{
                   backgroundColor: style?.accent,
                 }}
-                className="border dark:border-slate-900 text-white rounded-2xl bg-teal-600 px-6 text-sm font-medium py-2"
+                className="border dark:border-slate-800 text-white rounded-2xl bg-teal-600 px-6 text-sm font-medium py-2"
               >
                 {props.primaryButtonText}
               </button>

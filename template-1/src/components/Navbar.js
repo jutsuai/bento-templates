@@ -10,7 +10,7 @@ export default function Navbar({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="relative border-b border-gray-200 bg-white dark:border-gray-900 dark:bg-gray-950"
+      className="relative border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
@@ -56,7 +56,7 @@ export default function Navbar({ props, style, id }) {
         </button>
 
         <div
-          className={`absolute right-0 top-0 w-full border-b bg-white p-7 px-8 transition-all duration-200 dark:border-gray-700 dark:bg-gray-900 ${
+          className={`absolute right-0 top-0 w-full border-b bg-white p-7 px-8 transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 ${
             showNav ? "inline-block" : "hidden"
           }`}
         >
