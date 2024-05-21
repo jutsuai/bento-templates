@@ -50,7 +50,7 @@ export default function Navbar({ props, style, id }) {
           </ul>
         </div>
         <i
-          class="fa-solid fa-bars-staggered block text-xl text-black dark:text-gray-200 lg:hidden"
+          className="fa-solid fa-bars-staggered block text-xl text-black dark:text-gray-200 lg:hidden"
           onClick={() => setShowNav(true)}
         />
 
@@ -69,7 +69,7 @@ export default function Navbar({ props, style, id }) {
           }`}
         >
           <i
-            class="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
+            className="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
             onClick={() => setShowNav(false)}
           />{" "}
           <ul className="flex flex-col items-center justify-center gap-6">

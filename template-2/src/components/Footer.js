@@ -24,11 +24,11 @@ export default function Footer({ props, style, id }) {
             className="max-w-52 hidden dark:inline-block"
           />
           <div className="flex text-black dark:text-white items-center gap-4 mt-2">
-            <i class="fa-brands fa-linkedin text-2xl"></i>
-            <i class="fa-brands fa-square-facebook text-2xl"></i>
-            <i class="fa-brands fa-github text-2xl"></i>
-            <i class="fa-brands fa-x-twitter text-2xl"></i>
-            <i class="fa-brands fa-youtube text-2xl"></i>
+            <i className="fa-brands fa-linkedin text-2xl"></i>
+            <i className="fa-brands fa-square-facebook text-2xl"></i>
+            <i className="fa-brands fa-github text-2xl"></i>
+            <i className="fa-brands fa-x-twitter text-2xl"></i>
+            <i className="fa-brands fa-youtube text-2xl"></i>
           </div>
         </div>
 

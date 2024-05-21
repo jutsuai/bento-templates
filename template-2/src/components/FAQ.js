@@ -21,7 +21,7 @@ export default function FAQ({ props, style, id }) {
             }}
             className="hidden aspect-video w-full max-w-96 place-items-center rounded-3xl bg-teal-600 xl:grid"
           >
-            <i class="fa-solid fa-comments text-8xl text-white" />
+            <i className="fa-solid fa-comments text-8xl text-white" />
           </div>
         </div>
         <div className="flex flex-col gap-8 rounded-3xl bg-slate-100 dark:bg-slate-900 p-14">
