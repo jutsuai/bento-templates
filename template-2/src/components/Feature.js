@@ -12,7 +12,7 @@ export default function Feature({ props, style, id }) {
         <div
           style={{
             flexDirection: style?.flexDirection,
-            backgroundColor: style?.backgroundColor + 12,
+            backgroundColor: style?.accent + 12,
           }}
           className={`flex aspect-auto h-full xl:min-h-96 flex-col-reverse items-center justify-between gap-8 min-h-80 overflow-hidden rounded-3xl md:w-full xl:aspect-[16/5] ${
             props.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"

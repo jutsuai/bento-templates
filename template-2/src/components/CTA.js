@@ -12,7 +12,7 @@ export default function CTA({ props, style, id }) {
         <div
           style={{
             flexDirection: style?.flexDirection,
-            backgroundColor: style?.backgroundColor + 12,
+            backgroundColor: style?.accent + 12,
           }}
           className="gap-6 dark:bg-slate-800 max-w-10/12 rounded-3xl border dark:border-slate-800 mx-auto flex flex-col items-center text-center justify-center p-10 md:p-20"
         >
