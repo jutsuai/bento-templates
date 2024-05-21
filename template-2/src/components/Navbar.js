@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export default function Navbar({ props, style }) {
+export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
   return (
     <nav
+      id={id}
       style={{
         padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
           style?.paddingBottom || 0
@@ -31,10 +32,17 @@ export default function Navbar({ props, style }) {
 
         <ul className="hidden text-sm font-medium items-center gap-6 lg:flex">
           {props.navItems.map((item, index) => (
-            <li>
+            <li key={index}>
               <a
-                key={index}
                 href={item.link}
+                style={{
+                  ":hover": {
+                    color: style?.hoverColor,
+                  },
+                  "&:hover": {
+                    color: style?.hoverColor,
+                  },
+                }}
                 className="text-nowrap text-gray-700 dark:text-gray-200 hover:text-teal-600"
               >
                 {item.name}
@@ -48,7 +56,12 @@ export default function Navbar({ props, style }) {
           onClick={() => setShowNav(true)}
         />
 
-        <button className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white lg:block">
+        <button
+          style={{
+            backgroundColor: style?.accent,
+          }}
+          className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white lg:block"
+        >
           {props.buttonText}
         </button>
 
@@ -63,17 +76,29 @@ export default function Navbar({ props, style }) {
           />{" "}
           <ul className="flex flex-col  items-center justify-center gap-6">
             {props.navItems.map((item, index) => (
-              <li>
+              <li key={index}>
                 <a
-                  key={index}
                   href={item.link}
+                  style={{
+                    ":hover": {
+                      color: style?.hoverColor,
+                    },
+                    "&:hover": {
+                      color: style?.hoverColor,
+                    },
+                  }}
                   className="text-gray-700 dark:text-gray-300 hover:text-teal-600"
                 >
                   {item.name}
                 </a>
               </li>
             ))}
-            <button className="text-nowrap rounded-2xl bg-teal-600 px-4 py-1 text-sm font-medium text-white block">
+            <button
+              style={{
+                backgroundColor: style?.accent,
+              }}
+              className="text-nowrap rounded-2xl bg-teal-600 px-4 py-1 text-sm font-medium text-white block"
+            >
               {props.buttonText}
             </button>
           </ul>

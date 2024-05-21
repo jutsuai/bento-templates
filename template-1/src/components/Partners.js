@@ -1,6 +1,7 @@
-export default function Partners({ props, style }) {
+export default function Partners({ props, style, id }) {
   return (
     <section
+      id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,

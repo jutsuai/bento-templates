@@ -1,6 +1,6 @@
-export default function FAQ({ props, style }) {
+export default function FAQ({ props, style, id }) {
   return (
-    <section className="bg-white dark:bg-slate-950">
+    <section id={id} className="bg-white dark:bg-slate-950">
       <div className="container mx-auto px-8 py-20 grid w-full grid-cols-1 gap-10 xl:grid-cols-2">
         <div
           style={{
@@ -15,7 +15,12 @@ export default function FAQ({ props, style }) {
           <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-base">
             {props.subHeaderText}
           </p>
-          <div className="hidden aspect-video w-full max-w-96 place-items-center rounded-3xl bg-teal-600 xl:grid">
+          <div
+            style={{
+              backgroundColor: style?.accent,
+            }}
+            className="hidden aspect-video w-full max-w-96 place-items-center rounded-3xl bg-teal-600 xl:grid"
+          >
             <i class="fa-solid fa-comments text-8xl text-white" />
           </div>
         </div>

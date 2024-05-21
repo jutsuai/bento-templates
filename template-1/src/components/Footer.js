@@ -1,6 +1,7 @@
-export default function Footer({ props, style }) {
+export default function Footer({ props, style, id }) {
   return (
     <footer
+      id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,

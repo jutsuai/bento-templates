@@ -1,6 +1,7 @@
-export default function CTA({ props, style }) {
+export default function CTA({ props, style, id }) {
   return (
     <section
+      id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
@@ -18,10 +19,22 @@ export default function CTA({ props, style }) {
           {props.subHeaderText}
         </p>
         <div className="flex items-center justify-end gap-4">
-          <button className="rounded-2xl border border-purple-700 bg-purple-700 px-4 py-1 text-sm font-medium text-white">
+          <button
+            style={{
+              borderColor: style?.accent,
+              backgroundColor: style?.accent,
+            }}
+            className="rounded-2xl border border-purple-700 bg-purple-700 px-4 py-1 text-sm font-medium text-white"
+          >
             {props.primaryButtonText}
           </button>
-          <button className="rounded-2xl border border-purple-700 bg-transparent px-4 py-1 text-sm font-medium text-purple-700">
+          <button
+            style={{
+              borderColor: style?.accent,
+              color: style?.accent,
+            }}
+            className="rounded-2xl border border-purple-700 bg-transparent px-4 py-1 text-sm font-medium text-purple-700"
+          >
             {props.secondaryButtonText}
           </button>
         </div>

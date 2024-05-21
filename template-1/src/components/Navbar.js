@@ -1,17 +1,14 @@
 import { useState } from "react";
 
-export default function Navbar({ props, style }) {
+export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
 
   return (
     <nav
+      id={id}
       style={{
-        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-          style?.paddingBottom || 0
-        }px ${style?.paddingLeft || 0}px`,
-        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-          style?.marginBottom || 0
-        }px ${style?.marginLeft || 0}px`,
+        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
+        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="relative border-b border-gray-200 bg-white dark:border-gray-900 dark:bg-gray-950"
     >
@@ -33,10 +30,17 @@ export default function Navbar({ props, style }) {
 
           <ul className="hidden items-center gap-6 lg:flex">
             {props.navItems.map((item, index) => (
-              <li>
+              <li key={index}>
                 <a
-                  key={index}
                   href={item.link}
+                  style={{
+                    ":hover": {
+                      color: style?.hoverColor,
+                    },
+                    "&:hover": {
+                      color: style?.hoverColor,
+                    },
+                  }}
                   className="text-nowrap text-gray-700 hover:text-purple-700 dark:text-gray-300"
                 >
                   {item.name}
@@ -50,7 +54,12 @@ export default function Navbar({ props, style }) {
           onClick={() => setShowNav(true)}
         />
 
-        <button className="hidden text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white lg:block">
+        <button
+          style={{
+            backgroundColor: style?.accent,
+          }}
+          className="hidden text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white lg:block"
+        >
           {props.buttonText}
         </button>
 
@@ -65,17 +74,29 @@ export default function Navbar({ props, style }) {
           />{" "}
           <ul className="flex flex-col items-center justify-center gap-6">
             {props.navItems.map((item, index) => (
-              <li>
+              <li key={index}>
                 <a
-                  key={index}
                   href={item.link}
+                  style={{
+                    ":hover": {
+                      color: style?.hoverColor,
+                    },
+                    "&:hover": {
+                      color: style?.hoverColor,
+                    },
+                  }}
                   className="text-gray-700 hover:text-purple-700 dark:text-gray-300"
                 >
                   {item.name}
                 </a>
               </li>
             ))}
-            <button className="text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white ">
+            <button
+              style={{
+                backgroundColor: style?.accent,
+              }}
+              className="text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white "
+            >
               {props.buttonText}
             </button>
           </ul>

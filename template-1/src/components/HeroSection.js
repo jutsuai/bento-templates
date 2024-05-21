@@ -1,6 +1,7 @@
-export default function HeroSection({ props, style }) {
+export default function HeroSection({ props, style, id }) {
   return (
     <section
+      id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
@@ -19,23 +20,45 @@ export default function HeroSection({ props, style }) {
             {props.subHeaderText}
           </p>
           <div className="flex items-center gap-4">
-            <button className="text-nowrap rounded-2xl border-purple-700 bg-purple-700 px-6 py-2 text-sm font-medium text-white">
+            <button
+              style={{
+                borderColor: style?.accent,
+                backgroundColor: style?.accent,
+              }}
+              className="text-nowrap rounded-2xl border-purple-700 bg-purple-700 px-6 py-2 text-sm font-medium text-white"
+            >
               {props.primaryButtonText}
             </button>
-            <button className="text-nowrap rounded-2xl border border-purple-700 bg-transparent px-6 py-2 text-sm font-medium text-purple-700">
+            <button
+              style={{
+                borderColor: style?.accent,
+                color: style?.accent,
+              }}
+              className="text-nowrap rounded-2xl border border-purple-700 bg-transparent px-6 py-2 text-sm font-medium text-purple-700"
+            >
               {props.secondaryButtonText}
             </button>
           </div>
         </div>
         <div className="relative mr-4 hidden aspect-square max-w-sm rounded-lg  lg:block xl:max-w-md">
-          <div className="absolute -bottom-4 -left-4 z-0 h-40 w-40 rounded-lg bg-purple-700" />
+          <div
+            style={{
+              backgroundColor: style?.accent,
+            }}
+            className="absolute -bottom-4 -left-4 z-0 h-40 w-40 rounded-lg bg-purple-700"
+          />
           <img
             src={props.backgroundImageUrl}
             alt="hero"
             className="relative z-10 aspect-square h-full w-full min-w-28 rounded-lg object-cover object-center"
             loading="lazy"
           />
-          <div className="absolute -right-4 -top-4 z-0 h-40 w-40 rounded-lg bg-purple-700" />
+          <div
+            style={{
+              backgroundColor: style?.accent,
+            }}
+            className="absolute -right-4 -top-4 z-0 h-40 w-40 rounded-lg bg-purple-700"
+          />
         </div>
       </div>
     </section>

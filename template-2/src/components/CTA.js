@@ -1,6 +1,7 @@
-export default function CTA({ props, style }) {
+export default function CTA({ props, style, id }) {
   return (
     <section
+      id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
@@ -19,10 +20,22 @@ export default function CTA({ props, style }) {
             {props.subHeaderText}
           </p>
           <div className="flex flex-col w-full sm:w-10/12 md:w-1/2 items-center justify-end gap-4">
-            <button className="border w-full border-teal-600 text-white rounded-xl bg-teal-600 px-10 text-sm font-medium py-3">
+            <button
+              style={{
+                backgroundColor: style?.accent,
+                borderColor: style?.accent,
+              }}
+              className="border w-full border-teal-600 text-white rounded-xl bg-teal-600 px-10 text-sm font-medium py-3"
+            >
               {props.primaryButtonText}
             </button>
-            <button className="border w-full bg-transparent border-teal-600 px-10 rounded-xl text-teal-600 text-sm font-medium py-3">
+            <button
+              style={{
+                color: style?.accent,
+                borderColor: style?.accent,
+              }}
+              className="border w-full bg-transparent border-teal-600 px-10 rounded-xl text-teal-600 text-sm font-medium py-3"
+            >
               {props.secondaryButtonText}
             </button>
           </div>
