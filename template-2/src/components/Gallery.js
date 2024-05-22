@@ -1,6 +1,12 @@
+import { useNode } from "@craftjs/core";
+
 export default function Gallery({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <section
+      ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
