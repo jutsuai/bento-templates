@@ -1,12 +1,9 @@
-import { useNode } from "@craftjs/core";
+import { useState } from "react";
 
 export default function Gallery({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+  const [count, setCount] = useState(0);
   return (
     <section
-      ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
@@ -14,6 +11,11 @@ export default function Gallery({ props, style, id }) {
       }}
       className="bg-white dark:bg-slate-800"
     >
+      <div>
+        <button onClick={() => setCount(count + 1)}>+</button>
+        <p>{count}</p>
+        <button onClick={() => setCount(count - 1)}>-</button>
+      </div>
       <div
         style={{ flexDirection: style.flexDirection }}
         className="mx-auto px-8 py-20 flex lg:flex-row flex-col items-center justify-center text-center gap-20 container"
