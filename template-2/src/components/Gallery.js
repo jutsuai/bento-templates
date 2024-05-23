@@ -22,14 +22,14 @@ export default function Gallery({ props, style, id }) {
       >
         <div className="w-full lg:w-1/2">
           <h2 className="text-3xl text-black dark:text-white xl:text-5xl font-bold mb-6">
-            {props.headerText}
+            {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-lg">
-            {props.subHeaderText}
+            {props?.subHeaderText}
           </p>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] lg:grid-cols-2 items-center gap-6 w-full lg:w-1/2">
-          {props.galleryImages.map((image, index) => (
+          {props?.galleryImages.map((image, index) => (
             <img
               key={index}
               src={image}

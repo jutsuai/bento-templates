@@ -12,10 +12,10 @@ export default function Contact({ props, style, id }) {
         <div className="mb-8 flex flex-col items-start justify-center gap-4">
           {/* <p className="text-sm text-gray-700 dark:text-gray-300">{opentime}</p> */}
           <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
-            {props.headerText}
+            {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            {props.subHeaderText}
+            {props?.subHeaderText}
           </p>
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] items-center gap-12 md:gap-16">
@@ -30,7 +30,7 @@ export default function Contact({ props, style, id }) {
               For any service related queries, please contact our email.
             </p>
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props.email}
+              {props?.email}
             </p>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
@@ -44,7 +44,7 @@ export default function Contact({ props, style, id }) {
               For any service related queries, please contact us.
             </p>
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props.phone}
+              {props?.phone}
             </p>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
@@ -58,7 +58,7 @@ export default function Contact({ props, style, id }) {
               For any service related queries, please come to our office.
             </p>
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props.address}
+              {props?.address}
             </p>
           </div>
         </div>

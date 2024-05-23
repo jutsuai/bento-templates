@@ -13,10 +13,10 @@ export default function CTA({ props, style, id }) {
         className="container mx-auto flex flex-col items-center justify-center gap-6 px-8 py-20 text-center"
       >
         <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
-          {props.headerText}
+          {props?.headerText}
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-200 md:text-base">
-          {props.subHeaderText}
+          {props?.subHeaderText}
         </p>
         <div className="flex items-center justify-end gap-4">
           <button
@@ -26,7 +26,7 @@ export default function CTA({ props, style, id }) {
             }}
             className="rounded-2xl border border-purple-700 bg-purple-700 px-4 py-1 text-sm font-medium text-white"
           >
-            {props.primaryButtonText}
+            {props?.primaryButtonText}
           </button>
           <button
             style={{
@@ -35,7 +35,7 @@ export default function CTA({ props, style, id }) {
             }}
             className="rounded-2xl border border-purple-700 bg-transparent px-4 py-1 text-sm font-medium text-purple-700"
           >
-            {props.secondaryButtonText}
+            {props?.secondaryButtonText}
           </button>
         </div>
       </div>

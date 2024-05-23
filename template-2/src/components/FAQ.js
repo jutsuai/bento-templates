@@ -10,10 +10,10 @@ export default function FAQ({ props, style, id }) {
           className="flex flex-col gap-6 text-center xl:text-left"
         >
           <h2 className="text-3xl text-black dark:text-white font-bold lg:text-4xl">
-            {props.headerText}
+            {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-base">
-            {props.subHeaderText}
+            {props?.subHeaderText}
           </p>
           <div
             style={{
@@ -25,7 +25,7 @@ export default function FAQ({ props, style, id }) {
           </div>
         </div>
         <div className="flex flex-col gap-8 rounded-3xl bg-slate-100 dark:bg-slate-800 p-14">
-          {props.qna.map((item, index) => (
+          {props?.qna.map((item, index) => (
             <div key={index}>
               <h3 className="text-sm text-black dark:text-white font-semibold leading-relaxed lg:text-base ">
                 {item.question}
