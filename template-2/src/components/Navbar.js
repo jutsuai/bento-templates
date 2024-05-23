@@ -31,7 +31,7 @@ export default function Navbar({ props, style, id }) {
         />
 
         <ul className="hidden text-sm font-medium items-center gap-6 lg:flex">
-          {props?.navItems.map((item, index) => (
+          {props?.navItems?.map((item, index) => (
             <li key={index}>
               <a
                 href={item.link}
@@ -67,7 +67,7 @@ export default function Navbar({ props, style, id }) {
             onClick={() => setShowNav(false)}
           />{" "}
           <ul className="flex flex-col  items-center justify-center gap-6">
-            {props?.navItems.map((item, index) => (
+            {props?.navItems?.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.link}

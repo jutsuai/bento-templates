@@ -34,7 +34,7 @@ export default function Footer({ props, style, id }) {
 
         <div className="grid sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fit,_minmax(270px,1fr))] max-w-4xl w-full text-sm gap-8">
           <div className="flex flex-col gap-4">
-            {props?.legal.map((item, index) => (
+            {props?.legal?.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
@@ -46,7 +46,7 @@ export default function Footer({ props, style, id }) {
           </div>
           <div className="h-px w-full bg-gray-300 dark:bg-gray-800 sm:hidden block" />
           <div className="flex flex-col gap-4">
-            {props?.service.map((item, index) => (
+            {props?.service?.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
@@ -58,7 +58,7 @@ export default function Footer({ props, style, id }) {
           </div>
           <div className="h-px w-full bg-gray-300 dark:bg-gray-800 sm:hidden block" />
           <div className="flex flex-col gap-4">
-            {props?.information.map((item, index) => (
+            {props?.information?.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
