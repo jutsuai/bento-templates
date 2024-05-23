@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useNode } from "@craftjs/core";
 
 export default function Gallery({ props, style, id }) {
-  const [count, setCount] = useState(0);
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <section
+      ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
@@ -11,30 +14,25 @@ export default function Gallery({ props, style, id }) {
       }}
       className="bg-white dark:bg-slate-800"
     >
-      <div>
-        <button onClick={() => setCount(count + 1)}>+</button>
-        <p>{count}</p>
-        <button onClick={() => setCount(count - 1)}>-</button>
-      </div>
       <div
-        style={{ flexDirection: style.flexDirection }}
-        className="mx-auto px-8 py-20 flex lg:flex-row flex-col items-center justify-center text-center gap-20 container"
+        style={{ flexDirection: style?.flexDirection }}
+        className="container mx-auto flex flex-col items-center justify-center gap-20 px-8 py-20 text-center @lg:flex-row"
       >
-        <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl text-black dark:text-white xl:text-5xl font-bold mb-6">
+        <div className="w-full @lg:w-1/2">
+          <h2 className="mb-6 text-3xl font-bold text-black @xl:text-5xl dark:text-white">
             {props.headerText}
           </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-lg">
+          <p className="text-sm text-gray-700 @lg:text-lg dark:text-gray-300">
             {props.subHeaderText}
           </p>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] lg:grid-cols-2 items-center gap-6 w-full lg:w-1/2">
+        <div className="grid w-full grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] items-center gap-6 @lg:w-1/2 @lg:grid-cols-2">
           {props.galleryImages.map((image, index) => (
             <img
               key={index}
               src={image}
               alt="bike"
-              className="w-full aspect-video object-cover object-center rounded-md"
+              className="aspect-video w-full rounded-md object-cover object-center"
               loading="lazy"
             />
           ))}
