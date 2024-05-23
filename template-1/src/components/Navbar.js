@@ -29,7 +29,7 @@ export default function Navbar({ props, style, id }) {
           />
 
           <ul className="hidden items-center gap-6 lg:flex">
-            {props.navItems.map((item, index) => (
+            {props?.navItems.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.link}
@@ -52,7 +52,7 @@ export default function Navbar({ props, style, id }) {
           }}
           className="hidden text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white lg:block"
         >
-          {props.buttonText}
+          {props?.buttonText}
         </button>
 
         <div
@@ -65,7 +65,7 @@ export default function Navbar({ props, style, id }) {
             onClick={() => setShowNav(false)}
           />{" "}
           <ul className="flex flex-col items-center justify-center gap-6">
-            {props.navItems.map((item, index) => (
+            {props?.navItems.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.link}
@@ -81,7 +81,7 @@ export default function Navbar({ props, style, id }) {
               }}
               className="text-nowrap rounded-2xl bg-purple-700  px-4 py-1 text-sm font-medium text-white "
             >
-              {props.buttonText}
+              {props?.buttonText}
             </button>
           </ul>
         </div>

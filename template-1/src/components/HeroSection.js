@@ -14,10 +14,10 @@ export default function HeroSection({ props, style, id }) {
       >
         <div className="flex max-w-3xl flex-col items-center justify-center gap-8 text-center lg:items-start lg:text-left">
           <h1 className="text-3xl font-bold text-black lg:text-5xl xl:text-6xl dark:text-white">
-            {props.headerText}
+            {props?.headerText}
           </h1>
           <p className="text-base text-gray-600 lg:text-lg dark:text-gray-300">
-            {props.subHeaderText}
+            {props?.subHeaderText}
           </p>
           <div className="flex items-center gap-4">
             <button
@@ -27,7 +27,7 @@ export default function HeroSection({ props, style, id }) {
               }}
               className="text-nowrap rounded-2xl border-purple-700 bg-purple-700 px-6 py-2 text-sm font-medium text-white"
             >
-              {props.primaryButtonText}
+              {props?.primaryButtonText}
             </button>
             <button
               style={{
@@ -36,7 +36,7 @@ export default function HeroSection({ props, style, id }) {
               }}
               className="text-nowrap rounded-2xl border border-purple-700 bg-transparent px-6 py-2 text-sm font-medium text-purple-700"
             >
-              {props.secondaryButtonText}
+              {props?.secondaryButtonText}
             </button>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function HeroSection({ props, style, id }) {
             className="absolute -bottom-4 -left-4 z-0 h-40 w-40 rounded-lg bg-purple-700"
           />
           <img
-            src={props.backgroundImageUrl}
+            src={props?.backgroundImageUrl}
             alt="hero"
             className="relative z-10 aspect-square h-full w-full min-w-28 rounded-lg object-cover object-center"
             loading="lazy"

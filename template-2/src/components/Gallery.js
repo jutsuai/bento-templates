@@ -18,16 +18,16 @@ export default function Gallery({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto flex flex-col items-center justify-center gap-20 px-8 py-20 text-center @lg:flex-row"
       >
-        <div className="w-full @lg:w-1/2">
-          <h2 className="mb-6 text-3xl font-bold text-black @xl:text-5xl dark:text-white">
-            {props.headerText}
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-3xl text-black dark:text-white xl:text-5xl font-bold mb-6">
+            {props?.headerText}
           </h2>
-          <p className="text-sm text-gray-700 @lg:text-lg dark:text-gray-300">
-            {props.subHeaderText}
+          <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-lg">
+            {props?.subHeaderText}
           </p>
         </div>
-        <div className="grid w-full grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] items-center gap-6 @lg:w-1/2 @lg:grid-cols-2">
-          {props.galleryImages.map((image, index) => (
+        <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] lg:grid-cols-2 items-center gap-6 w-full lg:w-1/2">
+          {props?.galleryImages.map((image, index) => (
             <img
               key={index}
               src={image}

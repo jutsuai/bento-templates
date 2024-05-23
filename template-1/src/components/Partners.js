@@ -13,10 +13,10 @@ export default function Partners({ props, style, id }) {
         className="container mx-auto flex flex-col items-center justify-center gap-8 px-8 py-20"
       >
         <h2 className="text-center text-2xl font-semibold text-black md:text-4xl dark:text-white">
-          {props.headerText}
+          {props?.headerText}
         </h2>
         <div className="grid w-full grid-cols-2 items-center gap-10 sm:grid-cols-[repeat(auto-fit,_minmax(120px,1fr))]">
-          {props.logos.map((logo, index) => (
+          {props?.logos.map((logo, index) => (
             <img
               key={index}
               src={logo}
