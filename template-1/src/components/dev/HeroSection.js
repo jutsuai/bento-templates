@@ -16,13 +16,13 @@ export default function HeroSection({ props, style, id }) {
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex flex-row items-center justify-center gap-16 px-8 py-20 lg:justify-between"
+        className="container mx-auto flex flex-row items-center justify-center gap-16 px-8 py-20 @lg:justify-between"
       >
-        <div className="flex max-w-3xl flex-col items-center justify-center gap-8 text-center lg:items-start lg:text-left">
-          <h1 className="text-3xl font-bold text-black lg:text-5xl xl:text-6xl dark:text-white">
+        <div className="flex max-w-3xl flex-col items-center justify-center gap-8 text-center @lg:items-start @lg:text-left">
+          <h1 className="text-3xl font-bold text-black @lg:text-5xl @xl:text-6xl dark:text-white">
             {props?.headerText}
           </h1>
-          <p className="text-base text-gray-600 lg:text-lg dark:text-gray-300">
+          <p className="text-base text-gray-600 @lg:text-lg dark:text-gray-300">
             {props?.subHeaderText}
           </p>
           <div className="flex items-center gap-4">
@@ -46,7 +46,7 @@ export default function HeroSection({ props, style, id }) {
             </button>
           </div>
         </div>
-        <div className="relative mr-4 hidden aspect-square max-w-sm rounded-lg  lg:block xl:max-w-md">
+        <div className="relative mr-4 hidden aspect-square max-w-sm rounded-lg  @lg:block @xl:max-w-md">
           <div
             style={{
               backgroundColor: style?.accent,

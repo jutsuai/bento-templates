@@ -19,10 +19,10 @@ export default function Gallery({ props, style, id }) {
         className="container mx-auto flex flex-col items-center justify-center gap-6 px-8 py-20 text-center"
       >
         <div>
-          <h2 className="mb-4 text-2xl lg:text-4xl font-semibold text-black dark:text-white">
+          <h2 className="mb-4 text-2xl @lg:text-4xl font-semibold text-black dark:text-white">
             {props?.headerText}
           </h2>
-          <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">
+          <p className="text-sm @lg:text-base text-gray-600 dark:text-gray-300">
             {props?.subHeaderText}
           </p>
         </div>

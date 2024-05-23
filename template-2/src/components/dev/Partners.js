@@ -18,10 +18,10 @@ export default function Partners({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="py-20 pb-28 mx-auto px-8 flex flex-col items-center justify-center gap-20 container"
       >
-        <h2 className="text-3xl md:text-4xl max-w-3xl dark:text-white text-black font-bold text-center">
+        <h2 className="text-3xl @md:text-4xl max-w-3xl dark:text-white text-black font-bold text-center">
           {props?.headerText}
         </h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-[repeat(auto-fit,_minmax(140px,1fr))] place-items-center xl:px-0 px-8 items-center w-full">
+        <div className="grid grid-cols-2 gap-6 @sm:grid-cols-[repeat(auto-fit,_minmax(140px,1fr))] place-items-center @xl:px-0 px-8 items-center w-full">
           {props?.logos?.map((logo, index) => (
             <div
               key={index}

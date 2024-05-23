@@ -14,13 +14,13 @@ export default function HeroSection({ props, style, id }) {
       }}
       className="bg-white dark:bg-slate-800"
     >
-      <div className="container mx-auto px-8 flex flex-col py-20 sm:py-24 gap-20 items-center justify-center">
+      <div className="container mx-auto px-8 flex flex-col py-20 @sm:py-24 gap-20 items-center justify-center">
         <div className="flex flex-col items-center justify-center w-full text-center  gap-8">
-          <h1 className="text-4xl mt-6 lg:text-7xl text-black dark:text-white font-extrabold">
+          <h1 className="text-4xl mt-6 @lg:text-7xl text-black dark:text-white font-extrabold">
             {props?.headerText}
           </h1>
           <div className="flex flex-col items-center justify-center gap-6">
-            <h6 className="text-lg text-gray-800 dark:text-gray-300 lg:text-xl">
+            <h6 className="text-lg text-gray-800 dark:text-gray-300 @lg:text-xl">
               {props?.subHeaderText}
             </h6>
             <div className="flex items-center justify-center gap-4">

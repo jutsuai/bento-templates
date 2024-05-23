@@ -17,23 +17,23 @@ export default function Feature({ props, style, id }) {
       <div
         style={{ flexDirection: style?.flexDirection }}
         className={`container mx-auto flex flex-col items-center gap-10 px-8 py-20 ${
-          props?.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
+          props?.isReverse ? "@lg:flex-row-reverse" : "@lg:flex-row"
         }`}
       >
         <img
           src={props?.imageSrc}
           alt="features"
-          className="aspect-video rounded-lg object-cover object-center lg:w-1/2"
+          className="aspect-video rounded-lg object-cover object-center @lg:w-1/2"
           loading="lazy"
         />
-        <div className="flex flex-col gap-4 lg:w-1/2 lg:gap-8 lg:p-14">
-          <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 lg:text-base">
+        <div className="flex flex-col gap-4 @lg:w-1/2 @lg:gap-8 @lg:p-14">
+          <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 @lg:text-base">
             {props?.subHeaderText}
           </p>
-          <h2 className="text-3xl font-bold text-black dark:text-white md:text-4xl">
+          <h2 className="text-3xl font-bold text-black dark:text-white @md:text-4xl">
             {props?.headerText}
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-200 lg:text-base">
+          <p className="text-sm text-gray-600 dark:text-gray-200 @lg:text-base">
             {props?.description}
           </p>
         </div>

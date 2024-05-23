@@ -18,7 +18,7 @@ export default function Footer({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto flex flex-col items-center justify-center gap-10 px-8 py-20"
       >
-        <div className="grid w-full grid-cols-[repeat(auto-fit,_minmax(150px,1fr))] place-items-center gap-8 text-center text-sm text-gray-700 dark:text-gray-300 sm:text-left">
+        <div className="grid w-full grid-cols-[repeat(auto-fit,_minmax(150px,1fr))] place-items-center gap-8 text-center text-sm text-gray-700 dark:text-gray-300 @sm:text-left">
           <div className="flex flex-col gap-4">
             {props?.legal?.map((item, index) => (
               <a

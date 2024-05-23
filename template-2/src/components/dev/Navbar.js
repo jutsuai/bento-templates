@@ -36,7 +36,7 @@ export default function Navbar({ props, style, id }) {
           className="h-8 hidden dark:inline-block"
         />
 
-        <ul className="hidden text-sm font-medium items-center gap-6 lg:flex">
+        <ul className="hidden text-sm font-medium items-center gap-6 @lg:flex">
           {props?.navItems?.map((item, index) => (
             <li key={index}>
               <a
@@ -50,7 +50,7 @@ export default function Navbar({ props, style, id }) {
         </ul>
         {/* </div> */}
         <i
-          className="fa-solid fa-bars-staggered block text-black dark:text-gray-200 text-xl lg:hidden"
+          className="fa-solid fa-bars-staggered block text-black dark:text-gray-200 text-xl @lg:hidden"
           onClick={() => setShowNav(true)}
         />
 
@@ -58,7 +58,7 @@ export default function Navbar({ props, style, id }) {
           style={{
             backgroundColor: style?.accent,
           }}
-          className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white lg:block"
+          className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white @lg:block"
         >
           {props?.buttonText}
         </button>

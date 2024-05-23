@@ -20,15 +20,15 @@ export default function CTA({ props, style, id }) {
             flexDirection: style?.flexDirection,
             backgroundColor: style?.accent + 12,
           }}
-          className="gap-6 dark:bg-slate-800 max-w-10/12 rounded-3xl border dark:border-slate-800 mx-auto flex flex-col items-center text-center justify-center p-10 md:p-20"
+          className="gap-6 dark:bg-slate-800 max-w-10/12 rounded-3xl border dark:border-slate-800 mx-auto flex flex-col items-center text-center justify-center p-10 @md:p-20"
         >
-          <h2 className="text-3xl text-black dark:text-white md:text-5xl font-semibold">
+          <h2 className="text-3xl text-black dark:text-white @md:text-5xl font-semibold">
             {props?.headerText}
           </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300 md:text-base">
+          <p className="text-sm text-gray-700 dark:text-gray-300 @md:text-base">
             {props?.subHeaderText}
           </p>
-          <div className="flex flex-col w-full sm:w-10/12 md:w-1/2 items-center justify-end gap-4">
+          <div className="flex flex-col w-full @sm:w-10/12 @md:w-1/2 items-center justify-end gap-4">
             <button
               style={{
                 backgroundColor: style?.accent,

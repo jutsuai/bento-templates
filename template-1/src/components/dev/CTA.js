@@ -18,10 +18,10 @@ export default function CTA({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto flex flex-col items-center justify-center gap-6 px-8 py-20 text-center"
       >
-        <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
+        <h2 className="text-3xl font-semibold text-black dark:text-white @md:text-4xl">
           {props?.headerText}
         </h2>
-        <p className="text-sm text-gray-600 dark:text-gray-200 md:text-base">
+        <p className="text-sm text-gray-600 dark:text-gray-200 @md:text-base">
           {props?.subHeaderText}
         </p>
         <div className="flex items-center justify-end gap-4">

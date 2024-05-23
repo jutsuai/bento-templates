@@ -17,14 +17,14 @@ export default function Contact({ props, style, id }) {
       <div className="container mx-auto px-8 py-20">
         <div className="mb-8 flex flex-col items-start justify-center gap-4">
           {/* <p className="text-sm text-gray-700 dark:text-gray-300">{opentime}</p> */}
-          <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
+          <h2 className="text-3xl font-semibold text-black dark:text-white @md:text-4xl">
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
             {props?.subHeaderText}
           </p>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] items-center gap-12 md:gap-16">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] items-center gap-12 @md:gap-16">
           <div className="flex flex-col items-start justify-center gap-4">
             <i
               className={`fa-solid fa-envelope text-3xl text-black dark:text-white`}
