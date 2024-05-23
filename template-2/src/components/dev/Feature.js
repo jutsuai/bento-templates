@@ -4,6 +4,7 @@ export default function Feature({ props, style, id }) {
   const {
     connectors: { connect, drag },
   } = useNode();
+  console.log("Is reverse:", props?.isReverse);
   return (
     <section
       ref={(ref) => connect(drag(ref))}

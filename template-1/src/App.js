@@ -1,12 +1,12 @@
-import Gallery from "./components/Gallery";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import Partners from "./components/Partners";
-import Feature from "./components/Feature";
-import CTA from "./components/CTA";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Gallery from "./components/prod/Gallery";
+import HeroSection from "./components/prod/HeroSection";
+import Navbar from "./components/prod/Navbar";
+import Partners from "./components/prod/Partners";
+import Feature from "./components/prod/Feature";
+import CTA from "./components/prod/CTA";
+import FAQ from "./components/prod/FAQ";
+import Contact from "./components/prod/Contact";
+import Footer from "./components/prod/Footer";
 
 const nodes = [
   "7YoXE88zl3",
@@ -192,7 +192,6 @@ const values = {
   },
   features: {
     props: {
-      isReverse: false,
       subHeaderText: "Ride in Style and Comfort",
       headerText: "Premium Bikes",
       description:

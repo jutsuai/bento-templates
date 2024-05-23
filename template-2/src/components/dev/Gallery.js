@@ -16,7 +16,7 @@ export default function Gallery({ props, style, id }) {
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex flex-col items-center justify-center gap-20 px-8 py-20 text-center @@lg:flex-row"
+        className="container mx-auto flex flex-col items-center justify-center gap-20 px-8 py-20 text-center @lg:flex-row"
       >
         <div className="w-full @lg:w-1/2">
           <h2 className="text-3xl text-black dark:text-white @xl:text-5xl font-bold mb-6">
