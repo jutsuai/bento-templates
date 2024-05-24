@@ -41,7 +41,7 @@ export default function HeroSection({ props, style, id }) {
         <img
           src={props?.backgroundImageUrl}
           alt="hero"
-          className="w-full  object-cover object-center shadow-lg rounded-full"
+          className="w-full max-h-[900px] object-cover object-center shadow-lg rounded-full"
           loading="lazy"
         />
       </div>
