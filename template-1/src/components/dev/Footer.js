@@ -75,7 +75,7 @@ export default function Footer({ props, style, id }) {
       </div>
       <div className="border-t py-3 text-center dark:border-slate-800">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          &copy;{props?.copyRight}
+          {props?.copyRight}
         </p>
       </div>
     </footer>
