@@ -6,7 +6,7 @@ export default function Footer({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="bg-white dark:bg-slate-900"
+      className="bg-white dark:bg-[#080a11]"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
@@ -70,7 +70,7 @@ export default function Footer({ props, style, id }) {
           </div>
         </div>
       </div>
-      <div className="text-center py-3 border-t dark:border-slate-900">
+      <div className="container mx-auto px-6 py-6 border-t dark:border-[#080a11]">
         <p className="text-gray-600 dark:text-gray-300 text-sm">
           {props?.copyRight}
         </p>

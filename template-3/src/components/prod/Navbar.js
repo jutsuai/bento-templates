@@ -13,7 +13,7 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      className="relative bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-900"
+      className="relative bg-white dark:bg-[#080a11] border-b border-gray-200 dark:border-[#080a11]"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
@@ -64,7 +64,7 @@ export default function Navbar({ props, style, id }) {
         </div>
 
         <div
-          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-slate-900 p-7 px-8 transition-all duration-200 ${
+          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-[#080a11] p-7 px-8 transition-all duration-200 ${
             showNav ? "inline-block" : "hidden"
           }`}
         >

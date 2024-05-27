@@ -8,7 +8,7 @@ export default function Contact({ props, style, id }) {
       }}
       className="bg-white dark:bg-gray-800"
     >
-      <div className="container mx-auto px-8 py-20">
+      <div className="container mx-auto px-4 py-20">
         <div className="mb-8 flex flex-col items-start justify-center gap-4">
           {/* <p className="text-sm text-gray-700 dark:text-gray-300">{opentime}</p> */}
           <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">

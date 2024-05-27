@@ -6,40 +6,35 @@ export default function CTA({ props, style, id }) {
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
-      className="bg-white dark:bg-slate-900"
+      className="bg-white dark:bg-[#080a11]"
     >
-      <div className="container mx-auto px-8 py-20">
+      <div className="container mx-auto px-4 py-20">
         <div
           style={{
             flexDirection: style?.flexDirection,
-            backgroundColor: style?.accent + 12,
+            // backgroundColor: style?.accent + 11,
           }}
-          className="gap-6 dark:bg-slate-900 max-w-10/12 rounded-3xl border dark:border-slate-900 mx-auto flex flex-col items-center text-center justify-center p-10 md:p-20"
+          className="gap-6 dark:bg-[#14161d] max-w-6xl rounded-sm border bg-[#14161d12] dark:border-[#14161d] mx-auto flex flex-col items-center text-center justify-center h-full p-10 md:p-24"
         >
-          <h2 className="text-3xl text-black dark:text-white md:text-5xl font-semibold">
+          <h2 className="text-3xl text-black dark:text-white md:text-4xl font-semibold">
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300 md:text-base">
             {props?.subHeaderText}
           </p>
-          <div className="flex flex-col w-full sm:w-10/12 md:w-1/2 items-center justify-end gap-4">
+          <div className="flex w-full h-12 max-w-md items-center ">
+            <input
+              placeholder={props?.placeholder}
+              className="border rounded-sm placeholder:text-sm sm:placeholder:text-base flex-grow w-full bg-transparent placeholder:text-gray-500 h-full min-h-12 outline-none border-gray-600 px-4"
+            />
             <button
               style={{
                 backgroundColor: style?.accent,
                 borderColor: style?.accent,
               }}
-              className="border w-full border-[#b9ff81] text-white rounded-xl bg-[#b9ff81] px-10 text-sm font-medium py-3"
+              className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm bg-[#b9ff81] px-1 text-xs sm:text-sm font-semibold py-2"
             >
-              {props?.primaryButtonText}
-            </button>
-            <button
-              style={{
-                color: style?.accent,
-                borderColor: style?.accent,
-              }}
-              className="border w-full bg-transparent border-[#b9ff81] px-10 rounded-xl text-[#b9ff81] text-sm font-medium py-3"
-            >
-              {props?.secondaryButtonText}
+              {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
             </button>
           </div>
         </div>
