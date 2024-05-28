@@ -1,3 +1,10 @@
+const socialIcons = [
+  { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/" },
+  { icon: "fa-brands fa-github", href: "" },
+  { icon: "fa-brands fa-x-twitter", href: "https://twitter.com/" },
+  { icon: "fa-brands fa-youtube", href: "https://www.youtube.com/" },
+  { icon: "fa-brands fa-square-facebook", href: "https://www.facebook.com/" },
+];
 export default function Footer({ props, style, id }) {
   return (
     <footer
@@ -12,7 +19,7 @@ export default function Footer({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="container py-20 gap-10 flex flex-col lg:flex-row items-center justify-between px-8 mx-auto"
       >
-        <div className="opacity-80 p-2">
+        <div className="opacity-80">
           <img
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/Jutsu%20Black.png"
             alt=""
@@ -24,11 +31,17 @@ export default function Footer({ props, style, id }) {
             className="max-w-52 hidden dark:inline-block"
           />
           <div className="flex text-black dark:text-white items-center gap-4 mt-2">
-            <i className="fa-brands fa-linkedin text-2xl"></i>
-            <i className="fa-brands fa-square-facebook text-2xl"></i>
-            <i className="fa-brands fa-github text-2xl"></i>
-            <i className="fa-brands fa-x-twitter text-2xl"></i>
-            <i className="fa-brands fa-youtube text-2xl"></i>
+            {socialIcons.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="p-2 rounded-full aspect-square w-10 flex items-center justify-center bg-[#14161d12] dark:bg-[#14161d]"
+              >
+                <i
+                  className={`${item.icon} dark:text-white/90 text-black/90`}
+                />
+              </a>
+            ))}
           </div>
         </div>
 

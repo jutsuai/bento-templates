@@ -13,11 +13,11 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      className="relative bg-white dark:bg-[#080a11] border-b border-gray-200 dark:border-[#080a11]"
+      className="relative bg-white dark:bg-[#080a11] dark:border-[#080a11]"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex items-center justify-between px-8 py-6"
+        className="container mx-auto flex items-center justify-between px-4 py-6"
       >
         <div className="flex items-center gap-10">
           <img
@@ -50,16 +50,14 @@ export default function Navbar({ props, style, id }) {
         />
 
         <div className="hidden lg:flex items-center gap-2">
-          <button className="hidden text-nowrap rounded-2xl px-4 py-1 text-base font-medium dark:text-white text-black lg:block">
-            {props?.primaryButtonText}
-          </button>
           <button
             style={{
               backgroundColor: style?.accent,
             }}
-            className="hidden text-nowrap rounded-sm bg-[#b9ff81] px-6 py-2 text-base font-semibold text-inherit lg:block"
+            className="hidden text-nowrap rounded-[4px] bg-[#b9ff81] px-6 py-2 text-base font-semibold text-inherit lg:block"
           >
-            {props?.secondaryButtonText}
+            {props?.secondaryButtonText}{" "}
+            <i class="fa-solid fa-arrow-right ml-1"></i>
           </button>
         </div>
 
