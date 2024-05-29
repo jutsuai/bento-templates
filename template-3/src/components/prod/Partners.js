@@ -12,9 +12,9 @@ export default function Partners({ props, style, id }) {
         style={{ flexDirection: style?.flexDirection }}
         className="py-20 pb-28 mx-auto px-4 flex flex-col items-center justify-center gap-20 container"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold dark:text-white text-black text-center">
+        {/* <h2 className="text-3xl md:text-4xl font-semibold dark:text-white text-black text-center">
           {props?.headerText}
-        </h2>
+        </h2> */}
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-[repeat(auto-fit,_minmax(140px,1fr))] place-items-center xl:px-0 px-8 items-center w-full">
           {props?.logos?.map((logo, index) => (
             <img

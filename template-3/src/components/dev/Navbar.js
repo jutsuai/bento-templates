@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useNode } from "@craftjs/core";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <nav
+      ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
         padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${

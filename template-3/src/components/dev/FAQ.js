@@ -1,8 +1,16 @@
 import { useState } from "react";
+import { useNode } from "@craftjs/core";
 
 export default function FAQ({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
-    <section id={id} className="bg-white dark:bg-[#080a11]">
+    <section
+      ref={(ref) => connect(drag(ref))}
+      id={id}
+      className="bg-white dark:bg-[#080a11]"
+    >
       <div className="container mx-auto px-4 py-20 grid w-full grid-cols-1 gap-10 place-items-center">
         <div
           style={{
@@ -18,7 +26,7 @@ export default function FAQ({ props, style, id }) {
             {props?.subHeaderText}
           </p>
         </div>
-        <div className="flex flex-col gap-8 rounded-sm w-full bg-[#14161d12] dark:bg-[#14161d] p-14">
+        <div className="flex flex-col gap-8 rounded-sm w-full max-w-7xl py-14">
           {props?.qna?.map((item, index) => (
             <FAQItem
               key={index}
@@ -36,23 +44,23 @@ function FAQItem({ question, answer }) {
   const [expand, setExpand] = useState(false);
   return (
     <div
-      className={`relative  hover:text-black dark:hover:text-white dark:text-white/70 ${
-        expand ? "!text-black dark:!text-white" : ""
-      }`}
+      className={`relative border-b border-black/30 dark:border-white/30 pb-2 hover:text-black dark:hover:text-white dark:text-white/70`}
       onClick={() => setExpand((e) => !e)}
     >
       <div className="flex items-center w-full justify-between">
-        <h3 className="text-lg font-medium leading-relaxed ">{question}</h3>
+        <h3 className="text-lg font-medium text-black dark:text-white leading-relaxed ">
+          {question}
+        </h3>
         <i
-          class={`transition-all fa-solid fa-chevron-down text-sm text-gray-800 dark:text-gray-200 ${
-            expand ? "transform rotate-180" : ""
+          class={`transition-all fa-solid  text-sm text-gray-800 dark:text-gray-200 ${
+            expand ? "transform rotate-180 fa-minus" : "fa-plus"
           }`}
         ></i>
       </div>
       <p
         className={`transition-all text-xs mt-1 ${
           expand ? "opacity-100 h-fit" : "opacity-0 h-0"
-        } text-gray-800 dark:text-gray-200 font-medium leading-relaxed @lg:text-base @lg:font-normal`}
+        } text-gray-800 dark:text-white/70 font-medium leading-relaxed @lg:text-sm @lg:font-normal`}
       >
         {answer}
       </p>

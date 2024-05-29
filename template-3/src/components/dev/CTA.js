@@ -1,6 +1,12 @@
+import { useNode } from "@craftjs/core";
+
 export default function CTA({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <section
+      ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
         padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
@@ -12,14 +18,19 @@ export default function CTA({ props, style, id }) {
         <div
           style={{
             flexDirection: style?.flexDirection,
-            // backgroundColor: style?.accent + 11,
+            backgroundImage:
+              'url("https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/Picsart_24-05-29_17-06-50-600.png',
+
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
-          className="gap-6 dark:bg-[#14161d] rounded-sm border bg-[#14161d12] dark:border-[#14161d] mx-auto flex flex-col items-center text-center justify-center h-full p-10 @md:p-32"
+          className="gap-6 rounded-sm border max-w-7xl dark:border-[#14161d] mx-auto flex flex-col items-center overflow-hidden text-center justify-center h-full p-10 @md:p-32"
+          // style={{}}
         >
-          <h2 className="text-3xl text-black dark:text-white @md:text-4xl font-semibold">
+          <h2 className="text-3xl text-white @md:text-4xl font-semibold">
             {props?.headerText}
           </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300 @md:text-base">
+          <p className="text-sm text-gray-300 @md:text-base">
             {props?.subHeaderText}
           </p>
           <div className="flex w-full h-12 max-w-md items-center ">

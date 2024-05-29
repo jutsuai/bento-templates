@@ -1,28 +1,16 @@
-// import Gallery from "./components/prod/Gallery";
-import HeroSection from "./components/prod/HeroSection";
-import Navbar from "./components/prod/Navbar";
-import Partners from "./components/prod/Partners";
-import Feature from "./components/prod/Feature";
-import CTA from "./components/prod/CTA";
-import FAQ from "./components/prod/FAQ";
-// import Contact from "./components/prod/Contact";
-import Footer from "./components/prod/Footer";
-import { useState } from "react";
+import Gallery from "./components/Gallery";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
+import Partners from "./components/Partners";
+import Feature from "./components/Feature";
+import CTA from "./components/CTA";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
   return (
-    <main
-      className={`relative ${darkMode ? "dark" : "font-sans"}`}
-      // style={{ fontFamily: "revert" }}
-    >
-      <button
-        className="fixed z-50 top-10 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
-        onClick={() => setDarkMode((e) => !e)}
-      >
-        {darkMode ? "Dark" : "Light"}
-      </button>
+    <>
       <Navbar
         props={values.navbar.props}
         style={values.navbar.style}
@@ -38,20 +26,15 @@ export default function App() {
         style={values.partners.style}
         id={values.partners.node}
       />
-      {/* <Gallery
+      <Gallery
         props={values.gallery.props}
         style={values.gallery.style}
         id={values.gallery.node}
-      /> */}
+      />
       <Feature
         props={values.features.props}
         style={values.features.style}
         id={values.features.node}
-      />
-      <Feature
-        props={values.features2.props}
-        style={values.features2.style}
-        id={values.features2.node}
       />
       <CTA
         props={values.cta.props}
@@ -63,17 +46,17 @@ export default function App() {
         style={values.faq.style}
         id={values.faq.node}
       />
-      {/* <Contact
+      <Contact
         props={values.contact.props}
         style={values.contact.style}
         id={values.contact.node}
-      /> */}
+      />
       <Footer
         props={values.footer.props}
         style={values.footer.style}
         id={values.footer.node}
       />
-    </main>
+    </>
   );
 }
 
@@ -102,7 +85,7 @@ const values = {
           link: "#",
         },
       ],
-      buttonText: "Download",
+      buttonText: "Buy",
     },
     style: {
       flexDirection: "row",
@@ -114,17 +97,14 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "7YoXE88zl3",
   },
   heroSection: {
     props: {
-      backgroundImages: [
-        "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHByb2dyYW1taW5nfGVufDB8fDB8fHww",
-      ],
+      backgroundImageUrl:
+        "https://source.unsplash.com/random/1920x900/?bike road",
       headerText: "Welcome to our Bike Showroom",
       subHeaderText: "Explore our widerange of bikes for every type of rider",
       primaryButtonText: "Contact Us",
@@ -140,7 +120,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "eqJ1Le-Eek",
   },
@@ -148,11 +128,12 @@ const values = {
     props: {
       headerText: "Trusted by the worlds best companies",
       logos: [
-        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
-        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
-        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
-        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/codecademy-color.svg",
-        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/facepunch-color.svg",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/107.webp",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/40626.webp",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/4332857.webp",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/5.webp",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/ODUJEH0.webp",
+        "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/bird_2.webp",
       ],
     },
     style: {
@@ -165,7 +146,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "qW8TVT1Ghs",
   },
@@ -175,14 +156,10 @@ const values = {
       subHeaderText:
         "Browse through our collection of high-quality bikes available for sale",
       galleryImages: [
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://source.unsplash.com/random/315x215/?bike gallery",
+        "https://source.unsplash.com/random/320x220/?bike gallery",
+        "https://source.unsplash.com/random/325x225/?bike gallery",
+        "https://source.unsplash.com/random/335x235/?bike gallery",
       ],
     },
     style: {
@@ -195,7 +172,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "c0841A0VNv",
   },
@@ -206,8 +183,7 @@ const values = {
       headerText: "Premium Bikes",
       description:
         "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
-      imageSrc:
-        "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageSrc: "https://source.unsplash.com/random/600x500/?sports bikes",
     },
     style: {
       paddingTop: 0,
@@ -218,30 +194,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
-    },
-    node: "I2n0gkh6lx",
-  },
-  features2: {
-    props: {
-      isReverse: true,
-      subHeaderText: "Ride in Style and Comfort",
-      headerText: "Premium Bikes",
-      description:
-        "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
-      imageSrc:
-        "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    style: {
-      paddingTop: 0,
-      paddingLeft: 0,
-      paddingBottom: 0,
-      paddingRight: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "I2n0gkh6lx",
   },
@@ -263,7 +216,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "jOCWcl4ZY3",
   },
@@ -285,7 +238,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "hFj2-m4g8y",
   },
@@ -294,8 +247,8 @@ const values = {
       headerText: "Find Your Perfect Ride",
       subHeaderText:
         "Explore our wide range of bikes and find the one that suits your style and needs.",
-      placeholder: "Enter your email address",
-      buttonText: "Browse Bikes",
+      primaryButtonText: "Browse Bikes",
+      secondaryButtonText: "Contact Us",
     },
     style: {
       flexDirection: "column",
@@ -307,7 +260,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "lb4B3saWZH",
   },
@@ -354,7 +307,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "qWKNVA6O_F",
   },
@@ -376,7 +329,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "LZ3qsC8_zP",
   },
@@ -459,7 +412,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#94cc67",
+      accent: "#0d9488",
     },
     node: "WLZFjGp2JT",
   },
