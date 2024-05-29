@@ -94,8 +94,7 @@ const values = {
           link: "#",
         },
       ],
-      primaryButtonText: "Lite App",
-      secondaryButtonText: "Download",
+      buttonText: "Download",
     },
     style: {
       flexDirection: "row",
@@ -146,7 +145,6 @@ const values = {
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/codecademy-color.svg",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/facepunch-color.svg",
-        // "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/bird_2.webp",
       ],
     },
     style: {

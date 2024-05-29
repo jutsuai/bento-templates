@@ -56,8 +56,7 @@ export default function Navbar({ props, style, id }) {
             }}
             className="hidden text-nowrap rounded-[4px] bg-[#b9ff81] px-6 py-2 text-base font-semibold text-inherit lg:block"
           >
-            {props?.secondaryButtonText}{" "}
-            <i class="fa-solid fa-arrow-right ml-1"></i>
+            {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
           </button>
         </div>
 
@@ -81,16 +80,14 @@ export default function Navbar({ props, style, id }) {
                 </a>
               </li>
             ))}
-            <button className="text-nowrap px-4 py-1 text-base font-medium dark:text-white text-black block">
-              {props?.primaryButtonText}
-            </button>
+
             <button
               style={{
                 backgroundColor: style?.accent,
               }}
-              className="text-nowrap rounded-2xl bg-[#b9ff81] px-4 py-1 text-base font-medium dark:text-white text-black block"
+              className="text-nowrap rounded-md bg-[#b9ff81] px-4 py-1 text-base font-medium dark:text-white text-black block"
             >
-              {props?.secondaryButtonText}
+              {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
             </button>
           </ul>
         </div>
