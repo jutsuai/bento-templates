@@ -39,7 +39,8 @@ export default function CTA({ props, style, id }) {
               }}
               className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm bg-[#b9ff81] px-1 text-xs sm:text-sm font-semibold py-2"
             >
-              {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
+              {props?.buttonText}
+              <i className="fa-solid fa-arrow-right ml-1"></i>
             </button>
           </div>
         </div>

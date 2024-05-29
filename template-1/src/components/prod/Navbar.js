@@ -63,7 +63,7 @@ export default function Navbar({ props, style, id }) {
           <i
             className="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
             onClick={() => setShowNav(false)}
-          />{" "}
+          />
           <ul className="flex flex-col items-center justify-center gap-6">
             {props?.navItems?.map((item, index) => (
               <li key={index}>

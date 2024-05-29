@@ -24,11 +24,12 @@ export default function HeroSection({ props, style, id }) {
               }}
               className="flex items-center gap-2 bg-[#b9ff81] px-8 rounded-[4px] text-black text-base font-semibold py-4"
             >
-              {props?.secondaryButtonText}{" "}
-              <i class="fa-solid fa-arrow-right"></i>
+              {props?.secondaryButtonText}
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
             <button className="text-black flex items-center gap-2 dark:text-white px-6 text-base font-semibold py-2">
-              {props?.primaryButtonText} <i class="fa-solid fa-arrow-right"></i>
+              {props?.primaryButtonText}
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </div>

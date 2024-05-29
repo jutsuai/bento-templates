@@ -56,7 +56,7 @@ export default function Navbar({ props, style, id }) {
             }}
             className="hidden text-nowrap rounded-[4px] bg-[#b9ff81] px-6 py-2 text-base font-semibold text-inherit lg:block"
           >
-            {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
+            {props?.buttonText} <i className="fa-solid fa-arrow-right ml-1"></i>
           </button>
         </div>
 
@@ -68,7 +68,7 @@ export default function Navbar({ props, style, id }) {
           <i
             className="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
             onClick={() => setShowNav(false)}
-          />{" "}
+          />
           <ul className="flex flex-col  items-center justify-center gap-6">
             {props?.navItems?.map((item, index) => (
               <li key={index}>
@@ -87,7 +87,8 @@ export default function Navbar({ props, style, id }) {
               }}
               className="text-nowrap rounded-md bg-[#b9ff81] px-4 py-1 text-base font-medium dark:text-white text-black block"
             >
-              {props?.buttonText} <i class="fa-solid fa-arrow-right ml-1"></i>
+              {props?.buttonText}
+              <i className="fa-solid fa-arrow-right ml-1"></i>
             </button>
           </ul>
         </div>

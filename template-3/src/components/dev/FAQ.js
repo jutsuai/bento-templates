@@ -52,7 +52,7 @@ function FAQItem({ question, answer }) {
           {question}
         </h3>
         <i
-          class={`transition-all fa-solid  text-sm text-gray-800 dark:text-gray-200 ${
+          className={`transition-all fa-solid  text-sm text-gray-800 dark:text-gray-200 ${
             expand ? "transform rotate-180 fa-minus" : "fa-plus"
           }`}
         ></i>
