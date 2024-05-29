@@ -33,22 +33,22 @@ export default function HeroSection({ props, style, id }) {
           </div>
         </div>
         <div className="relative h-full w-full aspect-square max-w-md hidden lg:block ">
-          {Array.isArray(props?.backgroundImages) ? (
+          {Array.isArray(props?.backgroundImageUrl) ? (
             <>
               <img
-                src={props?.backgroundImages[0] || ""}
+                src={props?.backgroundImageUrl[0] || ""}
                 alt="hero"
                 className="absolute top-14 -right-8 border-l-8 border-t-8 border-white dark:border-[#080a11] w-full max-w-72 aspect-[9/11] object-cover object-center shadow-lg rounded-md"
                 loading="lazy"
               />
               <img
-                src={props?.backgroundImages[1] || ""}
+                src={props?.backgroundImageUrl[1] || ""}
                 alt="hero"
                 className="w-full max-w-md max-h-64 border border-white/10 aspect-square object-cover object-center shadow-lg rounded-md"
                 loading="lazy"
               />
               <img
-                src={props?.backgroundImages[2] || ""}
+                src={props?.backgroundImageUrl[2] || ""}
                 alt="hero"
                 className="absolute bottom-5 -left-24 border border-white/10 w-full max-w-72 aspect-video object-cover object-center shadow-lg rounded-md"
                 loading="lazy"
@@ -56,7 +56,7 @@ export default function HeroSection({ props, style, id }) {
             </>
           ) : (
             <img
-              src={props?.backgroundImages || ""}
+              src={props?.backgroundImageUrl || ""}
               alt="hero"
               className="w-full min-w-28 h-full border border-white/10 aspect-square object-cover object-center shadow-lg rounded-md"
               loading="lazy"
