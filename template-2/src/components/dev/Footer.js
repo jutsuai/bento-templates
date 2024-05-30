@@ -38,7 +38,7 @@ export default function Footer({ props, style, id }) {
           </div>
         </div>
 
-        <div className="grid @sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fill,_minmax(150px,1fr))] w-full text-sm gap-8">
+        <div className="grid @sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fit,_minmax(220px,1fr))] w-full text-sm gap-8">
           <div className="flex flex-col gap-4 px-4">
             {props?.legal?.map((item, index) => (
               <a
