@@ -13,11 +13,11 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      className="relative bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-800"
+      className="relative bg-white dark:bg-[#121212] dark:border-[#121212]"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex items-center justify-between px-8 py-6"
+        className="container mx-auto flex items-center justify-between px-4 py-6"
       >
         <img
           src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/Black%20Jutsu.png"
@@ -42,7 +42,6 @@ export default function Navbar({ props, style, id }) {
             </li>
           ))}
         </ul>
-        {/* </div> */}
         <i
           className="fa-solid fa-bars-staggered block text-black dark:text-gray-200 text-xl lg:hidden"
           onClick={() => setShowNav(true)}
@@ -52,13 +51,14 @@ export default function Navbar({ props, style, id }) {
           style={{
             backgroundColor: style?.accent,
           }}
-          className="hidden text-nowrap rounded-2xl bg-teal-600  px-4 py-1 text-sm font-medium text-white lg:block"
+          className="hidden text-nowrap rounded-md bg-[#412dff] px-4 py-2 text-sm font-medium text-white lg:block"
         >
-          {props?.buttonText}
+          {props?.buttonText}{" "}
+          <i class="fa-regular fa-paper-plane opacity-90 ml-1"></i>
         </button>
 
         <div
-          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-slate-800 p-7 px-8 transition-all duration-200 ${
+          className={`absolute right-0 top-0 w-full border-b dark:border-[#121212] bg-white dark:bg-[#121212] z-50 p-7 px-8 transition-all duration-200 ${
             showNav ? "inline-block" : "hidden"
           }`}
         >
@@ -81,9 +81,10 @@ export default function Navbar({ props, style, id }) {
               style={{
                 backgroundColor: style?.accent,
               }}
-              className="text-nowrap rounded-2xl bg-teal-600 px-4 py-1 text-sm font-medium text-white block"
+              className="text-nowrap rounded-md bg-[#412dff] px-4 py-2 text-sm font-medium text-white"
             >
               {props?.buttonText}
+              <i class="fa-regular fa-paper-plane opacity-90 ml-1"></i>
             </button>
           </ul>
         </div>

@@ -28,7 +28,7 @@ export default function CTA({ props, style, id }) {
                 backgroundColor: style?.accent,
                 borderColor: style?.accent,
               }}
-              className="border w-full border-teal-600 text-white rounded-xl bg-teal-600 px-10 text-sm font-medium py-3"
+              className="border w-full border-[#412dff] text-white rounded-xl bg-[#412dff] px-10 text-sm font-medium py-3"
             >
               {props?.primaryButtonText}
             </button>
@@ -37,7 +37,7 @@ export default function CTA({ props, style, id }) {
                 color: style?.accent,
                 borderColor: style?.accent,
               }}
-              className="border w-full bg-transparent border-teal-600 px-10 rounded-xl text-teal-600 text-sm font-medium py-3"
+              className="border w-full bg-transparent border-[#412dff] px-10 rounded-xl text-[#412dff] text-sm font-medium py-3"
             >
               {props?.secondaryButtonText}
             </button>

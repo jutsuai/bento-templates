@@ -1,16 +1,30 @@
-import Gallery from "./components/Gallery";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import Partners from "./components/Partners";
-import Feature from "./components/Feature";
-import CTA from "./components/CTA";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Navbar from "./components/prod/Navbar";
+import HeroSection from "./components/prod/HeroSection";
+import Numbers from "./components/prod/Numbers";
+import Services from "./components/prod/Services";
+import About from "./components/prod/About";
+import Gallery from "./components/prod/Gallery";
+import Partners from "./components/prod/Partners";
+import Feature from "./components/prod/Feature";
+import CTA from "./components/prod/CTA";
+import FAQ from "./components/prod/FAQ";
+import Contact from "./components/prod/Contact";
+import Footer from "./components/prod/Footer";
+import { useState } from "react";
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState();
   return (
-    <>
+    <main
+      className={`relative ${darkMode ? "dark" : ""}`}
+      // style={{ fontFamily: "revert" }}
+    >
+      <button
+        className="fixed z-50 top-10 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
+        onClick={() => setDarkMode((e) => !e)}
+      >
+        {darkMode ? "Dark" : "Light"}
+      </button>
       <Navbar
         props={values.navbar.props}
         style={values.navbar.style}
@@ -20,6 +34,21 @@ export default function App() {
         props={values.heroSection.props}
         style={values.heroSection.style}
         id={values.heroSection.node}
+      />
+      <Numbers
+        props={{}}
+        style={values.partners.style}
+        id={values.partners.node}
+      />
+      <Services
+        props={{}}
+        style={values.partners.style}
+        id={values.partners.node}
+      />
+      <About
+        props={{}}
+        style={values.partners.style}
+        id={values.partners.node}
       />
       <Partners
         props={values.partners.props}
@@ -56,7 +85,7 @@ export default function App() {
         style={values.footer.style}
         id={values.footer.node}
       />
-    </>
+    </main>
   );
 }
 
@@ -65,27 +94,24 @@ const values = {
     props: {
       navItems: [
         {
-          name: "Home",
+          name: "HOME",
+          link: "#",
+        },
+
+        {
+          name: "SERVICES",
           link: "#",
         },
         {
-          name: "Bikes",
+          name: "ABOUT US",
           link: "#",
         },
         {
-          name: "Accessories",
-          link: "#",
-        },
-        {
-          name: "About Us",
-          link: "#",
-        },
-        {
-          name: "Contact Us",
+          name: "CONTACT US",
           link: "#",
         },
       ],
-      buttonText: "Buy",
+      buttonText: "BUY",
     },
     style: {
       flexDirection: "row",
@@ -97,18 +123,19 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "7YoXE88zl3",
   },
   heroSection: {
     props: {
       backgroundImageUrl:
-        "https://source.unsplash.com/random/1920x900/?bike road",
-      headerText: "Welcome to our Bike Showroom",
-      subHeaderText: "Explore our widerange of bikes for every type of rider",
-      primaryButtonText: "Contact Us",
-      secondaryButtonText: "View Collection",
+        "https://ipfs.near.social/ipfs/bafkreibuoq4pd34vkyv3wqcsyj44ahmhxd5jc6plfk37s4e2xhal2m7fg4",
+      headerText: "We Create Beautiful Templates for your dapps",
+      subHeaderText:
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      primaryButtonText: "HIRE ME",
+      secondaryButtonText: "DOWNLOAD CV",
     },
     style: {
       flexDirection: "row",
@@ -120,7 +147,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "eqJ1Le-Eek",
   },
@@ -146,7 +173,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "qW8TVT1Ghs",
   },
@@ -172,7 +199,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "c0841A0VNv",
   },
@@ -194,7 +221,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "I2n0gkh6lx",
   },
@@ -216,7 +243,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "jOCWcl4ZY3",
   },
@@ -238,7 +265,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "hFj2-m4g8y",
   },
@@ -260,7 +287,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "lb4B3saWZH",
   },
@@ -307,7 +334,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "qWKNVA6O_F",
   },
@@ -329,7 +356,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "LZ3qsC8_zP",
   },
@@ -412,7 +439,7 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#0d9488",
+      accent: "#412dff",
     },
     node: "WLZFjGp2JT",
   },

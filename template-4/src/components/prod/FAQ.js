@@ -19,7 +19,7 @@ export default function FAQ({ props, style, id }) {
             style={{
               backgroundColor: style?.accent,
             }}
-            className="hidden aspect-video w-full max-w-96 place-items-center rounded-3xl bg-teal-600 xl:grid"
+            className="hidden aspect-video w-full max-w-96 place-items-center rounded-3xl bg-[#412dff] xl:grid"
           >
             <i className="fa-solid fa-comments text-8xl text-white" />
           </div>
