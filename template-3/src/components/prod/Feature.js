@@ -54,11 +54,9 @@ export default function Feature({ props, style, id }) {
             />
           </div>
         </div>
-        {/* </div>
-        </div> */}
         <div className="flex flex-1 flex-col gap-4 lg:w-1/2 lg:p-14">
           <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-base font-medium">
-            // {props?.subHeaderText}
+            {`// ${props?.subHeaderText}`}
           </p>
           <h2 className="text-3xl font-bold text-black dark:text-white md:text-4xl">
             {props?.headerText}
