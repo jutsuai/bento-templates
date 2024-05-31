@@ -20,7 +20,11 @@ export default function Feature({ props, style, id }) {
           props?.isReverse ? "@lg:flex-row-reverse" : "@lg:flex-row"
         }`}
       >
-        <div className="flex-1 relative">
+        <div
+          className={`flex-1 relative flex ${
+            props?.isReverse ? "justify-end" : "justify-start"
+          }`}
+        >
           <img
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
             alt=""
@@ -53,7 +57,7 @@ export default function Feature({ props, style, id }) {
             <img
               src={props?.imageSrc}
               alt="features"
-              className="rounded-lg object-cover object-center "
+              className="rounded-lg object-cover w-full max-w-xl h-full max-h-xl aspect-square object-center "
               loading="lazy"
             />
           </div>
