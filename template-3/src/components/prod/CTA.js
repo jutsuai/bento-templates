@@ -30,14 +30,14 @@ export default function CTA({ props, style, id }) {
           <div className="flex w-full h-12 max-w-md items-center ">
             <input
               placeholder="Enter your email address"
-              className="border text-white rounded-sm placeholder:text-sm sm:placeholder:text-base flex-grow w-full bg-transparent placeholder:text-gray-500 h-full min-h-12 outline-none border-gray-600 px-4"
+              className="border text-white rounded-sm rounded-e-none border-r-0 placeholder:text-sm sm:placeholder:text-base flex-grow w-full bg-transparent placeholder:text-gray-500 h-full min-h-12 outline-none border-gray-600 px-4"
             />
             <button
               style={{
                 backgroundColor: style?.accent,
                 borderColor: style?.accent,
               }}
-              className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm bg-[#b9ff81] px-1 text-xs sm:text-sm font-semibold py-2"
+              className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm rounded-s-none bg-[#b9ff81] px-1 text-xs sm:text-sm font-semibold py-2"
             >
               {props?.buttonText}
               <i className="fa-solid fa-arrow-right ml-1"></i>
