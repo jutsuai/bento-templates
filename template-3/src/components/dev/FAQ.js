@@ -26,7 +26,7 @@ export default function FAQ({ props, style, id }) {
             {props?.subHeaderText}
           </p>
         </div>
-        <div className="flex flex-col gap-8 rounded-sm w-full max-w-7xl py-14">
+        <div className="flex flex-col gap-5 rounded-sm w-full max-w-7xl py-14">
           {props?.qna?.map((item, index) => (
             <FAQItem
               key={index}
@@ -44,10 +44,10 @@ function FAQItem({ question, answer }) {
   const [expand, setExpand] = useState(false);
   return (
     <div
-      className={`relative border-b border-black/30 dark:border-white/30 pb-2 hover:text-black dark:hover:text-white dark:text-white/70`}
+      className={`relative border-b border-black/30 dark:border-white/30 pb-4 hover:text-black dark:hover:text-white dark:text-white/70`}
       onClick={() => setExpand((e) => !e)}
     >
-      <div className="flex items-center w-full justify-between">
+      <div className="flex items-center w-full justify-between cursor-pointer">
         <h3 className="text-lg font-medium text-black dark:text-white leading-relaxed ">
           {question}
         </h3>
@@ -58,9 +58,9 @@ function FAQItem({ question, answer }) {
         ></i>
       </div>
       <p
-        className={`transition-all text-xs mt-1 ${
+        className={`transition-all text-sm mt-1 ${
           expand ? "opacity-100 h-fit" : "opacity-0 h-0"
-        } text-gray-800 dark:text-white/70 font-medium leading-relaxed @lg:text-sm @lg:font-normal`}
+        } text-gray-800 dark:text-white/70 font-medium leading-relaxed @lg:text-base @lg:font-normal`}
       >
         {answer}
       </p>
