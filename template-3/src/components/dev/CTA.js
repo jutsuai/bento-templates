@@ -43,7 +43,7 @@ export default function CTA({ props, style, id }) {
                 backgroundColor: style?.accent,
                 borderColor: style?.accent,
               }}
-              className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm rounded-s-none bg-[#b9ff81] px-1 text-xs @sm:text-sm font-semibold py-2"
+              className="border w-full flex-shrink h-full max-w-40 border-[#b9ff81] text-black rounded-sm rounded-s-[0px] bg-[#b9ff81] px-1 text-xs @sm:text-sm font-semibold py-2"
             >
               {props?.primaryButtonText}
               <i className="fa-solid fa-arrow-right ml-1"></i>
