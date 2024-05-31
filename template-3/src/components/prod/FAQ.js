@@ -39,7 +39,7 @@ function FAQItem({ question, answer }) {
       className={`relative border-b border-black/30 dark:border-white/30 pb-4 hover:text-black dark:hover:text-white dark:text-white/70`}
       onClick={() => setExpand((e) => !e)}
     >
-      <div className="flex items-center w-full justify-between  cursor-pointer">
+      <div className="flex items-center w-full justify-between cursor-pointer">
         <h3 className="text-lg font-medium text-black dark:text-white leading-relaxed">
           {question}
         </h3>

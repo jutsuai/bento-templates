@@ -20,16 +20,55 @@ export default function Navbar({ props, style, id }) {
         className="container mx-auto flex items-center justify-between px-4 py-6"
       >
         <div className="flex items-center gap-10">
-          <img
-            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/Black%20Jutsu.png"
-            alt="Jutsu"
-            className="h-8 inline-block dark:hidden"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/White%20Jutsu.png"
-            alt="Jutsu"
-            className="h-8 hidden dark:inline-block"
-          />
+          <svg
+            className="dark:fill-white fill-black h-9"
+            width="133"
+            height="166"
+            viewBox="0 0 133 166"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_d_3125_6665)">
+              <path d="M2 33.8189V0H130.953V98.5159C130.953 135.278 100.911 163 66.1089 163C29.4901 163 2 132.427 2 98.5159V73.8134H35.8189V98.5159C35.8189 116.678 51.0366 129.176 66.1089 129.176C83.3579 129.176 97.134 115.628 97.134 98.5159V33.8189H2Z" />
+              <circle cx="18.9094" cy="53.9631" r="11.322" fill="#FFD37C" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_3125_6665"
+                x="0.823691"
+                y="0"
+                width="131.305"
+                height="165.353"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="1.17631" />
+                <feGaussianBlur stdDeviation="0.588155" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_3125_6665"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_3125_6665"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
 
           <ul className="hidden text-base font-medium items-center gap-6 lg:flex">
             {props?.navItems?.map((item, index) => (
