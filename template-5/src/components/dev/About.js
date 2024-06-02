@@ -17,7 +17,7 @@ export default function About({ props, style, id }) {
       <div className="flex flex-col p-4 md:px-12 gap-6 py-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <h2 className="text-xl md:text-4xl dark:text-white text-black leading-snug col-span-1">
-            {props?.aboutText}
+            {props?.headerText}
           </h2>
         </div>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
