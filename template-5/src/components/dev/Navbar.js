@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
+import { useEffect, useState } from "react";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
