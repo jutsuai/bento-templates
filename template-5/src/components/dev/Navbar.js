@@ -1,32 +1,35 @@
 import { useNode } from "@craftjs/core";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
   // const [windowHeight, setWindowHeight] = useState(0);
-  const [addBg, setAddBg] = useState(false);
+  // const [addBg, setAddBg] = useState(false);
+  const addBg = false;
 
-  useEffect(() => {
-    const innerHeight = window.innerHeight;
+  // import { useEffect, useState } from "react";
+  // useEffect(() => {
+  //   const innerHeight = window.innerHeight;
 
-    // Function to handle scroll events
-    const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
-      if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
-        setAddBg(false);
-      } else {
-        setAddBg(true);
-      }
-    };
+  //   // Function to handle scroll events
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.pageYOffset;
+  //     if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
+  //       setAddBg(false);
+  //     } else {
+  //       setAddBg(true);
+  //     }
+  //   };
 
-    // Adding the scroll event listener to the window
-    window.addEventListener("scroll", handleScroll);
+  //   // Adding the scroll event listener to the window
+  //   window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   // Cleanup function to remove the event listener
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
   const {
     connectors: { connect, drag },
   } = useNode();
