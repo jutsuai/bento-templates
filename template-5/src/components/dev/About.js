@@ -22,16 +22,16 @@ export default function About({ props, style, id }) {
         </div>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
           <div className="col-start-2 col-span-1">
-            {props.moreInfo.map((item, index) => (
+            {props?.moreInfo?.map((item, index) => (
               <div
                 key={index}
                 className="grid grid-cols-1 gap-6 md:gap-0 md:grid-cols-6 py-14 border-t"
               >
                 <h3 className="col-span-2 text-lg font-medium md:text-2xl md:w-min dark:text-white text-black">
-                  {item.title}
+                  {item?.title}
                 </h3>
                 <p className="col-span-4 text-sm md:text-lg dark:text-white/80 text-black/80">
-                  {item.description}
+                  {item?.description}
                 </p>
               </div>
             ))}

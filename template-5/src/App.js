@@ -18,12 +18,6 @@ export default function App() {
       className={`relative ${darkMode ? "dark" : ""} font-sans`}
       // style={{ fontFamily: "revert" }}
     >
-      <button
-        className="fixed z-50 top-52 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
-        onClick={() => setDarkMode((e) => !e)}
-      >
-        {darkMode ? "Dark" : "Light"}
-      </button>
       <Navbar
         props={values.navbar.props}
         style={values.navbar.style}
@@ -137,28 +131,23 @@ const values = {
 
   about: {
     props: {
-      aboutText:
+      headerText:
         "The global, $5 trillion chemical industry faces a reckoning. Chemical production is expected to quadruple by 2050 to meet ever-increasing demand. But the industry must cut greenhouse gas emissions by more than half to meet sustainability goals.",
       moreInfo: [
         {
-          title: "Nature's catalysts",
+          title: "Revolutionizing Chemistry",
           description:
-            "Enzymes enable chemistry in the natural world. We unlock their potential as clean, precise, and efficient catalysts for sustainable manufacturing.",
+            "At EnginZyme, we're transforming the chemical industry by harnessing the power of enzymes. Our technology enables cleaner, more efficient production processes, significantly reducing the sector's carbon footprint.",
         },
         {
-          title: "Nature's catalysts",
+          title: "Sustainable Solutions",
           description:
-            "Enzymes enable chemistry in the natural world. We unlock their potential as clean, precise, and efficient catalysts for sustainable manufacturing.",
+            "Our enzyme-based catalysts are designed to be both eco-friendly and economically viable. By mimicking nature's methods, we provide an alternative to harsh chemical processes that are sustainable and scalable.",
         },
         {
-          title: "Nature's catalysts",
+          title: "Precision Manufacturing",
           description:
-            "Enzymes enable chemistry in the natural world. We unlock their potential as clean, precise, and efficient catalysts for sustainable manufacturing.",
-        },
-        {
-          title: "Nature's catalysts",
-          description:
-            "Enzymes enable chemistry in the natural world. We unlock their potential as clean, precise, and efficient catalysts for sustainable manufacturing.",
+            "Leveraging biotechnology, EnginZyme delivers unprecedented precision in chemical manufacturing. Our tailored enzyme solutions optimize reactions for maximum yield and purity, ensuring high-quality output with minimal waste.",
         },
       ],
       buttonText: "Get started",
