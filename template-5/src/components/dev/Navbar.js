@@ -1,35 +1,32 @@
+import { useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
-import { useState } from "react";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
   // const [windowHeight, setWindowHeight] = useState(0);
-  // const [addBg, setAddBg] = useState(false);
-  const addBg = false;
+  const [addBg, setAddBg] = useState(false);
 
-  // import { useEffect, useState } from "react";
-  // useEffect(() => {
-  //   const innerHeight = window.innerHeight;
+  useEffect(() => {
+    const innerHeight = window.innerHeight;
 
-  //   // Function to handle scroll events
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.pageYOffset;
-  //     if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
-  //       setAddBg(false);
-  //     } else {
-  //       setAddBg(true);
-  //     }
-  //   };
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset;
+      if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
+        setAddBg(false);
+      } else {
+        setAddBg(true);
+      }
+    };
 
-  //   // Adding the scroll event listener to the window
-  //   window.addEventListener("scroll", handleScroll);
+    // Adding the scroll event listener to the window
+    window.addEventListener("scroll", handleScroll);
 
-  //   // Cleanup function to remove the event listener
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -45,9 +42,10 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      className={`fixed w-full top-0 z-50 ${
-        addBg ? "bg-slate-100 dark:bg-gray-950" : "bg-transparent"
-      }`}
+      // className={`fixed w-full top-0 z-50 ${
+      //   addBg ? "bg-slate-100 dark:bg-gray-950" : "bg-transparent"
+      // }`}
+      className="fixed w-full top-0 z-50 bg-black/50"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}

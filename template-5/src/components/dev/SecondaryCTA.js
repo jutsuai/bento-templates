@@ -32,7 +32,7 @@ export default function SecondaryCTA({ props, style, id }) {
               {props?.subHeaderText}
             </p>
             <button className="bg-[#28282c] text-white rounded-full py-3 px-6 w-fit h-fit flex items-center justify-center gap-4 font-medium">
-              {props?.buttonText}
+              {props?.primaryButtonText}
               <div
                 style={{ backgroundColor: style?.accent }}
                 className="h-8 w-8 bg-[#b9ff81] text-[#28282c]  rounded-full flex items-center justify-center"

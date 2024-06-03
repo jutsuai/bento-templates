@@ -30,7 +30,7 @@ export default function PrimaryCTA({ props, style, id }) {
           style={{ backgroundColor: style?.accent }}
           className="bg-[#b9ff81] rounded-full py-3 px-6 w-fit h-fit flex items-center justify-center gap-3 font-semibold"
         >
-          {props?.buttonText}
+          {props?.primaryButtonText}
           <div
             style={{ color: style?.accent }}
             className="h-6 w-6 bg-gray-800 text-[#b9ff81]  rounded-full flex items-center justify-center"
