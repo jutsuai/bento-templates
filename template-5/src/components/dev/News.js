@@ -14,9 +14,9 @@ export default function News({ props, style, id }) {
       }}
       className="bg-white dark:bg-gray-950"
     >
-      <div className="p-4 md:px-12 py-24 grid grid-cols-1 lg:gap-0 gap-14 lg:grid-cols-2">
-        <div className="flex flex-col md:gap-14 gap-10">
-          <h2 className="text-4xl text-black dark:text-white md:text-5xl leading-snug max-w-md">
+      <div className="p-4 @md:px-12 py-24 grid grid-cols-1 @lg:gap-0 gap-14 @lg:grid-cols-2">
+        <div className="flex flex-col @md:gap-14 gap-10">
+          <h2 className="text-4xl text-black dark:text-white @md:text-5xl leading-snug max-w-md">
             {props?.headerText}
           </h2>
           <button className="text-black dark:text-white border-2 rounded-full py-3 px-6 w-fit h-fit flex items-center justify-center gap-3 font-semibold">
@@ -33,12 +33,12 @@ export default function News({ props, style, id }) {
           {props?.news?.map((item, index) => (
             <div
               key={index}
-              className="grid md:grid-cols-6 grid-cols-1 gap-4 md:gap-0"
+              className="grid @md:grid-cols-6 grid-cols-1 gap-4 @md:gap-0"
             >
-              <h3 className="text-4xl md:text-6xl col-span-1 text-black dark:text-white ">
+              <h3 className="text-4xl @md:text-6xl col-span-1 text-black dark:text-white ">
                 {index < 9 ? `0${index + 1}` : index + 1}
               </h3>
-              <div className="col-span-5 flex flex-col gap-10 md:gap-14 border-b-2 pb-4">
+              <div className="col-span-5 flex flex-col gap-10 @md:gap-14 border-b-2 pb-4">
                 <h4 className="text-base font-medium text-black dark:text-white">
                   {item?.article}
                 </h4>

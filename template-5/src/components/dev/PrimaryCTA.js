@@ -19,11 +19,11 @@ export default function PrimaryCTA({ props, style, id }) {
       }}
       className="bg-[#28282c] h-dvh max-h-full py-24"
     >
-      <div className="p-4 md:px-12 flex flex-col gap-14 justify-center h-full ">
-        <h2 className="text-6xl md:text-9xl leading-none max-w-3xl text-white break-words">
+      <div className="p-4 @md:px-12 flex flex-col gap-14 justify-center h-full ">
+        <h2 className="text-6xl @md:text-9xl leading-none max-w-3xl text-white break-words">
           {props?.headerText}
         </h2>
-        <h6 className="text-sm md:text-base text-white/70 max-w-md lg:text-lg">
+        <h6 className="text-sm @md:text-base text-white/70 max-w-md @lg:text-lg">
           {props?.subHeaderText}
         </h6>
         <button

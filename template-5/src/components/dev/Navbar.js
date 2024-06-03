@@ -65,7 +65,7 @@ export default function Navbar({ props, style, id }) {
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="flex items-center justify-between p-4 md:px-12 py-6"
+        className="flex items-center justify-between p-4 @md:px-12 py-6"
       >
         <svg
           className={`h-9 w-fit ${
@@ -119,7 +119,7 @@ export default function Navbar({ props, style, id }) {
           </defs>
         </svg>
 
-        <ul className="hidden text-sm font-semibold items-center gap-6 lg:flex">
+        <ul className="hidden text-sm font-semibold items-center gap-6 @lg:flex">
           {props?.navItems?.map((item, index) => (
             <li key={index}>
               <a
@@ -135,15 +135,15 @@ export default function Navbar({ props, style, id }) {
         </ul>
         {/* </div> */}
         <i
-          className={`fa-solid fa-bars-staggered block text-xl lg:hidden ${
+          className={`fa-solid fa-bars-staggered block text-xl @lg:hidden ${
             addBg ? "dark:text-white text-black" : "text-white"
           }`}
           onClick={() => setShowNav(true)}
         />
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden @lg:flex items-center gap-2">
           <button
-            className={`hidden gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold lg:flex ${
+            className={`hidden gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold @lg:flex ${
               addBg ? "dark:text-white text-black" : "text-white"
             }`}
           >
@@ -158,7 +158,7 @@ export default function Navbar({ props, style, id }) {
         </div>
 
         <div
-          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-gray-950 p-7 p-4 md:px-12 transition-all duration-200 ${
+          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-gray-950 p-7 p-4 @md:px-12 transition-all duration-200 ${
             showNav ? "inline-block" : "hidden"
           }`}
         >

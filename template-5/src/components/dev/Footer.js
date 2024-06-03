@@ -24,9 +24,9 @@ export default function Footer({ props, style, id }) {
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
-        className="p-4 md:px-12 container mx-auto py-24 w-full"
+        className="p-4 @md:px-12 container mx-auto py-24 w-full"
       >
-        <div className="grid sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fit,_minmax(220px,1fr))] w-full text-sm gap-8 ">
+        <div className="grid @sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fit,_minmax(220px,1fr))] w-full text-sm gap-8 ">
           <div className="opacity-80 flex flex-col items-center ">
             <svg
               className="max-w-36 h-fit dark:fill-white fill-black ml-2"
@@ -62,7 +62,7 @@ export default function Footer({ props, style, id }) {
               </a>
             ))}
           </div>
-          {/* <div className="h-px w-full bg-gray-300 dark:bg-gray-800 sm:hidden block" /> */}
+          {/* <div className="h-px w-full bg-gray-300 dark:bg-gray-800 @sm:hidden block" /> */}
           <div className="flex flex-col text-center gap-4 px-4">
             {props?.service?.map((item, index) => (
               <a
@@ -74,7 +74,7 @@ export default function Footer({ props, style, id }) {
               </a>
             ))}
           </div>
-          {/* <div className="h-px w-full bg-gray-300 dark:bg-gray-800 sm:hidden block" /> */}
+          {/* <div className="h-px w-full bg-gray-300 dark:bg-gray-800 @sm:hidden block" /> */}
           <div className="flex flex-col text-center gap-4 px-4">
             {props?.information?.map((item, index) => (
               <a
