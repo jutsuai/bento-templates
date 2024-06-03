@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export default function Navbar({ props, style, id }) {
-  const [showNav, setShowNav] = useState(false);
-  // const [windowHeight, setWindowHeight] = useState(0);
-  const [addBg, setAddBg] = useState(false);
+  const [showNav, setShowNav] = React.useState(false);
+  const addBg = false;
 
-  useEffect(() => {
+  React.useEffect(() => {
     const nav = document.getElementsByTagName("nav")[0];
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight - 90) {
@@ -21,26 +20,7 @@ export default function Navbar({ props, style, id }) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  //   const innerHeight = window.innerHeight;
 
-  //   // Function to handle scroll events
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.pageYOffset;
-  //     if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
-  //       setAddBg(false);
-  //     } else {
-  //       setAddBg(true);
-  //     }
-  //   };
-
-  //   // Adding the scroll event listener to the window
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Cleanup function to remove the event listener
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
   return (
     <nav
       id={id}
