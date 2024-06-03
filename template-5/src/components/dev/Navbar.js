@@ -1,27 +1,28 @@
 import { useNode } from "@craftjs/core";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
+  const addBg = false;
   // const [windowHeight, setWindowHeight] = useState(0);
-  const [addBg, setAddBg] = useState(false);
+  // const [addBg, setAddBg] = useState(false);
 
-  useEffect(() => {
-    const nav = document.getElementsByTagName("nav")[0];
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight - 90) {
-        nav.classList.add("bg-black", "bg-opacity-75"); // I used bg-opacity-75 for a slightly transparent black
-        nav.classList.remove("bg-transparent", "bg-opacity-100");
-      } else {
-        nav.classList.add("bg-transparent", "bg-opacity-100");
-        nav.classList.remove("bg-black", "bg-opacity-75");
-      }
-    };
+  // useEffect(() => {
+  //   const nav = document.getElementsByTagName("nav")[0];
+  //   const handleScroll = () => {
+  //     if (window.scrollY > window.innerHeight - 90) {
+  //       nav.classList.add("bg-black", "bg-opacity-75"); // I used bg-opacity-75 for a slightly transparent black
+  //       nav.classList.remove("bg-transparent", "bg-opacity-100");
+  //     } else {
+  //       nav.classList.add("bg-transparent", "bg-opacity-100");
+  //       nav.classList.remove("bg-black", "bg-opacity-75");
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   //   const innerHeight = window.innerHeight;
 
   //   // Function to handle scroll events
