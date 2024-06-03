@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
+import { useEffect, useState } from "react";
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = useState(false);
@@ -7,26 +7,41 @@ export default function Navbar({ props, style, id }) {
   const [addBg, setAddBg] = useState(false);
 
   useEffect(() => {
-    const innerHeight = window.innerHeight;
-
-    // Function to handle scroll events
+    const nav = document.getElementsByTagName("nav")[0];
     const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
-      if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
-        setAddBg(false);
+      if (window.scrollY > window.innerHeight - 90) {
+        nav.classList.add("bg-black", "bg-opacity-75"); // I used bg-opacity-75 for a slightly transparent black
+        nav.classList.remove("bg-transparent", "bg-opacity-100");
       } else {
-        setAddBg(true);
+        nav.classList.add("bg-transparent", "bg-opacity-100");
+        nav.classList.remove("bg-black", "bg-opacity-75");
       }
     };
 
-    // Adding the scroll event listener to the window
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  //   const innerHeight = window.innerHeight;
+
+  //   // Function to handle scroll events
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.pageYOffset;
+  //     if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
+  //       setAddBg(false);
+  //     } else {
+  //       setAddBg(true);
+  //     }
+  //   };
+
+  //   // Adding the scroll event listener to the window
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // Cleanup function to remove the event listener
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -45,7 +60,7 @@ export default function Navbar({ props, style, id }) {
       // className={`fixed w-full top-0 z-50 ${
       //   addBg ? "bg-slate-100 dark:bg-gray-950" : "bg-transparent"
       // }`}
-      className="fixed w-full top-0 z-50 bg-black/50"
+      className="fixed w-full transition-all duration-200 top-0 z-50"
     >
       <div
         style={{ flexDirection: style?.flexDirection }}
