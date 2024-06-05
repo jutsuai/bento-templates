@@ -21,10 +21,10 @@ export default function HeroSection({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
-    @container (min-width: 28rem) {
+    @container (min-width: 42rem) {
       padding-inline: 3rem;
     }
-    @container (min-width: 32rem) {
+    @container (min-width: 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   `;
@@ -39,10 +39,10 @@ export default function HeroSection({ props, style, id }) {
     gap: 4rem;
     grid-column: span 1 / span 1;
 
-    @container (min-width: 32rem) {
+    @container (min-width: 48rem) {
       text-align: left;
     }
-    @container (min-width: 32rem) {
+    @container (min-width: 48rem) {
       align-items: flex-start;
     }
   `;
@@ -54,10 +54,10 @@ export default function HeroSection({ props, style, id }) {
     filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
       drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 
-    @container (min-width: 24rem) {
+    @container (min-width: 36rem) {
       font-size: 4.5rem /* 72px */;
     }
-    @container (min-width: 28rem) {
+    @container (min-width: 42rem) {
       font-size: 8rem /* 128px */;
     }
   `;
@@ -70,11 +70,11 @@ export default function HeroSection({ props, style, id }) {
       drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     max-width: 36rem /* 576px */;
 
-    @container (min-width: 28rem) {
+    @container (min-width: 42rem) {
       font-size: 1.125rem /* 18px */;
       line-height: 1.75rem /* 28px */;
     }
-    @container (min-width: 32rem) {
+    @container (min-width: 48rem) {
       font-size: 1.125rem /* 18px */;
       line-height: 1.75rem /* 28px */;
     }
