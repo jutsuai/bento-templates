@@ -107,7 +107,7 @@ const values = {
   heroSection: {
     props: {
       backgroundImageUrl:
-        "https://source.unsplash.com/random/1920x1080/?chemistry%20black",
+        "https://source.unsplash.com/random/1920x1080/?chemistry",
       headerText: "changing chemistry for good",
       subHeaderText:
         "We are a team of passionate cyclists dedicated to providing high-quality bikes and accessories to our customers.",
