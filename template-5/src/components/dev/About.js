@@ -63,6 +63,11 @@ export default function About({ props, style, id }) {
     }
   `;
 
+  const AboutRightContainer = styled.div`
+    grid-column-start: 2;
+    grid-column: span 1;
+  `;
+
   const MoreInfoWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -138,13 +143,7 @@ export default function About({ props, style, id }) {
           <AboutHeader>{props?.headerText}</AboutHeader>
         </AboutLeft>
         <AboutRight>
-          <div
-            style={{
-              gridColumn: "span 1",
-              gridColumnStart: 2,
-            }}
-            // className="col-start-2 col-span-1"
-          >
+          <AboutRightContainer>
             {props?.moreInfo?.map((item, index) => (
               <MoreInfoWrapper key={index}>
                 <MoreInfoHeader>{item?.title}</MoreInfoHeader>
@@ -171,7 +170,7 @@ export default function About({ props, style, id }) {
                 />
               </div>
             </Button>
-          </div>
+          </AboutRightContainer>
         </AboutRight>
       </AboutContent>
     </AboutWrapper>
