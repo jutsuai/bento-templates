@@ -1,52 +1,179 @@
 import { useNode } from "@craftjs/core";
+import styled from "styled-components";
 
 export default function About({ props, style, id }) {
+  const AboutWrapper = styled.section`
+    padding: ${({ style }) =>
+      `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+    background-color: white;
+
+    &:is(.dark *) {
+      background-color: #1f2937;
+    }
+  `;
+
+  const AboutContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 1rem;
+    gap: 1.5rem;
+    width: 100%;
+
+    @container (min-width: 42rem) {
+      padding-inline: 3rem;
+    }
+  `;
+
+  const AboutLeft = styled.div`
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @container (min-width: 48rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  `;
+
+  const AboutHeader = styled.h2`
+    font-size: 1.25rem;
+    line-height: 1.375;
+    color: black;
+    line-height: snug;
+    grid-column: span 1;
+
+    &:is(.dark *) {
+      color: white;
+    }
+
+    @container (min-width: 42rem) {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+  `;
+
+  const AboutRight = styled.div`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @container (min-width: 48rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  `;
+
+  const MoreInfoWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    padding-block: 3.5rem;
+    border-top: 1px solid;
+
+    @container (min-width: 42rem) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+  `;
+
+  const MoreInfoHeader = styled.h3`
+    grid-column: span 2;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500; /* font-medium */
+    color: black;
+
+    &:is(.dark *) {
+      color: white;
+    }
+
+    @container (min-width: 42rem) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      width: min-content;
+    }
+  `;
+
+  const MoreInfoDescription = styled.p`
+    grid-column: span 4;
+    font-size: 0.875rem;
+    line-height: 1.25rem /* 20px */;
+    color: rgba(0, 0, 0, 0.8);
+
+    &:is(.dark *) {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    @container (min-width: 42rem) {
+      font-size: 1.125rem; /* text-lg */
+      line-height: 1.75rem /* 28px */;
+    }
+  `;
+
+  const Button = styled.button`
+    border: 2px solid;
+    border-radius: 4rem;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 600;
+
+    &:is(.dark *) {
+      color: white;
+    }
+  `;
+
   const {
     connectors: { connect, drag },
   } = useNode();
   return (
-    <section
-      ref={(ref) => connect(drag(ref))}
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-950"
-    >
-      <div className="flex flex-col p-4 @md:px-12 gap-6 py-24 w-full">
-        <div className="grid grid-cols-1 @lg:grid-cols-2">
-          <h2 className="text-xl @md:text-4xl dark:text-white text-black leading-snug col-span-1">
-            {props?.headerText}
-          </h2>
-        </div>
-        <div className="w-full h-full grid grid-cols-1 @lg:grid-cols-2">
-          <div className="col-start-2 col-span-1">
+    <AboutWrapper ref={(ref) => connect(drag(ref))} id={id}>
+      <AboutContent>
+        <AboutLeft>
+          <AboutHeader>{props?.headerText}</AboutHeader>
+        </AboutLeft>
+        <AboutRight>
+          <div
+            style={{
+              gridColumn: "span 1",
+              gridColumnStart: 2,
+            }}
+            // className="col-start-2 col-span-1"
+          >
             {props?.moreInfo?.map((item, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-1 gap-6 @md:gap-0 @md:grid-cols-6 py-14 border-t"
-              >
-                <h3 className="col-span-2 text-lg font-medium @md:text-2xl @md:w-min dark:text-white text-black">
-                  {item?.title}
-                </h3>
-                <p className="col-span-4 text-sm @md:text-lg dark:text-white/80 text-black/80">
-                  {item?.description}
-                </p>
-              </div>
+              <MoreInfoWrapper key={index}>
+                <MoreInfoHeader>{item?.title}</MoreInfoHeader>
+                <MoreInfoDescription>{item?.description}</MoreInfoDescription>
+              </MoreInfoWrapper>
             ))}
-            <button className="border-2 rounded-full text-black dark:text-white py-3 px-6 w-fit h-fit flex items-center justify-center gap-3 font-semibold">
+            <Button>
               {props?.buttonText}
               <div
-                style={{ color: style?.accent }}
-                className="h-6 w-6 bg-gray-800 text-[#b9ff81]  rounded-full flex items-center justify-center"
+                style={{
+                  color: style?.accent || "#b9ff81",
+                  height: 24,
+                  width: 24,
+                  backgroundColor: "rgb(31 41 55)",
+                  borderRadius: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
               >
-                <i className="fa-solid fa-arrow-right text-xs"></i>
+                <i
+                  style={{ fontSize: "0.75rem", lineHeight: "1rem" }}
+                  className="fa-solid fa-arrow-right"
+                />
               </div>
-            </button>
+            </Button>
           </div>
-        </div>
-      </div>
-    </section>
+        </AboutRight>
+      </AboutContent>
+    </AboutWrapper>
   );
 }
