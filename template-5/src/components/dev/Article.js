@@ -2,10 +2,10 @@ import { useNode } from "@craftjs/core";
 import styled from "styled-components";
 
 const bp = {
-  sm: "36rem",
-  md: "42rem",
-  lg: "48rem",
-  xl: "56rem",
+  sm: "38rem",
+  md: "44rem",
+  lg: "50rem",
+  xl: "58rem",
 };
 // const bp = {
 //   sm: "640px",
@@ -102,8 +102,16 @@ export default function Article({ props, style, id }) {
       line-height: 1.25rem;
     }
   `;
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
-    <ArticleWrapper id={id} style={style} props={props}>
+    <ArticleWrapper
+      ref={(ref) => connect(drag(ref))}
+      id={id}
+      style={style}
+      props={props}
+    >
       <ArticleContent>
         <ArticleColumn>
           <div
