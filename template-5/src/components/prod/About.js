@@ -12,6 +12,7 @@ const bp = {
   lg: "1024px",
   xl: "1280px",
 };
+
 export default function About({ props, style, id }) {
   const AboutWrapper = styled.section`
     padding: ${({ style }) =>

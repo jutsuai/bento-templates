@@ -232,7 +232,7 @@ const values = {
       headerText: "Pattented technology",
       subHeaderText:
         "Our patented enzyme immobilisation technology enables best of both worlds  biomanufacturing. We create bespoke, stable biocatalysts that can be used in multi-step enzymatic reactions, applying lessons from nature to modern manufacturing.",
-      buttonText: "Get started",
+      primaryButtonText: "Get started",
     },
     style: {
       paddingTop: 0,
@@ -252,7 +252,7 @@ const values = {
       headerText: "Join enginzyme and impact tomorrow today",
       subHeaderText:
         "Could your company benefit from a cleaner, less energy-intensive manufacturing process? Let's talk about it.",
-      buttonText: "Join Us",
+      primaryButtonText: "Join Us",
     },
     style: {
       paddingTop: 0,

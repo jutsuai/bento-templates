@@ -1,38 +1,115 @@
-export default function PrimaryCTA({ props, style, id }) {
-  return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
+import styled from "styled-components";
+// const bp = {
+//   sm: "38rem",
+//   md: "44rem",
+//   lg: "50rem",
+//   xl: "58rem",
+// };
+const bp = {
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
+};
 
-        backgroundImage:
-          "url(https://ipfs.near.social/ipfs/bafkreicgf3ripaiuwas5basym4m5wkcvtvg2lhoawcbbji6e3smkkcuwkq)",
-        backgroundPosition: "right 20% top 0px",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="bg-[#28282c] h-dvh max-h-full py-24"
-    >
-      <div className="p-4 md:px-12 flex flex-col justify-center h-full gap-14">
-        <h2 className="text-6xl md:text-9xl leading-none max-w-3xl text-white break-words">
-          {props?.headerText}
-        </h2>
-        <h6 className="text-sm md:text-base text-white/70 max-w-md lg:text-lg">
-          {props?.subHeaderText}
-        </h6>
+export default function PrimaryCTA({ props, style, id }) {
+  const PrimaryCTAWrapper = styled.section`
+    padding: ${({ style }) =>
+      `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+
+    background-image: url("https://ipfs.near.social/ipfs/bafkreicgf3ripaiuwas5basym4m5wkcvtvg2lhoawcbbji6e3smkkcuwkq");
+    background-position: right 20% top 0px;
+    background-repeat: no-repeat;
+    height: 100dvh;
+    max-height: 100%;
+    padding-block: 6rem;
+    background-color: #28282c;
+  `;
+  const PrimaryCTAContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+    gap: 3.5rem;
+
+    @media (min-width: ${bp.md}) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  `;
+  const PrimaryCTAHeader = styled.h2`
+    font-size: 3.75rem;
+    line-height: 1;
+    max-width: 48rem;
+    color: white;
+    word-break: break-word;
+
+    @media (min-width: ${bp.md}) {
+      font-size: 8rem;
+    }
+  `;
+  const PrimaryCTASubHeader = styled.h6`
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 28rem;
+
+    @media (min-width: ${bp.md}) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    @media (min-width: ${bp.lg}) {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  `;
+
+  return (
+    <PrimaryCTAWrapper id={id} style={style} props={props}>
+      <PrimaryCTAContent>
+        <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
+        <PrimaryCTASubHeader>{props?.subHeaderText}</PrimaryCTASubHeader>
         <button
-          style={{ backgroundColor: style?.accent }}
-          className="bg-[#b9ff81] rounded-full py-3 px-6 w-fit h-fit flex items-center justify-center gap-3 font-semibold"
+          style={{
+            backgroundColor: style?.accent || "#b9ff81",
+            borderRadius: "9999px",
+            padding: "0.75rem 1.5rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.75rem",
+            fontWeight: "600",
+            width: "fit-content",
+            height: "fit-content",
+          }}
         >
           {props?.primaryButtonText}
           <div
-            style={{ color: style?.accent }}
-            className="h-6 w-6 bg-gray-800 text-[#b9ff81]  rounded-full flex items-center justify-center"
+            style={{
+              color: style?.accent,
+              height: "1.5rem",
+              width: "1.5rem",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "rgb(31 41 55)",
+            }}
           >
-            <i className="fa-solid fa-arrow-right text-xs"></i>
+            <i
+              className="fa-solid fa-arrow-right"
+              style={{
+                fontSize: "0.75rem",
+                lineHeight: "1rem",
+              }}
+            ></i>
           </div>
         </button>
-      </div>
-    </section>
+      </PrimaryCTAContent>
+    </PrimaryCTAWrapper>
   );
 }
