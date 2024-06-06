@@ -75,7 +75,6 @@ export default function About({ props, style, id }) {
 
     @media (min-width: 42rem) {
       grid-template-columns: repeat(6, 1fr);
-      gap: 0;
     }
   `;
 
