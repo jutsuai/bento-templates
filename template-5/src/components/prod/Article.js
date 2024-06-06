@@ -1,45 +1,159 @@
-export default function Article({ props, style, id }) {
-  return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
+import styled from "styled-components";
 
-        backgroundImage: `url(${props.backgroundImageUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="p-4 md:px-12 h-dvh grid grid-cols-1 lg:grid-cols-2 ">
-        <div className="lg:col-start-2 lg:col-span-1 flex items-center justify-center py-16 md:p-16 xl:p-24">
+export default function Article({ props, style, id }) {
+  const ArticleWrapper = styled.section`
+    padding: ${({ style }) =>
+      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+        style?.paddingBottom || 0
+      }px ${style?.paddingLeft || 0}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+        style?.marginBottom || 0
+      }px ${style?.marginLeft || 0}px`};
+
+    background-image: ${({ bgImg }) => `url(${bgImg})`};
+    background-size: cover;
+    background-position: center;
+  `;
+
+  const ArticleContent = styled.div`
+    padding: 1rem;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 42rem) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @media (min-width: 48rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  `;
+
+  const ArticleColumn = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 4rem;
+
+    @media (min-width: 42rem) {
+      padding: 4rem;
+    }
+
+    @media (min-width: 48rem) {
+      grid-column-start: 2;
+    }
+
+    @media (min-width: 56rem) {
+      padding: 6rem;
+    }
+  `;
+  const ArticleHeaderText = styled.h4`
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+
+    @media (min-width: 42rem) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  `;
+  const ArticleSubHeaderText = styled.p`
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+
+    @media (min-width: 42rem) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  `;
+
+  const ArticleMetadataTitle = styled.h6`
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    @media (min-width: 42rem) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  `;
+  const ArticleMetadataDate = styled.p`
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+
+    @media (min-width: 42rem) {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  `;
+
+  return (
+    <ArticleWrapper id={id} bgImg={props?.backgroundImageUrl}>
+      <ArticleContent>
+        <ArticleColumn>
           <div
-            style={{ backgroundColor: style?.accent }}
-            className="flex flex-col gap-8 bg-[#b9ff81] h-full w-full p-8 rounded-md drop-shadow-md max-w-xl max-h-"
+            style={{
+              backgroundColor: style?.accent || "#b9ff81",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2rem",
+              padding: "2rem",
+              width: "100%",
+              height: "100%",
+              maxWidth: "36rem",
+              maxHeight: "100%",
+              borderRadius: "0.375rem",
+              boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
+            }}
           >
-            <h4 className="text-lg md:text-2xl font-medium ">
-              {props?.headerText}
-            </h4>
-            <p className="md:tet-base text-sm">{props?.subHeaderText}</p>
-            <div className="flex justify-between items-center mt-auto">
-              <div className="flex flex-col justify-center">
-                <h6 className="text-sm md:text-base font-medium">
-                  {props?.metadata?.title}
-                </h6>
-                <p className="text-black/70 text-xs md:text-sm">
-                  {props?.metadata?.date}
-                </p>
+            <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
+            <ArticleSubHeaderText>{props?.subHeaderText}</ArticleSubHeaderText>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: "auto",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <ArticleMetadataTitle>ARTICLES</ArticleMetadataTitle>
+                <ArticleMetadataDate>2024-02-05</ArticleMetadataDate>
               </div>
               <div
-                style={{ color: style?.accent }}
-                className="h-10 w-10 bg-gray-800 text-[#b9ff81]  rounded-full flex items-center justify-center"
+                style={{
+                  color: style?.accent || "#b9ff81",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "2.5rem",
+                  width: "2.5rem",
+                  backgroundColor: "#333",
+                  borderRadius: "100%",
+                }}
               >
-                <i className="fa-solid fa-arrow-right text-xs"></i>
+                <i
+                  style={{
+                    fontSize: "0.75rem",
+                    lineHeight: "1rem",
+                  }}
+                  className="fa-solid fa-arrow-right"
+                ></i>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </ArticleColumn>
+      </ArticleContent>
+    </ArticleWrapper>
   );
 }
