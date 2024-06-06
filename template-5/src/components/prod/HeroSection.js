@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
+const bp = {
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
+};
 export default function HeroSection({ props, style, id }) {
   const HeroSectionWrapper = styled.section`
     padding: ${({ style }) =>
@@ -20,10 +32,10 @@ export default function HeroSection({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
-    @media (min-width: 768px) {
+    @media (min-width: ${bp.md}) {
       padding-inline: 3rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: ${bp.lg}) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   `;
@@ -38,10 +50,10 @@ export default function HeroSection({ props, style, id }) {
     gap: 4rem;
     grid-column: span 1 / span 1;
 
-    @media (min-width: 1024px) {
+    @media (min-width: ${bp.lg}) {
       text-align: left;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: ${bp.lg}) {
       align-items: flex-start;
     }
   `;
@@ -53,29 +65,29 @@ export default function HeroSection({ props, style, id }) {
     filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
       drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 
-    @media (min-width: 640px) {
-      font-size: 4.5rem /* 72px */;
+    @media (min-width: ${bp.sm}) {
+      font-size: 4.5rem;
     }
-    @media (min-width: 768px) {
-      font-size: 8rem /* 128px */;
+    @media (min-width: ${bp.md}) {
+      font-size: 8rem;
     }
   `;
 
   const SubHeaderText = styled.h6`
-    font-size: 0.875rem /* 14px */;
-    line-height: 1.25rem /* 20px */;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: rgb(229 231 235);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
       drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-    max-width: 36rem /* 576px */;
+    max-width: 36rem;
 
-    @media (min-width: 768px) {
-      font-size: 1.125rem /* 18px */;
-      line-height: 1.75rem /* 28px */;
+    @media (min-width: ${bp.md}) {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
-    @media (min-width: 1024px) {
-      font-size: 1.125rem /* 18px */;
-      line-height: 1.75rem /* 28px */;
+    @media (min-width: ${bp.lg}) {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   `;
 

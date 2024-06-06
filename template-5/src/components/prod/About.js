@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
+const bp = {
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
+};
 export default function About({ props, style, id }) {
   const AboutWrapper = styled.section`
     padding: ${({ style }) =>
@@ -20,7 +32,7 @@ export default function About({ props, style, id }) {
     gap: 1.5rem;
     width: 100%;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       padding-inline: 3rem;
     }
   `;
@@ -29,7 +41,7 @@ export default function About({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    @media (min-width: 48rem) {
+    @media (min-width: ${bp.lg}) {
       grid-template-columns: repeat(2, 1fr);
     }
   `;
@@ -44,7 +56,7 @@ export default function About({ props, style, id }) {
       color: white;
     }
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 2.5rem;
       line-height: 2.5rem;
     }
@@ -56,7 +68,7 @@ export default function About({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    @media (min-width: 48rem) {
+    @media (min-width: ${bp.lg}) {
       grid-template-columns: repeat(2, 1fr);
     }
   `;
@@ -72,7 +84,7 @@ export default function About({ props, style, id }) {
     padding-block: 3.5rem;
     border-top: 1px solid;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       grid-template-columns: repeat(6, 1fr);
     }
   `;
@@ -88,7 +100,7 @@ export default function About({ props, style, id }) {
       color: white;
     }
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 1.5rem;
       line-height: 2rem;
       width: min-content;
@@ -105,7 +117,7 @@ export default function About({ props, style, id }) {
       color: rgba(255, 255, 255, 0.8);
     }
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 1.125rem; /* text-lg */
       line-height: 1.75rem /* 28px */;
     }

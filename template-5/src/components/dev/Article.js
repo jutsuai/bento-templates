@@ -1,5 +1,18 @@
+import { useNode } from "@craftjs/core";
 import styled from "styled-components";
 
+const bp = {
+  sm: "36rem",
+  md: "42rem",
+  lg: "48rem",
+  xl: "56rem",
+};
+// const bp = {
+//   sm: "640px",
+//   md: "768px",
+//   lg: "1024px",
+//   xl: "1280px",
+// };
 export default function Article({ props, style, id }) {
   const ArticleWrapper = styled.section`
     padding: ${({ style }) =>
@@ -10,7 +23,7 @@ export default function Article({ props, style, id }) {
       `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
         style?.marginBottom || 0
       }px ${style?.marginLeft || 0}px`};
-    background-image: ${({ bgImg }) => `url(${bgImg})`};
+    background-image: ${({ props }) => `url(${props?.backgroundImageUrl})`};
     background-size: cover;
     background-position: center;
   `;
@@ -21,12 +34,12 @@ export default function Article({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       padding-left: 3rem;
       padding-right: 3rem;
     }
 
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       grid-template-columns: repeat(2, 1fr);
     }
   `;
@@ -37,15 +50,15 @@ export default function Article({ props, style, id }) {
     justify-content: center;
     padding-block: 4rem; /* Default padding for medium devices */
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       padding: 4rem;
     }
 
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       grid-column-start: 2;
     }
 
-    @container (min-width: 56rem) {
+    @container (min-width: ${bp.xl}) {
       padding: 6rem;
     }
   `;
@@ -54,7 +67,7 @@ export default function Article({ props, style, id }) {
     line-height: 1.75rem;
     font-weight: 500; /* font-medium */
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       font-size: 1.5rem;
       line-height: 2rem;
     }
@@ -63,7 +76,7 @@ export default function Article({ props, style, id }) {
     line-height: 1.25rem;
     font-size: 0.875rem;
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -74,7 +87,7 @@ export default function Article({ props, style, id }) {
     font-size: 0.875rem;
     font-weight: 500;
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -84,13 +97,13 @@ export default function Article({ props, style, id }) {
     font-size: 0.75rem;
     line-height: 1.2rem;
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       font-size: 0.875rem;
       line-height: 1.25rem;
     }
   `;
   return (
-    <ArticleWrapper id={id} bgImg={props?.backgroundImageUrl}>
+    <ArticleWrapper id={id} style={style} props={props}>
       <ArticleContent>
         <ArticleColumn>
           <div
@@ -102,7 +115,7 @@ export default function Article({ props, style, id }) {
               padding: "2rem",
               width: "100%",
               height: "100%",
-              maxWidth: "36rem",
+              maxWidth: "100%",
               maxHeight: "100%",
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",

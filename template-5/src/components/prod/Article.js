@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
+const bp = {
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
+};
 export default function Article({ props, style, id }) {
   const ArticleWrapper = styled.section`
     padding: ${({ style }) =>
@@ -22,12 +34,12 @@ export default function Article({ props, style, id }) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       padding-left: 3rem;
       padding-right: 3rem;
     }
 
-    @media (min-width: 48rem) {
+    @media (min-width: ${bp.xl}) {
       grid-template-columns: repeat(2, 1fr);
     }
   `;
@@ -38,16 +50,17 @@ export default function Article({ props, style, id }) {
     justify-content: center;
     padding-block: 4rem;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       padding: 4rem;
     }
 
-    @media (min-width: 48rem) {
+    @media (min-width: ${bp.lg}) {
       grid-column-start: 2;
+      padding: 4rem;
     }
 
-    @media (min-width: 56rem) {
-      padding: 6rem;
+    @media (min-width: ${bp.xl}) {
+      padding: 8rem;
     }
   `;
   const ArticleHeaderText = styled.h4`
@@ -55,7 +68,7 @@ export default function Article({ props, style, id }) {
     line-height: 1.75rem;
     font-weight: 500;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 1.5rem;
       line-height: 2rem;
     }
@@ -64,7 +77,7 @@ export default function Article({ props, style, id }) {
     line-height: 1.25rem;
     font-size: 0.875rem;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -75,7 +88,7 @@ export default function Article({ props, style, id }) {
     font-size: 0.875rem;
     font-weight: 500;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -85,7 +98,7 @@ export default function Article({ props, style, id }) {
     font-size: 0.75rem;
     line-height: 1.2rem;
 
-    @media (min-width: 42rem) {
+    @media (min-width: ${bp.md}) {
       font-size: 0.875rem;
       line-height: 1.25rem;
     }
@@ -104,7 +117,7 @@ export default function Article({ props, style, id }) {
               padding: "2rem",
               width: "100%",
               height: "100%",
-              maxWidth: "36rem",
+              maxWidth: "100%",
               maxHeight: "100%",
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",

@@ -2,6 +2,18 @@ import { useNode } from "@craftjs/core";
 import React from "react";
 import styled from "styled-components";
 
+const bp = {
+  sm: "36rem",
+  md: "42rem",
+  lg: "48rem",
+  xl: "56rem",
+};
+// const bp = {
+//   sm: "640px",
+//   md: "768px",
+//   lg: "1024px",
+//   xl: "1280px",
+// };
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
   const StyledNav = styled.nav`
@@ -27,7 +39,7 @@ export default function Navbar({ props, style, id }) {
     justify-content: space-between;
     padding: 1rem;
     padding-block: 1.5rem;
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       padding-left: 3rem /* 48px */;
       padding-right: 3rem /* 48px */;
     }
@@ -40,7 +52,7 @@ export default function Navbar({ props, style, id }) {
     font-weight: 600;
     align-items: center;
     gap: 1.5rem;
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       display: flex;
     }
   `;
@@ -49,7 +61,7 @@ export default function Navbar({ props, style, id }) {
     display: block;
     font-size: 1.25rem /* 20px */;
     line-height: 1.75rem /* 28px */;
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       display: none;
     }
     color: white;
@@ -58,7 +70,7 @@ export default function Navbar({ props, style, id }) {
   const NavButtomContainer = styled.div`
     display: none;
 
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       display: flex;
     }
     align-items: center;
@@ -76,7 +88,7 @@ export default function Navbar({ props, style, id }) {
     font-weight: 600;
     color: white;
 
-    @container (min-width: 48rem) {
+    @container (min-width: ${bp.lg}) {
       display: flex;
     }
   `;
@@ -92,7 +104,7 @@ export default function Navbar({ props, style, id }) {
     transition: all 0.2s;
     display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
 
-    @container (min-width: 42rem) {
+    @container (min-width: ${bp.md}) {
       padding-left: 3rem;
       padding-right: 3rem;
     }
@@ -168,14 +180,8 @@ export default function Navbar({ props, style, id }) {
     <StyledNav
       ref={(ref) => connect(drag(ref))}
       id={id}
-      style={{
-        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-          style?.paddingBottom || 0
-        }px ${style?.paddingLeft || 0}px`,
-        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-          style?.marginBottom || 0
-        }px ${style?.marginLeft || 0}px`,
-      }}
+      style={style}
+      props={props}
     >
       <NavContainer>
         <svg
