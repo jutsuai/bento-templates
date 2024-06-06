@@ -112,7 +112,7 @@ const CloseIcon = styled.i`
   color: rgb(229 231 235);
 `;
 
-const MobileNavList = styled.ui`
+const MobileNavList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
