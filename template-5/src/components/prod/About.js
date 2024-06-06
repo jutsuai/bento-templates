@@ -38,7 +38,6 @@ export default function About({ props, style, id }) {
     font-size: 1.25rem;
     line-height: 1.375;
     color: black;
-    line-height: snug;
     grid-column: span 1;
 
     &:is(.dark *) {
