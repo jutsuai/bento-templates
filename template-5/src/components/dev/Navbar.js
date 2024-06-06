@@ -25,7 +25,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 1rem;
   padding-block: 1.5rem;
-  @media (min-width: 42rem) {
+  @container (min-width: 42rem) {
     padding-left: 3rem /* 48px */;
     padding-right: 3rem /* 48px */;
   }
@@ -38,7 +38,7 @@ const NavList = styled.ul`
   font-weight: 600;
   align-items: center;
   gap: 1.5rem;
-  @media (min-width: 48rem) {
+  @container (min-width: 48rem) {
     display: flex;
   }
 `;
@@ -47,7 +47,7 @@ const MenuIcon = styled.i`
   display: block;
   font-size: 1.25rem /* 20px */;
   line-height: 1.75rem /* 28px */;
-  @media (min-width: 48rem) {
+  @container (min-width: 48rem) {
     display: none;
   }
   color: white;
@@ -56,7 +56,7 @@ const MenuIcon = styled.i`
 const NavButtomContainer = styled.div`
   display: none;
 
-  @media (min-width: 48rem) {
+  @container (min-width: 48rem) {
     display: flex;
   }
   align-items: center;
@@ -74,7 +74,7 @@ const Button = styled.button`
   font-weight: 600;
   color: white;
 
-  @media (min-width: 48rem) {
+  @container (min-width: 48rem) {
     display: flex;
   }
 `;
@@ -90,7 +90,7 @@ const MobileMenu = styled.div`
   transition: all 0.2s;
   display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
 
-  @media (min-width: 42rem) {
+  @container (min-width: 42rem) {
     padding-left: 3rem;
     padding-right: 3rem;
   }
