@@ -64,7 +64,6 @@ export default function About({ props, style, id }) {
 
   const AboutRightContainer = styled.div`
     grid-column-start: 2;
-    grid-column: span 1;
   `;
 
   const MoreInfoWrapper = styled.div`
