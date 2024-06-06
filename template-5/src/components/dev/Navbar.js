@@ -1,11 +1,150 @@
 import { useNode } from "@craftjs/core";
 import React from "react";
+import styled from "styled-components";
+
+const StyledNav = styled.nav`
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  transition: all 0.2s;
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+`;
+
+const NavContainer = styled.div`
+  display: flex;
+  flex-direction: ${({ style }) => style?.flexDirection || "row"};
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-block: 1.5rem;
+  @container (min-width: 42rem) {
+    padding-left: 3rem /* 48px */;
+    padding-right: 3rem /* 48px */;
+  }
+`;
+
+const NavList = styled.ul`
+  display: none;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  font-weight: 600;
+  align-items: center;
+  gap: 1.5rem;
+  @container (min-width: 48rem) {
+    display: flex;
+  }
+`;
+
+const MenuIcon = styled.i`
+  display: block;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+  @container (min-width: 48rem) {
+    display: none;
+  }
+  color: white;
+`;
+
+const NavButtomContainer = styled.div`
+  display: none;
+
+  @container (min-width: 48rem) {
+    display: flex;
+  }
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const Button = styled.button`
+  display: none;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: white;
+
+  @container (min-width: 48rem) {
+    display: flex;
+  }
+`;
+
+const MobileMenu = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid;
+  background-color: white;
+  padding: 1.75rem;
+  transition: all 0.2s;
+  display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
+
+  @container (min-width: 42rem) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  &:is(.dark *) {
+    border-color: rgb(55 65 81);
+    background-color: rgb(3 7 18);
+  }
+`;
+
+const CloseIcon = styled.i`
+  margin-right: 1.5rem;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  text-align: right;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(229 231 235);
+`;
+
+const MobileNavList = styled.ui`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+`;
+
+const MobileNavListItem = styled.a`
+  color: #4b5563;
+  &:is(.dark *) {
+    color: #d1d5db;
+  }
+`;
+
+const MobileButton = styled.button`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: black;
+
+  &:is(.dark *) {
+    color: white;
+  }
+`;
 
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
-  const addBg = false;
-  // const [windowHeight, setWindowHeight] = useState(0);
-  // const [addBg, setAddBg] = useState(false);
 
   React.useEffect(() => {
     const nav = document.getElementsByTagName("nav")[0];
@@ -23,31 +162,11 @@ export default function Navbar({ props, style, id }) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  //   const innerHeight = window.innerHeight;
-
-  //   // Function to handle scroll events
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.pageYOffset;
-  //     if (scrollPosition < innerHeight && innerHeight - scrollPosition > 96) {
-  //       setAddBg(false);
-  //     } else {
-  //       setAddBg(true);
-  //     }
-  //   };
-
-  //   // Adding the scroll event listener to the window
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Cleanup function to remove the event listener
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
   const {
     connectors: { connect, drag },
   } = useNode();
   return (
-    <nav
+    <StyledNav
       ref={(ref) => connect(drag(ref))}
       id={id}
       style={{
@@ -58,19 +177,10 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      // className={`fixed w-full top-0 z-50 ${
-      //   addBg ? "bg-slate-100 dark:bg-gray-950" : "bg-transparent"
-      // }`}
-      className="fixed w-full transition-all duration-200 top-0 z-50"
     >
-      <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="flex items-center justify-between p-4 @md:px-12 py-6"
-      >
+      <NavContainer>
         <svg
-          className={`h-9 w-fit ${
-            addBg ? "dark:fill-white fill-black" : "fill-white "
-          }`}
+          style={{ fill: "white", height: "2.25rem", width: "fit-content" }}
           width="133"
           height="166"
           viewBox="0 0 133 166"
@@ -119,77 +229,80 @@ export default function Navbar({ props, style, id }) {
           </defs>
         </svg>
 
-        <ul className="hidden text-sm font-semibold items-center gap-6 @lg:flex">
+        <NavList>
           {props?.navItems?.map((item, index) => (
             <li key={index}>
               <a
                 href={item.link}
-                className={`text-nowrap  ${
-                  addBg ? "dark:text-gray-200 text-gray-800" : "text-gray-200"
-                }`}
+                style={{
+                  textWrap: "nowrap",
+                  color: "rgb(229 231 235)",
+                }}
               >
                 {item.name}
               </a>
             </li>
           ))}
-        </ul>
-        {/* </div> */}
-        <i
-          className={`fa-solid fa-bars-staggered block text-xl @lg:hidden ${
-            addBg ? "dark:text-white text-black" : "text-white"
-          }`}
+        </NavList>
+        <MenuIcon
+          className="fa-solid fa-bars-staggered"
           onClick={() => setShowNav(true)}
         />
 
-        <div className="hidden @lg:flex items-center gap-2">
-          <button
-            className={`hidden gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold @lg:flex ${
-              addBg ? "dark:text-white text-black" : "text-white"
-            }`}
-          >
+        <NavButtomContainer>
+          <Button>
             <div
-              style={{ backgroundColor: style?.accent }}
-              className="bg-[#b9ff81] h-8 w-8 flex items-center justify-center rounded-full"
+              style={{
+                backgroundColor: style?.accent || "#b9ff81",
+                color: "black",
+                height: "2rem",
+                width: "2rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "100%",
+              }}
             >
-              <i className="fa-solid fa-arrow-right text-black"></i>
+              <i className="fa-solid fa-arrow-right" />
             </div>
             {props?.buttonText}
-          </button>
-        </div>
+          </Button>
+        </NavButtomContainer>
 
-        <div
-          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-gray-950 p-7 p-4 @md:px-12 transition-all duration-200 ${
-            showNav ? "inline-block" : "hidden"
-          }`}
-        >
-          <i
-            className="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-gray-200"
+        <MobileMenu>
+          <CloseIcon
+            className="fa-solid fa-xmark"
             onClick={() => setShowNav(false)}
           />
-          <ul className="flex flex-col  items-center justify-center gap-6">
+          <MobileNavList>
             {props?.navItems?.map((item, index) => (
               <li key={index}>
-                <a
-                  href={item.link}
-                  className="text-gray-700 dark:text-gray-300"
-                >
+                <MobileNavListItem href={item.link}>
                   {item.name}
-                </a>
+                </MobileNavListItem>
               </li>
             ))}
 
-            <button className=" gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold text-black dark:text-white flex">
+            <MobileButton className="gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold text-black dark:text-white flex">
               <div
-                style={{ backgroundColor: style?.accent }}
-                className="bg-[#b9ff81] h-8 w-8 flex items-center justify-center rounded-full"
+                style={{
+                  backgroundColor: style?.accent || "#b9ff81",
+                  color: "black",
+                  height: "2rem",
+                  width: "2rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "100%",
+                }}
               >
-                <i className="fa-solid fa-arrow-right text-black"></i>
+                <i className="fa-solid fa-arrow-right" />
               </div>
               {props?.buttonText}
-            </button>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            </MobileButton>
+          </MobileNavList>
+        </MobileMenu>
+      </NavContainer>
+    </StyledNav>
   );
 }
