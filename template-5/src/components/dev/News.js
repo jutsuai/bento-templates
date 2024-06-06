@@ -1,10 +1,10 @@
 import { useNode } from "@craftjs/core";
 import styled from "styled-components";
 const bp = {
-  sm: "36rem",
-  md: "42rem",
-  lg: "48rem",
-  xl: "56rem",
+  sm: "38rem",
+  md: "44rem",
+  lg: "50rem",
+  xl: "58rem",
 };
 // const bp = {
 //   sm: "640px",
