@@ -154,7 +154,6 @@ export default function News({ props, style, id }) {
   } = useNode();
   return (
     <NewsWrapper
-      id={id}
       ref={(ref) => connect(drag(ref))}
       id={id}
       style={style}
