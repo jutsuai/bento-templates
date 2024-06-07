@@ -7,13 +7,11 @@ const bp = {
   lg: "50rem",
   xl: "58rem",
 };
-// const bp = {
-//   sm: "640px",
-//   md: "768px",
-//   lg: "1024px",
-//   xl: "1280px",
-// };
+
 export default function Article({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const ArticleWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
@@ -23,14 +21,15 @@ export default function Article({ props, style, id }) {
       `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
         style?.marginBottom || 0
       }px ${style?.marginLeft || 0}px`};
-    background-image: ${({ props }) => `url(${props?.backgroundImageUrl})`};
+
+    background-image: ${({ bgImg }) => `url(${bgImg})`};
     background-size: cover;
     background-position: center;
   `;
 
   const ArticleContent = styled.div`
     padding: 1rem;
-    height: 100dvh; /* Assuming h-dvh is a custom utility for 100vh height */
+    height: 100dvh;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
@@ -39,7 +38,7 @@ export default function Article({ props, style, id }) {
       padding-right: 3rem;
     }
 
-    @container (min-width: ${bp.lg}) {
+    @container (min-width: ${bp.xl}) {
       grid-template-columns: repeat(2, 1fr);
     }
   `;
@@ -48,7 +47,7 @@ export default function Article({ props, style, id }) {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-block: 4rem; /* Default padding for medium devices */
+    padding-block: 4rem;
 
     @container (min-width: ${bp.md}) {
       padding: 4rem;
@@ -56,16 +55,17 @@ export default function Article({ props, style, id }) {
 
     @container (min-width: ${bp.lg}) {
       grid-column-start: 2;
+      padding: 4rem;
     }
 
     @container (min-width: ${bp.xl}) {
-      padding: 6rem;
+      padding: 8rem;
     }
   `;
   const ArticleHeaderText = styled.h4`
     font-size: 1.125rem;
     line-height: 1.75rem;
-    font-weight: 500; /* font-medium */
+    font-weight: 500;
 
     @container (min-width: ${bp.md}) {
       font-size: 1.5rem;
@@ -102,9 +102,7 @@ export default function Article({ props, style, id }) {
       line-height: 1.25rem;
     }
   `;
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+
   return (
     <ArticleWrapper
       ref={(ref) => connect(drag(ref))}

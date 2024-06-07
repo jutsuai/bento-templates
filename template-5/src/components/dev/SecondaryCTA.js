@@ -8,6 +8,9 @@ const bp = {
 };
 
 export default function SecondaryCTA({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const SecondaryCTAWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -74,9 +77,6 @@ export default function SecondaryCTA({ props, style, id }) {
     }
   `;
 
-  const {
-    connectors: { connect, drag },
-  } = useNode();
   return (
     <SecondaryCTAWrapper
       ref={(ref) => connect(drag(ref))}

@@ -33,6 +33,8 @@ export default function Navbar({ props, style, id }) {
 
   const NavContainer = styled.div`
     display: flex;
+    background-color: #00000040;
+    backdrop-filter: blur(8px);
     flex-direction: ${({ style }) => style?.flexDirection || "row"};
     align-items: center;
     justify-content: space-between;
@@ -86,10 +88,16 @@ export default function Navbar({ props, style, id }) {
     line-height: 1.25rem;
     font-weight: 600;
     color: white;
+    border: none;
+    background: transparent;
 
     @media (min-width: ${bp.lg}) {
       display: flex;
     }
+  `;
+
+  const NavImageLight = styled.img`
+    width: 2rem;
   `;
 
   const MobileMenu = styled.div`
@@ -156,23 +164,6 @@ export default function Navbar({ props, style, id }) {
     }
   `;
 
-  React.useEffect(() => {
-    const nav = document.getElementsByTagName("nav")[0];
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight - 90) {
-        nav.classList.add("bg-black", "bg-opacity-75"); // I used bg-opacity-75 for a slightly transparent black
-        nav.classList.remove("bg-transparent", "bg-opacity-100");
-      } else {
-        nav.classList.add("bg-transparent", "bg-opacity-100");
-        nav.classList.remove("bg-black", "bg-opacity-75");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <StyledNav
       id={id}
@@ -186,56 +177,10 @@ export default function Navbar({ props, style, id }) {
       }}
     >
       <NavContainer>
-        <svg
-          style={{ fill: "white", height: "2.25rem", width: "fit-content" }}
-          width="133"
-          height="166"
-          viewBox="0 0 133 166"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_d_3125_6665)">
-            <path d="M2 33.8189V0H130.953V98.5159C130.953 135.278 100.911 163 66.1089 163C29.4901 163 2 132.427 2 98.5159V73.8134H35.8189V98.5159C35.8189 116.678 51.0366 129.176 66.1089 129.176C83.3579 129.176 97.134 115.628 97.134 98.5159V33.8189H2Z" />
-            <circle cx="18.9094" cy="53.9631" r="11.322" fill="#FFD37C" />
-          </g>
-          <defs>
-            <filter
-              id="filter0_d_3125_6665"
-              x="0.823691"
-              y="0"
-              width="131.305"
-              height="165.353"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="1.17631" />
-              <feGaussianBlur stdDeviation="0.588155" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_3125_6665"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow_3125_6665"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-
+        <NavImageLight
+          src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+          alt="logo"
+        />
         <NavList>
           {props?.navItems?.map((item, index) => (
             <li key={index}>
@@ -243,7 +188,7 @@ export default function Navbar({ props, style, id }) {
                 href={item.link}
                 style={{
                   textWrap: "nowrap",
-                  color: "rgb(229 231 235)",
+                  color: "white",
                 }}
               >
                 {item.name}
@@ -276,7 +221,7 @@ export default function Navbar({ props, style, id }) {
           </Button>
         </NavButtomContainer>
 
-        <MobileMenu>
+        <MobileMenu showNav={showNav}>
           <CloseIcon
             className="fa-solid fa-xmark"
             onClick={() => setShowNav(false)}

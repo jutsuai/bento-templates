@@ -7,13 +7,11 @@ const bp = {
   lg: "50rem",
   xl: "58rem",
 };
-// const bp = {
-//   sm: "640px",
-//   md: "768px",
-//   lg: "1024px",
-//   xl: "1280px",
-// };
+
 export default function HeroSection({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const HeroSectionWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -67,28 +65,28 @@ export default function HeroSection({ props, style, id }) {
       drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 
     @container (min-width: ${bp.sm}) {
-      font-size: 4.5rem /* 72px */;
+      font-size: 4.5rem;
     }
     @container (min-width: ${bp.md}) {
-      font-size: 8rem /* 128px */;
+      font-size: 8rem;
     }
   `;
 
   const SubHeaderText = styled.h6`
-    font-size: 0.875rem /* 14px */;
-    line-height: 1.25rem /* 20px */;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: rgb(229 231 235);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
       drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-    max-width: 36rem /* 576px */;
+    max-width: 36rem;
 
     @container (min-width: ${bp.md}) {
-      font-size: 1.125rem /* 18px */;
-      line-height: 1.75rem /* 28px */;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
     @container (min-width: ${bp.lg}) {
-      font-size: 1.125rem /* 18px */;
-      line-height: 1.75rem /* 28px */;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   `;
 
@@ -105,11 +103,9 @@ export default function HeroSection({ props, style, id }) {
     border-radius: 100%;
     position: absolute;
     bottom: 2.5rem;
+    border: none;
   `;
 
-  const {
-    connectors: { connect, drag },
-  } = useNode();
   return (
     <HeroSectionWrapper
       ref={(ref) => connect(drag(ref))}

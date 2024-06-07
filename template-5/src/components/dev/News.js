@@ -6,14 +6,11 @@ const bp = {
   lg: "50rem",
   xl: "58rem",
 };
-// const bp = {
-//   sm: "640px",
-//   md: "768px",
-//   lg: "1024px",
-//   xl: "1280px",
-// };
 
 export default function News({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const NewsWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -149,9 +146,6 @@ export default function News({ props, style, id }) {
     }
   `;
 
-  const {
-    connectors: { connect, drag },
-  } = useNode();
   return (
     <NewsWrapper
       ref={(ref) => connect(drag(ref))}

@@ -1,19 +1,18 @@
 import { useNode } from "@craftjs/core";
-import styled from "styled-components";
 
+import styled from "styled-components";
 const bp = {
   sm: "38rem",
   md: "44rem",
   lg: "50rem",
   xl: "58rem",
 };
-// const bp = {
-//   sm: "640px",
-//   md: "768px",
-//   lg: "1024px",
-//   xl: "1280px",
-// };
+
 export default function About({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
+
   const AboutWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -142,9 +141,6 @@ export default function About({ props, style, id }) {
     }
   `;
 
-  const {
-    connectors: { connect, drag },
-  } = useNode();
   return (
     <AboutWrapper
       ref={(ref) => connect(drag(ref))}

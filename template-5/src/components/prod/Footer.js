@@ -84,17 +84,17 @@ export default function Footer({ props, style, id }) {
   `;
 
   const FooterIconsLink = styled.a`
-    padding: 0.5rem; /* p-2 */
-    border-radius: 9999px; /* rounded-full */
-    aspect-ratio: 1 / 1; /* aspect-square */
-    width: 2.5rem; /* w-10 */
+    padding: 0.5rem;
+    border-radius: 9999px;
+    aspect-ratio: 1 / 1;
+    width: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(20, 22, 29, 0.07); /* bg-[#14161d12] */
+    background-color: rgba(20, 22, 29, 0.07);
 
     &:is(.dark *) {
-      background-color: #14161d; /* dark:bg-[#14161d] */
+      background-color: #14161d;
     }
   `;
 

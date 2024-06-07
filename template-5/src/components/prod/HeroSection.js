@@ -104,6 +104,7 @@ export default function HeroSection({ props, style, id }) {
     border-radius: 100%;
     position: absolute;
     bottom: 2.5rem;
+    border: none;
   `;
 
   return (
