@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-// const bp = {
-//   sm: "36rem",
-//   md: "42rem",
-//   lg: "48rem",
-//   xl: "56rem",
-// };
 const bp = {
   sm: "640px",
   md: "768px",
