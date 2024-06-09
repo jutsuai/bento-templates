@@ -117,6 +117,7 @@ export default function Article({ props, style, id }) {
               gap: "4rem",
               padding: "2rem",
               width: "100%",
+              maxWidth: "48rem",
 
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
