@@ -48,7 +48,7 @@ export default function About({ props, style, id }) {
 
   const AboutHeader = styled.h2`
     font-size: 1.25rem;
-    line-height: 1.375;
+    line-height: 1.5;
     color: black;
     grid-column: span 1;
 
@@ -58,7 +58,7 @@ export default function About({ props, style, id }) {
 
     @container (min-width: ${bp.md}) {
       font-size: 2.5rem;
-      line-height: 2.5rem;
+      line-height: 1.5;
     }
   `;
 

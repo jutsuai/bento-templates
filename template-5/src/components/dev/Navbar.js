@@ -51,6 +51,7 @@ export default function Navbar({ props, style, id }) {
     line-height: 1.25rem /* 20px */;
     font-weight: 600;
     align-items: center;
+    margin-block: auto;
     gap: 1.5rem;
     @container (min-width: ${bp.lg}) {
       display: flex;
