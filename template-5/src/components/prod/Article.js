@@ -23,7 +23,8 @@ export default function Article({ props, style, id }) {
         style?.marginBottom || 0
       }px ${style?.marginLeft || 0}px`};
 
-    background-image: ${({ bgImg }) => `url(${bgImg})`};
+    background-image: ${({ props }) =>
+      `url(https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`};
     background-size: cover;
     background-position: center;
   `;
@@ -102,7 +103,7 @@ export default function Article({ props, style, id }) {
   `;
 
   return (
-    <ArticleWrapper id={id} bgImg={props?.backgroundImageUrl}>
+    <ArticleWrapper id={id} props={props} style={style}>
       <ArticleContent>
         <ArticleColumn>
           <div
@@ -113,9 +114,8 @@ export default function Article({ props, style, id }) {
               gap: "4rem",
               padding: "2rem",
               width: "100%",
-
-              maxWidth: "100%",
-              maxHeight: "80%",
+              maxWidth: "48rem",
+              marginInline: "auto",
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
             }}
