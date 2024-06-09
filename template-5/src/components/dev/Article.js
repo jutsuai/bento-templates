@@ -2,10 +2,10 @@ import { useNode } from "@craftjs/core";
 import styled from "styled-components";
 
 const bp = {
-  sm: "38rem",
-  md: "44rem",
-  lg: "50rem",
-  xl: "58rem",
+  sm: "42rem",
+  md: "48rem",
+  lg: "56rem",
+  xl: "64rem",
 };
 
 export default function Article({ props, style, id }) {
