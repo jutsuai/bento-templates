@@ -4,8 +4,8 @@ import styled from "styled-components";
 const bp = {
   sm: "40rem",
   md: "48rem",
-  lg: "56rem",
-  xl: "72rem",
+  lg: "64rem",
+  xl: "80rem",
 };
 
 export default function Article({ props, style, id }) {
