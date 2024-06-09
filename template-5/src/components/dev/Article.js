@@ -30,6 +30,7 @@ export default function Article({ props, style, id }) {
   const ArticleContent = styled.div`
     padding: 1rem;
     height: 100dvh;
+    max-height: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
@@ -47,19 +48,15 @@ export default function Article({ props, style, id }) {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-block: 4rem;
+    padding-block: 1rem;
 
     @container (min-width: ${bp.md}) {
-      padding: 4rem;
+      padding: 2rem;
     }
 
     @container (min-width: ${bp.lg}) {
       grid-column-start: 2;
-      padding: 4rem;
-    }
-
-    @container (min-width: ${bp.xl}) {
-      padding: 8rem;
+      padding: 2rem;
     }
   `;
   const ArticleHeaderText = styled.h4`
@@ -121,8 +118,7 @@ export default function Article({ props, style, id }) {
               padding: "2rem",
               width: "100%",
               height: "100%",
-              maxWidth: "100%",
-              maxHeight: "100%",
+
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
             }}
