@@ -110,10 +110,10 @@ export default function Article({ props, style, id }) {
               backgroundColor: style?.accent || "#b9ff81",
               display: "flex",
               flexDirection: "column",
-              gap: "2rem",
+              gap: "4rem",
               padding: "2rem",
               width: "100%",
-              height: "100%",
+
               maxWidth: "100%",
               maxHeight: "80%",
               borderRadius: "0.375rem",
