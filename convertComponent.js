@@ -34,7 +34,7 @@ async function convertToDev(fileName) {
     }
 
     const modifiedData = data
-      .replace("@media ", "@container ")
+      .replace(/@media/g, "@container")
       .replace(
         'import styled from "styled-components";',
         'import styled from "styled-components";\nimport { useNode } from "@craftjs/core";'
