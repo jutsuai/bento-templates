@@ -7,12 +7,10 @@ export default function Blank({ props, style, id }) {
       style={{
         width: "100%",
         aspectRatio: "16 / 9",
-        backgroundColor: "#eeeeee",
+        backgroundColor: "#ffffff",
         ...style,
       }}
       props={props}
-    >
-      x
-    </div>
+    />
   );
 }
