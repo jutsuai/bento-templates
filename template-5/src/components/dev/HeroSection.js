@@ -1,13 +1,18 @@
-import { useNode } from "@craftjs/core";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
 const bp = {
   sm: "40rem",
   md: "48rem",
   lg: "64rem",
   xl: "80rem",
 };
-
 export default function HeroSection({ props, style, id }) {
   const {
     connectors: { connect, drag },
@@ -30,7 +35,7 @@ export default function HeroSection({ props, style, id }) {
     padding-block: 6rem;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.25);
 
     @container (min-width: ${bp.md}) {
       padding-inline: 3rem;
@@ -109,10 +114,10 @@ export default function HeroSection({ props, style, id }) {
 
   return (
     <HeroSectionWrapper
-      ref={(ref) => connect(drag(ref))}
       id={id}
       style={style}
       props={props}
+      ref={(ref) => connect(drag(ref))}
     >
       <SectionContent>
         <ContentColumn>

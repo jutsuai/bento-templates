@@ -1,6 +1,5 @@
-import { useNode } from "@craftjs/core";
 import styled from "styled-components";
-
+import { useNode } from "@craftjs/core";
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -69,10 +68,10 @@ export default function PrimaryCTA({ props, style, id }) {
 
   return (
     <PrimaryCTAWrapper
-      ref={(ref) => connect(drag(ref))}
       id={id}
       style={style}
       props={props}
+      ref={(ref) => connect(drag(ref))}
     >
       <PrimaryCTAContent>
         <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>

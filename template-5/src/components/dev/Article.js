@@ -1,5 +1,5 @@
-import { useNode } from "@craftjs/core";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -7,7 +7,6 @@ const bp = {
   lg: "64rem",
   xl: "80rem",
 };
-
 export default function Article({ props, style, id }) {
   const {
     connectors: { connect, drag },
@@ -102,10 +101,10 @@ export default function Article({ props, style, id }) {
 
   return (
     <ArticleWrapper
-      ref={(ref) => connect(drag(ref))}
       id={id}
-      style={style}
       props={props}
+      style={style}
+      ref={(ref) => connect(drag(ref))}
     >
       <ArticleContent>
         <ArticleColumn>
@@ -119,7 +118,6 @@ export default function Article({ props, style, id }) {
               width: "100%",
               maxWidth: "48rem",
               marginInline: "auto",
-
               borderRadius: "0.375rem",
               boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
             }}

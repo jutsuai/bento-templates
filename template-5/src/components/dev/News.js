@@ -1,5 +1,12 @@
-import { useNode } from "@craftjs/core";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
+
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -18,7 +25,7 @@ export default function News({ props, style, id }) {
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
     background-color: white;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       background-color: #1f2937;
     }
   `;
@@ -53,7 +60,7 @@ export default function News({ props, style, id }) {
     line-height: 1.375;
     max-width: 28rem;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
 
@@ -75,7 +82,7 @@ export default function News({ props, style, id }) {
     gap: 0.75rem;
     font-weight: 600;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
@@ -95,7 +102,7 @@ export default function News({ props, style, id }) {
     color: black;
     grid-column: span 1;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
 
@@ -122,7 +129,7 @@ export default function News({ props, style, id }) {
     font-weight: 500;
     color: black;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
@@ -132,7 +139,7 @@ export default function News({ props, style, id }) {
     font-weight: 400;
     color: black;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
@@ -141,17 +148,17 @@ export default function News({ props, style, id }) {
     line-height: 1rem;
     color: rgba(0, 0, 0, 0.7);
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: rgba(255, 255, 255, 0.7);
     }
   `;
 
   return (
     <NewsWrapper
-      ref={(ref) => connect(drag(ref))}
       id={id}
       style={style}
       props={props}
+      ref={(ref) => connect(drag(ref))}
     >
       <NewsContent>
         <NewsColumn>

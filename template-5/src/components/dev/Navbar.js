@@ -1,14 +1,19 @@
-import { useNode } from "@craftjs/core";
 import React from "react";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
+// const bp = {
+//   sm: "36rem",
+//   md: "42rem",
+//   lg: "48rem",
+//   xl: "56rem",
+// };
 const bp = {
   sm: "40rem",
   md: "48rem",
   lg: "64rem",
   xl: "80rem",
 };
-
 export default function Navbar({ props, style, id }) {
   const {
     connectors: { connect, drag },
@@ -116,7 +121,7 @@ export default function Navbar({ props, style, id }) {
       padding-right: 3rem;
     }
 
-    &:is(.dark *) {
+    &:is(.dark) {
       border-color: rgb(55 65 81);
       background-color: rgb(3 7 18);
     }
@@ -143,7 +148,7 @@ export default function Navbar({ props, style, id }) {
 
   const MobileNavListItem = styled.a`
     color: #4b5563;
-    &:is(.dark *) {
+    &:is(.dark) {
       color: #d1d5db;
     }
   `;
@@ -159,17 +164,23 @@ export default function Navbar({ props, style, id }) {
     font-weight: 600;
     color: black;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
 
   return (
     <StyledNav
-      ref={(ref) => connect(drag(ref))}
       id={id}
-      style={style}
-      props={props}
+      style={{
+        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+          style?.paddingBottom || 0
+        }px ${style?.paddingLeft || 0}px`,
+        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+          style?.marginBottom || 0
+        }px ${style?.marginLeft || 0}px`,
+      }}
+      ref={(ref) => connect(drag(ref))}
     >
       <NavContainer>
         <NavImageLight

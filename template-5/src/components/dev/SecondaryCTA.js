@@ -1,5 +1,11 @@
-import { useNode } from "@craftjs/core";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
+// const bp = {
+//   sm: "38rem",
+//   md: "44rem",
+//   lg: "50rem",
+//   xl: "58rem",
+// };
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -79,10 +85,10 @@ export default function SecondaryCTA({ props, style, id }) {
 
   return (
     <SecondaryCTAWrapper
-      ref={(ref) => connect(drag(ref))}
       id={id}
       style={style}
       props={props}
+      ref={(ref) => connect(drag(ref))}
     >
       <SecondaryCTAContent>
         <SecondaryCTADesign>

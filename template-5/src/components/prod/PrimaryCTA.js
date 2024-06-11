@@ -1,9 +1,9 @@
 import styled from "styled-components";
 const bp = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
 };
 
 export default function PrimaryCTA({ props, style, id }) {

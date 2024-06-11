@@ -1,9 +1,8 @@
+const style = props.style || {};
+const props = props.props || {};
 import React from "react";
 
-export default function Blank({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
     <div
       id={id}
@@ -14,6 +13,6 @@ export default function Blank({ props, style, id }) {
         ...style,
       }}
       props={props}
-    / ref={(ref) => connect(drag(ref))}>
+    />
   );
-}
+

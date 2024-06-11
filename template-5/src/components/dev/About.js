@@ -1,18 +1,10 @@
-import { useNode } from "@craftjs/core";
-
 import styled from "styled-components";
-const bp = {
-  sm: "40rem",
-  md: "48rem",
-  lg: "64rem",
-  xl: "80rem",
-};
+import { useNode } from "@craftjs/core";
 
 export default function About({ props, style, id }) {
   const {
     connectors: { connect, drag },
   } = useNode();
-
   const AboutWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -20,7 +12,7 @@ export default function About({ props, style, id }) {
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
     background-color: white;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       background-color: #1f2937;
     }
   `;
@@ -52,7 +44,7 @@ export default function About({ props, style, id }) {
     color: black;
     grid-column: span 1;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
 
@@ -96,7 +88,7 @@ export default function About({ props, style, id }) {
     font-weight: 500; /* font-medium */
     color: black;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
 
@@ -113,7 +105,7 @@ export default function About({ props, style, id }) {
     line-height: 1.25rem /* 20px */;
     color: rgba(0, 0, 0, 0.8);
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: rgba(255, 255, 255, 0.8);
     }
 
@@ -136,18 +128,13 @@ export default function About({ props, style, id }) {
     gap: 0.75rem;
     font-weight: 600;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
 
   return (
-    <AboutWrapper
-      ref={(ref) => connect(drag(ref))}
-      id={id}
-      style={style}
-      props={props}
-    >
+    <AboutWrapper id={id} ref={(ref) => connect(drag(ref))}>
       <AboutContent>
         <AboutLeft>
           <AboutHeader>{props?.headerText}</AboutHeader>

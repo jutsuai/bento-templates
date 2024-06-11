@@ -8,10 +8,10 @@ import styled from "styled-components";
 //   xl: "56rem",
 // };
 const bp = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
 };
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
@@ -117,7 +117,7 @@ export default function Navbar({ props, style, id }) {
       padding-right: 3rem;
     }
 
-    &:is(.dark *) {
+    &:is(.dark) {
       border-color: rgb(55 65 81);
       background-color: rgb(3 7 18);
     }
@@ -144,7 +144,7 @@ export default function Navbar({ props, style, id }) {
 
   const MobileNavListItem = styled.a`
     color: #4b5563;
-    &:is(.dark *) {
+    &:is(.dark) {
       color: #d1d5db;
     }
   `;
@@ -160,7 +160,7 @@ export default function Navbar({ props, style, id }) {
     font-weight: 600;
     color: black;
 
-    &:is(.dark *) {
+    &:is(.dark) {
       color: white;
     }
   `;
