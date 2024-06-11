@@ -18,8 +18,7 @@ export default function HeroSection({ props, style, id }) {
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
     margin: ${({ style }) =>
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
-    background-image: ${({ props }) =>
-      `url(https://images.unsplash.com/photo-1524802414218-3983cd08ed53?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`};
+    background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
     background-size: cover;
     background-position: center;
   `;
@@ -32,6 +31,7 @@ export default function HeroSection({ props, style, id }) {
     padding-block: 6rem;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    background-color: rgba(0, 0, 0, 0.25);
 
     @media (min-width: ${bp.md}) {
       padding-inline: 3rem;
