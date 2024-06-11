@@ -1,10 +1,5 @@
 import styled from "styled-components";
-// const bp = {
-//   sm: "38rem",
-//   md: "44rem",
-//   lg: "50rem",
-//   xl: "58rem",
-// };
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -27,7 +22,7 @@ export default function Footer({ props, style, id }) {
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
     background-color: white;
-    &:is(.dark) {
+    &:is(.dark *) {
       background-color: #080a11;
     }
   `;
@@ -51,7 +46,7 @@ export default function Footer({ props, style, id }) {
     line-height: 1.25rem;
     gap: 2rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgb(209 213 219);
     }
 
@@ -66,7 +61,7 @@ export default function Footer({ props, style, id }) {
     fill: black;
     margin-left: 0.5rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       fill: white;
     }
   `;
@@ -78,7 +73,7 @@ export default function Footer({ props, style, id }) {
     gap: 1rem;
     margin-top: 1.5rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
   `;
@@ -93,7 +88,7 @@ export default function Footer({ props, style, id }) {
     justify-content: center;
     background-color: rgba(20, 22, 29, 0.07);
 
-    &:is(.dark) {
+    &:is(.dark *) {
       background-color: #14161d;
     }
   `;
@@ -101,7 +96,7 @@ export default function Footer({ props, style, id }) {
   const FooterLink = styled.a`
     color: black;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgba(255, 255, 255, 0.8);
     }
   `;
@@ -113,7 +108,7 @@ export default function Footer({ props, style, id }) {
     border-top: 1px solid;
     border-color: #080a1120;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       border-color: #080a11;
     }
   `;
@@ -121,7 +116,7 @@ export default function Footer({ props, style, id }) {
     color: #4b5563; /* text-gray-600 */
     font-size: 0.75rem; /* text-xs */
     text-align: center;
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgb(209 213 219);
     }
   `;

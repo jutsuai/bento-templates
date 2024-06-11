@@ -1,12 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
-// const bp = {
-//   sm: "38rem",
-//   md: "44rem",
-//   lg: "50rem",
-//   xl: "58rem",
-// };
+
 const bp = {
   sm: "40rem",
   md: "48rem",

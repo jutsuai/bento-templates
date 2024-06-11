@@ -2,12 +2,6 @@ const style = props.style || {};
 const props = props.props || {};
 
 
-// const bp = {
-//   sm: "36rem",
-//   md: "42rem",
-//   lg: "48rem",
-//   xl: "56rem",
-// };
 const bp = {
   sm: "40rem",
   md: "48rem",

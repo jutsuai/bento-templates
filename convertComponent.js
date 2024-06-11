@@ -18,6 +18,9 @@ fs.readdir(directoryPath, function (err, files) {
     return console.log("Unable to scan directory: " + err);
   }
   files?.map(async (fileName) => {
+    if (fileName === "Blank.js") {
+      return;
+    }
     await convertToDev(fileName);
     await convertToWeb3(fileName);
   });

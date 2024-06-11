@@ -1,12 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
-// const bp = {
-//   sm: "38rem",
-//   md: "44rem",
-//   lg: "50rem",
-//   xl: "58rem",
-// };
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -29,7 +24,7 @@ const socialIcons = [
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
     background-color: white;
-    &:is(.dark) {
+    &:is(.dark *) {
       background-color: #080a11;
     }
   `;
@@ -53,7 +48,7 @@ const socialIcons = [
     line-height: 1.25rem;
     gap: 2rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgb(209 213 219);
     }
 
@@ -68,7 +63,7 @@ const socialIcons = [
     fill: black;
     margin-left: 0.5rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       fill: white;
     }
   `;
@@ -80,7 +75,7 @@ const socialIcons = [
     gap: 1rem;
     margin-top: 1.5rem;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
   `;
@@ -95,7 +90,7 @@ const socialIcons = [
     justify-content: center;
     background-color: rgba(20, 22, 29, 0.07);
 
-    &:is(.dark) {
+    &:is(.dark *) {
       background-color: #14161d;
     }
   `;
@@ -103,7 +98,7 @@ const socialIcons = [
   const FooterLink = styled.a`
     color: black;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgba(255, 255, 255, 0.8);
     }
   `;
@@ -115,7 +110,7 @@ const socialIcons = [
     border-top: 1px solid;
     border-color: #080a1120;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       border-color: #080a11;
     }
   `;
@@ -123,7 +118,7 @@ const socialIcons = [
     color: #4b5563; /* text-gray-600 */
     font-size: 0.75rem; /* text-xs */
     text-align: center;
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgb(209 213 219);
     }
   `;

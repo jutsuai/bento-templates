@@ -3,12 +3,6 @@ const props = props.props || {};
 import React from "react";
 
 
-// const bp = {
-//   sm: "36rem",
-//   md: "42rem",
-//   lg: "48rem",
-//   xl: "56rem",
-// };
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -119,7 +113,7 @@ const bp = {
       padding-right: 3rem;
     }
 
-    &:is(.dark) {
+    &:is(.dark *) {
       border-color: rgb(55 65 81);
       background-color: rgb(3 7 18);
     }
@@ -146,7 +140,7 @@ const bp = {
 
   const MobileNavListItem = styled.a`
     color: #4b5563;
-    &:is(.dark) {
+    &:is(.dark *) {
       color: #d1d5db;
     }
   `;
@@ -162,7 +156,7 @@ const bp = {
     font-weight: 600;
     color: black;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
   `;
@@ -238,7 +232,7 @@ const bp = {
               </li>
             ))}
 
-            <MobileButton className="gap-4 items-center text-nowrap px-6 py-2 text-sm font-semibold text-black dark:text-white flex">
+            <MobileButton>
               <div
                 style={{
                   backgroundColor: style?.accent || "#b9ff81",

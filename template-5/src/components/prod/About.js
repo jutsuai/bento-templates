@@ -15,7 +15,7 @@ export default function About({ props, style, id }) {
       `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
     background-color: white;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       background-color: #1f2937;
     }
   `;
@@ -47,7 +47,7 @@ export default function About({ props, style, id }) {
     color: black;
     grid-column: span 1;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
 
@@ -91,7 +91,7 @@ export default function About({ props, style, id }) {
     font-weight: 500; /* font-medium */
     color: black;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
 
@@ -108,7 +108,7 @@ export default function About({ props, style, id }) {
     line-height: 1.25rem /* 20px */;
     color: rgba(0, 0, 0, 0.8);
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: rgba(255, 255, 255, 0.8);
     }
 
@@ -131,7 +131,7 @@ export default function About({ props, style, id }) {
     gap: 0.75rem;
     font-weight: 600;
 
-    &:is(.dark) {
+    &:is(.dark *) {
       color: white;
     }
   `;
