@@ -15,9 +15,9 @@ const bp = {
 };
 
 export default function News({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const NewsWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -154,12 +154,7 @@ export default function News({ props, style, id }) {
   `;
 
   return (
-    <NewsWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <NewsWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <NewsContent>
         <NewsColumn>
           <NewsHeader>{props?.headerText}</NewsHeader>

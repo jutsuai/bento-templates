@@ -8,9 +8,9 @@ const bp = {
 };
 
 export default function PrimaryCTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const PrimaryCTAWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -67,12 +67,7 @@ export default function PrimaryCTA({ props, style, id }) {
   `;
 
   return (
-    <PrimaryCTAWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <PrimaryCTAWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <PrimaryCTAContent>
         <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
         <PrimaryCTASubHeader>{props?.subHeaderText}</PrimaryCTASubHeader>

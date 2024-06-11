@@ -14,9 +14,9 @@ const bp = {
   xl: "80rem",
 };
 export default function HeroSection({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const HeroSectionWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -113,12 +113,7 @@ export default function HeroSection({ props, style, id }) {
   `;
 
   return (
-    <HeroSectionWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <HeroSectionWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <SectionContent>
         <ContentColumn>
           <HeaderText>{props?.headerText}</HeaderText>

@@ -15,9 +15,9 @@ const bp = {
   xl: "80rem",
 };
 export default function Navbar({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const [showNav, setShowNav] = React.useState(false);
   const StyledNav = styled.nav`
     position: fixed;
@@ -180,8 +180,7 @@ export default function Navbar({ props, style, id }) {
           style?.marginBottom || 0
         }px ${style?.marginLeft || 0}px`,
       }}
-      ref={(ref) => connect(drag(ref))}
-    >
+     ref={(ref) => connect(drag(ref))}>
       <NavContainer>
         <NavImageLight
           src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"

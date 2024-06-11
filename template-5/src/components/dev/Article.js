@@ -8,9 +8,9 @@ const bp = {
   xl: "80rem",
 };
 export default function Article({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const ArticleWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
@@ -100,12 +100,7 @@ export default function Article({ props, style, id }) {
   `;
 
   return (
-    <ArticleWrapper
-      id={id}
-      props={props}
-      style={style}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <ArticleWrapper id={id} props={props} style={style} ref={(ref) => connect(drag(ref))}>
       <ArticleContent>
         <ArticleColumn>
           <div

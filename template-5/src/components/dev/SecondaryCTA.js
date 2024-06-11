@@ -14,9 +14,9 @@ const bp = {
 };
 
 export default function SecondaryCTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const SecondaryCTAWrapper = styled.section`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -84,12 +84,7 @@ export default function SecondaryCTA({ props, style, id }) {
   `;
 
   return (
-    <SecondaryCTAWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <SecondaryCTAWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <SecondaryCTAContent>
         <SecondaryCTADesign>
           {[...new Array(100)].map((_, index) => (
