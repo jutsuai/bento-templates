@@ -164,17 +164,7 @@ export default function Navbar({ props, style, id }) {
   `;
 
   return (
-    <StyledNav
-      id={id}
-      style={{
-        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-          style?.paddingBottom || 0
-        }px ${style?.paddingLeft || 0}px`,
-        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-          style?.marginBottom || 0
-        }px ${style?.marginLeft || 0}px`,
-      }}
-     ref={(ref) => connect(drag(ref))}>
+    <StyledNav id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <NavContainer>
         <NavImageLight
           src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
