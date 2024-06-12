@@ -17,8 +17,10 @@ export default function Navbar({ props, style, id }) {
   const StyledNav = styled.nav`
     position: relative;
     width: 100%;
-    z-index: 50;
-    transition: all 0.2s;
+    background-color: white;
+    &:is(.dark *) {
+      background-color: #080a11;
+    }
     padding: ${({ style }) =>
       `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
         style?.paddingBottom || 0
@@ -31,20 +33,14 @@ export default function Navbar({ props, style, id }) {
 
   const NavContainer = styled.div`
     display: flex;
-    background-color: white;
+
     flex-direction: ${({ style }) => style?.flexDirection || "row"};
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    padding-block: 1.5rem;
-    @container (min-width: ${bp.md}) {
-      padding-left: 3rem /* 48px */;
-      padding-right: 3rem /* 48px */;
-    }
+    padding: 1.5rem 1rem;
 
-    &:is(.dark *) {
-      background-color: rgb(3 7 18);
-    }
+    max-width: 96rem;
+    margin-inline: auto;
   `;
 
   const NavList = styled.ul`

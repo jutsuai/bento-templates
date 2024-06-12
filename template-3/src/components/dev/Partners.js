@@ -1,3 +1,13 @@
+import styled from "styled-components";
+import { useNode } from "@craftjs/core";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
 export default function Partners({ props, style, id }) {
  const {
 		connectors: { connect, drag },
@@ -10,30 +20,68 @@ export default function Partners({ props, style, id }) {
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/facepunch-color.svg",
   ];
 
+  const PartnersContainer = styled.section`
+    padding: ${({ style }) =>
+      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+        style?.paddingBottom || 0
+      }px ${style?.paddingLeft || 0}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+        style?.marginBottom || 0
+      }px ${style?.marginLeft || 0}px`};
+    background-color: white;
+    &:is(.dark *) {
+      background-color: #080a11;
+    }
+  `;
+  const PartnersWrapper = styled.div`
+    max-width: 96rem;
+    margin-inline: auto;
+    padding: 5rem 1rem;
+    padding-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  `;
+
+  const PartnersLogoContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    place-items: center;
+    padding-inline: 0;
+    align-items: center;
+    width: 100%;
+
+    @container (min-width: ${bp.sm}) {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+  `;
+
+  const PartnersLogo = styled.img`
+    filter: grayscale(100%);
+    pointer-events: none;
+    transform: translate3d(0);
+    user-select: none;
+    border-radius: 0px !important;
+
+    &:is(.dark *) {
+      filter: brightness(0.35) grayscale(100%) invert(100%) saturate(0.15)
+        sepia(0.01);
+    }
+  `;
+
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-[#080a11]"
-     ref={(ref) => connect(drag(ref))}>
-      <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="py-20 pb-28 mx-auto px-4 flex flex-col items-center justify-center gap-20 container"
-      >
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-[repeat(auto-fit,_minmax(140px,1fr))] place-items-center xl:px-0 px-8 items-center w-full">
+    <PartnersContainer id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+      <PartnersWrapper>
+        <PartnersLogoContainer>
           {(logos || props?.logos)?.map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt="logos"
-              className="backface-hidden grayscale pointer-events-none transform-gpu select-none !rounded-none dark:brightness-[0.35] dark:grayscale dark:invert dark:saturate-[0.15] dark:sepia-[0.01]"
-            />
+            <PartnersLogo key={index} src={logo} alt="logos" />
           ))}
-        </div>
-      </div>
-    </section>
+        </PartnersLogoContainer>
+      </PartnersWrapper>
+    </PartnersContainer>
   );
 }

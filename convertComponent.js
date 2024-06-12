@@ -81,7 +81,9 @@ async function convertToWeb3(fileName) {
     const initModifiedData = data
       .replace('import styled from "styled-components";', "")
       .replace(/export\s+default\s+function\s+(\w+)\s*\(\{.*?\}\)\s*\{/, "")
-      .replace("styled.section", "styled.div");
+      .replace("styled.section", "styled.div")
+      .replace("styled.nav", "styled.div")
+      .replace("styled.footer", "styled.div");
 
     const modifiedData = addAndRemoveSome(initModifiedData);
 

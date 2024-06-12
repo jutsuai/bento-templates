@@ -1,17 +1,11 @@
 const style = props.style || {};
 const props = props.props || {};
 
-// const bp = {
-//   sm: "38rem",
-//   md: "44rem",
-//   lg: "50rem",
-//   xl: "58rem",
-// };
 const bp = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
 };
 
 const socialIcons = [
@@ -22,7 +16,7 @@ const socialIcons = [
   { icon: "fa-brands fa-square-facebook", href: "https://www.facebook.com/" },
 ];
 
-  const FooterWrapper = styled.footer`
+  const FooterWrapper = styled.div`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
     margin: ${({ style }) =>

@@ -1,60 +1,244 @@
+import styled from "styled-components";
+import { useNode } from "@craftjs/core";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
 export default function HeroSection({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();
-  return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-[#080a11] overflow-hidden"
-     ref={(ref) => connect(drag(ref))}>
-      <div className="container mx-auto px-4 flex items-center py-20 sm:py-24 gap-20 justify-center lg:flex-row flex-col lg:justify-between">
-        <div className="flex flex-col items-center lg:text-left text-center lg:items-start justify-center w-full  gap-8 max-w-xl">
-          <h1 className="text-4xl mt-6 lg:text-6xl text-black dark:text-white font-bold !leading-tight">
-            {props?.headerText}
-          </h1>
+  const HeroWrapper = styled.section`
+    background-color: white;
+    overflow: hidden;
 
-          <h6 className="text-lg text-gray-800 dark:text-gray-300 lg:text-xl">
-            {props?.subHeaderText}
-          </h6>
-          <div className="flex items-center justify-start gap-4">
-            <button
-              style={{
-                backgroundColor: style?.accent,
-              }}
-              className="flex items-center gap-2 bg-[#b9ff81] px-8 rounded-[4px] text-black text-base font-semibold py-4"
-            >
+    &:is(.dark *) {
+      background-color: #080a11;
+    }
+  `;
+  const HeroContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem 1rem;
+    gap: 5rem;
+    max-width: 96rem;
+    margin-inline: auto;
+
+    @container (min-width: ${bp.sm}) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    @container (min-width: ${bp.lg}) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  `;
+  const HeroContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 2rem;
+    max-width: 36rem;
+
+    @container (min-width: ${bp.lg}) {
+      text-align: left;
+      align-items: flex-start;
+    }
+  `;
+  const HeroTitle = styled.h1`
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-top: 1.5rem;
+    color: black;
+    font-weight: bold;
+    font-weight: 700;
+    line-height: 1.25 !important;
+
+    &:is(.dark *) {
+      color: white;
+    }
+
+    @container (min-width: ${bp.lg}) {
+      font-size: 3.75rem;
+      line-height: 1rem;
+    }
+  `;
+  const HeroSubtitle = styled.h6`
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #4b5563;
+
+    &:is(.dark *) {
+      color: #d1d5db;
+    }
+
+    @container (min-width: ${bp.lg}) {
+      font-size: 1.25rem;
+    }
+  `;
+  const HeroButton1 = styled.button`
+    background-color: ${({ style }) => style?.accent || "#b9ff81"};
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: black;
+    border-radius: 4px;
+
+    font-size: 0.8rem;
+    @container (min-width: ${bp.lg}) {
+      font-size: 1rem;
+    }
+  `;
+  const HeroButton2 = styled.button`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: black;
+    fill: black;
+
+    &:is(.dark *) {
+      color: white;
+      fill: white;
+    }
+
+    font-size: 0.8rem;
+    @container (min-width: ${bp.lg}) {
+      font-size: 1rem;
+    }
+  `;
+  const HeroImageContainer = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 28rem;
+    margin-right: 2rem;
+    display: none;
+
+    @container (min-width: ${bp.lg}) {
+      display: block;
+    }
+  `;
+
+  const HeroImage1 = styled.img`
+    position: absolute;
+    top: 3.5rem;
+    right: -2rem;
+    border-left-width: 0.5rem;
+    border-top-width: 0.5rem;
+    border-color: white;
+    &:is(.dark *) {
+      border-color: #080a11;
+    }
+    width: 100%;
+    max-width: 18rem;
+    aspect-ratio: 9/11;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border-radius: 0.375rem;
+  `;
+
+  return (
+    <HeroWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+      <HeroContainer>
+        <HeroContent>
+          <HeroTitle>{props?.headerText}</HeroTitle>
+
+          <HeroSubtitle>{props?.subHeaderText}</HeroSubtitle>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
+          >
+            <HeroButton1>
               {props?.secondaryButtonText}
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
-            <button className="text-black flex items-center gap-2 dark:text-white px-6 text-base font-semibold py-2">
+              <svg
+                style={{
+                  width: "0.7rem",
+                  transform: "rotate(-0.25turn)",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+              </svg>
+            </HeroButton1>
+            <HeroButton2>
               {props?.primaryButtonText}
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
+              <svg
+                style={{
+                  width: "0.7rem",
+                  transform: "rotate(-0.25turn)",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+              </svg>
+            </HeroButton2>
           </div>
-        </div>
-        <div className="relative h-full w-full aspect-square max-w-md hidden lg:block ">
+        </HeroContent>
+        <HeroImageContainer>
           {Array.isArray(props?.backgroundImageUrl) ? (
             <>
-              <img
+              <HeroImage1
                 src={props?.backgroundImageUrl[0] || ""}
                 alt="hero"
-                className="absolute top-14 -right-8 border-l-8 border-t-8 border-white dark:border-[#080a11] w-full max-w-72 aspect-[9/11] object-cover object-center shadow-lg rounded-md"
                 loading="lazy"
               />
               <img
                 src={props?.backgroundImageUrl[1] || ""}
                 alt="hero"
-                className="w-full max-w-md max-h-64 border border-white/10 aspect-square object-cover object-center shadow-lg rounded-md"
+                style={{
+                  width: "100%",
+                  maxWidth: "18rem",
+                  maxHeight: "16rem",
+                  border: "1px solid rgb(255 255 255 / 0.1)",
+                  aspectRatio: "1/1",
+                  objectFit: "cover",
+                  objectPosition: "center",
+
+                  borderRadius: "0.375rem",
+                }}
                 loading="lazy"
               />
               <img
                 src={props?.backgroundImageUrl[2] || ""}
                 alt="hero"
-                className="absolute bottom-5 -left-24 border border-white/10 w-full max-w-72 aspect-video object-cover object-center shadow-lg rounded-md"
+                style={{
+                  position: "absolute",
+                  bottom: "1.25rem",
+                  left: "-6rem",
+                  border: "1px solid rgb(255 255 255 / 0.1)",
+                  width: "100%",
+                  maxWidth: "18rem",
+                  aspectRatio: "16/9",
+                  objectFit: "cover",
+                  objectPosition: "center",
+
+                  borderRadius: "0.375rem",
+                }}
                 loading="lazy"
               />
             </>
@@ -62,12 +246,22 @@ export default function HeroSection({ props, style, id }) {
             <img
               src={props?.backgroundImageUrl || ""}
               alt="hero"
-              className="w-full min-w-28 h-full border border-white/10 aspect-square object-cover object-center shadow-lg rounded-md"
+              style={{
+                width: "100%",
+                minWidth: "7rem",
+                height: "100%",
+                border: "1px solid rgb(255 255 255 / 0.1)",
+                aspectRatio: "1/1",
+                objectFit: "cover",
+                objectPosition: "center",
+
+                borderRadius: "0.375rem",
+              }}
               loading="lazy"
             />
           )}
-        </div>
-      </div>
-    </section>
+        </HeroImageContainer>
+      </HeroContainer>
+    </HeroWrapper>
   );
 }
