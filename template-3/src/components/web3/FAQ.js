@@ -1,11 +1,10 @@
+const style = props.style || {};
+const props = props.props || {};
 import { useState } from "react";
 
-export default function FAQ({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <section id={id} className="bg-white dark:bg-[#080a11]" ref={(ref) => connect(drag(ref))}>
+    <section id={id} className="bg-white dark:bg-[#080a11]">
       <div className="container mx-auto px-4 py-20 grid w-full grid-cols-1 gap-10 place-items-center">
         <div
           style={{
@@ -61,4 +60,4 @@ function FAQItem({ question, answer }) {
       </p>
     </div>
   );
-}
+

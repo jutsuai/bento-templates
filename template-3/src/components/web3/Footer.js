@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 // const bp = {
 //   sm: "38rem",
 //   md: "44rem",
@@ -20,10 +21,7 @@ const socialIcons = [
   { icon: "fa-brands fa-youtube", href: "https://www.youtube.com/" },
   { icon: "fa-brands fa-square-facebook", href: "https://www.facebook.com/" },
 ];
-export default function Footer({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   const FooterWrapper = styled.footer`
     padding: ${({ style }) =>
       `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -40,7 +38,7 @@ export default function Footer({ props, style, id }) {
     width: 100%;
     margin-inline: auto;
 
-    @container (min-width: ${bp.md}) {
+    @media (min-width: ${bp.md}) {
       padding-left: 3rem;
       padding-right: 3rem;
     }
@@ -59,7 +57,7 @@ export default function Footer({ props, style, id }) {
       color: rgb(209 213 219);
     }
 
-    @container (min-width: ${bp.sm}) {
+    @media (min-width: ${bp.sm}) {
       text-align: left;
     }
   `;
@@ -130,7 +128,7 @@ export default function Footer({ props, style, id }) {
     }
   `;
   return (
-    <FooterWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+    <FooterWrapper id={id} style={style} props={props}>
       <FooterContent>
         <FooterGrid>
           <div
@@ -213,4 +211,4 @@ export default function Footer({ props, style, id }) {
       </FooterBottom>
     </FooterWrapper>
   );
-}
+

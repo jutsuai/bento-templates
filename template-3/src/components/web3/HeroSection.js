@@ -1,7 +1,6 @@
-export default function HeroSection({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+const style = props.style || {};
+const props = props.props || {};
+
   return (
     <section
       id={id}
@@ -10,7 +9,7 @@ export default function HeroSection({ props, style, id }) {
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="bg-white dark:bg-[#080a11] overflow-hidden"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <div className="container mx-auto px-4 flex items-center py-20 sm:py-24 gap-20 justify-center lg:flex-row flex-col lg:justify-between">
         <div className="flex flex-col items-center lg:text-left text-center lg:items-start justify-center w-full  gap-8 max-w-xl">
           <h1 className="text-4xl mt-6 lg:text-6xl text-black dark:text-white font-bold !leading-tight">
@@ -70,4 +69,4 @@ export default function HeroSection({ props, style, id }) {
       </div>
     </section>
   );
-}
+

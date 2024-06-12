@@ -1,7 +1,6 @@
-export default function CTA({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+const style = props.style || {};
+const props = props.props || {};
+
   return (
     <section
       id={id}
@@ -10,7 +9,7 @@ export default function CTA({ props, style, id }) {
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="bg-white dark:bg-[#080a11]"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <div className="container mx-auto px-4 py-20">
         <div
           style={{
@@ -50,4 +49,4 @@ export default function CTA({ props, style, id }) {
       </div>
     </section>
   );
-}
+

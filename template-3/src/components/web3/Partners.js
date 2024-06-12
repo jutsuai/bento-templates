@@ -1,7 +1,6 @@
-export default function Partners({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+const style = props.style || {};
+const props = props.props || {};
+
   const logos = [
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
@@ -18,7 +17,7 @@ export default function Partners({ props, style, id }) {
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="bg-white dark:bg-[#080a11]"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <div
         style={{ flexDirection: style?.flexDirection }}
         className="py-20 pb-28 mx-auto px-4 flex flex-col items-center justify-center gap-20 container"
@@ -36,4 +35,4 @@ export default function Partners({ props, style, id }) {
       </div>
     </section>
   );
-}
+

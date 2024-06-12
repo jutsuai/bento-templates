@@ -1,9 +1,8 @@
+const style = props.style || {};
+const props = props.props || {};
 import React from "react";
 
-export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
     <section
       id={id}
@@ -12,7 +11,7 @@ export default function Feature({ props, style, id }) {
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="bg-white dark:bg-[#080a11]"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <div
         style={{ flexDirection: style?.flexDirection }}
         className={`container mx-auto flex flex-col items-center gap-10 px-4 py-20 ${
@@ -75,4 +74,4 @@ export default function Feature({ props, style, id }) {
       </div>
     </section>
   );
-}
+

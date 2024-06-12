@@ -1,5 +1,7 @@
+const style = props.style || {};
+const props = props.props || {};
 import React from "react";
-import styled from "styled-components";
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +10,7 @@ const bp = {
   xl: "80rem",
 };
 
-export default function Navbar({ props, style, id }) {
+
   const [showNav, setShowNav] = React.useState(false);
   const StyledNav = styled.nav`
     position: relative;
@@ -253,4 +255,4 @@ export default function Navbar({ props, style, id }) {
       </NavContainer>
     </StyledNav>
   );
-}
+

@@ -1,142 +1,260 @@
-import { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 import { useNode } from "@craftjs/core";
 
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
 export default function Navbar({ props, style, id }) {
-  const [showNav, setShowNav] = useState(false);
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
+  const [showNav, setShowNav] = React.useState(false);
+  const StyledNav = styled.nav`
+    position: relative;
+    width: 100%;
+    z-index: 50;
+    transition: all 0.2s;
+    padding: ${({ style }) =>
+      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+        style?.paddingBottom || 0
+      }px ${style?.paddingLeft || 0}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+        style?.marginBottom || 0
+      }px ${style?.marginLeft || 0}px`};
+  `;
+
+  const NavContainer = styled.div`
+    display: flex;
+    background-color: white;
+    flex-direction: ${({ style }) => style?.flexDirection || "row"};
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-block: 1.5rem;
+    @container (min-width: ${bp.md}) {
+      padding-left: 3rem /* 48px */;
+      padding-right: 3rem /* 48px */;
+    }
+
+    &:is(.dark *) {
+      background-color: rgb(3 7 18);
+    }
+  `;
+
+  const NavList = styled.ul`
+    display: none;
+    color: black;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    font-weight: 600;
+    align-items: center;
+    margin-block: auto;
+    gap: 1.5rem;
+    @container (min-width: ${bp.lg}) {
+      display: flex;
+    }
+    &:is(.dark *) {
+      color: white;
+    }
+  `;
+
+  const MenuIcon = styled.svg`
+    display: block;
+    height: 1.25rem;
+    @container (min-width: ${bp.lg}) {
+      display: none;
+    }
+    fill: black;
+    &:is(.dark *) {
+      fill: white;
+    }
+  `;
+
+  const NavButtomContainer = styled.div`
+    display: none;
+
+    @container (min-width: ${bp.lg}) {
+      display: flex;
+    }
+    align-items: center;
+    gap: 0.5rem;
+  `;
+
+  const Button = styled.button`
+    white-space: nowrap;
+    border-radius: 0.375rem;
+    background-color: #b9ff81;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  `;
+
+  const NavImageLight = styled.img`
+    width: 2rem;
+    display: none;
+    &:is(.dark *) {
+      display: inline-block;
+    }
+  `;
+
+  const NavImageDark = styled.img`
+    width: 2rem;
+    display: inline-block;
+    &:is(.dark *) {
+      display: none;
+    }
+  `;
+
+  const MobileMenu = styled.div`
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid;
+    background-color: white;
+    padding: 1.75rem;
+    transition: all 0.2s;
+    display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
+
+    @container (min-width: ${bp.md}) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    &:is(.dark *) {
+      border-color: rgb(55 65 81);
+      background-color: rgb(3 7 18);
+    }
+  `;
+
+  const CloseIcon = styled.svg`
+    margin-left: auto;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    width: 1.5rem;
+    fill: rgb(229 231 235);
+    &:is(.dark *) {
+      fill: rgb(229 231 235 / 0.5);
+    }
+  `;
+
+  const MobileNavList = styled.ul`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  `;
+
+  const MobileNavListItem = styled.a`
+    color: #4b5563;
+    &:is(.dark *) {
+      color: #d1d5db;
+    }
+  `;
+
+  const MobileButton = styled.button`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.375rem;
+    background-color: #b9ff81;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+  `;
+
   return (
-    <nav
-      ref={(ref) => connect(drag(ref))}
-      id={id}
-      style={{
-        padding: `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-          style?.paddingBottom || 0
-        }px ${style?.paddingLeft || 0}px`,
-        margin: `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-          style?.marginBottom || 0
-        }px ${style?.marginLeft || 0}px`,
-      }}
-      className="relative bg-white dark:bg-[#080a11] dark:border-[#080a11]"
-    >
-      <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex items-center justify-between px-4 py-6"
-      >
-        <div className="flex items-center gap-10">
-          <svg
-            className="dark:fill-white fill-black h-9"
-            width="133"
-            height="166"
-            viewBox="0 0 133 166"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_d_3125_6665)">
-              <path d="M2 33.8189V0H130.953V98.5159C130.953 135.278 100.911 163 66.1089 163C29.4901 163 2 132.427 2 98.5159V73.8134H35.8189V98.5159C35.8189 116.678 51.0366 129.176 66.1089 129.176C83.3579 129.176 97.134 115.628 97.134 98.5159V33.8189H2Z" />
-              <circle cx="18.9094" cy="53.9631" r="11.322" fill="#FFD37C" />
-            </g>
-            <defs>
-              <filter
-                id="filter0_d_3125_6665"
-                x="0.823691"
-                y="0"
-                width="131.305"
-                height="165.353"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset dy="1.17631" />
-                <feGaussianBlur stdDeviation="0.588155" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_3125_6665"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_3125_6665"
-                  result="shape"
-                />
-              </filter>
-            </defs>
-          </svg>
-
-          <ul className="hidden text-base font-medium items-center gap-6 @lg:flex">
-            {props?.navItems?.map((item, index) => (
-              <li key={index}>
-                <a
-                  href={item.link}
-                  className="text-nowrap text-gray-700 dark:text-gray-200"
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <i
-          className="fa-solid fa-bars-staggered block text-black dark:text-gray-200 text-xl @lg:hidden"
-          onClick={() => setShowNav(true)}
-        />
-
-        <div className="hidden @lg:flex items-center gap-2">
-          <button
-            style={{
-              backgroundColor: style?.accent,
-            }}
-            className="hidden text-nowrap rounded-[4px] bg-[#b9ff81] px-6 py-2 text-base font-semibold text-inherit @lg:block"
-          >
-            {props?.buttonText} <i className="fa-solid fa-arrow-right ml-1"></i>
-          </button>
-        </div>
-
-        <div
-          className={`absolute right-0 top-0 w-full border-b dark:border-gray-700 bg-white dark:bg-[#080a11] p-7 px-8 transition-all duration-200 ${
-            showNav ? "inline-block" : "hidden"
-          }`}
-        >
-          <i
-            className="fa-solid fa-xmark mr-6 inline-block w-full cursor-pointer text-right text-2xl text-black dark:text-gray-200"
-            onClick={() => setShowNav(false)}
+    <StyledNav id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+      <NavContainer>
+        <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+          <NavImageLight
+            src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+            alt="logo"
           />
-          <ul className="flex flex-col  items-center justify-center gap-6">
+          <NavImageDark
+            src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
+            alt="logo"
+          />
+          <NavList>
             {props?.navItems?.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.link}
-                  className="text-gray-700 dark:text-gray-300"
+                  style={{
+                    textWrap: "nowrap",
+                  }}
                 >
                   {item.name}
                 </a>
               </li>
             ))}
-
-            <button
-              style={{
-                backgroundColor: style?.accent,
-              }}
-              className="text-nowrap rounded-md bg-[#b9ff81] px-4 py-1 text-base font-medium dark:text-white text-black block"
-            >
-              {props?.buttonText}
-              <i className="fa-solid fa-arrow-right ml-1"></i>
-            </button>
-          </ul>
+          </NavList>
         </div>
-      </div>
-    </nav>
+        <MenuIcon
+          onClick={() => setShowNav(true)}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+        </MenuIcon>
+
+        <NavButtomContainer>
+          <Button>
+            {props?.buttonText}
+            <svg
+              style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+            </svg>
+          </Button>
+        </NavButtomContainer>
+
+        <MobileMenu showNav={showNav}>
+          <CloseIcon
+            onClick={() => setShowNav(false)}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+          </CloseIcon>
+          <MobileNavList>
+            {props?.navItems?.map((item, index) => (
+              <li key={index}>
+                <MobileNavListItem href={item.link}>
+                  {item.name}
+                </MobileNavListItem>
+              </li>
+            ))}
+
+            <MobileButton>
+              {props?.buttonText}
+              <svg
+                style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+              </svg>
+            </MobileButton>
+          </MobileNavList>
+        </MobileMenu>
+      </NavContainer>
+    </StyledNav>
   );
 }
