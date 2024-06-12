@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNode } from "@craftjs/core";
 export default function FAQ({ props, style, id }) {
  const {
 		connectors: { connect, drag },
