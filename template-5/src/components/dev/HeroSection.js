@@ -12,7 +12,7 @@ const HeroSectionWrapper = styled.section`
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
-  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-image: ${({ props }) => `url(${props?.backgroundImageUrl})`};
   background-size: cover;
   background-position: center;
 `;
@@ -102,11 +102,16 @@ const ScrollDownButton = styled.button`
   border: none;
 `;
 export default function HeroSection({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
-    <HeroSectionWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+    <HeroSectionWrapper
+      id={id}
+      style={style}
+      props={props}
+      ref={(ref) => connect(drag(ref))}
+    >
       <SectionContent>
         <ContentColumn>
           <HeaderText>{props?.headerText}</HeaderText>
