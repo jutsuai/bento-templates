@@ -8,169 +8,169 @@ const bp = {
   xl: "80rem",
 };
 
+const StyledNav = styled.nav`
+  position: relative;
+  width: 100%;
+  background-color: white;
+  &:is(.dark *) {
+    background-color: #080a11;
+  }
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+`;
+
+const NavContainer = styled.div`
+  display: flex;
+
+  flex-direction: ${({ style }) => style?.flexDirection || "row"};
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+
+  max-width: 96rem;
+  margin-inline: auto;
+`;
+
+const NavList = styled.ul`
+  display: none;
+  color: black;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  font-weight: 600;
+  align-items: center;
+  margin-block: auto;
+  gap: 1.5rem;
+  @media (min-width: ${bp.lg}) {
+    display: flex;
+  }
+  &:is(.dark *) {
+    color: white;
+  }
+`;
+
+const MenuIcon = styled.svg`
+  display: block;
+  height: 1.25rem;
+  @media (min-width: ${bp.lg}) {
+    display: none;
+  }
+  fill: black;
+  &:is(.dark *) {
+    fill: white;
+  }
+`;
+
+const NavButtomContainer = styled.div`
+  display: none;
+
+  @media (min-width: ${bp.lg}) {
+    display: flex;
+  }
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const Button = styled.button`
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  background-color: #b9ff81;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const NavImageLight = styled.img`
+  width: 2rem;
+  display: none;
+  &:is(.dark *) {
+    display: inline-block;
+  }
+`;
+
+const NavImageDark = styled.img`
+  width: 2rem;
+  display: inline-block;
+  &:is(.dark *) {
+    display: none;
+  }
+`;
+
+const MobileMenu = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid;
+  background-color: white;
+  padding: 1.75rem;
+  transition: all 0.2s;
+  display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
+
+  @media (min-width: ${bp.md}) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  &:is(.dark *) {
+    border-color: rgb(55 65 81);
+    background-color: rgb(3 7 18);
+  }
+`;
+
+const CloseIcon = styled.svg`
+  margin-left: auto;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  width: 1.5rem;
+  fill: rgb(229 231 235);
+  &:is(.dark *) {
+    fill: rgb(229 231 235 / 0.5);
+  }
+`;
+
+const MobileNavList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+`;
+
+const MobileNavListItem = styled.a`
+  color: #4b5563;
+  &:is(.dark *) {
+    color: #d1d5db;
+  }
+`;
+
+const MobileButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  background-color: #b9ff81;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+`;
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
-  const StyledNav = styled.nav`
-    position: relative;
-    width: 100%;
-    background-color: white;
-    &:is(.dark *) {
-      background-color: #080a11;
-    }
-    padding: ${({ style }) =>
-      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-        style?.paddingBottom || 0
-      }px ${style?.paddingLeft || 0}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-        style?.marginBottom || 0
-      }px ${style?.marginLeft || 0}px`};
-  `;
-
-  const NavContainer = styled.div`
-    display: flex;
-
-    flex-direction: ${({ style }) => style?.flexDirection || "row"};
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 1rem;
-
-    max-width: 96rem;
-    margin-inline: auto;
-  `;
-
-  const NavList = styled.ul`
-    display: none;
-    color: black;
-    font-size: 0.875rem /* 14px */;
-    line-height: 1.25rem /* 20px */;
-    font-weight: 600;
-    align-items: center;
-    margin-block: auto;
-    gap: 1.5rem;
-    @media (min-width: ${bp.lg}) {
-      display: flex;
-    }
-    &:is(.dark *) {
-      color: white;
-    }
-  `;
-
-  const MenuIcon = styled.svg`
-    display: block;
-    height: 1.25rem;
-    @media (min-width: ${bp.lg}) {
-      display: none;
-    }
-    fill: black;
-    &:is(.dark *) {
-      fill: white;
-    }
-  `;
-
-  const NavButtomContainer = styled.div`
-    display: none;
-
-    @media (min-width: ${bp.lg}) {
-      display: flex;
-    }
-    align-items: center;
-    gap: 0.5rem;
-  `;
-
-  const Button = styled.button`
-    white-space: nowrap;
-    border-radius: 0.375rem;
-    background-color: #b9ff81;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  `;
-
-  const NavImageLight = styled.img`
-    width: 2rem;
-    display: none;
-    &:is(.dark *) {
-      display: inline-block;
-    }
-  `;
-
-  const NavImageDark = styled.img`
-    width: 2rem;
-    display: inline-block;
-    &:is(.dark *) {
-      display: none;
-    }
-  `;
-
-  const MobileMenu = styled.div`
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    border-bottom: 1px solid;
-    background-color: white;
-    padding: 1.75rem;
-    transition: all 0.2s;
-    display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
-
-    @media (min-width: ${bp.md}) {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-
-    &:is(.dark *) {
-      border-color: rgb(55 65 81);
-      background-color: rgb(3 7 18);
-    }
-  `;
-
-  const CloseIcon = styled.svg`
-    margin-left: auto;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    width: 1.5rem;
-    fill: rgb(229 231 235);
-    &:is(.dark *) {
-      fill: rgb(229 231 235 / 0.5);
-    }
-  `;
-
-  const MobileNavList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  `;
-
-  const MobileNavListItem = styled.a`
-    color: #4b5563;
-    &:is(.dark *) {
-      color: #d1d5db;
-    }
-  `;
-
-  const MobileButton = styled.button`
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    white-space: nowrap;
-    border-radius: 0.375rem;
-    background-color: #b9ff81;
-    padding: 0.25rem 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: black;
-  `;
 
   return (
-    <StyledNav id={id} style={style} props={props}>
+    <StyledNav id={id} style={style}>
       <NavContainer>
         <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
           <NavImageLight

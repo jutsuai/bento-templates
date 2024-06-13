@@ -9,153 +9,157 @@ const bp = {
   xl: "80rem",
 };
 
+const HeroWrapper = styled.div`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-  const HeroWrapper = styled.div`
-    background-color: white;
-    overflow: hidden;
+  background-color: white;
+  overflow: hidden;
 
-    &:is(.dark *) {
-      background-color: #080a11;
-    }
-  `;
-  const HeroContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5rem 1rem;
-    gap: 5rem;
-    max-width: 96rem;
-    margin-inline: auto;
+  &:is(.dark *) {
+    background-color: #080a11;
+  }
+`;
+const HeroContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem 1rem;
+  gap: 5rem;
+  max-width: 96rem;
+  margin-inline: auto;
 
-    @media (min-width: ${bp.sm}) {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
+  @media (min-width: ${bp.sm}) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 
-    @media (min-width: ${bp.lg}) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  `;
-  const HeroContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    gap: 2rem;
-    max-width: 36rem;
+  @media (min-width: ${bp.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 2rem;
+  max-width: 36rem;
 
-    @media (min-width: ${bp.lg}) {
-      text-align: left;
-      align-items: flex-start;
-    }
-  `;
-  const HeroTitle = styled.h1`
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    margin-top: 1.5rem;
-    color: black;
-    font-weight: bold;
-    font-weight: 700;
-    line-height: 1.25 !important;
+  @media (min-width: ${bp.lg}) {
+    text-align: left;
+    align-items: flex-start;
+  }
+`;
+const HeroTitle = styled.h1`
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 1.5rem;
+  color: black;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 1.25 !important;
 
-    &:is(.dark *) {
-      color: white;
-    }
+  &:is(.dark *) {
+    color: white;
+  }
 
-    @media (min-width: ${bp.lg}) {
-      font-size: 3.75rem;
-      line-height: 1rem;
-    }
-  `;
-  const HeroSubtitle = styled.h6`
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    color: #4b5563;
+  @media (min-width: ${bp.lg}) {
+    font-size: 3.75rem;
+    line-height: 1rem;
+  }
+`;
+const HeroSubtitle = styled.h6`
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #4b5563;
 
-    &:is(.dark *) {
-      color: #d1d5db;
-    }
+  &:is(.dark *) {
+    color: #d1d5db;
+  }
 
-    @media (min-width: ${bp.lg}) {
-      font-size: 1.25rem;
-    }
-  `;
-  const HeroButton1 = styled.button`
-    background-color: ${({ style }) => style?.accent || "#b9ff81"};
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    color: black;
-    border-radius: 4px;
+  @media (min-width: ${bp.lg}) {
+    font-size: 1.25rem;
+  }
+`;
+const HeroButton1 = styled.button`
+  background-color: ${({ style }) => style?.accent || "#b9ff81"};
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
 
-    font-size: 0.8rem;
-    @media (min-width: ${bp.lg}) {
-      font-size: 1rem;
-    }
-  `;
-  const HeroButton2 = styled.button`
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
+  }
+`;
+const HeroButton2 = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
 
-    font-weight: 600;
-    line-height: 1.5rem;
-    color: black;
-    fill: black;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: black;
+  fill: black;
 
-    &:is(.dark *) {
-      color: white;
-      fill: white;
-    }
+  &:is(.dark *) {
+    color: white;
+    fill: white;
+  }
 
-    font-size: 0.8rem;
-    @media (min-width: ${bp.lg}) {
-      font-size: 1rem;
-    }
-  `;
-  const HeroImageContainer = styled.div`
-    position: relative;
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1/1;
-    max-width: 28rem;
-    margin-right: 2rem;
-    display: none;
+  font-size: 0.8rem;
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
+  }
+`;
+const HeroImageContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 28rem;
+  margin-right: 2rem;
+  display: none;
 
-    @media (min-width: ${bp.lg}) {
-      display: block;
-    }
-  `;
+  @media (min-width: ${bp.lg}) {
+    display: block;
+  }
+`;
 
-  const HeroImage1 = styled.img`
-    position: absolute;
-    top: 3.5rem;
-    right: -2rem;
-    border-left-width: 0.5rem;
-    border-top-width: 0.5rem;
-    border-color: white;
-    &:is(.dark *) {
-      border-color: #080a11;
-    }
-    width: 100%;
-    max-width: 18rem;
-    aspect-ratio: 9/11;
-    object-fit: cover;
-    object-position: center;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-    border-radius: 0.375rem;
-  `;
+const HeroImage1 = styled.img`
+  position: absolute;
+  top: 3.5rem;
+  right: -2rem;
+  border-left-width: 0.5rem;
+  border-top-width: 0.5rem;
+  border-color: white;
+  &:is(.dark *) {
+    border-color: #080a11;
+  }
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 9/11;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border-radius: 0.375rem;
+`;
 
   return (
-    <HeroWrapper id={id} style={style} props={props}>
+    <HeroWrapper id={id} style={style}>
       <HeroContainer>
         <HeroContent>
           <HeroTitle>{props?.headerText}</HeroTitle>

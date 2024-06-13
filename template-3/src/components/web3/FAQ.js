@@ -10,60 +10,59 @@ const bp = {
   xl: "80rem",
 };
 
+const FAQWrapper = styled.div`
+  background-color: white;
+  &:is(.dark *) {
+    background-color: #080a11;
+  }
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+`;
 
-  const FAQWrapper = styled.div`
-    background-color: white;
-    &:is(.dark *) {
-      background-color: #080a11;
-    }
-    padding: ${({ style }) =>
-      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-        style?.paddingBottom || 0
-      }px ${style?.paddingLeft || 0}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-        style?.marginBottom || 0
-      }px ${style?.marginLeft || 0}px`};
-  `;
+const FAQContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
 
-  const FAQContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
+  @media (min-width: ${bp.lg}) {
+    text-align: left;
+  }
+`;
 
-    @media (min-width: ${bp.lg}) {
-      text-align: left;
-    }
-  `;
+const FAQHeader = styled.h2`
+  font-size: 2.5rem;
+  text-align: center;
+  color: black;
+  font-weight: 700;
 
-  const FAQHeader = styled.h2`
-    font-size: 2.5rem;
-    text-align: center;
-    color: black;
-    font-weight: 700;
+  &:is(.dark *) {
+    color: white;
+  }
 
-    &:is(.dark *) {
-      color: white;
-    }
+  @media (min-width: ${bp.lg}) {
+    font-size: 2.25rem;
+  }
+`;
+const FAQSubHeader = styled.p`
+  font-size: 0.875rem;
+  text-align: center;
+  color: #4b5563;
 
-    @media (min-width: ${bp.lg}) {
-      font-size: 2.25rem;
-    }
-  `;
-  const FAQSubHeader = styled.p`
-    font-size: 0.875rem;
-    text-align: center;
-    color: #4b5563;
+  &:is(.dark *) {
+    color: #d1d5db;
+  }
 
-    &:is(.dark *) {
-      color: #d1d5db;
-    }
-
-    @media (min-width: ${bp.lg}) {
-      font-size: 1rem;
-    }
-  `;
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
+  }
+`;
 
   return (
     <FAQWrapper id={id} style={style}>
@@ -107,83 +106,83 @@ const bp = {
   );
 }
 
-function FAQItem({ question, answer }) {
-  const [expand, setExpand] = React.useState(false);
-  const FAQItemContainer = styled.div`
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    padding-bottom: 1rem;
+const FAQItemContainer = styled.div`
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 1rem;
+
+  &:hover {
+    color: black;
+  }
+
+  &:is(.dark *) {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
 
     &:hover {
-      color: black;
-    }
-
-    &:is(.dark *) {
-      border-bottom-color: rgba(255, 255, 255, 0.3);
-      color: rgba(255, 255, 255, 0.7);
-
-      &:hover {
-        color: white;
-      }
-    }
-  `;
-
-  const FAQItemQuestion = styled.h3`
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: black;
-    line-height: 1.625;
-
-    &:is(.dark *) {
       color: white;
     }
-  `;
-  const FAQItemAnswer = styled.p`
-    transition-property: all;
-    transition-duration: 150ms;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    margin-top: 0.25rem;
-    color: rgb(31 41 55);
-    font-weight: 500;
-    line-height: 1.625;
+  }
+`;
 
-    &:is(.dark *) {
-      color: rgb(255 255 255 / 0.7);
-    }
+const FAQItemQuestion = styled.h3`
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: black;
+  line-height: 1.625;
 
-    ${({ expand }) =>
-      expand
-        ? `
+  &:is(.dark *) {
+    color: white;
+  }
+`;
+const FAQItemAnswer = styled.p`
+  transition-property: all;
+  transition-duration: 150ms;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+  color: rgb(31 41 55);
+  font-weight: 500;
+  line-height: 1.625;
+
+  &:is(.dark *) {
+    color: rgb(255 255 255 / 0.7);
+  }
+
+  ${({ expand }) =>
+    expand
+      ? `
     opacity: 1;
     height: fit-content;
   `
-        : `
+      : `
     opacity: 0;
     height: 0;
     `}
-  `;
+`;
 
-  const FAQExpandIconPlus = styled.svg`
-    width: 1rem;
-    height: 1rem;
-    fill: black;
-    &:is(.dark *) {
-      fill: white;
-    }
+const FAQExpandIconPlus = styled.svg`
+  width: 1rem;
+  height: 1rem;
+  fill: black;
+  &:is(.dark *) {
+    fill: white;
+  }
 
-    transform: rotate(180deg);
-  `;
-  const FAQExpandIconMinus = styled.svg`
-    width: 1rem;
-    height: 1rem;
-    fill: black;
-    &:is(.dark *) {
-      fill: white;
-    }
+  transform: rotate(180deg);
+`;
+const FAQExpandIconMinus = styled.svg`
+  width: 1rem;
+  height: 1rem;
+  fill: black;
+  &:is(.dark *) {
+    fill: white;
+  }
 
-    transform: rotate(180deg);
-  `;
+  transform: rotate(180deg);
+`;
+function FAQItem({ question, answer }) {
+  const [expand, setExpand] = React.useState(false);
 
   return (
     <FAQItemContainer onClick={() => setExpand((e) => !e)}>

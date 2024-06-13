@@ -9,161 +9,160 @@ const bp = {
   xl: "80rem",
 };
 
+const FeatureWrapper = styled.div`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
 
-  const FeatureWrapper = styled.div`
-    padding: ${({ style }) =>
-      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-        style?.paddingBottom || 0
-      }px ${style?.paddingLeft || 0}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-        style?.marginBottom || 0
-      }px ${style?.marginLeft || 0}px`};
+  background-color: white;
+  &:is(.dark *) {
+    background-color: #080a11;
+  }
+`;
+const FeatureContainer = styled.div`
+  max-width: 96rem;
+  margin-inline: auto;
+  gap: 2.5rem;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex-direction: ; */
 
-    background-color: white;
-    &:is(.dark *) {
-      background-color: #080a11;
-    }
-  `;
-  const FeatureContainer = styled.div`
-    max-width: 96rem;
-    margin-inline: auto;
-    gap: 2.5rem;
-    padding: 5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* flex-direction: ; */
+  @media (min-width: ${bp.lg}) {
+    flex-direction: ${({ props }) =>
+      `${props?.isReverse ? "row-reverse" : "row"}`};
+  }
+`;
 
-    @media (min-width: ${bp.lg}) {
-      flex-direction: ${({ props }) =>
-        `${props?.isReverse ? "row-reverse" : "row"}`};
-    }
-  `;
-
-  const FeatureBorderWhite1 = styled.img`
-    &:is(.dark *) {
-      display: block;
-    }
-    display: none;
-    position: absolute;
-    top: 0;
-    ${({ props }) =>
-      props?.isReverse
-        ? `
+const FeatureBorderWhite1 = styled.img`
+  &:is(.dark *) {
+    display: block;
+  }
+  display: none;
+  position: absolute;
+  top: 0;
+  ${({ props }) =>
+    props?.isReverse
+      ? `
     transform: scaleX(-1);
     right: 0;
     `
-        : "left: 0"};
-  `;
-  const FeatureBorderBlack1 = styled.img`
-    &:is(.dark *) {
-      display: none;
-    }
-    display: block;
-    position: absolute;
-    top: 0;
-    ${({ props }) =>
-      props?.isReverse
-        ? `
+      : "left: 0"};
+`;
+const FeatureBorderBlack1 = styled.img`
+  &:is(.dark *) {
+    display: none;
+  }
+  display: block;
+  position: absolute;
+  top: 0;
+  ${({ props }) =>
+    props?.isReverse
+      ? `
         transform: scaleX(-1);
         right: 0;
         `
-        : "left: 0"};
-  `;
-  const FeatureBorderWhite2 = styled.img`
-    display: none;
-    position: absolute;
-    top: 0.75rem;
+      : "left: 0"};
+`;
+const FeatureBorderWhite2 = styled.img`
+  display: none;
+  position: absolute;
+  top: 0.75rem;
 
-    &:is(.dark *) {
-      display: block;
-    }
-
-    ${({ props }) =>
-      props?.isReverse
-        ? `
-    transform: scaleX(-1);
-    right: 0.75rem;
-    `
-        : "left: 0.75rem"};
-  `;
-  const FeatureBorderBlack2 = styled.img`
-    position: absolute;
-    top: 0.75rem;
+  &:is(.dark *) {
     display: block;
+  }
 
-    &:is(.dark *) {
-      display: none;
-    }
-
-    ${({ props }) =>
-      props?.isReverse
-        ? `
+  ${({ props }) =>
+    props?.isReverse
+      ? `
     transform: scaleX(-1);
     right: 0.75rem;
     `
-        : "left: 0.75rem"};
-  `;
+      : "left: 0.75rem"};
+`;
+const FeatureBorderBlack2 = styled.img`
+  position: absolute;
+  top: 0.75rem;
+  display: block;
 
-  const FeatureContent = styled.div`
-    display: flex;
-    flex: 1 1 0%;
-    flex-direction: column;
-    gap: 1rem;
+  &:is(.dark *) {
+    display: none;
+  }
 
-    @media (min-width: ${bp.lg}) {
-      width: 50%;
-      padding: 3.5rem;
-    }
-  `;
-  const FeatureSubHeader = styled.p`
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: rgb(55 65 81);
-    font-weight: 500;
+  ${({ props }) =>
+    props?.isReverse
+      ? `
+    transform: scaleX(-1);
+    right: 0.75rem;
+    `
+      : "left: 0.75rem"};
+`;
 
-    &:is(.dark *) {
-      color: rgb(209 213 219);
-    }
+const FeatureContent = styled.div`
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  gap: 1rem;
 
-    @media (min-width: ${bp.lg}) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  `;
-  const FeatureHeader = styled.h2`
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    color: black;
+  @media (min-width: ${bp.lg}) {
+    width: 50%;
+    padding: 3.5rem;
+  }
+`;
+const FeatureSubHeader = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(55 65 81);
+  font-weight: 500;
 
-    &:is(.dark *) {
-      color: white;
-    }
+  &:is(.dark *) {
+    color: rgb(209 213 219);
+  }
 
-    @media (min-width: ${bp.md}) {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-  `;
-  const FeatureDescription = styled.p`
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: rgb(75 85 99);
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+`;
+const FeatureHeader = styled.h2`
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: black;
 
-    &:is(.dark *) {
-      color: rgb(229 231 235);
-    }
+  &:is(.dark *) {
+    color: white;
+  }
 
-    @media (min-width: ${bp.lg}) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  `;
+  @media (min-width: ${bp.md}) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+`;
+const FeatureDescription = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(75 85 99);
+
+  &:is(.dark *) {
+    color: rgb(229 231 235);
+  }
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+`;
 
   return (
-    <FeatureWrapper id={id} style={style} props={props}>
+    <FeatureWrapper id={id} style={style}>
       <FeatureContainer
         style={{ flexDirection: style?.flexDirection }}
         props={props}

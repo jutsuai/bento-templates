@@ -14,117 +14,117 @@ const socialIcons = [
   { icon: "fa-brands fa-youtube", href: "https://www.youtube.com/" },
   { icon: "fa-brands fa-square-facebook", href: "https://www.facebook.com/" },
 ];
+const FooterWrapper = styled.footer`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+
+  background-color: white;
+  &:is(.dark *) {
+    background-color: #080a11;
+  }
+`;
+const FooterContent = styled.div`
+  padding: 6rem 1rem;
+  width: 100%;
+  margin-inline: auto;
+
+  @container (min-width: ${bp.md}) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+`;
+const FooterGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  width: 100%;
+  text-align: center;
+  color: rgb(55 65 81);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  gap: 2rem;
+
+  &:is(.dark *) {
+    color: rgb(209 213 219);
+  }
+
+  @container (min-width: ${bp.sm}) {
+    text-align: left;
+  }
+`;
+
+const FooterImage = styled.svg`
+  max-width: 9rem;
+  height: fit-content;
+  fill: black;
+  margin-left: 0.5rem;
+
+  &:is(.dark *) {
+    fill: white;
+  }
+`;
+
+const FooterIcons = styled.div`
+  display: flex;
+  color: black;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  &:is(.dark *) {
+    color: white;
+  }
+`;
+
+const FooterIconsLink = styled.a`
+  padding: 0.5rem;
+  border-radius: 9999px;
+  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(20, 22, 29, 0.07);
+
+  &:is(.dark *) {
+    background-color: #14161d;
+  }
+`;
+
+const FooterLink = styled.a`
+  color: black;
+
+  &:is(.dark *) {
+    color: rgba(255, 255, 255, 0.8);
+  }
+`;
+
+const FooterBottom = styled.div`
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 1.5rem;
+  border-top: 1px solid;
+  border-color: #080a1120;
+
+  &:is(.dark *) {
+    border-color: #080a11;
+  }
+`;
+const FooterBottomContent = styled.p`
+  color: #4b5563; /* text-gray-600 */
+  font-size: 0.75rem; /* text-xs */
+  text-align: left;
+  &:is(.dark *) {
+    color: rgb(209 213 219);
+  }
+`;
 export default function Footer({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();
-  const FooterWrapper = styled.footer`
-    padding: ${({ style }) =>
-      `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
-
-    background-color: white;
-    &:is(.dark *) {
-      background-color: #080a11;
-    }
-  `;
-  const FooterContent = styled.div`
-    padding: 6rem 1rem;
-    width: 100%;
-    margin-inline: auto;
-
-    @container (min-width: ${bp.md}) {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-  `;
-  const FooterGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    width: 100%;
-    text-align: center;
-    color: rgb(55 65 81);
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    gap: 2rem;
-
-    &:is(.dark *) {
-      color: rgb(209 213 219);
-    }
-
-    @container (min-width: ${bp.sm}) {
-      text-align: left;
-    }
-  `;
-
-  const FooterImage = styled.svg`
-    max-width: 9rem;
-    height: fit-content;
-    fill: black;
-    margin-left: 0.5rem;
-
-    &:is(.dark *) {
-      fill: white;
-    }
-  `;
-
-  const FooterIcons = styled.div`
-    display: flex;
-    color: black;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-
-    &:is(.dark *) {
-      color: white;
-    }
-  `;
-
-  const FooterIconsLink = styled.a`
-    padding: 0.5rem;
-    border-radius: 9999px;
-    aspect-ratio: 1 / 1;
-    width: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(20, 22, 29, 0.07);
-
-    &:is(.dark *) {
-      background-color: #14161d;
-    }
-  `;
-
-  const FooterLink = styled.a`
-    color: black;
-
-    &:is(.dark *) {
-      color: rgba(255, 255, 255, 0.8);
-    }
-  `;
-
-  const FooterBottom = styled.div`
-    max-width: 100%;
-    margin-inline: auto;
-    padding: 1.5rem;
-    border-top: 1px solid;
-    border-color: #080a1120;
-
-    &:is(.dark *) {
-      border-color: #080a11;
-    }
-  `;
-  const FooterBottomContent = styled.p`
-    color: #4b5563; /* text-gray-600 */
-    font-size: 0.75rem; /* text-xs */
-    text-align: left;
-    &:is(.dark *) {
-      color: rgb(209 213 219);
-    }
-  `;
   return (
-    <FooterWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+    <FooterWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FooterContent>
         <FooterGrid>
           <div
