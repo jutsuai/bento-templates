@@ -74,9 +74,9 @@ const bp = {
     }
   `;
   const CTASubtitle = styled.p`
-    font-size: 1.875rem;
     line-height: 2.25rem;
     color: rgb(209 213 219);
+    font-size: 0.8rem;
 
     @media (min-width: ${bp.md}) {
       font-size: 1rem;

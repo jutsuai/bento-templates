@@ -1,6 +1,6 @@
-import { useNode } from "@craftjs/core";
 import React from "react";
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -10,9 +10,9 @@ const bp = {
 };
 
 export default function FAQ({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const FAQWrapper = styled.section`
     background-color: white;
     &:is(.dark *) {
