@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -136,42 +137,43 @@ const Button = styled.button`
   }
 `;
 
-return (
-  <AboutWrapper id={id}>
-    <AboutContent>
-      <AboutLeft>
-        <AboutHeader>{props?.headerText}</AboutHeader>
-      </AboutLeft>
-      <AboutRight>
-        <AboutRightContainer>
-          {props?.moreInfo?.map((item, index) => (
-            <MoreInfoWrapper key={index}>
-              <MoreInfoHeader>{item?.title}</MoreInfoHeader>
-              <MoreInfoDescription>{item?.description}</MoreInfoDescription>
-            </MoreInfoWrapper>
-          ))}
-          <Button>
-            {props?.buttonText}
-            <div
-              style={{
-                color: style?.accent || "#b9ff81",
-                height: 24,
-                width: 24,
-                backgroundColor: "rgb(31 41 55)",
-                borderRadius: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <i
-                style={{ fontSize: "0.75rem", lineHeight: "1rem" }}
-                className="fa-solid fa-arrow-right"
-              />
-            </div>
-          </Button>
-        </AboutRightContainer>
-      </AboutRight>
-    </AboutContent>
-  </AboutWrapper>
-);
+  return (
+    <AboutWrapper id={id}>
+      <AboutContent>
+        <AboutLeft>
+          <AboutHeader>{props?.headerText}</AboutHeader>
+        </AboutLeft>
+        <AboutRight>
+          <AboutRightContainer>
+            {props?.moreInfo?.map((item, index) => (
+              <MoreInfoWrapper key={index}>
+                <MoreInfoHeader>{item?.title}</MoreInfoHeader>
+                <MoreInfoDescription>{item?.description}</MoreInfoDescription>
+              </MoreInfoWrapper>
+            ))}
+            <Button>
+              {props?.buttonText}
+              <div
+                style={{
+                  color: style?.accent || "#b9ff81",
+                  height: 24,
+                  width: 24,
+                  backgroundColor: "rgb(31 41 55)",
+                  borderRadius: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <i
+                  style={{ fontSize: "0.75rem", lineHeight: "1rem" }}
+                  className="fa-solid fa-arrow-right"
+                />
+              </div>
+            </Button>
+          </AboutRightContainer>
+        </AboutRight>
+      </AboutContent>
+    </AboutWrapper>
+  );
+

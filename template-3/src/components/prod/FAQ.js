@@ -148,7 +148,7 @@ const FAQItemAnswer = styled.p`
   }
 
   ${({ expand }) =>
-    expand
+    expand === 1
       ? `
     opacity: 1;
     height: fit-content;
@@ -180,10 +180,10 @@ const FAQExpandIconMinus = styled.svg`
   transform: rotate(180deg);
 `;
 function FAQItem({ question, answer }) {
-  const [expand, setExpand] = React.useState(false);
+  const [expand, setExpand] = React.useState(0);
 
   return (
-    <FAQItemContainer onClick={() => setExpand((e) => !e)}>
+    <FAQItemContainer onClick={() => setExpand((e) => (e === 0 ? 1 : 0))}>
       <div
         style={{
           display: "flex",

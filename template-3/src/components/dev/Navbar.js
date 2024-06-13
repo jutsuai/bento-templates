@@ -168,9 +168,9 @@ const MobileButton = styled.button`
   color: black;
 `;
 export default function Navbar({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   const [showNav, setShowNav] = React.useState(false);
 
   return (

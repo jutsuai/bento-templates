@@ -132,37 +132,38 @@ const CTABtnButton = styled.button`
   }
 `;
 
-return (
-  <CTAWrapper id={id} style={style}>
-    <CTAContainer>
-      <CTAContent>
-        <CTATitle>{props?.headerText}</CTATitle>
-        <CTASubtitle>{props?.subHeaderText}</CTASubtitle>
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            height: "3rem",
-            maxWidth: "28rem",
-            alignItems: "center",
-          }}
-        >
-          <CTAInput placeholder="Enter your email address" />
-          <CTABtnButton style={style}>
-            {props?.primaryButtonText}
-            <svg
-              style={{
-                width: "0.7rem",
-                transform: "rotate(-0.25turn)",
-              }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512"
-            >
-              <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-            </svg>
-          </CTABtnButton>
-        </div>
-      </CTAContent>
-    </CTAContainer>
-  </CTAWrapper>
-);
+  return (
+    <CTAWrapper id={id} style={style}>
+      <CTAContainer>
+        <CTAContent>
+          <CTATitle>{props?.headerText}</CTATitle>
+          <CTASubtitle>{props?.subHeaderText}</CTASubtitle>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "3rem",
+              maxWidth: "28rem",
+              alignItems: "center",
+            }}
+          >
+            <CTAInput placeholder="Enter your email address" />
+            <CTABtnButton style={style}>
+              {props?.primaryButtonText}
+              <svg
+                style={{
+                  width: "0.7rem",
+                  transform: "rotate(-0.25turn)",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+              </svg>
+            </CTABtnButton>
+          </div>
+        </CTAContent>
+      </CTAContainer>
+    </CTAWrapper>
+  );
+

@@ -106,7 +106,7 @@ export default function HeroSection({ props, style, id }) {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <HeroSectionWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <HeroSectionWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <SectionContent>
         <ContentColumn>
           <HeaderText>{props?.headerText}</HeaderText>

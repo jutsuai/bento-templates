@@ -121,16 +121,11 @@ const FooterBottomContent = styled.p`
   }
 `;
 export default function Footer({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <FooterWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <FooterWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <FooterContent>
         <FooterGrid>
           <div

@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -61,22 +62,23 @@ const PartnersLogo = styled.img`
   }
 `;
 
-const logos = [
-  "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
-  "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
-  "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
-  "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/codecademy-color.svg",
-  "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/facepunch-color.svg",
-];
+  const logos = [
+    "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
+    "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
+    "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
+    "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/codecademy-color.svg",
+    "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/facepunch-color.svg",
+  ];
 
-return (
-  <PartnersContainer id={id} style={style}>
-    <PartnersWrapper>
-      <PartnersLogoContainer>
-        {(logos || props?.logos)?.map((logo, index) => (
-          <PartnersLogo key={index} src={logo} alt="logos" />
-        ))}
-      </PartnersLogoContainer>
-    </PartnersWrapper>
-  </PartnersContainer>
-);
+  return (
+    <PartnersContainer id={id} style={style}>
+      <PartnersWrapper>
+        <PartnersLogoContainer>
+          {(logos || props?.logos)?.map((logo, index) => (
+            <PartnersLogo key={index} src={logo} alt="logos" />
+          ))}
+        </PartnersLogoContainer>
+      </PartnersWrapper>
+    </PartnersContainer>
+  );
+

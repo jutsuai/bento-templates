@@ -136,9 +136,9 @@ const Button = styled.button`
   }
 `;
 export default function About({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <AboutWrapper id={id} ref={(ref) => connect(drag(ref))}>
       <AboutContent>

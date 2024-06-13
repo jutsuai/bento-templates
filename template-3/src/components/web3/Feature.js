@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -160,69 +161,70 @@ const FeatureDescription = styled.p`
   }
 `;
 
-return (
-  <FeatureWrapper id={id} style={style}>
-    <FeatureContainer
-      style={{ flexDirection: style?.flexDirection }}
-      props={props}
-    >
-      <div
-        style={{
-          flex: "1 1 0%",
-          position: "relative",
-          display: "flex",
-          justifyContent: props?.isReverse ? "flex-end" : "flex-start",
-        }}
+  return (
+    <FeatureWrapper id={id} style={style}>
+      <FeatureContainer
+        style={{ flexDirection: style?.flexDirection }}
+        props={props}
       >
-        <FeatureBorderBlack1
-          props={props}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite1
-          props={props}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
-          alt=""
-        />
-        <FeatureBorderBlack2
-          props={props}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite2
-          props={props}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
-          alt=""
-        />
         <div
           style={{
-            marginTop: "1.5rem",
-            marginRight: props?.isReverse ? "1.5rem" : "unset",
-            marginLeft: props?.isReverse ? "unset" : "1.5rem",
+            flex: "1 1 0%",
+            position: "relative",
+            display: "flex",
+            justifyContent: props?.isReverse ? "flex-end" : "flex-start",
           }}
         >
-          <img
-            src={props?.imageSrc}
-            alt="features"
-            style={{
-              borderRadius: "0.5rem",
-              objectFit: "cover",
-              objectPosition: "center",
-              width: "100%",
-              height: "100%",
-              maxWidth: "36rem",
-              maxHeight: "36rem",
-              aspectRatio: "1/1",
-            }}
-            loading="lazy"
+          <FeatureBorderBlack1
+            props={props}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
+            alt=""
           />
+          <FeatureBorderWhite1
+            props={props}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
+            alt=""
+          />
+          <FeatureBorderBlack2
+            props={props}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
+            alt=""
+          />
+          <FeatureBorderWhite2
+            props={props}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
+            alt=""
+          />
+          <div
+            style={{
+              marginTop: "1.5rem",
+              marginRight: props?.isReverse ? "1.5rem" : "unset",
+              marginLeft: props?.isReverse ? "unset" : "1.5rem",
+            }}
+          >
+            <img
+              src={props?.imageSrc}
+              alt="features"
+              style={{
+                borderRadius: "0.5rem",
+                objectFit: "cover",
+                objectPosition: "center",
+                width: "100%",
+                height: "100%",
+                maxWidth: "36rem",
+                maxHeight: "36rem",
+                aspectRatio: "1/1",
+              }}
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
-      <FeatureContent>
-        <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
-        <FeatureHeader>{props?.headerText}</FeatureHeader>
-        <FeatureDescription>{props?.description}</FeatureDescription>
-      </FeatureContent>
-    </FeatureContainer>
-  </FeatureWrapper>
-);
+        <FeatureContent>
+          <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
+          <FeatureHeader>{props?.headerText}</FeatureHeader>
+          <FeatureDescription>{props?.description}</FeatureDescription>
+        </FeatureContent>
+      </FeatureContainer>
+    </FeatureWrapper>
+  );
+

@@ -14,9 +14,8 @@ const HeroWrapper = styled.section`
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-  overflow: hidden;
-
   background-color: white;
+  overflow: hidden;
 
   &:not(.light *) {
     background-color: #080a11;
@@ -158,9 +157,9 @@ const HeroImage1 = styled.img`
   border-radius: 0.375rem;
 `;
 export default function HeroSection({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <HeroWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <HeroContainer>

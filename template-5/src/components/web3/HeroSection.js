@@ -104,7 +104,7 @@ const ScrollDownButton = styled.button`
 `;
 
   return (
-    <HeroSectionWrapper id={id} style={style}>
+    <HeroSectionWrapper id={id} style={style} props={props}>
       <SectionContent>
         <ContentColumn>
           <HeaderText>{props?.headerText}</HeaderText>
