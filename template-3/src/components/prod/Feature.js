@@ -28,7 +28,7 @@ const FeatureContainer = styled.div`
   gap: 2.5rem;
   padding: 5rem 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ style }) => style.flexDirection || "column"};
   align-items: center;
   /* flex-direction: ; */
 
@@ -161,10 +161,7 @@ const FeatureDescription = styled.p`
 export default function Feature({ props, style, id }) {
   return (
     <FeatureWrapper id={id} style={style}>
-      <FeatureContainer
-        style={{ flexDirection: style?.flexDirection }}
-        props={props}
-      >
+      <FeatureContainer style={style} props={props}>
         <div
           style={{
             flex: "1 1 0%",

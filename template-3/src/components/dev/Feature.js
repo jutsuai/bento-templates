@@ -29,7 +29,7 @@ const FeatureContainer = styled.div`
   gap: 2.5rem;
   padding: 5rem 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ style }) => style.flexDirection || "column"};
   align-items: center;
   /* flex-direction: ; */
 
@@ -165,10 +165,7 @@ export default function Feature({ props, style, id }) {
 	} = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
-      <FeatureContainer
-        style={{ flexDirection: style?.flexDirection }}
-        props={props}
-      >
+      <FeatureContainer style={style} props={props}>
         <div
           style={{
             flex: "1 1 0%",
