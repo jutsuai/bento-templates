@@ -18,7 +18,7 @@ const CTAWrapper = styled.section`
     }px ${style?.marginLeft || 0}px`};
 
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
 `;
@@ -47,7 +47,7 @@ const CTAContent = styled.div`
   height: 100%;
   padding: 2.5rem;
   border-radius: 0.5rem;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #ebe9e2;
     background-image: url("https://ipfs.near.social/ipfs/bafkreicblnj4gy73vkd4i6ikejwgfb6n2uekq6tnugdynykdrt46szi5nq");
   }
@@ -67,7 +67,7 @@ const CTATitle = styled.h2`
     line-height: 2.5rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: black;
   }
 `;
@@ -81,7 +81,7 @@ const CTASubtitle = styled.p`
     line-height: 1.5rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #000000b3;
   }
 `;
@@ -131,9 +131,9 @@ const CTABtnButton = styled.button`
   }
 `;
 export default function CTA({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <CTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <CTAContainer>

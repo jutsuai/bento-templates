@@ -18,7 +18,7 @@ const PartnersContainer = styled.section`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
 `;
@@ -55,15 +55,15 @@ const PartnersLogo = styled.img`
   user-select: none;
   border-radius: 0px !important;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     filter: brightness(0.35) grayscale(100%) invert(100%) saturate(0.15)
       sepia(0.01);
   }
 `;
 export default function Partners({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const logos = [
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",

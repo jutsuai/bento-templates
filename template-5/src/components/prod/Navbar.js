@@ -110,7 +110,7 @@ const MobileMenu = styled.div`
     padding-right: 3rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: rgb(55 65 81);
     background-color: rgb(3 7 18);
   }
@@ -137,7 +137,7 @@ const MobileNavList = styled.ul`
 
 const MobileNavListItem = styled.a`
   color: #4b5563;
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 `;
@@ -153,7 +153,7 @@ const MobileButton = styled.button`
   font-weight: 600;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;

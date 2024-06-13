@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   position: relative;
   width: 100%;
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
   padding: ${({ style }) =>
@@ -49,7 +49,7 @@ const NavList = styled.ul`
   @media (min-width: ${bp.lg}) {
     display: flex;
   }
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -61,7 +61,7 @@ const MenuIcon = styled.svg`
     display: none;
   }
   fill: black;
-  &:is(.dark *) {
+  &:not(.light *) {
     fill: white;
   }
 `;
@@ -92,7 +92,7 @@ const Button = styled.button`
 const NavImageLight = styled.img`
   width: 2rem;
   display: none;
-  &:is(.dark *) {
+  &:not(.light *) {
     display: inline-block;
   }
 `;
@@ -100,7 +100,7 @@ const NavImageLight = styled.img`
 const NavImageDark = styled.img`
   width: 2rem;
   display: inline-block;
-  &:is(.dark *) {
+  &:not(.light *) {
     display: none;
   }
 `;
@@ -121,7 +121,7 @@ const MobileMenu = styled.div`
     padding-right: 3rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: rgb(55 65 81);
     background-color: rgb(3 7 18);
   }
@@ -134,7 +134,7 @@ const CloseIcon = styled.svg`
   cursor: pointer;
   width: 1.5rem;
   fill: rgb(229 231 235);
-  &:is(.dark *) {
+  &:not(.light *) {
     fill: rgb(229 231 235 / 0.5);
   }
 `;
@@ -149,7 +149,7 @@ const MobileNavList = styled.ul`
 
 const MobileNavListItem = styled.a`
   color: #4b5563;
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 `;

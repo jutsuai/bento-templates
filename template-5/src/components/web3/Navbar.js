@@ -2,7 +2,6 @@ const style = props.style || {};
 const props = props.props || {};
 import React from "react";
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -112,7 +111,7 @@ const MobileMenu = styled.div`
     padding-right: 3rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: rgb(55 65 81);
     background-color: rgb(3 7 18);
   }
@@ -139,7 +138,7 @@ const MobileNavList = styled.ul`
 
 const MobileNavListItem = styled.a`
   color: #4b5563;
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 `;
@@ -155,41 +154,74 @@ const MobileButton = styled.button`
   font-weight: 600;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
 
-  const [showNav, setShowNav] = React.useState(false);
-  return (
-    <StyledNav id={id} style={style}>
-      <NavContainer>
-        <NavImageLight
-          src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
-          alt="logo"
+const [showNav, setShowNav] = React.useState(false);
+return (
+  <StyledNav id={id} style={style}>
+    <NavContainer>
+      <NavImageLight
+        src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+        alt="logo"
+      />
+      <NavList>
+        {props?.navItems?.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.link}
+              style={{
+                textWrap: "nowrap",
+                color: "white",
+              }}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </NavList>
+      <MenuIcon
+        className="fa-solid fa-bars-staggered"
+        onClick={() => setShowNav(true)}
+      />
+
+      <NavButtomContainer>
+        <Button>
+          <div
+            style={{
+              backgroundColor: style?.accent || "#b9ff81",
+              color: "black",
+              height: "2rem",
+              width: "2rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "100%",
+            }}
+          >
+            <i className="fa-solid fa-arrow-right" />
+          </div>
+          {props?.buttonText}
+        </Button>
+      </NavButtomContainer>
+
+      <MobileMenu showNav={showNav}>
+        <CloseIcon
+          className="fa-solid fa-xmark"
+          onClick={() => setShowNav(false)}
         />
-        <NavList>
+        <MobileNavList>
           {props?.navItems?.map((item, index) => (
             <li key={index}>
-              <a
-                href={item.link}
-                style={{
-                  textWrap: "nowrap",
-                  color: "white",
-                }}
-              >
+              <MobileNavListItem href={item.link}>
                 {item.name}
-              </a>
+              </MobileNavListItem>
             </li>
           ))}
-        </NavList>
-        <MenuIcon
-          className="fa-solid fa-bars-staggered"
-          onClick={() => setShowNav(true)}
-        />
 
-        <NavButtomContainer>
-          <Button>
+          <MobileButton>
             <div
               style={{
                 backgroundColor: style?.accent || "#b9ff81",
@@ -205,43 +237,9 @@ const MobileButton = styled.button`
               <i className="fa-solid fa-arrow-right" />
             </div>
             {props?.buttonText}
-          </Button>
-        </NavButtomContainer>
-
-        <MobileMenu showNav={showNav}>
-          <CloseIcon
-            className="fa-solid fa-xmark"
-            onClick={() => setShowNav(false)}
-          />
-          <MobileNavList>
-            {props?.navItems?.map((item, index) => (
-              <li key={index}>
-                <MobileNavListItem href={item.link}>
-                  {item.name}
-                </MobileNavListItem>
-              </li>
-            ))}
-
-            <MobileButton>
-              <div
-                style={{
-                  backgroundColor: style?.accent || "#b9ff81",
-                  color: "black",
-                  height: "2rem",
-                  width: "2rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "100%",
-                }}
-              >
-                <i className="fa-solid fa-arrow-right" />
-              </div>
-              {props?.buttonText}
-            </MobileButton>
-          </MobileNavList>
-        </MobileMenu>
-      </NavContainer>
-    </StyledNav>
-  );
-
+          </MobileButton>
+        </MobileNavList>
+      </MobileMenu>
+    </NavContainer>
+  </StyledNav>
+);

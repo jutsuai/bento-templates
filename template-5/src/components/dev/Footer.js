@@ -22,7 +22,7 @@ const FooterWrapper = styled.footer`
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
 `;
@@ -46,7 +46,7 @@ const FooterGrid = styled.div`
   line-height: 1.25rem;
   gap: 2rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgb(209 213 219);
   }
 
@@ -61,7 +61,7 @@ const FooterImage = styled.svg`
   fill: black;
   margin-left: 0.5rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     fill: white;
   }
 `;
@@ -73,7 +73,7 @@ const FooterIcons = styled.div`
   gap: 1rem;
   margin-top: 1.5rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -88,7 +88,7 @@ const FooterIconsLink = styled.a`
   justify-content: center;
   background-color: rgba(20, 22, 29, 0.07);
 
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #14161d;
   }
 `;
@@ -96,7 +96,7 @@ const FooterIconsLink = styled.a`
 const FooterLink = styled.a`
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgba(255, 255, 255, 0.8);
   }
 `;
@@ -108,7 +108,7 @@ const FooterBottom = styled.div`
   border-top: 1px solid;
   border-color: #080a1120;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: #080a11;
   }
 `;
@@ -116,16 +116,21 @@ const FooterBottomContent = styled.p`
   color: #4b5563; /* text-gray-600 */
   font-size: 0.75rem; /* text-xs */
   text-align: center;
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgb(209 213 219);
   }
 `;
 export default function Footer({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
-    <FooterWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+    <FooterWrapper
+      id={id}
+      style={style}
+      props={props}
+      ref={(ref) => connect(drag(ref))}
+    >
       <FooterContent>
         <FooterGrid>
           <div

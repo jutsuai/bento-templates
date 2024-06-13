@@ -111,7 +111,7 @@ const MobileMenu = styled.div`
     padding-right: 3rem;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: rgb(55 65 81);
     background-color: rgb(3 7 18);
   }
@@ -138,7 +138,7 @@ const MobileNavList = styled.ul`
 
 const MobileNavListItem = styled.a`
   color: #4b5563;
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 `;
@@ -154,14 +154,14 @@ const MobileButton = styled.button`
   font-weight: 600;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
 export default function Navbar({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const [showNav, setShowNav] = React.useState(false);
   return (
     <StyledNav id={id} style={style} ref={(ref) => connect(drag(ref))}>

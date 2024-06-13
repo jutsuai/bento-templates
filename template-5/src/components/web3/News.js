@@ -1,7 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -16,7 +15,7 @@ const NewsWrapper = styled.div`
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
   background-color: white;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #1f2937;
   }
 `;
@@ -51,7 +50,7 @@ const NewsHeader = styled.h2`
   line-height: 1.375;
   max-width: 28rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -73,7 +72,7 @@ const NewsButton = styled.button`
   gap: 0.75rem;
   font-weight: 600;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -93,7 +92,7 @@ const NewsArticleIndex = styled.h3`
   color: black;
   grid-column: span 1;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -120,7 +119,7 @@ const NewsArticleTitle = styled.h4`
   font-weight: 500;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -130,7 +129,7 @@ const NewsArticleMetadataTitle = styled.h6`
   font-weight: 400;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -139,69 +138,68 @@ const NewsArticleMetadataDate = styled.p`
   line-height: 1rem;
   color: rgba(0, 0, 0, 0.7);
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
   }
 `;
 
-  return (
-    <NewsWrapper id={id} style={style}>
-      <NewsContent>
-        <NewsColumn>
-          <NewsHeader>{props?.headerText}</NewsHeader>
-          <NewsButton>
-            {props?.buttonText}
-            <div
+return (
+  <NewsWrapper id={id} style={style}>
+    <NewsContent>
+      <NewsColumn>
+        <NewsHeader>{props?.headerText}</NewsHeader>
+        <NewsButton>
+          {props?.buttonText}
+          <div
+            style={{
+              color: style?.accent || "#b9ff81",
+              height: "1.5rem",
+              width: "1.5rem",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "rgb(31 41 55)",
+            }}
+          >
+            <i
               style={{
-                color: style?.accent || "#b9ff81",
-                height: "1.5rem",
-                width: "1.5rem",
-                borderRadius: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "rgb(31 41 55)",
+                fontSize: "0.75rem" /* 12px */,
+                lineHeight: "1rem" /* 16px */,
               }}
-            >
-              <i
+              className="fa-solid fa-arrow-right"
+            ></i>
+          </div>
+        </NewsButton>
+      </NewsColumn>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "3rem",
+        }}
+      >
+        {props?.news?.map((item, index) => (
+          <NewsArticle key={index}>
+            <NewsArticleIndex>
+              {index < 9 ? `0${index + 1}` : index + 1}
+            </NewsArticleIndex>
+            <NewsArticleContent>
+              <NewsArticleTitle>{item?.article}</NewsArticleTitle>
+              <div
                 style={{
-                  fontSize: "0.75rem" /* 12px */,
-                  lineHeight: "1rem" /* 16px */,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.25rem",
                 }}
-                className="fa-solid fa-arrow-right"
-              ></i>
-            </div>
-          </NewsButton>
-        </NewsColumn>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "3rem",
-          }}
-        >
-          {props?.news?.map((item, index) => (
-            <NewsArticle key={index}>
-              <NewsArticleIndex>
-                {index < 9 ? `0${index + 1}` : index + 1}
-              </NewsArticleIndex>
-              <NewsArticleContent>
-                <NewsArticleTitle>{item?.article}</NewsArticleTitle>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.25rem",
-                  }}
-                >
-                  <NewsArticleMetadataTitle>ARTICLES</NewsArticleMetadataTitle>
-                  <NewsArticleMetadataDate>2024-02-05</NewsArticleMetadataDate>
-                </div>
-              </NewsArticleContent>
-            </NewsArticle>
-          ))}
-        </div>
-      </NewsContent>
-    </NewsWrapper>
-  );
-
+              >
+                <NewsArticleMetadataTitle>ARTICLES</NewsArticleMetadataTitle>
+                <NewsArticleMetadataDate>2024-02-05</NewsArticleMetadataDate>
+              </div>
+            </NewsArticleContent>
+          </NewsArticle>
+        ))}
+      </div>
+    </NewsContent>
+  </NewsWrapper>
+);

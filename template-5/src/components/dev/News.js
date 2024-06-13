@@ -15,7 +15,7 @@ const NewsWrapper = styled.section`
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
   background-color: white;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #1f2937;
   }
 `;
@@ -50,7 +50,7 @@ const NewsHeader = styled.h2`
   line-height: 1.375;
   max-width: 28rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -72,7 +72,7 @@ const NewsButton = styled.button`
   gap: 0.75rem;
   font-weight: 600;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -92,7 +92,7 @@ const NewsArticleIndex = styled.h3`
   color: black;
   grid-column: span 1;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -119,7 +119,7 @@ const NewsArticleTitle = styled.h4`
   font-weight: 500;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -129,7 +129,7 @@ const NewsArticleMetadataTitle = styled.h6`
   font-weight: 400;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -138,14 +138,14 @@ const NewsArticleMetadataDate = styled.p`
   line-height: 1rem;
   color: rgba(0, 0, 0, 0.7);
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
   }
 `;
 export default function News({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <NewsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <NewsContent>

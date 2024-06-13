@@ -10,7 +10,7 @@ const bp = {
 
 const FAQWrapper = styled.section`
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
   padding: ${({ style }) =>
@@ -40,7 +40,7 @@ const FAQHeader = styled.h2`
   color: black;
   font-weight: 700;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -53,7 +53,7 @@ const FAQSubHeader = styled.p`
   text-align: center;
   color: #4b5563;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 
@@ -113,7 +113,7 @@ const FAQItemContainer = styled.div`
     color: black;
   }
 
-  &:is(.dark *) {
+  &:not(.light *) {
     border-bottom-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.7);
 
@@ -129,7 +129,7 @@ const FAQItemQuestion = styled.h3`
   color: black;
   line-height: 1.625;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
@@ -143,7 +143,7 @@ const FAQItemAnswer = styled.p`
   font-weight: 500;
   line-height: 1.625;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgb(255 255 255 / 0.7);
   }
 
@@ -163,7 +163,7 @@ const FAQExpandIconPlus = styled.svg`
   width: 1rem;
   height: 1rem;
   fill: black;
-  &:is(.dark *) {
+  &:not(.light *) {
     fill: white;
   }
 
@@ -173,7 +173,7 @@ const FAQExpandIconMinus = styled.svg`
   width: 1rem;
   height: 1rem;
   fill: black;
-  &:is(.dark *) {
+  &:not(.light *) {
     fill: white;
   }
 

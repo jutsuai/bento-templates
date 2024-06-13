@@ -1,7 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -16,7 +15,7 @@ const AboutWrapper = styled.div`
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
   background-color: white;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #1f2937;
   }
 `;
@@ -48,7 +47,7 @@ const AboutHeader = styled.h2`
   color: black;
   grid-column: span 1;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -92,7 +91,7 @@ const MoreInfoHeader = styled.h3`
   font-weight: 500; /* font-medium */
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -109,7 +108,7 @@ const MoreInfoDescription = styled.p`
   line-height: 1.25rem /* 20px */;
   color: rgba(0, 0, 0, 0.8);
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgba(255, 255, 255, 0.8);
   }
 
@@ -132,48 +131,47 @@ const Button = styled.button`
   gap: 0.75rem;
   font-weight: 600;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 `;
 
-  return (
-    <AboutWrapper id={id}>
-      <AboutContent>
-        <AboutLeft>
-          <AboutHeader>{props?.headerText}</AboutHeader>
-        </AboutLeft>
-        <AboutRight>
-          <AboutRightContainer>
-            {props?.moreInfo?.map((item, index) => (
-              <MoreInfoWrapper key={index}>
-                <MoreInfoHeader>{item?.title}</MoreInfoHeader>
-                <MoreInfoDescription>{item?.description}</MoreInfoDescription>
-              </MoreInfoWrapper>
-            ))}
-            <Button>
-              {props?.buttonText}
-              <div
-                style={{
-                  color: style?.accent || "#b9ff81",
-                  height: 24,
-                  width: 24,
-                  backgroundColor: "rgb(31 41 55)",
-                  borderRadius: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <i
-                  style={{ fontSize: "0.75rem", lineHeight: "1rem" }}
-                  className="fa-solid fa-arrow-right"
-                />
-              </div>
-            </Button>
-          </AboutRightContainer>
-        </AboutRight>
-      </AboutContent>
-    </AboutWrapper>
-  );
-
+return (
+  <AboutWrapper id={id}>
+    <AboutContent>
+      <AboutLeft>
+        <AboutHeader>{props?.headerText}</AboutHeader>
+      </AboutLeft>
+      <AboutRight>
+        <AboutRightContainer>
+          {props?.moreInfo?.map((item, index) => (
+            <MoreInfoWrapper key={index}>
+              <MoreInfoHeader>{item?.title}</MoreInfoHeader>
+              <MoreInfoDescription>{item?.description}</MoreInfoDescription>
+            </MoreInfoWrapper>
+          ))}
+          <Button>
+            {props?.buttonText}
+            <div
+              style={{
+                color: style?.accent || "#b9ff81",
+                height: 24,
+                width: 24,
+                backgroundColor: "rgb(31 41 55)",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <i
+                style={{ fontSize: "0.75rem", lineHeight: "1rem" }}
+                className="fa-solid fa-arrow-right"
+              />
+            </div>
+          </Button>
+        </AboutRightContainer>
+      </AboutRight>
+    </AboutContent>
+  </AboutWrapper>
+);

@@ -13,9 +13,8 @@ const HeroWrapper = styled.section`
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-  overflow: hidden;
-
   background-color: white;
+  overflow: hidden;
 
   &:not(.light *) {
     background-color: #080a11;
@@ -65,7 +64,7 @@ const HeroTitle = styled.h1`
   font-weight: 700;
   line-height: 1.25 !important;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -79,7 +78,7 @@ const HeroSubtitle = styled.h6`
   line-height: 1.75rem;
   color: #4b5563;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: #d1d5db;
   }
 
@@ -114,7 +113,7 @@ const HeroButton2 = styled.button`
   color: black;
   fill: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
     fill: white;
   }
@@ -145,7 +144,7 @@ const HeroImage1 = styled.img`
   border-left-width: 0.5rem;
   border-top-width: 0.5rem;
   border-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     border-color: #080a11;
   }
   width: 100%;

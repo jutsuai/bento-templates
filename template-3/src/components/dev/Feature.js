@@ -19,7 +19,7 @@ const FeatureWrapper = styled.section`
     }px ${style?.marginLeft || 0}px`};
 
   background-color: white;
-  &:is(.dark *) {
+  &:not(.light *) {
     background-color: #080a11;
   }
 `;
@@ -40,7 +40,7 @@ const FeatureContainer = styled.div`
 `;
 
 const FeatureBorderWhite1 = styled.img`
-  &:is(.dark *) {
+  &:not(.light *) {
     display: block;
   }
   display: none;
@@ -55,7 +55,7 @@ const FeatureBorderWhite1 = styled.img`
       : "left: 0"};
 `;
 const FeatureBorderBlack1 = styled.img`
-  &:is(.dark *) {
+  &:not(.light *) {
     display: none;
   }
   display: block;
@@ -74,7 +74,7 @@ const FeatureBorderWhite2 = styled.img`
   position: absolute;
   top: 0.75rem;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     display: block;
   }
 
@@ -91,7 +91,7 @@ const FeatureBorderBlack2 = styled.img`
   top: 0.75rem;
   display: block;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     display: none;
   }
 
@@ -121,7 +121,7 @@ const FeatureSubHeader = styled.p`
   color: rgb(55 65 81);
   font-weight: 500;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgb(209 213 219);
   }
 
@@ -136,7 +136,7 @@ const FeatureHeader = styled.h2`
   font-weight: 700;
   color: black;
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: white;
   }
 
@@ -150,7 +150,7 @@ const FeatureDescription = styled.p`
   line-height: 1.25rem;
   color: rgb(75 85 99);
 
-  &:is(.dark *) {
+  &:not(.light *) {
     color: rgb(229 231 235);
   }
 
@@ -160,9 +160,9 @@ const FeatureDescription = styled.p`
   }
 `;
 export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FeatureContainer
