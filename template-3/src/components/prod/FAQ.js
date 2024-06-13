@@ -147,8 +147,8 @@ const FAQItemAnswer = styled.p`
     color: rgb(255 255 255 / 0.7);
   }
 
-  ${(props) =>
-    props.expand
+  ${({ expand }) =>
+    expand
       ? `
     opacity: 1;
     height: fit-content;
@@ -210,7 +210,7 @@ function FAQItem({ question, answer }) {
           </FAQExpandIconPlus>
         )}
       </div>
-      <FAQItemAnswer expand={expand ? true : undefined}>{answer}</FAQItemAnswer>
+      <FAQItemAnswer expand={expand}>{answer}</FAQItemAnswer>
     </FAQItemContainer>
   );
 }
