@@ -16,10 +16,10 @@ const HeroWrapper = styled.div`
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
   overflow: hidden;
-  &:is(.light *) {
-    background-color: white;
-  }
-  &:is(.dark *) {
+
+  background-color: white;
+
+  &:not(.light *) {
     background-color: #080a11;
   }
 `;
