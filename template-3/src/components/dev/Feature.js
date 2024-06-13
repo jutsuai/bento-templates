@@ -29,9 +29,9 @@ const FeatureContainer = styled.div`
   gap: 2.5rem;
   padding: 5rem 1rem;
   display: flex;
-  flex-direction: ${({ style }) => style.flexDirection || "column"};
+  /* flex-direction: ${({ style }) => style.flexDirection || "row"}; */
   align-items: center;
-  /* flex-direction: ; */
+  flex-direction: row;
 
   @container (min-width: ${bp.lg}) {
     flex-direction: ${({ props }) =>
@@ -160,9 +160,9 @@ const FeatureDescription = styled.p`
   }
 `;
 export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FeatureContainer style={style} props={props}>
