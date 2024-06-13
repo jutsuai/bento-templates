@@ -9,134 +9,133 @@ const bp = {
   xl: "80rem",
 };
 
+const AboutWrapper = styled.div`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+  background-color: white;
 
-  const AboutWrapper = styled.div`
-    padding: ${({ style }) =>
-      `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
-    background-color: white;
+  &:is(.dark *) {
+    background-color: #1f2937;
+  }
+`;
 
-    &:is(.dark *) {
-      background-color: #1f2937;
-    }
-  `;
+const AboutContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 1rem;
+  gap: 1.5rem;
+  width: 100%;
 
-  const AboutContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 6rem 1rem;
-    gap: 1.5rem;
-    width: 100%;
+  @media (min-width: ${bp.md}) {
+    padding-inline: 3rem;
+  }
+`;
 
-    @media (min-width: ${bp.md}) {
-      padding-inline: 3rem;
-    }
-  `;
+const AboutLeft = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 
-  const AboutLeft = styled.div`
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+  @media (min-width: ${bp.lg}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
 
-    @media (min-width: ${bp.lg}) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  `;
+const AboutHeader = styled.h2`
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: black;
+  grid-column: span 1;
 
-  const AboutHeader = styled.h2`
-    font-size: 1.25rem;
+  &:is(.dark *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.md}) {
+    font-size: 2.5rem;
     line-height: 1.5;
-    color: black;
-    grid-column: span 1;
+  }
+`;
 
-    &:is(.dark *) {
-      color: white;
-    }
+const AboutRight = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 
-    @media (min-width: ${bp.md}) {
-      font-size: 2.5rem;
-      line-height: 1.5;
-    }
-  `;
+  @media (min-width: ${bp.lg}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
 
-  const AboutRight = styled.div`
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+const AboutRightContainer = styled.div`
+  grid-column-start: 2;
+`;
 
-    @media (min-width: ${bp.lg}) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  `;
+const MoreInfoWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding-block: 3.5rem;
+  border-top: 1px solid;
 
-  const AboutRightContainer = styled.div`
-    grid-column-start: 2;
-  `;
+  @media (min-width: ${bp.md}) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+`;
 
-  const MoreInfoWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-    padding-block: 3.5rem;
-    border-top: 1px solid;
+const MoreInfoHeader = styled.h3`
+  grid-column: span 2;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500; /* font-medium */
+  color: black;
 
-    @media (min-width: ${bp.md}) {
-      grid-template-columns: repeat(6, 1fr);
-    }
-  `;
+  &:is(.dark *) {
+    color: white;
+  }
 
-  const MoreInfoHeader = styled.h3`
-    grid-column: span 2;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 500; /* font-medium */
-    color: black;
+  @media (min-width: ${bp.md}) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: min-content;
+  }
+`;
 
-    &:is(.dark *) {
-      color: white;
-    }
+const MoreInfoDescription = styled.p`
+  grid-column: span 4;
+  font-size: 0.875rem;
+  line-height: 1.25rem /* 20px */;
+  color: rgba(0, 0, 0, 0.8);
 
-    @media (min-width: ${bp.md}) {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      width: min-content;
-    }
-  `;
+  &:is(.dark *) {
+    color: rgba(255, 255, 255, 0.8);
+  }
 
-  const MoreInfoDescription = styled.p`
-    grid-column: span 4;
-    font-size: 0.875rem;
-    line-height: 1.25rem /* 20px */;
-    color: rgba(0, 0, 0, 0.8);
+  @media (min-width: ${bp.md}) {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem /* 28px */;
+  }
+`;
 
-    &:is(.dark *) {
-      color: rgba(255, 255, 255, 0.8);
-    }
+const Button = styled.button`
+  border: 2px solid;
+  border-radius: 4rem;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 600;
 
-    @media (min-width: ${bp.md}) {
-      font-size: 1.125rem; /* text-lg */
-      line-height: 1.75rem /* 28px */;
-    }
-  `;
-
-  const Button = styled.button`
-    border: 2px solid;
-    border-radius: 4rem;
-    color: black;
-    padding: 0.75rem 1.5rem;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    font-weight: 600;
-
-    &:is(.dark *) {
-      color: white;
-    }
-  `;
+  &:is(.dark *) {
+    color: white;
+  }
+`;
 
   return (
     <AboutWrapper id={id}>

@@ -8,88 +8,82 @@ const bp = {
   xl: "80rem",
 };
 
-export default function SecondaryCTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
-  const SecondaryCTAWrapper = styled.section`
-    padding: ${({ style }) =>
-      `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+const SecondaryCTAWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-    background-color: ${({ style }) => `${style?.accent || "#b9ff81"}`};
-    width: 100%;
-    height: 100dvh;
-    max-height: 100%;
-  `;
-  const SecondaryCTAContent = styled.div`
+  background-color: ${({ style }) => `${style?.accent || "#b9ff81"}`};
+  width: 100%;
+  height: 100dvh;
+  max-height: 100%;
+`;
+const SecondaryCTAContent = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1rem;
+  gap: 5rem;
+  height: 100%;
+
+  @container (min-width: ${bp.md}) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+`;
+const SecondaryCTAData = styled.div`
+  grid-column: span 1;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @container (min-width: ${bp.md}) {
+    grid-column-start: 2;
+  }
+`;
+const SecondaryCTAHeader = styled.h2`
+  font-size: 2.5rem;
+  line-height: 1;
+  max-width: 36rem;
+
+  @container (min-width: ${bp.sm}) {
+    font-size: 3rem;
+  }
+
+  @container (min-width: ${bp.lg}) {
+    font-size: 4.5rem;
+  }
+`;
+const SecondaryCTASubHeader = styled.p``;
+const SecondaryCTADesign = styled.div`
+  position: absolute;
+  opacity: 0.5;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(10%, 1fr));
+  grid-template-rows: repeat(10, minmax(10%, 1fr));
+  width: 100%;
+  height: 100%;
+  place-items: center;
+
+  @container (min-width: ${bp.md}) {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    padding: 1rem;
-    gap: 5rem;
-    height: 100%;
-
-    @container (min-width: ${bp.md}) {
-      grid-template-columns: repeat(2, 1fr);
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-  `;
-  const SecondaryCTAData = styled.div`
-    grid-column: span 1;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @container (min-width: ${bp.md}) {
-      grid-column-start: 2;
-    }
-  `;
-  const SecondaryCTAHeader = styled.h2`
-    font-size: 2.5rem;
-    line-height: 1;
-    max-width: 36rem;
-
-    @container (min-width: ${bp.sm}) {
-      font-size: 3rem;
-    }
-
-    @container (min-width: ${bp.lg}) {
-      font-size: 4.5rem;
-    }
-  `;
-  const SecondaryCTASubHeader = styled.p``;
-  const SecondaryCTADesign = styled.div`
-    position: absolute;
-    opacity: 0.5;
-    display: grid;
-    grid-template-columns: repeat(10, minmax(10%, 1fr));
-    grid-template-rows: repeat(10, minmax(10%, 1fr));
-    width: 100%;
-    height: 100%;
-    place-items: center;
-
-    @container (min-width: ${bp.md}) {
-      position: relative;
-      opacity: 1;
-    }
-  `;
-
+    opacity: 1;
+  }
+`;
+export default function SecondaryCTA({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <SecondaryCTAWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <SecondaryCTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <SecondaryCTAContent>
         <SecondaryCTADesign>
           {[...new Array(100)].map((_, index) => (
             <i
-              className="fa-solid fa-plus"
+              class="fa-solid fa-plus"
               style={{
                 fontSize: "0.75rem",
                 opacity: "0.6",

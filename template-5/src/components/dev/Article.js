@@ -7,100 +7,99 @@ const bp = {
   lg: "64rem",
   xl: "80rem",
 };
+const ArticleWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+
+  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-size: cover;
+  background-position: center;
+`;
+
+const ArticleContent = styled.div`
+  padding: 1rem;
+  height: 100dvh;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @container (min-width: ${bp.md}) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @container (min-width: ${bp.xl}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+const ArticleColumn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1rem;
+
+  @container (min-width: ${bp.md}) {
+    padding: 2rem;
+  }
+
+  @container (min-width: ${bp.lg}) {
+    grid-column-start: 2;
+    padding: 2rem;
+  }
+`;
+const ArticleHeaderText = styled.h4`
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+`;
+const ArticleSubHeaderText = styled.p`
+  line-height: 1.25rem;
+  font-size: 0.875rem;
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+`;
+
+const ArticleMetadataTitle = styled.h6`
+  line-height: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+`;
+const ArticleMetadataDate = styled.p`
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.75rem;
+  line-height: 1.2rem;
+
+  @container (min-width: ${bp.md}) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+`;
 export default function Article({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();
-  const ArticleWrapper = styled.section`
-    padding: ${({ style }) =>
-      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
-        style?.paddingBottom || 0
-      }px ${style?.paddingLeft || 0}px`};
-    margin: ${({ style }) =>
-      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
-        style?.marginBottom || 0
-      }px ${style?.marginLeft || 0}px`};
-
-    background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
-    background-size: cover;
-    background-position: center;
-  `;
-
-  const ArticleContent = styled.div`
-    padding: 1rem;
-    height: 100dvh;
-    max-height: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-
-    @container (min-width: ${bp.md}) {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-
-    @container (min-width: ${bp.xl}) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  `;
-
-  const ArticleColumn = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-block: 1rem;
-
-    @container (min-width: ${bp.md}) {
-      padding: 2rem;
-    }
-
-    @container (min-width: ${bp.lg}) {
-      grid-column-start: 2;
-      padding: 2rem;
-    }
-  `;
-  const ArticleHeaderText = styled.h4`
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 500;
-
-    @container (min-width: ${bp.md}) {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  `;
-  const ArticleSubHeaderText = styled.p`
-    line-height: 1.25rem;
-    font-size: 0.875rem;
-
-    @container (min-width: ${bp.md}) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  `;
-
-  const ArticleMetadataTitle = styled.h6`
-    line-height: 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-
-    @container (min-width: ${bp.md}) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  `;
-  const ArticleMetadataDate = styled.p`
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.75rem;
-    line-height: 1.2rem;
-
-    @container (min-width: ${bp.md}) {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-    }
-  `;
-
   return (
-    <ArticleWrapper id={id} props={props} style={style} ref={(ref) => connect(drag(ref))}>
+    <ArticleWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <ArticleContent>
         <ArticleColumn>
           <div
