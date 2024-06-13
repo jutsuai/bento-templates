@@ -13,9 +13,10 @@ const HeroWrapper = styled.section`
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-  background-color: white;
   overflow: hidden;
-
+  &:is(.light *) {
+    background-color: white;
+  }
   &:is(.dark *) {
     background-color: #080a11;
   }
