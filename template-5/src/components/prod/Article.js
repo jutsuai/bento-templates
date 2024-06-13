@@ -95,7 +95,7 @@ const ArticleMetadataDate = styled.p`
 `;
 export default function Article({ props, style, id }) {
   return (
-    <ArticleWrapper id={id} style={style}>
+    <ArticleWrapper id={id} style={style} props={props}>
       <ArticleContent>
         <ArticleColumn>
           <div
