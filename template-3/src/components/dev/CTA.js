@@ -33,7 +33,8 @@ export default function CTA({ props, style, id }) {
     padding: 5rem 1rem;
   `;
   const CTAContent = styled.div`
-    background-image: url("https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/Picsart_24-05-29_17-06-50-600.png");
+    background-image: url("https://ipfs.near.social/ipfs/bafkreiazq6pkk3d7vzlkvdae2gfrz2coaj32xxj7g7nycdx2fqhjeonsnu");
+    background-color: #14161d;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -43,14 +44,16 @@ export default function CTA({ props, style, id }) {
     text-align: center;
     gap: 1.5rem;
     border-radius: 0.125rem;
-    max-width: 80rem;
+    max-width: 76rem;
     border: 1px solid;
     margin-inline: auto;
     overflow: hidden;
     height: 100%;
     padding: 2.5rem;
+    border-radius: 0.5rem;
     &:is(.dark *) {
-      border-color: #14161d;
+      background-color: #ebe9e2;
+      background-image: url("https://ipfs.near.social/ipfs/bafkreicblnj4gy73vkd4i6ikejwgfb6n2uekq6tnugdynykdrt46szi5nq");
     }
 
     @container (min-width: ${bp.md}) {
@@ -67,6 +70,10 @@ export default function CTA({ props, style, id }) {
       font-size: 2.25rem;
       line-height: 2.5rem;
     }
+
+    &:is(.dark *) {
+      color: black;
+    }
   `;
   const CTASubtitle = styled.p`
     font-size: 1.875rem;
@@ -76,6 +83,10 @@ export default function CTA({ props, style, id }) {
     @container (min-width: ${bp.md}) {
       font-size: 1rem;
       line-height: 1.5rem;
+    }
+
+    &:is(.dark *) {
+      color: #000000b3;
     }
   `;
   const CTAInput = styled.input`

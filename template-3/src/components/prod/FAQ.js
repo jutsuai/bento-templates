@@ -1,24 +1,97 @@
-import { useState } from "react";
+import React from "react";
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
 
 export default function FAQ({ props, style, id }) {
+  const FAQWrapper = styled.section`
+    background-color: white;
+    &:is(.dark *) {
+      background-color: #080a11;
+    }
+    padding: ${({ style }) =>
+      `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+        style?.paddingBottom || 0
+      }px ${style?.paddingLeft || 0}px`};
+    margin: ${({ style }) =>
+      `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+        style?.marginBottom || 0
+      }px ${style?.marginLeft || 0}px`};
+  `;
+
+  const FAQContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+
+    @media (min-width: ${bp.lg}) {
+      text-align: left;
+    }
+  `;
+
+  const FAQHeader = styled.h2`
+    font-size: 2.5rem;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+
+    &:is(.dark *) {
+      color: white;
+    }
+
+    @media (min-width: ${bp.lg}) {
+      font-size: 2.25rem;
+    }
+  `;
+  const FAQSubHeader = styled.p`
+    font-size: 0.875rem;
+    text-align: center;
+    color: #4b5563;
+
+    &:is(.dark *) {
+      color: #d1d5db;
+    }
+
+    @media (min-width: ${bp.lg}) {
+      font-size: 1rem;
+    }
+  `;
+
   return (
-    <section id={id} className="bg-white dark:bg-[#080a11]">
-      <div className="container mx-auto px-4 py-20 grid w-full grid-cols-1 gap-10 place-items-center">
+    <FAQWrapper id={id} style={style}>
+      <div
+        style={{
+          maxWidth: "96rem",
+          marginInline: "auto",
+          padding: "5rem 1rem",
+          display: "grid",
+          gap: "2.5rem",
+          gridTemplateColumns: "1fr",
+          placeItems: "center",
+          width: "100%",
+        }}
+      >
+        <FAQContent>
+          <FAQHeader>{props?.headerText}</FAQHeader>
+          <FAQSubHeader>{props?.subHeaderText}</FAQSubHeader>
+        </FAQContent>
         <div
           style={{
-            padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-            margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.5rem",
+            borderRadius: "0.125rem",
+            width: "100%",
+            maxWidth: "80rem",
+            paddingBlock: "3.5rem",
           }}
-          className="flex flex-col gap-6 text-center xl:text-left"
         >
-          <h2 className="text-4xl text-center text-black dark:text-white font-bold lg:text-4xl">
-            {props?.headerText}
-          </h2>
-          <p className="text-sm text-center text-gray-700 dark:text-gray-300 lg:text-base">
-            {props?.subHeaderText}
-          </p>
-        </div>
-        <div className="flex flex-col gap-5 rounded-sm w-full max-w-7xl py-14">
           {props?.qna?.map((item, index) => (
             <FAQItem
               key={index}
@@ -28,34 +101,117 @@ export default function FAQ({ props, style, id }) {
           ))}
         </div>
       </div>
-    </section>
+    </FAQWrapper>
   );
 }
 
 function FAQItem({ question, answer }) {
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = React.useState(false);
+  const FAQItemContainer = styled.div`
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 1rem;
+
+    &:hover {
+      color: black;
+    }
+
+    &:is(.dark *) {
+      border-bottom-color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        color: white;
+      }
+    }
+  `;
+
+  const FAQItemQuestion = styled.h3`
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: black;
+    line-height: 1.625;
+
+    &:is(.dark *) {
+      color: white;
+    }
+  `;
+  const FAQItemAnswer = styled.p`
+    transition-property: all;
+    transition-duration: 150ms;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    color: rgb(31 41 55);
+    font-weight: 500;
+    line-height: 1.625;
+
+    &:is(.dark *) {
+      color: rgb(255 255 255 / 0.7);
+    }
+
+    ${({ expand }) =>
+      expand
+        ? `
+    opacity: 1;
+    height: fit-content;
+  `
+        : `
+    opacity: 0;
+    height: 0;
+    `}
+  `;
+
+  const FAQExpandIconPlus = styled.svg`
+    width: 1rem;
+    height: 1rem;
+    fill: black;
+    &:is(.dark *) {
+      fill: white;
+    }
+
+    transform: rotate(180deg);
+  `;
+  const FAQExpandIconMinus = styled.svg`
+    width: 1rem;
+    height: 1rem;
+    fill: black;
+    &:is(.dark *) {
+      fill: white;
+    }
+
+    transform: rotate(180deg);
+  `;
+
   return (
-    <div
-      className={`relative border-b border-black/30 dark:border-white/30 pb-4 hover:text-black dark:hover:text-white dark:text-white/70`}
-      onClick={() => setExpand((e) => !e)}
-    >
-      <div className="flex items-center w-full justify-between cursor-pointer">
-        <h3 className="text-lg font-medium text-black dark:text-white leading-relaxed">
-          {question}
-        </h3>
-        <i
-          className={`transition-all fa-solid  text-sm text-gray-800 dark:text-gray-200 ${
-            expand ? "transform rotate-180 fa-minus" : "fa-plus"
-          }`}
-        ></i>
-      </div>
-      <p
-        className={`transition-all text-sm mt-1 ${
-          expand ? "opacity-100 h-fit" : "opacity-0 h-0"
-        } text-gray-800 dark:text-white/70 font-medium leading-relaxed lg:text-base lg:font-normal`}
+    <FAQItemContainer onClick={() => setExpand((e) => !e)}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          width: "100%",
+          justifyContent: "space-between",
+          cursor: "pointer",
+        }}
       >
-        {answer}
-      </p>
-    </div>
+        <FAQItemQuestion>{question}</FAQItemQuestion>
+        {expand ? (
+          <FAQExpandIconMinus
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+          </FAQExpandIconMinus>
+        ) : (
+          <FAQExpandIconPlus
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+          </FAQExpandIconPlus>
+        )}
+      </div>
+      <FAQItemAnswer expand={expand}>{answer}</FAQItemAnswer>
+    </FAQItemContainer>
   );
 }
