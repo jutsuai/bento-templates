@@ -197,6 +197,7 @@ export default function Feature({ props, style, id }) {
           />
           <div
             style={{
+              zIndex: 9999,
               marginTop: "1.5rem",
               marginRight: style?.flexDirection?.includes("reverse")
                 ? "1.5rem"
