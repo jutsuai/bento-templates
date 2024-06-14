@@ -1,23 +1,6 @@
-const style = props.style || {
-  paddingTop: 0,
-  paddingLeft: 0,
-  paddingBottom: 0,
-  paddingRight: 0,
-  marginTop: 0,
-  marginLeft: 0,
-  marginBottom: 0,
-  marginRight: 0,
-  accent: "#94cc67",
-};
-const props = props.props || {
-  isReverse: false,
-  subHeaderText: "Ride in Style and Comfort",
-  headerText: "Premium Bikes",
-  description:
-    "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
-  imageSrc:
-    "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-};
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -64,8 +47,7 @@ const FeatureBorderWhite1 = styled.img`
   position: absolute;
   top: 0;
   ${({ style }) =>
-    style?.flexDirection === "row-reverse" ||
-    style?.flexDirection === "column-reverse"
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0;
@@ -80,8 +62,7 @@ const FeatureBorderBlack1 = styled.img`
   position: absolute;
   top: 0;
   ${({ style }) =>
-    style?.flexDirection === "row-reverse" ||
-    style?.flexDirection === "column-reverse"
+    style?.flexDirection?.includes("reverse")
       ? `
         transform: scaleX(-1);
         right: 0;
@@ -98,8 +79,7 @@ const FeatureBorderWhite2 = styled.img`
   }
 
   ${({ style }) =>
-    style?.flexDirection === "row-reverse" ||
-    style?.flexDirection === "column-reverse"
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -116,8 +96,7 @@ const FeatureBorderBlack2 = styled.img`
   }
 
   ${({ style }) =>
-    style?.flexDirection === "row-reverse" ||
-    style?.flexDirection === "column-reverse"
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -181,79 +160,74 @@ const FeatureDescription = styled.p`
   }
 `;
 
-return (
-  <FeatureWrapper id={id} style={style}>
-    <FeatureContainer style={style} props={props}>
-      <div
-        style={{
-          flex: "1 1 0%",
-          position: "relative",
-          display: "flex",
-          justifyContent:
-            style?.flexDirection === "row-reverse" ||
-            style?.flexDirection === "column-reverse"
-              ? "flex-end"
-              : "flex-start",
-        }}
-      >
-        <FeatureBorderBlack1
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite1
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
-          alt=""
-        />
-        <FeatureBorderBlack2
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite2
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
-          alt=""
-        />
+  return (
+    <FeatureWrapper id={id} style={style}>
+      <FeatureContainer style={style} props={props}>
         <div
           style={{
-            zIndex: 9999,
-            marginTop: "1.5rem",
-            marginRight:
-              style?.flexDirection === "row-reverse" ||
-              style?.flexDirection === "column-reverse"
-                ? "1.5rem"
-                : "unset",
-            marginLeft:
-              style?.flexDirection === "row-reverse" ||
-              style?.flexDirection === "column-reverse"
-                ? "unset"
-                : "1.5rem",
+            flex: "1 1 0%",
+            position: "relative",
+            display: "flex",
+            justifyContent: style?.flexDirection?.includes("reverse")
+              ? "flex-end"
+              : "flex-start",
           }}
         >
-          <img
-            src={props?.imageSrc}
-            alt="features"
-            style={{
-              borderRadius: "0.5rem",
-              objectFit: "cover",
-              objectPosition: "center",
-              width: "100%",
-              height: "100%",
-              maxWidth: "36rem",
-              maxHeight: "36rem",
-              aspectRatio: "1/1",
-            }}
-            loading="lazy"
+          <FeatureBorderBlack1
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
+            alt=""
           />
+          <FeatureBorderWhite1
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
+            alt=""
+          />
+          <FeatureBorderBlack2
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
+            alt=""
+          />
+          <FeatureBorderWhite2
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
+            alt=""
+          />
+          <div
+            style={{
+              zIndex: 9999,
+              marginTop: "1.5rem",
+              marginRight: style?.flexDirection?.includes("reverse")
+                ? "1.5rem"
+                : "unset",
+              marginLeft: style?.flexDirection?.includes("reverse")
+                ? "unset"
+                : "1.5rem",
+            }}
+          >
+            <img
+              src={props?.imageSrc}
+              alt="features"
+              style={{
+                borderRadius: "0.5rem",
+                objectFit: "cover",
+                objectPosition: "center",
+                width: "100%",
+                height: "100%",
+                maxWidth: "36rem",
+                maxHeight: "36rem",
+                aspectRatio: "1/1",
+              }}
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
-      <FeatureContent>
-        <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
-        <FeatureHeader>{props?.headerText}</FeatureHeader>
-        <FeatureDescription>{props?.description}</FeatureDescription>
-      </FeatureContent>
-    </FeatureContainer>
-  </FeatureWrapper>
-);
+        <FeatureContent>
+          <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
+          <FeatureHeader>{props?.headerText}</FeatureHeader>
+          <FeatureDescription>{props?.description}</FeatureDescription>
+        </FeatureContent>
+      </FeatureContainer>
+    </FeatureWrapper>
+  );
+

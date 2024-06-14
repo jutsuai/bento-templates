@@ -173,7 +173,7 @@ const HeroImage1 = styled.img`
               gap: "1rem",
             }}
           >
-            <HeroButton1>
+            <HeroButton1 style={style}>
               {props?.secondaryButtonText}
               <svg
                 style={{

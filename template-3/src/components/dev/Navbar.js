@@ -80,7 +80,7 @@ const NavButtomContainer = styled.div`
 const Button = styled.button`
   white-space: nowrap;
   border-radius: 0.375rem;
-  background-color: #b9ff81;
+  background-color: ${({ style }) => style?.accent || "#b9ff81"};
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -161,7 +161,7 @@ const MobileButton = styled.button`
   gap: 0.5rem;
   white-space: nowrap;
   border-radius: 0.375rem;
-  background-color: #b9ff81;
+  background-color: ${({ style }) => style?.accent || "#b9ff81"};
   padding: 0.25rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -209,7 +209,7 @@ export default function Navbar({ props, style, id }) {
         </MenuIcon>
 
         <NavButtomContainer>
-          <Button>
+          <Button style={style}>
             {props?.buttonText}
             <svg
               style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
@@ -238,7 +238,7 @@ export default function Navbar({ props, style, id }) {
               </li>
             ))}
 
-            <MobileButton>
+            <MobileButton style={style}>
               {props?.buttonText}
               <svg
                 style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}

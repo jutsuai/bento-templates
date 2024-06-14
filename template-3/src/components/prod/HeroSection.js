@@ -171,7 +171,7 @@ export default function HeroSection({ props, style, id }) {
               gap: "1rem",
             }}
           >
-            <HeroButton1>
+            <HeroButton1 style={style}>
               {props?.secondaryButtonText}
               <svg
                 style={{
