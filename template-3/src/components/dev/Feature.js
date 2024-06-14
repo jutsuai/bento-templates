@@ -221,7 +221,7 @@ export default function Feature({ props, style, id }) {
               }}
               loading="lazy"
             /> */}
-            {console.log("Adnan console:", props)}
+            {console.log("Adnan console:", props, style)}
             {JSON.stringify(props, null, 4)}
           </div>
         </div>
