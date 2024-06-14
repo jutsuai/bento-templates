@@ -29,13 +29,12 @@ const FeatureContainer = styled.div`
   gap: 2.5rem;
   padding: 5rem 1rem;
   display: flex;
-  /* flex-direction: ${({ style }) => style.flexDirection || "row"}; */
   align-items: center;
-  flex-direction: row;
 
-  @container (min-width: ${bp.lg}) {
-    flex-direction: ${({ props }) =>
-      `${props?.isReverse ? "row-reverse" : "row"}`};
+  flex-direction: ${({ style }) => style?.flexDirection || "row"};
+
+  @container (max-width: ${bp.lg}) {
+    flex-direction: column !important;
   }
 `;
 
@@ -46,8 +45,8 @@ const FeatureBorderWhite1 = styled.img`
   display: none;
   position: absolute;
   top: 0;
-  ${({ props }) =>
-    props?.isReverse
+  ${({ style }) =>
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0;
@@ -61,8 +60,8 @@ const FeatureBorderBlack1 = styled.img`
   display: block;
   position: absolute;
   top: 0;
-  ${({ props }) =>
-    props?.isReverse
+  ${({ style }) =>
+    style?.flexDirection?.includes("reverse")
       ? `
         transform: scaleX(-1);
         right: 0;
@@ -78,8 +77,8 @@ const FeatureBorderWhite2 = styled.img`
     display: block;
   }
 
-  ${({ props }) =>
-    props?.isReverse
+  ${({ style }) =>
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -95,8 +94,8 @@ const FeatureBorderBlack2 = styled.img`
     display: none;
   }
 
-  ${({ props }) =>
-    props?.isReverse
+  ${({ style }) =>
+    style?.flexDirection?.includes("reverse")
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -160,9 +159,9 @@ const FeatureDescription = styled.p`
   }
 `;
 export default function Feature({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FeatureContainer style={style} props={props}>
@@ -171,34 +170,40 @@ export default function Feature({ props, style, id }) {
             flex: "1 1 0%",
             position: "relative",
             display: "flex",
-            justifyContent: props?.isReverse ? "flex-end" : "flex-start",
+            justifyContent: style?.flexDirection?.includes("reverse")
+              ? "flex-end"
+              : "flex-start",
           }}
         >
           <FeatureBorderBlack1
-            props={props}
+            style={style}
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
             alt=""
           />
           <FeatureBorderWhite1
-            props={props}
+            style={style}
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
             alt=""
           />
           <FeatureBorderBlack2
-            props={props}
+            style={style}
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
             alt=""
           />
           <FeatureBorderWhite2
-            props={props}
+            style={style}
             src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
             alt=""
           />
           <div
             style={{
               marginTop: "1.5rem",
-              marginRight: props?.isReverse ? "1.5rem" : "unset",
-              marginLeft: props?.isReverse ? "unset" : "1.5rem",
+              marginRight: style?.flexDirection?.includes("reverse")
+                ? "1.5rem"
+                : "unset",
+              marginLeft: style?.flexDirection?.includes("reverse")
+                ? "unset"
+                : "1.5rem",
             }}
           >
             <img

@@ -14,7 +14,9 @@ export default function App() {
 
   return (
     <main
-      className={`relative font-sans ${darkMode ? "dark" : "font-sans"}`}
+      className={`container mx-auto relative font-sans ${
+        darkMode ? "dark" : "light"
+      }`}
       // style={{ fontFamily: "revert" }}
     >
       <button
@@ -210,6 +212,7 @@ const values = {
         "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     style: {
+      flexDirection: "row-reverse",
       paddingTop: 0,
       paddingLeft: 0,
       paddingBottom: 0,

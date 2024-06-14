@@ -121,6 +121,7 @@ const CTABtnButton = styled.button`
   height: 100%;
   max-width: 10rem;
   color: black;
+  gap: 1rem;
   border-radius: 0.125rem;
   border-start-start-radius: 0px;
   border-end-start-radius: 0px;
