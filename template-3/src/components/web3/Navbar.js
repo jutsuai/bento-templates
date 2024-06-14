@@ -81,7 +81,7 @@ const NavButtomContainer = styled.div`
 const Button = styled.button`
   white-space: nowrap;
   border-radius: 0.375rem;
-  background-color: ${({ style }) => style?.accent || "#b9ff81"};
+  background-color: ${({ accent }) => accent || "#b9ff81"};
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -162,7 +162,7 @@ const MobileButton = styled.button`
   gap: 0.5rem;
   white-space: nowrap;
   border-radius: 0.375rem;
-  background-color: ${({ style }) => style?.accent || "#b9ff81"};
+  background-color: ${({ accent }) => accent || "#b9ff81"};
   padding: 0.25rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -207,7 +207,7 @@ const MobileButton = styled.button`
         </MenuIcon>
 
         <NavButtomContainer>
-          <Button style={style}>
+          <Button accnet={style?.accent}>
             {props?.buttonText}
             <svg
               style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
@@ -236,7 +236,7 @@ const MobileButton = styled.button`
               </li>
             ))}
 
-            <MobileButton style={style}>
+            <MobileButton accnet={style?.accent}>
               {props?.buttonText}
               <svg
                 style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
