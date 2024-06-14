@@ -206,7 +206,7 @@ export default function Feature({ props, style, id }) {
                 : "1.5rem",
             }}
           >
-            {/* <img
+            <img
               src={props?.imageSrc}
               alt="features"
               style={{
@@ -220,9 +220,7 @@ export default function Feature({ props, style, id }) {
                 aspectRatio: "1/1",
               }}
               loading="lazy"
-            /> */}
-            {console.log("Adnan console:", props, style)}
-            {JSON.stringify(props, null, 4)}
+            />
           </div>
         </div>
         <FeatureContent>
