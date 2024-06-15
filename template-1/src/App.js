@@ -206,7 +206,7 @@ const values = {
     props: {
       subHeaderTextarea: "Ride in Style and Comfort",
       headerText: "Premium Bikes",
-      description:
+      descriptionTextarea:
         "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
       imageSrc:
         "https://images.unsplash.com/photo-1516905041604-7935af78f572?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -342,9 +342,9 @@ const values = {
       headerText: "Contact Us",
       subHeaderTextarea:
         "Feel free to reach out to us for any inquiries or assistance.",
-      email: "hello@jutsu.ai",
-      phone: "+1 234 567 890",
-      address: "123 Main Street, New York, NY 10001",
+      emailText: "hello@jutsu.ai",
+      phoneText: "+1 234 567 890",
+      addressText: "123 Main Street, New York, NY 10001",
     },
     style: {
       paddingTop: 0,

@@ -1,69 +1,161 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const ContactWrapper = styled.div`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const ContactHeader = styled.div`
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.md}) {
+    font-size: 2.5rem;
+  }
+`;
+const ContactSubHeader = styled.p`
+  font-size: 0.875rem;
+  color: #4b5563;
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+`;
+
+const ContactContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  gap: 3rem;
+
+  @media (min-width: ${bp.md}) {
+    gap: 4rem;
+  }
+`;
+
+const ContactSVG = styled.svg`
+  width: 2rem;
+  fill: black;
+
+  &:not(.light *) {
+    fill: white;
+  }
+`;
+
+const ContactTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+`;
+
+const ContactSubtitle = styled.p`
+  font-size: 0.875rem;
+  color: #4b5563;
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+`;
+
+
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-800"
-    >
-      <div className="container mx-auto px-8 py-20">
-        <div className="mb-8 flex flex-col items-start justify-center gap-4">
-          <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
-            {props?.headerText}
-          </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300">
-            {props?.subHeaderTextarea}
-          </p>
+    <ContactWrapper id={id} style={style}>
+      <div
+        style={{
+          maxWidth: "96rem",
+          marginInline: "auto",
+          padding: "5rem 1rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            marginBottom: "2rem",
+            gap: "1rem",
+          }}
+        >
+          <ContactHeader>{props?.headerText}</ContactHeader>
+          <ContactSubHeader>{props?.subHeaderTextarea}</ContactSubHeader>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] items-center gap-12 md:gap-16">
-          <div className="flex flex-col items-start justify-center gap-4">
-            <i
-              className={`fa-solid fa-envelope text-3xl text-black dark:text-white`}
-            />
-            <h3 className="text-xl font-medium text-black dark:text-white">
-              Email
-            </h3>
-            <p className=" text-sm text-gray-700 dark:text-gray-300">
+        <ContactContainer>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
+          >
+            <ContactSVG
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+            </ContactSVG>
+            <ContactTitle>Email</ContactTitle>
+            <ContactSubtitle>
               For any service related queries, please contact our email.
-            </p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props?.email}
-            </p>
+            </ContactSubtitle>
+            <ContactSubtitle>{props?.emailText}</ContactSubtitle>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
-            <i
-              className={`fa-solid fa-phone text-3xl text-black dark:text-white`}
-            />
-            <h3 className="text-xl font-medium text-black dark:text-white">
-              Phone
-            </h3>
-            <p className=" text-sm text-gray-700 dark:text-gray-300">
+            <ContactSVG
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+            </ContactSVG>
+            <ContactTitle>Phone</ContactTitle>
+            <ContactSubtitle>
               For any service related queries, please contact us.
-            </p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props?.phone}
-            </p>
+            </ContactSubtitle>
+            <ContactSubtitle>{props?.phoneText}</ContactSubtitle>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
-            <i
-              className={`fa-solid fa-location-dot text-3xl text-black dark:text-white`}
-            />
-            <h3 className="text-xl font-medium text-black dark:text-white">
-              Office
-            </h3>
-            <p className=" text-sm text-gray-700 dark:text-gray-300">
+            <ContactSVG
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+            </ContactSVG>
+            <ContactTitle>Office</ContactTitle>
+            <ContactSubtitle>
               For any service related queries, please come to our office.
-            </p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              {props?.address}
-            </p>
+            </ContactSubtitle>
+            <ContactSubtitle>{props?.addressText}</ContactSubtitle>
           </div>
-        </div>
+        </ContactContainer>
       </div>
-    </section>
+    </ContactWrapper>
   );
 

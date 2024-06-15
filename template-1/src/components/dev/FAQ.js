@@ -23,6 +23,64 @@ const FAQWrapper = styled.section`
     }px ${style?.marginLeft || 0}px`};
 `;
 
+const FAQHeader = styled.h2`
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 2.25rem;
+  }
+`;
+
+const FAQSubHeader = styled.p`
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4b5563;
+
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1rem;
+  }
+`;
+
+const FAQquestion = styled.h3`
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.625;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1rem;
+  }
+`;
+
+const FAQanswer = styled.p`
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.625;
+  color: black;
+
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+`;
 export default function FAQ({ props, style, id }) {
  const {
 		connectors: { connect, drag },
@@ -30,24 +88,33 @@ export default function FAQ({ props, style, id }) {
   return (
     <FAQWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex flex-col items-center justify-center gap-8 px-8 py-20"
+        style={{
+          flexDirection: style?.flexDirection || "column",
+          maxWidth: "96rem",
+          marginInline: "auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2rem",
+          padding: "5rem 1rem",
+        }}
       >
-        <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
-          {props?.headerText}
-        </h2>
-        <p className="text-center text-sm text-gray-700 dark:text-gray-300 md:text-base">
-          {props?.subHeaderTextarea}
-        </p>
-        <div className="my-8 flex flex-col items-start justify-center gap-6">
+        <FAQHeader>{props?.headerText}</FAQHeader>
+        <FAQSubHeader>{props?.subHeaderTextarea}</FAQSubHeader>
+        <div
+          style={{
+            marginBlock: "2rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            gap: "1.5rem",
+          }}
+        >
           {props?.qna?.map((item, index) => (
             <div key={index}>
-              <h3 className="text-sm font-semibold leading-relaxed text-black dark:text-white md:text-base ">
-                {item.question}
-              </h3>
-              <p className="text-xs font-medium leading-relaxed text-black dark:text-gray-300 md:text-sm md:font-normal">
-                {item.answer}
-              </p>
+              <FAQquestion>{item.question}</FAQquestion>
+              <FAQanswer>{item.answer}</FAQanswer>
             </div>
           ))}
         </div>
