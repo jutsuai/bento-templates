@@ -178,7 +178,7 @@ export default function News({ props, style, id }) {
             gap: "3rem",
           }}
         >
-          {props?.news?.map((item, index) => (
+          {props?.articles?.map((item, index) => (
             <NewsArticle key={index}>
               <NewsArticleIndex>
                 {index < 9 ? `0${index + 1}` : index + 1}
@@ -193,7 +193,9 @@ export default function News({ props, style, id }) {
                   }}
                 >
                   <NewsArticleMetadataTitle>ARTICLES</NewsArticleMetadataTitle>
-                  <NewsArticleMetadataDate>2024-02-05</NewsArticleMetadataDate>
+                  <NewsArticleMetadataDate>
+                    {item?.createdAtDate}
+                  </NewsArticleMetadataDate>
                 </div>
               </NewsArticleContent>
             </NewsArticle>
