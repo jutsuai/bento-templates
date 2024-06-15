@@ -184,7 +184,7 @@ export default function News({ props, style, id }) {
                 {index < 9 ? `0${index + 1}` : index + 1}
               </NewsArticleIndex>
               <NewsArticleContent>
-                <NewsArticleTitle>{item?.article}</NewsArticleTitle>
+                <NewsArticleTitle>{item?.articleTextarea}</NewsArticleTitle>
                 <div
                   style={{
                     display: "flex",
