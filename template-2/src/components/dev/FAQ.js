@@ -132,9 +132,9 @@ const FAQanswer = styled.p`
 `;
 
 export default function FAQ({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <FAQWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FAQContainer>

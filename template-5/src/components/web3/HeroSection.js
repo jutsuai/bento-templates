@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -102,16 +103,17 @@ const ScrollDownButton = styled.button`
   border: none;
 `;
 
-return (
-  <HeroSectionWrapper id={id} style={style} props={props}>
-    <SectionContent>
-      <ContentColumn>
-        <HeaderText>{props?.headerText}</HeaderText>
-        <SubHeaderText>{props?.subHeaderTextarea}</SubHeaderText>
-        <ScrollDownButton style={style}>
-          <i className="fa-solid fa-arrow-down"></i>
-        </ScrollDownButton>
-      </ContentColumn>
-    </SectionContent>
-  </HeroSectionWrapper>
-);
+  return (
+    <HeroSectionWrapper id={id} style={style} props={props}>
+      <SectionContent>
+        <ContentColumn>
+          <HeaderText>{props?.headerText}</HeaderText>
+          <SubHeaderText>{props?.subHeaderTextarea}</SubHeaderText>
+          <ScrollDownButton style={style}>
+            <i className="fa-solid fa-arrow-down"></i>
+          </ScrollDownButton>
+        </ContentColumn>
+      </SectionContent>
+    </HeroSectionWrapper>
+  );
+

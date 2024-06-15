@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const FAQWrapper = styled.section`
+const FAQWrapper = styled.div`
   background-color: white;
   &:not(.light *) {
     background-color: #080a11;
@@ -23,12 +24,9 @@ const FAQWrapper = styled.section`
     }px ${style?.marginLeft || 0}px`};
 `;
 
-export default function FAQ({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <FAQWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <FAQWrapper id={id} style={style}>
       <div
         style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto flex flex-col items-center justify-center gap-8 px-8 py-20"
@@ -54,4 +52,4 @@ export default function FAQ({ props, style, id }) {
       </div>
     </FAQWrapper>
   );
-}
+

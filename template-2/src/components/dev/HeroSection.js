@@ -71,9 +71,9 @@ const HeroSectionSubtitle = styled.h6`
 `;
 
 export default function HeroSection({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <HeroSectionWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <HeroSectionContainer>

@@ -192,7 +192,7 @@ export default function Navbar({ props, style, id }) {
               gap: "2.5rem",
             }}
           >
-            {props?.imageSrcrc === defaultLogoSrc ? (
+            {props?.logoSrc === defaultLogoSrc ? (
               <>
                 <NavImageLight
                   src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
@@ -206,7 +206,7 @@ export default function Navbar({ props, style, id }) {
             ) : (
               <img
                 style={{ height: "2rem" }}
-                src={props?.imageSrcrc}
+                src={props?.logoSrc}
                 alt="company logo"
               />
             )}

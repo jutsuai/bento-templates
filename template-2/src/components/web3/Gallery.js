@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -80,35 +81,37 @@ const GalleryImageContainer = styled.div`
   }
 `;
 
-return (
-  <GalleryWrapper id={id} style={style}>
-    <GalleryContainer>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "48rem",
-        }}
-      >
-        <GalleryHeader>{props?.headerText}</GalleryHeader>
-        <GallerySubHeader>{props?.subHeaderTextarea}</GallerySubHeader>
-      </div>
-      <GalleryImageContainer>
-        {props?.imageSrc?.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt="bike"
-            style={{
-              aspectRatio: "16 / 9",
-              width: "100%",
-              borderRadius: "0.375rem",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-            loading="lazy"
-          />
-        ))}
-      </GalleryImageContainer>
-    </GalleryContainer>
-  </GalleryWrapper>
-);
+
+  return (
+    <GalleryWrapper id={id} style={style}>
+      <GalleryContainer>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "48rem",
+          }}
+        >
+          <GalleryHeader>{props?.headerText}</GalleryHeader>
+          <GallerySubHeader>{props?.subHeaderTextarea}</GallerySubHeader>
+        </div>
+        <GalleryImageContainer>
+          {props?.imageSrc?.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt="bike"
+              style={{
+                aspectRatio: "16 / 9",
+                width: "100%",
+                borderRadius: "0.375rem",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+              loading="lazy"
+            />
+          ))}
+        </GalleryImageContainer>
+      </GalleryContainer>
+    </GalleryWrapper>
+  );
+

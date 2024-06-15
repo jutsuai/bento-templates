@@ -54,16 +54,6 @@ const PartnersLogoContainer = styled.div`
   }
 `;
 
-const PartnersImageBox = styled.div`
-  background-color: #e2e8f0;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  aspect-ratio: 1 / 1;
-
-  &:not(.light *) {
-    background-color: #1e293b;
-  }
-`;
 
   return (
     <PartnersWrapper id={id} style={style}>
@@ -85,18 +75,17 @@ const PartnersImageBox = styled.div`
           {props?.imageSrc?.map(
             (logo, index) =>
               index < 5 && (
-                <PartnersImageBox key={index}>
-                  <img
-                    src={logo}
-                    alt="logos"
-                    style={{
-                      aspectRatio: "1 / 1",
-                      borderRadius: "0.5rem",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
-                  />
-                </PartnersImageBox>
+                <img
+                  key={index}
+                  src={logo}
+                  alt="logos"
+                  style={{
+                    aspectRatio: "1 / 1",
+                    borderRadius: "0.5rem",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
               )
           )}
         </PartnersLogoContainer>

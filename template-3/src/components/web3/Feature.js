@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -159,73 +160,74 @@ const FeatureDescription = styled.p`
   }
 `;
 
-return (
-  <FeatureWrapper id={id} style={style}>
-    <FeatureContainer style={style} props={props}>
-      <div
-        style={{
-          flex: "1 1 0%",
-          position: "relative",
-          display: "flex",
-          justifyContent: style?.flexDirection?.includes("reverse")
-            ? "flex-end"
-            : "flex-start",
-        }}
-      >
-        <FeatureBorderBlack1
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite1
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
-          alt=""
-        />
-        <FeatureBorderBlack2
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
-          alt=""
-        />
-        <FeatureBorderWhite2
-          style={style}
-          src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
-          alt=""
-        />
+  return (
+    <FeatureWrapper id={id} style={style}>
+      <FeatureContainer style={style} props={props}>
         <div
           style={{
-            zIndex: 9999,
-            marginTop: "1.5rem",
-            marginRight: style?.flexDirection?.includes("reverse")
-              ? "1.5rem"
-              : "unset",
-            marginLeft: style?.flexDirection?.includes("reverse")
-              ? "unset"
-              : "1.5rem",
+            flex: "1 1 0%",
+            position: "relative",
+            display: "flex",
+            justifyContent: style?.flexDirection?.includes("reverse")
+              ? "flex-end"
+              : "flex-start",
           }}
         >
-          <img
-            src={props?.imageSrc}
-            alt="features"
-            style={{
-              borderRadius: "0.5rem",
-              objectFit: "cover",
-              objectPosition: "center",
-              width: "100%",
-              height: "100%",
-              maxWidth: "36rem",
-              maxHeight: "36rem",
-              aspectRatio: "1/1",
-            }}
-            loading="lazy"
+          <FeatureBorderBlack1
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-black.svg"
+            alt=""
           />
+          <FeatureBorderWhite1
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border-white.svg"
+            alt=""
+          />
+          <FeatureBorderBlack2
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-black.svg"
+            alt=""
+          />
+          <FeatureBorderWhite2
+            style={style}
+            src="https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/template-3/feature-border2-white.svg"
+            alt=""
+          />
+          <div
+            style={{
+              zIndex: 9999,
+              marginTop: "1.5rem",
+              marginRight: style?.flexDirection?.includes("reverse")
+                ? "1.5rem"
+                : "unset",
+              marginLeft: style?.flexDirection?.includes("reverse")
+                ? "unset"
+                : "1.5rem",
+            }}
+          >
+            <img
+              src={props?.imageSrc}
+              alt="features"
+              style={{
+                borderRadius: "0.5rem",
+                objectFit: "cover",
+                objectPosition: "center",
+                width: "100%",
+                height: "100%",
+                maxWidth: "36rem",
+                maxHeight: "36rem",
+                aspectRatio: "1/1",
+              }}
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
-      <FeatureContent>
-        <FeatureSubHeader>{`// ${props?.subHeaderTextarea}`}</FeatureSubHeader>
-        <FeatureHeader>{props?.headerText}</FeatureHeader>
-        <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
-      </FeatureContent>
-    </FeatureContainer>
-  </FeatureWrapper>
-);
+        <FeatureContent>
+          <FeatureSubHeader>{`// ${props?.subHeaderTextarea}`}</FeatureSubHeader>
+          <FeatureHeader>{props?.headerText}</FeatureHeader>
+          <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
+        </FeatureContent>
+      </FeatureContainer>
+    </FeatureWrapper>
+  );
+

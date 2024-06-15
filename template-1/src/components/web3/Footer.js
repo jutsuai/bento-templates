@@ -1,7 +1,6 @@
-export default function Footer({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+const style = props.style || {};
+const props = props.props || {};
+
   return (
     <footer
       id={id}
@@ -10,7 +9,7 @@ export default function Footer({ props, style, id }) {
         margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
       }}
       className="bg-white dark:bg-slate-800"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <div
         style={{ flexDirection: style?.flexDirection }}
         className="container mx-auto flex flex-col items-center justify-center gap-10 px-8 py-20"
@@ -78,4 +77,4 @@ export default function Footer({ props, style, id }) {
       </div>
     </footer>
   );
-}
+

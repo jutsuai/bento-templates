@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const GalleryWrapper = styled.section`
+const GalleryWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -35,7 +36,7 @@ const GalleryContainer = styled.div`
   text-align: center;
   flex-direction: ${({ style }) => style?.flexDirection || "column"};
 
-  @container (max-width: ${bp.lg}) {
+  @media (max-width: ${bp.lg}) {
     flex-direction: column !important;
   }
 `;
@@ -50,7 +51,7 @@ const GalleryHeader = styled.h2`
     color: white;
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 3rem;
   }
 `;
@@ -63,7 +64,7 @@ const GallerySubHeader = styled.p`
     color: #d1d5db;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 1.125rem;
   }
 `;
@@ -76,17 +77,14 @@ const GalleryImageContainer = styled.div`
 
   grid-template-columns: 1fr 1fr;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `;
 
-export default function Gallery({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <GalleryWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <GalleryWrapper id={id} style={style}>
       <GalleryContainer>
         <div
           style={{
@@ -118,4 +116,4 @@ export default function Gallery({ props, style, id }) {
       </GalleryContainer>
     </GalleryWrapper>
   );
-}
+

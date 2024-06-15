@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -74,72 +75,73 @@ const SecondaryCTADesign = styled.div`
   }
 `;
 
-return (
-  <SecondaryCTAWrapper id={id} style={style}>
-    <SecondaryCTAContent>
-      <SecondaryCTADesign>
-        {[...new Array(100)].map((_, index) => (
-          <i
-            class="fa-solid fa-plus"
+  return (
+    <SecondaryCTAWrapper id={id} style={style}>
+      <SecondaryCTAContent>
+        <SecondaryCTADesign>
+          {[...new Array(100)].map((_, index) => (
+            <i
+              class="fa-solid fa-plus"
+              style={{
+                fontSize: "0.75rem",
+                opacity: "0.6",
+              }}
+              key={index}
+            />
+          ))}
+        </SecondaryCTADesign>
+        <SecondaryCTAData>
+          <div
             style={{
-              fontSize: "0.75rem",
-              opacity: "0.6",
-            }}
-            key={index}
-          />
-        ))}
-      </SecondaryCTADesign>
-      <SecondaryCTAData>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "2.5rem",
-          }}
-        >
-          <SecondaryCTAHeader>{props?.headerText}</SecondaryCTAHeader>
-          <SecondaryCTASubHeader className="text-sm sm:text-base lg:text-lg max-w-lg">
-            {props?.subHeaderTextarea}
-          </SecondaryCTASubHeader>
-          <button
-            style={{
-              backgroundColor: "#28282c",
-              color: "white",
-              borderRadius: "9999px",
-              padding: "0.75rem 1.5rem",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "1rem",
-              fontWeight: "600",
-              width: "fit-content",
-              height: "fit-content",
+              flexDirection: "column",
+              gap: "2.5rem",
             }}
           >
-            {props?.primaryButtonText}
-            <div
+            <SecondaryCTAHeader>{props?.headerText}</SecondaryCTAHeader>
+            <SecondaryCTASubHeader className="text-sm sm:text-base lg:text-lg max-w-lg">
+              {props?.subHeaderTextarea}
+            </SecondaryCTASubHeader>
+            <button
               style={{
-                backgroundColor: style?.accent || "#b9ff81",
-                height: "2rem",
-                width: "2rem",
-                borderRadius: "100%",
+                backgroundColor: "#28282c",
+                color: "white",
+                borderRadius: "9999px",
+                padding: "0.75rem 1.5rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#28282c",
+                gap: "1rem",
+                fontWeight: "600",
+                width: "fit-content",
+                height: "fit-content",
               }}
             >
-              <i
-                className="fa-solid fa-arrow-right"
+              {props?.primaryButtonText}
+              <div
                 style={{
-                  fontSize: "0.75rem",
-                  lineHeight: "1rem",
+                  backgroundColor: style?.accent || "#b9ff81",
+                  height: "2rem",
+                  width: "2rem",
+                  borderRadius: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#28282c",
                 }}
-              ></i>
-            </div>
-          </button>
-        </div>
-      </SecondaryCTAData>
-    </SecondaryCTAContent>
-  </SecondaryCTAWrapper>
-);
+              >
+                <i
+                  className="fa-solid fa-arrow-right"
+                  style={{
+                    fontSize: "0.75rem",
+                    lineHeight: "1rem",
+                  }}
+                ></i>
+              </div>
+            </button>
+          </div>
+        </SecondaryCTAData>
+      </SecondaryCTAContent>
+    </SecondaryCTAWrapper>
+  );
+

@@ -74,15 +74,11 @@ const SecondaryCTADesign = styled.div`
   }
 `;
 export default function SecondaryCTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <SecondaryCTAWrapper
-      id={id}
-      style={style}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <SecondaryCTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <SecondaryCTAContent>
         <SecondaryCTADesign>
           {[...new Array(100)].map((_, index) => (

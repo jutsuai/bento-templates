@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const FeatureWrapper = styled.section`
+const FeatureWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -33,7 +34,7 @@ const FeatureContainer = styled.div`
   justify-content: center;
   padding: 5rem 1rem;
 
-  @container (max-width: ${bp.lg}) {
+  @media (max-width: ${bp.lg}) {
     flex-direction: column !important;
   }
 `;
@@ -44,7 +45,7 @@ const FeatureImage = styled.img`
   object-fit: cover;
   object-position: center;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     width: 50%;
   }
 `;
@@ -55,7 +56,7 @@ const FeatureContent = styled.div`
   gap: 1rem; // gap-4
   margin: 1rem;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     width: 50%; // lg:w-1/2
     gap: 2rem; // lg:gap-8
     padding: 3.5rem; // lg:p-14
@@ -71,7 +72,7 @@ const FeatureSubHeader = styled.p`
     color: #d1d5db; // dark:text-gray-300
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 1rem; // xl:text-base
   }
 `;
@@ -84,7 +85,7 @@ const FeatureHeader = styled.h2`
     color: white;
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 2.5rem; // xl:text-4xl
   }
 `;
@@ -96,16 +97,13 @@ const FeatureDescription = styled.p`
     color: #d1d5db; // dark:text-gray-300
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 1rem; // xl:text-base
   }
 `;
-export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <FeatureWrapper id={id} style={style}>
       <FeatureContainer flexDirection={style?.flexDirection}>
         <FeatureImage src={props?.imageSrc} alt="features" loading="lazy" />
         <FeatureContent>
@@ -116,4 +114,4 @@ export default function Feature({ props, style, id }) {
       </FeatureContainer>
     </FeatureWrapper>
   );
-}
+

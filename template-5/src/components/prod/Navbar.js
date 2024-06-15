@@ -92,6 +92,18 @@ const Button = styled.button`
 
 const NavImageLight = styled.img`
   width: 2rem;
+  display: none;
+  &:not(.light *) {
+    display: inline-block;
+  }
+`;
+
+const NavImageDark = styled.img`
+  width: 2rem;
+  display: inline-block;
+  &:not(.light *) {
+    display: none;
+  }
 `;
 
 const MobileMenu = styled.div`
@@ -157,15 +169,31 @@ const MobileButton = styled.button`
     color: white;
   }
 `;
+const defaultLogoSrc =
+  "https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza";
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
   return (
     <StyledNav id={id} style={style}>
       <NavContainer>
-        <NavImageLight
-          src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
-          alt="logo"
-        />
+        {props?.logoSrc === defaultLogoSrc ? (
+          <>
+            <NavImageLight
+              src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+              alt="logo"
+            />
+            <NavImageDark
+              src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
+              alt="logo"
+            />
+          </>
+        ) : (
+          <img
+            style={{ height: "2rem" }}
+            src={props?.logoSrc}
+            alt="company logo"
+          />
+        )}
         <NavList>
           {props?.navItems?.map((item, index) => (
             <li key={index}>

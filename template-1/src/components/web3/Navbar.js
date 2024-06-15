@@ -187,38 +187,47 @@ const defaultLogoSrc =
             width: "100%",
           }}
         >
-          {props?.logoSrc === defaultLogoSrc ? (
-            <>
-              <NavImageLight
-                src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
-                alt="logo"
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "2.5rem",
+            }}
+          >
+            {props?.logoSrc === defaultLogoSrc ? (
+              <>
+                <NavImageLight
+                  src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+                  alt="logo"
+                />
+                <NavImageDark
+                  src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
+                  alt="logo"
+                />
+              </>
+            ) : (
+              <img
+                style={{ height: "2rem" }}
+                src={props?.logoSrc}
+                alt="company logo"
               />
-              <NavImageDark
-                src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
-                alt="logo"
-              />
-            </>
-          ) : (
-            <img
-              style={{ height: "2rem" }}
-              src={props?.logoSrc}
-              alt="company logo"
-            />
-          )}
-          <NavList>
-            {props?.navItems?.map((item, index) => (
-              <li key={index}>
-                <a
-                  href={item.link}
-                  style={{
-                    textWrap: "nowrap",
-                  }}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </NavList>
+            )}
+
+            <NavList>
+              {props?.navItems?.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.link}
+                    style={{
+                      textWrap: "nowrap",
+                    }}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </NavList>
+          </div>
 
           <MenuIcon
             onClick={() => setShowNav(true)}

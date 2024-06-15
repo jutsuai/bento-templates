@@ -127,9 +127,9 @@ const FeatureImage = styled.img`
 `;
 
 export default function Feature({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div

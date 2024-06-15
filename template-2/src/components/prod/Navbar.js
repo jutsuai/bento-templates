@@ -167,6 +167,9 @@ const MobileButton = styled.button`
   font-weight: 500;
   color: white;
 `;
+
+const defaultLogoSrc =
+  "https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza";
 export default function Navbar({ props, style, id }) {
   const [showNav, setShowNav] = React.useState(false);
 
@@ -182,14 +185,24 @@ export default function Navbar({ props, style, id }) {
             width: "100%",
           }}
         >
-          <NavImageLight
-            src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
-            alt="logo"
-          />
-          <NavImageDark
-            src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
-            alt="logo"
-          />
+          {props?.logoSrc === defaultLogoSrc ? (
+            <>
+              <NavImageLight
+                src="https://ipfs.near.social/ipfs/bafkreici2x5ecmfgjks6r4cd2ntz5hcxo27xu7j4ykhcrsfjbtmoeyeve4"
+                alt="logo"
+              />
+              <NavImageDark
+                src="https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza"
+                alt="logo"
+              />
+            </>
+          ) : (
+            <img
+              style={{ height: "2rem" }}
+              src={props?.logoSrc}
+              alt="company logo"
+            />
+          )}
           <NavList>
             {props?.navItems?.map((item, index) => (
               <li key={index}>

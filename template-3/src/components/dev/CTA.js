@@ -132,9 +132,9 @@ const CTABtnButton = styled.button`
   }
 `;
 export default function CTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <CTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <CTAContainer>

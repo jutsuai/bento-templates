@@ -1,6 +1,7 @@
 const style = props.style || {};
 const props = props.props || {};
 
+
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -95,69 +96,70 @@ const ArticleMetadataDate = styled.p`
   }
 `;
 
-return (
-  <ArticleWrapper id={id} style={style} props={props}>
-    <ArticleContent>
-      <ArticleColumn>
-        <div
-          style={{
-            backgroundColor: style?.accent || "#b9ff81",
-            display: "flex",
-            flexDirection: "column",
-            gap: "4rem",
-            padding: "2rem",
-            width: "100%",
-            maxWidth: "48rem",
-            marginInline: "auto",
-            borderRadius: "0.375rem",
-            boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
-          }}
-        >
-          <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
-          <ArticleSubHeaderText>
-            {props?.subHeaderTextarea}
-          </ArticleSubHeaderText>
+  return (
+    <ArticleWrapper id={id} style={style} props={props}>
+      <ArticleContent>
+        <ArticleColumn>
           <div
             style={{
+              backgroundColor: style?.accent || "#b9ff81",
               display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: "auto",
+              flexDirection: "column",
+              gap: "4rem",
+              padding: "2rem",
+              width: "100%",
+              maxWidth: "48rem",
+              marginInline: "auto",
+              borderRadius: "0.375rem",
+              boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
             }}
           >
+            <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
+            <ArticleSubHeaderText>
+              {props?.subHeaderTextarea}
+            </ArticleSubHeaderText>
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              <ArticleMetadataTitle>ARTICLES</ArticleMetadataTitle>
-              <ArticleMetadataDate>2024-02-05</ArticleMetadataDate>
-            </div>
-            <div
-              style={{
-                color: style?.accent || "#b9ff81",
-                display: "flex",
+                justifyContent: "space-between",
                 alignItems: "center",
-                justifyContent: "center",
-                height: "2.5rem",
-                width: "2.5rem",
-                backgroundColor: "#333",
-                borderRadius: "100%",
+                marginTop: "auto",
               }}
             >
-              <i
+              <div
                 style={{
-                  fontSize: "0.75rem",
-                  lineHeight: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
                 }}
-                className="fa-solid fa-arrow-right"
-              ></i>
+              >
+                <ArticleMetadataTitle>ARTICLES</ArticleMetadataTitle>
+                <ArticleMetadataDate>2024-02-05</ArticleMetadataDate>
+              </div>
+              <div
+                style={{
+                  color: style?.accent || "#b9ff81",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "2.5rem",
+                  width: "2.5rem",
+                  backgroundColor: "#333",
+                  borderRadius: "100%",
+                }}
+              >
+                <i
+                  style={{
+                    fontSize: "0.75rem",
+                    lineHeight: "1rem",
+                  }}
+                  className="fa-solid fa-arrow-right"
+                ></i>
+              </div>
             </div>
           </div>
-        </div>
-      </ArticleColumn>
-    </ArticleContent>
-  </ArticleWrapper>
-);
+        </ArticleColumn>
+      </ArticleContent>
+    </ArticleWrapper>
+  );
+
