@@ -1,39 +1,5 @@
-const style = props.style ||{
-  paddingTop: 0,
-  paddingLeft: 0,
-  paddingBottom: 0,
-  paddingRight: 0,
-  marginTop: 0,
-  marginLeft: 0,
-  marginBottom: 0,
-  marginRight: 0,
-  accent: "#0d9488",
-};
-const props = props.props || {
-  navItems: [
-    {
-      name: "Home",
-      link: "#",
-    },
-    {
-      name: "Bikes",
-      link: "#",
-    },
-    {
-      name: "Accessories",
-      link: "#",
-    },
-    {
-      name: "About Us",
-      link: "#",
-    },
-    {
-      name: "Contact Us",
-      link: "#",
-    },
-  ],
-  buttonText: "Buy",
-},;
+const style = props.style || {};
+const props = props.props || {};
 import React from "react";
 
 
@@ -45,6 +11,7 @@ const bp = {
 };
 
 const StyledNav = styled.div`
+  z-index: 100;
   position: relative;
   width: 100%;
   background-color: white;
@@ -115,7 +82,7 @@ const NavButtomContainer = styled.div`
 const Button = styled.button`
   white-space: nowrap;
   border-radius: 9999px;
-  background-color: #b9ff81;
+  background-color: ${({ accent }) => accent || "#b9ff81"};
   padding: 0.5rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 500;
@@ -196,7 +163,7 @@ const MobileButton = styled.button`
   gap: 0.5rem;
   white-space: nowrap;
   border-radius: 9999px;
-  background-color: #b9ff81;
+  background-color: ${({ accent }) => accent || "#b9ff81"};
   padding: 0.25rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 500;
@@ -248,7 +215,7 @@ const MobileButton = styled.button`
             <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
           </MenuIcon>
           <NavButtomContainer>
-            <Button>{props?.buttonText}</Button>
+            <Button accent={style?.accent}>{props?.buttonText}</Button>
           </NavButtomContainer>
         </div>
 
@@ -269,7 +236,9 @@ const MobileButton = styled.button`
               </li>
             ))}
 
-            <MobileButton>{props?.buttonText}</MobileButton>
+            <MobileButton accent={style?.accent}>
+              {props?.buttonText}
+            </MobileButton>
           </MobileNavList>
         </MobileMenu>
       </NavContainer>
