@@ -149,8 +149,10 @@ export default function About({ props, style, id }) {
           <AboutRightContainer>
             {props?.moreInfo?.map((item, index) => (
               <MoreInfoWrapper key={index}>
-                <MoreInfoHeader>{item?.title}</MoreInfoHeader>
-                <MoreInfoDescription>{item?.description}</MoreInfoDescription>
+                <MoreInfoHeader>{item?.titleText}</MoreInfoHeader>
+                <MoreInfoDescription>
+                  {item?.descriptionTextarea}
+                </MoreInfoDescription>
               </MoreInfoWrapper>
             ))}
             <Button>

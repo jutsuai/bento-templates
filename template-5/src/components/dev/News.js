@@ -143,9 +143,9 @@ const NewsArticleMetadataDate = styled.p`
   }
 `;
 export default function News({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <NewsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <NewsContent>
