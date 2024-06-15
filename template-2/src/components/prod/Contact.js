@@ -20,63 +20,47 @@ const ContactWrapper = styled.section`
 `;
 
 const ContactHeader = styled.div`
-  font-size: 1.875rem; // text-3xl
-  font-weight: 600; // font-semibold
-  /* color: black; */
+  font-size: 1.875rem;
+  font-weight: 600;
 
   color: white;
-  /* &:not(.light *) {
-  } */
 
   @media (min-width: ${bp.md}) {
-    font-size: 2.5rem; // md:text-4xl
+    font-size: 2.5rem;
   }
 `;
 const ContactSubHeader = styled.p`
   font-size: 0.875rem;
-  /* color: #4b5563; */
-
   color: #d1d5db;
-  /* &:not(.light *) {
-  } */
 `;
 
 const ContactContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: center;
-  gap: 3rem; // gap-12
+  gap: 3rem;
 
   @media (min-width: ${bp.md}) {
-    gap: 4rem; // md:gap-16
+    gap: 4rem;
   }
 `;
 
 const ContactSVG = styled.svg`
   width: 2rem;
-  /* fill: black; */
   fill: white;
-  /* &:not(.light *) {
-  } */
 `;
 
 const ContactTitle = styled.h3`
-  font-size: 1.25rem; // text-xl
-  font-weight: 500; // font-medium
-  /* color: black; */
+  font-size: 1.25rem;
+  font-weight: 500;
 
   color: white;
-  /* &:not(.light *) {
-  } */
 `;
 
 const ContactSubtitle = styled.p`
   font-size: 0.875rem;
-  /* color: #4b5563; */
 
   color: #d1d5db;
-  /* &:not(.light *) {
-  } */
 `;
 
 export default function Contact({ props, style, id }) {
@@ -122,7 +106,7 @@ export default function Contact({ props, style, id }) {
             <ContactSubtitle>
               For any service related queries, please contact our email.
             </ContactSubtitle>
-            <ContactSubtitle>{props?.email}</ContactSubtitle>
+            <ContactSubtitle>{props?.emailText}</ContactSubtitle>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
             <ContactSVG
@@ -135,7 +119,7 @@ export default function Contact({ props, style, id }) {
             <ContactSubtitle>
               For any service related queries, please contact us.
             </ContactSubtitle>
-            <ContactSubtitle>{props?.phone}</ContactSubtitle>
+            <ContactSubtitle>{props?.phoneText}</ContactSubtitle>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
             <ContactSVG
@@ -148,7 +132,7 @@ export default function Contact({ props, style, id }) {
             <ContactSubtitle>
               For any service related queries, please come to our office.
             </ContactSubtitle>
-            <ContactSubtitle>{props?.address}</ContactSubtitle>
+            <ContactSubtitle>{props?.addressText}</ContactSubtitle>
           </div>
         </ContactContainer>
       </div>
