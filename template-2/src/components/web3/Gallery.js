@@ -90,7 +90,7 @@ return (
         }}
       >
         <GalleryHeader>{props?.headerText}</GalleryHeader>
-        <GallerySubHeader>{props?.subHeaderText}</GallerySubHeader>
+        <GallerySubHeader>{props?.subHeaderTextarea}</GallerySubHeader>
       </div>
       <GalleryImageContainer>
         {props?.imageSrc?.map((image, index) => (

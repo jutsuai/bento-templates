@@ -108,7 +108,7 @@ const values = {
     props: {
       imageSrc: "https://source.unsplash.com/random/1920x1080/?chemistry",
       headerText: "changing chemistry for good",
-      subHeaderText:
+      subHeaderTextarea:
         "We are a team of passionate cyclists dedicated to providing high-quality bikes and accessories to our customers.",
       primaryButtonText: "Contact Us",
       secondaryButtonText: "View Collection",
@@ -168,7 +168,7 @@ const values = {
     props: {
       imageSrc: "https://source.unsplash.com/random/1920x1080/?lab%20article",
       headerText: "We need the chemistry industry but it needs to change",
-      subHeaderText:
+      subHeaderTextarea:
         "Even as the world transitions to renewable energy, we still need the chemistry industry to produce the materials that make modern life possible. But the industry must change to meet sustainability goals.",
       metadata: {
         title: "ARTICLES",
@@ -228,7 +228,7 @@ const values = {
   primaryCTA: {
     props: {
       headerText: "Pattented technology",
-      subHeaderText:
+      subHeaderTextarea:
         "Our patented enzyme immobilisation technology enables best of both worlds  biomanufacturing. We create bespoke, stable biocatalysts that can be used in multi-step enzymatic reactions, applying lessons from nature to modern manufacturing.",
       primaryButtonText: "Get started",
     },
@@ -248,7 +248,7 @@ const values = {
   secondaryCTA: {
     props: {
       headerText: "Join enginzyme and impact tomorrow today",
-      subHeaderText:
+      subHeaderTextarea:
         "Could your company benefit from a cleaner, less energy-intensive manufacturing process? Let's talk about it.",
       primaryButtonText: "Join Us",
     },

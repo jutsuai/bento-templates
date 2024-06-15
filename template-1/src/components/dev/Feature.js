@@ -28,13 +28,13 @@ export default function Feature({ props, style, id }) {
         />
         <div className="flex flex-col gap-4 @lg:w-1/2 @lg:gap-8 @lg:p-14">
           <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 @lg:text-base">
-            {props?.subHeaderText}
+            {props?.subHeaderTextarea}
           </p>
           <h2 className="text-3xl font-bold text-black dark:text-white @md:text-4xl">
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-200 @lg:text-base">
-            {props?.description}
+            {props?.descriptionTextarea}
           </p>
         </div>
       </div>

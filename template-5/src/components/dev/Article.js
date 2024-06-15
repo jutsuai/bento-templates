@@ -122,7 +122,9 @@ export default function Article({ props, style, id }) {
             }}
           >
             <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
-            <ArticleSubHeaderText>{props?.subHeaderText}</ArticleSubHeaderText>
+            <ArticleSubHeaderText>
+              {props?.subHeaderTextarea}
+            </ArticleSubHeaderText>
             <div
               style={{
                 display: "flex",

@@ -33,7 +33,7 @@ export default function FAQ({ props, style, id }) {
           {props?.headerText}
         </h2>
         <p className="text-center text-sm text-gray-700 dark:text-gray-300 md:text-base">
-          {props?.subHeaderText}
+          {props?.subHeaderTextarea}
         </p>
         <div className="my-8 flex flex-col items-start justify-center gap-6">
           {props?.qna?.map((item, index) => (

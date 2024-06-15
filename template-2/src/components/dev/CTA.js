@@ -90,9 +90,9 @@ const CTABtnContainer = styled.div`
 `;
 
 export default function CTA({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <CTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
@@ -104,7 +104,7 @@ export default function CTA({ props, style, id }) {
       >
         <CTAContainer accent={style?.accent}>
           <CTAHeader>{props?.headerText}</CTAHeader>
-          <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
+          <CTASubHeader>{props?.subHeaderTextarea}</CTASubHeader>
           <CTABtnContainer>
             <button
               style={{

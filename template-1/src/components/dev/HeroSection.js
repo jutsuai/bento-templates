@@ -23,7 +23,7 @@ export default function HeroSection({ props, style, id }) {
             {props?.headerText}
           </h1>
           <p className="text-base text-gray-600 @lg:text-lg dark:text-gray-300">
-            {props?.subHeaderText}
+            {props?.subHeaderTextarea}
           </p>
           <div className="flex items-center gap-4">
             <button

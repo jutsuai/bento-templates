@@ -114,7 +114,9 @@ return (
           }}
         >
           <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
-          <ArticleSubHeaderText>{props?.subHeaderText}</ArticleSubHeaderText>
+          <ArticleSubHeaderText>
+            {props?.subHeaderTextarea}
+          </ArticleSubHeaderText>
           <div
             style={{
               display: "flex",

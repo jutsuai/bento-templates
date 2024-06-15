@@ -100,7 +100,7 @@ export default function CTA({ props, style, id }) {
       >
         <CTAContainer accent={style?.accent}>
           <CTAHeader>{props?.headerText}</CTAHeader>
-          <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
+          <CTASubHeader>{props?.subHeaderTextarea}</CTASubHeader>
           <CTABtnContainer>
             <button
               style={{

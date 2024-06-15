@@ -136,7 +136,7 @@ export default function FAQ({ props, style, id }) {
       <FAQContainer>
         <FAQContent>
           <FAQHeader>{props?.headerText}</FAQHeader>
-          <FAQSubHeader>{props?.subHeaderText}</FAQSubHeader>
+          <FAQSubHeader>{props?.subHeaderTextarea}</FAQSubHeader>
           <FAQIcon style={style}>
             <svg
               style={{ width: "8rem", fill: "white" }}

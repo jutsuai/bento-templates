@@ -4,27 +4,27 @@ export default function Services({ props, style, id }) {
   const {
     labelText = "SERVICES",
     headerText = "Making Magic Happen for Your Business",
-    subHeaderText = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    subHeaderTextarea = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     servicesData = [
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "Web Design",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "SEO Optimization",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "Marketing",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
     ],
@@ -37,7 +37,7 @@ export default function Services({ props, style, id }) {
           {headerText}
         </h2>
         <p className="text-sm text-black/70 dark:text-white/70 max-w-lg text-center">
-          {subHeaderText}
+          {subHeaderTextarea}
         </p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mt-4 w-full">
           {servicesData.map((service, index) => (
@@ -55,7 +55,7 @@ export default function Services({ props, style, id }) {
                 {service.headerText}
               </h3>
               <p className="text-base text-black/70 dark:text-white/70 text-center">
-                {service.subHeaderText}
+                {service.subHeaderTextarea}
               </p>
             </div>
           ))}

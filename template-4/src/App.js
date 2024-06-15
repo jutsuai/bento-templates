@@ -132,7 +132,7 @@ const values = {
       imageSrc:
         "https://ipfs.near.social/ipfs/bafkreibuoq4pd34vkyv3wqcsyj44ahmhxd5jc6plfk37s4e2xhal2m7fg4",
       headerText: "We Create Beautiful Templates for your dapps",
-      subHeaderText:
+      subHeaderTextarea:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
       primaryButtonText: "HIRE ME",
       secondaryButtonText: "DOWNLOAD CV",
@@ -180,7 +180,7 @@ const values = {
   gallery: {
     props: {
       headerText: "Explore Our Bike Gallery",
-      subHeaderText:
+      subHeaderTextarea:
         "Browse through our collection of high-quality bikes available for sale",
       imageSrc: [
         "https://source.unsplash.com/random/315x215/?bike gallery",
@@ -206,7 +206,7 @@ const values = {
   features: {
     props: {
       isReverse: false,
-      subHeaderText: "Ride in Style and Comfort",
+      subHeaderTextarea: "Ride in Style and Comfort",
       headerText: "Premium Bikes",
       description:
         "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
@@ -228,7 +228,7 @@ const values = {
   "features-1": {
     props: {
       isReverse: true,
-      subHeaderText: "Ride in Style and Power",
+      subHeaderTextarea: "Ride in Style and Power",
       headerText: "Mountain Bikes",
       description:
         "Explore the great outdoors with our range of durable and high-performance mountain bikes. Designed to tackle rough terrains and steep inclines, these bikes are perfect for adventure seekers.",
@@ -250,7 +250,7 @@ const values = {
   "features-2": {
     props: {
       isReverse: false,
-      subHeaderText: "Ride in style with our sleek and modern designs",
+      subHeaderTextarea: "Ride in style with our sleek and modern designs",
       headerText: "Sleek Design",
       description:
         "Our bikes are designed to not only perform well but also turn heads with their sleek and stylish appearance.",
@@ -272,7 +272,7 @@ const values = {
   cta: {
     props: {
       headerText: "Find Your Perfect Ride",
-      subHeaderText:
+      subHeaderTextarea:
         "Explore our wide range of bikes and find the one that suits your style and needs.",
       primaryButtonText: "Browse Bikes",
       secondaryButtonText: "Contact Us",
@@ -294,7 +294,7 @@ const values = {
   faq: {
     props: {
       headerText: "Frequently Asked Questions",
-      subHeaderText:
+      subHeaderTextarea:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
       qna: [
         {
@@ -341,7 +341,7 @@ const values = {
   contact: {
     props: {
       headerText: "Contact Us",
-      subHeaderText:
+      subHeaderTextarea:
         "Feel free to reach out to us for any inquiries or assistance.",
       email: "hello@jutsu.ai",
       phone: "+1 234 567 890",

@@ -13,7 +13,7 @@ export default function FAQ({ props, style, id }) {
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300 lg:text-base">
-            {props?.subHeaderText}
+            {props?.subHeaderTextarea}
           </p>
           <div
             style={{

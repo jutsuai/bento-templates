@@ -62,14 +62,14 @@ const PrimaryCTASubHeader = styled.h6`
   }
 `;
 export default function PrimaryCTA({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <PrimaryCTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <PrimaryCTAContent>
         <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
-        <PrimaryCTASubHeader>{props?.subHeaderText}</PrimaryCTASubHeader>
+        <PrimaryCTASubHeader>{props?.subHeaderTextarea}</PrimaryCTASubHeader>
         <button
           style={{
             backgroundColor: style?.accent || "#b9ff81",

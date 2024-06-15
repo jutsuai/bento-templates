@@ -107,7 +107,7 @@ return (
     <SectionContent>
       <ContentColumn>
         <HeaderText>{props?.headerText}</HeaderText>
-        <SubHeaderText>{props?.subHeaderText}</SubHeaderText>
+        <SubHeaderText>{props?.subHeaderTextarea}</SubHeaderText>
         <ScrollDownButton style={style}>
           <i className="fa-solid fa-arrow-down"></i>
         </ScrollDownButton>

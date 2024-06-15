@@ -15,7 +15,7 @@ export default function Contact({ props, style, id }) {
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            {props?.subHeaderText}
+            {props?.subHeaderTextarea}
           </p>
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] items-center gap-12 md:gap-16">

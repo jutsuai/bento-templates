@@ -63,48 +63,47 @@ const PrimaryCTASubHeader = styled.h6`
   }
 `;
 
-  return (
-    <PrimaryCTAWrapper id={id} style={style}>
-      <PrimaryCTAContent>
-        <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
-        <PrimaryCTASubHeader>{props?.subHeaderText}</PrimaryCTASubHeader>
-        <button
+return (
+  <PrimaryCTAWrapper id={id} style={style}>
+    <PrimaryCTAContent>
+      <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
+      <PrimaryCTASubHeader>{props?.subHeaderTextarea}</PrimaryCTASubHeader>
+      <button
+        style={{
+          backgroundColor: style?.accent || "#b9ff81",
+          borderRadius: "9999px",
+          padding: "0.75rem 1.5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.75rem",
+          fontWeight: "600",
+          width: "fit-content",
+          height: "fit-content",
+        }}
+      >
+        {props?.primaryButtonText}
+        <div
           style={{
-            backgroundColor: style?.accent || "#b9ff81",
-            borderRadius: "9999px",
-            padding: "0.75rem 1.5rem",
+            color: style?.accent,
+            height: "1.5rem",
+            width: "1.5rem",
+            borderRadius: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "0.75rem",
-            fontWeight: "600",
-            width: "fit-content",
-            height: "fit-content",
+            backgroundColor: "rgb(31 41 55)",
           }}
         >
-          {props?.primaryButtonText}
-          <div
+          <i
+            className="fa-solid fa-arrow-right"
             style={{
-              color: style?.accent,
-              height: "1.5rem",
-              width: "1.5rem",
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "rgb(31 41 55)",
+              fontSize: "0.75rem",
+              lineHeight: "1rem",
             }}
-          >
-            <i
-              className="fa-solid fa-arrow-right"
-              style={{
-                fontSize: "0.75rem",
-                lineHeight: "1rem",
-              }}
-            ></i>
-          </div>
-        </button>
-      </PrimaryCTAContent>
-    </PrimaryCTAWrapper>
-  );
-
+          ></i>
+        </div>
+      </button>
+    </PrimaryCTAContent>
+  </PrimaryCTAWrapper>
+);

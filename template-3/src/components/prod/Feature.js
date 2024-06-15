@@ -221,9 +221,9 @@ export default function Feature({ props, style, id }) {
           </div>
         </div>
         <FeatureContent>
-          <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
+          <FeatureSubHeader>{`// ${props?.subHeaderTextarea}`}</FeatureSubHeader>
           <FeatureHeader>{props?.headerText}</FeatureHeader>
-          <FeatureDescription>{props?.description}</FeatureDescription>
+          <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
         </FeatureContent>
       </FeatureContainer>
     </FeatureWrapper>

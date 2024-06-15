@@ -63,9 +63,9 @@ const FAQSubHeader = styled.p`
   }
 `;
 export default function FAQ({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <FAQWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
@@ -82,7 +82,7 @@ export default function FAQ({ props, style, id }) {
       >
         <FAQContent>
           <FAQHeader>{props?.headerText}</FAQHeader>
-          <FAQSubHeader>{props?.subHeaderText}</FAQSubHeader>
+          <FAQSubHeader>{props?.subHeaderTextarea}</FAQSubHeader>
         </FAQContent>
         <div
           style={{

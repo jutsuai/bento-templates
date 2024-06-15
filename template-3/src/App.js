@@ -128,7 +128,8 @@ const values = {
         "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHByb2dyYW1taW5nfGVufDB8fDB8fHww",
       ],
       headerText: "Welcome to our Bike Showroom",
-      subHeaderText: "Explore our widerange of bikes for every type of rider",
+      subHeaderTextarea:
+        "Explore our widerange of bikes for every type of rider",
       primaryButtonText: "Contact Us",
       secondaryButtonText: "View Collection",
     },
@@ -174,7 +175,7 @@ const values = {
   gallery: {
     props: {
       headerText: "Explore Our Bike Gallery",
-      subHeaderText:
+      subHeaderTextarea:
         "Browse through our collection of high-quality bikes available for sale",
       imageSrc: [
         "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -204,7 +205,7 @@ const values = {
   features: {
     props: {
       isReverse: false,
-      subHeaderText: "Ride in Style and Comfort",
+      subHeaderTextarea: "Ride in Style and Comfort",
       headerText: "Premium Bikes",
       description:
         "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
@@ -228,7 +229,7 @@ const values = {
   features2: {
     props: {
       isReverse: true,
-      subHeaderText: "Ride in Style and Comfort",
+      subHeaderTextarea: "Ride in Style and Comfort",
       headerText: "Premium Bikes",
       description:
         "Explore our collection of premium bites that offer both style and cockpit for an exceptional writing experience.",
@@ -251,7 +252,7 @@ const values = {
   "features-1": {
     props: {
       isReverse: true,
-      subHeaderText: "Ride in Style and Power",
+      subHeaderTextarea: "Ride in Style and Power",
       headerText: "Mountain Bikes",
       description:
         "Explore the great outdoors with our range of durable and high-performance mountain bikes. Designed to tackle rough terrains and steep inclines, these bikes are perfect for adventure seekers.",
@@ -273,7 +274,7 @@ const values = {
   "features-2": {
     props: {
       isReverse: false,
-      subHeaderText: "Ride in style with our sleek and modern designs",
+      subHeaderTextarea: "Ride in style with our sleek and modern designs",
       headerText: "Sleek Design",
       description:
         "Our bikes are designed to not only perform well but also turn heads with their sleek and stylish appearance.",
@@ -295,7 +296,7 @@ const values = {
   cta: {
     props: {
       headerText: "Find Your Perfect Ride",
-      subHeaderText:
+      subHeaderTextarea:
         "Explore our wide range of bikes and find the one that suits your style and needs.",
       placeholder: "Enter your email address",
       buttonText: "Browse Bikes",
@@ -317,7 +318,7 @@ const values = {
   faq: {
     props: {
       headerText: "Frequently Asked Questions",
-      subHeaderText:
+      subHeaderTextarea:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
       qna: [
         {
@@ -364,7 +365,7 @@ const values = {
   contact: {
     props: {
       headerText: "Contact Us",
-      subHeaderText:
+      subHeaderTextarea:
         "Feel free to reach out to us for any inquiries or assistance.",
       email: "hello@jutsu.ai",
       phone: "+1 234 567 890",

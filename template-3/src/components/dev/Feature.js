@@ -159,9 +159,9 @@ const FeatureDescription = styled.p`
   }
 `;
 export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <FeatureContainer style={style} props={props}>
@@ -225,9 +225,9 @@ export default function Feature({ props, style, id }) {
           </div>
         </div>
         <FeatureContent>
-          <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
+          <FeatureSubHeader>{`// ${props?.subHeaderTextarea}`}</FeatureSubHeader>
           <FeatureHeader>{props?.headerText}</FeatureHeader>
-          <FeatureDescription>{props?.description}</FeatureDescription>
+          <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
         </FeatureContent>
       </FeatureContainer>
     </FeatureWrapper>

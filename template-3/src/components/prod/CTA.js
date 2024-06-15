@@ -136,7 +136,7 @@ export default function CTA({ props, style, id }) {
       <CTAContainer>
         <CTAContent>
           <CTATitle>{props?.headerText}</CTATitle>
-          <CTASubtitle>{props?.subHeaderText}</CTASubtitle>
+          <CTASubtitle>{props?.subHeaderTextarea}</CTASubtitle>
           <div
             style={{
               display: "flex",

@@ -98,7 +98,7 @@ export default function SecondaryCTA({ props, style, id }) {
           >
             <SecondaryCTAHeader>{props?.headerText}</SecondaryCTAHeader>
             <SecondaryCTASubHeader className="text-sm sm:text-base lg:text-lg max-w-lg">
-              {props?.subHeaderText}
+              {props?.subHeaderTextarea}
             </SecondaryCTASubHeader>
             <button
               style={{

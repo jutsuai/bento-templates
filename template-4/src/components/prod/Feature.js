@@ -20,13 +20,13 @@ export default function Feature({ props, style, id }) {
         >
           <div className="xl:p-15 flex w-full flex-col gap-4 px-10 pb-10 md:gap-8 lg:w-1/2 lg:p-10">
             <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 xl:text-base">
-              {props?.subHeaderText}
+              {props?.subHeaderTextarea}
             </p>
             <h2 className="text-2xl font-bold text-black dark:text-white xl:text-4xl">
               {props?.headerText}
             </h2>
             <p className="text-sm text-gray-700 dark:text-gray-300 xl:text-base">
-              {props?.description}
+              {props?.descriptionTextarea}
             </p>
           </div>
           <img

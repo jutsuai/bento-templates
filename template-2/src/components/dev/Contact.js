@@ -81,9 +81,9 @@ const ContactSubtitle = styled.p`
 `;
 
 export default function Contact({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <ContactWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
@@ -104,7 +104,7 @@ export default function Contact({ props, style, id }) {
           }}
         >
           <ContactHeader>{props?.headerText}</ContactHeader>
-          <ContactSubHeader>{props?.subHeaderText}</ContactSubHeader>
+          <ContactSubHeader>{props?.subHeaderTextarea}</ContactSubHeader>
         </div>
         <ContactContainer>
           <div

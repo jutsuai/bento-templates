@@ -65,7 +65,7 @@ export default function PrimaryCTA({ props, style, id }) {
     <PrimaryCTAWrapper id={id} style={style}>
       <PrimaryCTAContent>
         <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
-        <PrimaryCTASubHeader>{props?.subHeaderText}</PrimaryCTASubHeader>
+        <PrimaryCTASubHeader>{props?.subHeaderTextarea}</PrimaryCTASubHeader>
         <button
           style={{
             backgroundColor: style?.accent || "#b9ff81",

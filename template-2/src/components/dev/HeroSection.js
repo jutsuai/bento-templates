@@ -88,7 +88,9 @@ export default function HeroSection({ props, style, id }) {
               gap: "1.5rem",
             }}
           >
-            <HeroSectionSubtitle>{props?.subHeaderText}</HeroSectionSubtitle>
+            <HeroSectionSubtitle>
+              {props?.subHeaderTextarea}
+            </HeroSectionSubtitle>
             <div
               style={{
                 display: "flex",

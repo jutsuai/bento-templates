@@ -3,7 +3,7 @@ import React from "react";
 export default function About({ props, style, id }) {
   const {
     headerText = "Who is Adnan Siddiqui?",
-    subHeaderText = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    subHeaderTextarea = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     labelText = "ABOUT US",
     buttonText = "KNOW MORE",
     projects = [
@@ -11,28 +11,28 @@ export default function About({ props, style, id }) {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "Web Design",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "SEO Optimization",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "Marketing",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
       {
         image:
           "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
         headerText: "DAPP",
-        subHeaderText:
+        subHeaderTextarea:
           "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
       },
     ],
@@ -53,7 +53,7 @@ export default function About({ props, style, id }) {
             {headerText}
           </h2>
           <p className="text-sm text-black/70 dark:text-white/70 max-w-2xl">
-            {subHeaderText}
+            {subHeaderTextarea}
           </p>
           <div className="grid grid-cols-2 gap-8 py-8">
             {projects.map((project, index) => (
@@ -68,7 +68,7 @@ export default function About({ props, style, id }) {
                     {project.headerText}
                   </h3>
                   <p className="text-black/70 dark:text-white/70 text-xs">
-                    {project.subHeaderText}
+                    {project.subHeaderTextarea}
                   </p>
                 </div>
               </div>

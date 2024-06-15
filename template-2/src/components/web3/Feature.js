@@ -1,7 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -127,28 +126,26 @@ const FeatureImage = styled.img`
   }
 `;
 
-
-  return (
-    <FeatureWrapper id={id} style={style}>
-      <div
-        style={{
-          maxWidth: "96rem",
-          marginInline: "auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "5rem 1rem",
-        }}
-      >
-        <FeatureContainer style={style}>
-          <FeatureContent>
-            <FeatureSubHeader>{props?.subHeaderText}</FeatureSubHeader>
-            <FeatureHeader>{props?.headerText}</FeatureHeader>
-            <FeatureDescription>{props?.description}</FeatureDescription>
-          </FeatureContent>
-          <FeatureImage src={props?.imageSrc} alt="features" loading="lazy" />
-        </FeatureContainer>
-      </div>
-    </FeatureWrapper>
-  );
-
+return (
+  <FeatureWrapper id={id} style={style}>
+    <div
+      style={{
+        maxWidth: "96rem",
+        marginInline: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "5rem 1rem",
+      }}
+    >
+      <FeatureContainer style={style}>
+        <FeatureContent>
+          <FeatureSubHeader>{props?.subHeaderTextarea}</FeatureSubHeader>
+          <FeatureHeader>{props?.headerText}</FeatureHeader>
+          <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
+        </FeatureContent>
+        <FeatureImage src={props?.imageSrc} alt="features" loading="lazy" />
+      </FeatureContainer>
+    </div>
+  </FeatureWrapper>
+);

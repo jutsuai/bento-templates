@@ -165,7 +165,7 @@ export default function HeroSection({ props, style, id }) {
         <HeroContent>
           <HeroTitle>{props?.headerText}</HeroTitle>
 
-          <HeroSubtitle>{props?.subHeaderText}</HeroSubtitle>
+          <HeroSubtitle>{props?.subHeaderTextarea}</HeroSubtitle>
           <div
             style={{
               display: "flex",

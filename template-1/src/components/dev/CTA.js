@@ -22,7 +22,7 @@ export default function CTA({ props, style, id }) {
           {props?.headerText}
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-200 @md:text-base">
-          {props?.subHeaderText}
+          {props?.subHeaderTextarea}
         </p>
         <div className="flex items-center justify-end gap-4">
           <button

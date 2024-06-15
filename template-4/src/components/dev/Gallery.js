@@ -23,7 +23,7 @@ export default function Gallery({ props, style, id }) {
             {props?.headerText}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300 @lg:text-lg">
-            {props?.subHeaderText}
+            {props?.subHeaderTextarea}
           </p>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] @lg:grid-cols-2 items-center gap-6 w-full @lg:w-1/2">

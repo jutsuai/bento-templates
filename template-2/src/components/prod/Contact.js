@@ -100,7 +100,7 @@ export default function Contact({ props, style, id }) {
           }}
         >
           <ContactHeader>{props?.headerText}</ContactHeader>
-          <ContactSubHeader>{props?.subHeaderText}</ContactSubHeader>
+          <ContactSubHeader>{props?.subHeaderTextarea}</ContactSubHeader>
         </div>
         <ContactContainer>
           <div
