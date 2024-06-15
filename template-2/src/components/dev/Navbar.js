@@ -85,7 +85,7 @@ const Button = styled.button`
   padding: 0.5rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 500;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -166,7 +166,7 @@ const MobileButton = styled.button`
   padding: 0.25rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 500;
-  color: black;
+  color: white;
 `;
 export default function Navbar({ props, style, id }) {
  const {
