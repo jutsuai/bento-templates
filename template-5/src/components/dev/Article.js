@@ -17,7 +17,7 @@ const ArticleWrapper = styled.section`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-image: ${({ props }) => `url(${props.imageSrc})`};
   background-size: cover;
   background-position: center;
 `;
@@ -95,11 +95,16 @@ const ArticleMetadataDate = styled.p`
   }
 `;
 export default function Article({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
-    <ArticleWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
+    <ArticleWrapper
+      id={id}
+      style={style}
+      props={props}
+      ref={(ref) => connect(drag(ref))}
+    >
       <ArticleContent>
         <ArticleColumn>
           <div

@@ -16,7 +16,7 @@ const ArticleWrapper = styled.section`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-image: ${({ props }) => `url(${props.imageSrc})`};
   background-size: cover;
   background-position: center;
 `;

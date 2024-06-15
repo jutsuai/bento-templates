@@ -61,10 +61,10 @@ const PartnersLogo = styled.img`
   }
 `;
 export default function Partners({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
-  const logos = [
+  const {
+    connectors: { connect, drag },
+  } = useNode();
+  const imageSrc = [
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
@@ -76,7 +76,7 @@ export default function Partners({ props, style, id }) {
     <PartnersContainer id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <PartnersWrapper>
         <PartnersLogoContainer>
-          {(logos || props?.logos)?.map((logo, index) => (
+          {(logos || props?.imageSrc)?.map((logo, index) => (
             <PartnersLogo key={index} src={logo} alt="logos" />
           ))}
         </PartnersLogoContainer>

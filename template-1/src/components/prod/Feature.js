@@ -1,37 +1,115 @@
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const FeatureWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const FeatureContainer = styled.div`
+  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
+  max-width: 96rem;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+
+  @media (max-width: ${bp.lg}) {
+    flex-direction: column !important;
+  }
+`;
+
+const FeatureImage = styled.img`
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  object-position: center;
+
+  @media (min-width: ${bp.lg}) {
+    width: 50%;
+  }
+`;
+
+const FeatureContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; // gap-4
+  margin: 1rem;
+
+  @media (min-width: ${bp.lg}) {
+    width: 50%; // lg:w-1/2
+    gap: 2rem; // lg:gap-8
+    padding: 3.5rem; // lg:p-14
+  }
+`;
+
+const FeatureSubHeader = styled.p`
+  margin-bottom: -1rem; // -mb-4
+  font-size: 0.875rem; // text-sm
+  color: #4b5563; // text-gray-700
+
+  &:not(.light *) {
+    color: #d1d5db; // dark:text-gray-300
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 1rem; // xl:text-base
+  }
+`;
+const FeatureHeader = styled.h2`
+  font-size: 1.5rem; // text-2xl
+  font-weight: bold;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 2.5rem; // xl:text-4xl
+  }
+`;
+const FeatureDescription = styled.p`
+  font-size: 0.875rem; // text-sm
+  color: #4b5563; // text-gray-700
+
+  &:not(.light *) {
+    color: #d1d5db; // dark:text-gray-300
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 1rem; // xl:text-base
+  }
+`;
 export default function Feature({ props, style, id }) {
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-800"
-    >
-      <div
-        style={{ flexDirection: style?.flexDirection }}
-        className={`container mx-auto flex flex-col items-center gap-10 px-8 py-20 ${
-          props?.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
-        }`}
-      >
-        <img
-          src={props?.imageSrc}
-          alt="features"
-          className="aspect-video rounded-lg object-cover object-center lg:w-1/2"
-          loading="lazy"
-        />
-        <div className="flex flex-col gap-4 lg:w-1/2 lg:gap-8 lg:p-14">
-          <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 lg:text-base">
-            {props?.subHeaderText}
-          </p>
-          <h2 className="text-3xl font-bold text-black dark:text-white md:text-4xl">
-            {props?.headerText}
-          </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-200 lg:text-base">
-            {props?.description}
-          </p>
-        </div>
-      </div>
-    </section>
+    <FeatureWrapper id={id} style={style}>
+      <FeatureContainer flexDirection={style?.flexDirection}>
+        <FeatureImage src={props?.imageSrc} alt="features" loading="lazy" />
+        <FeatureContent>
+          <FeatureSubHeader>{props?.subHeaderText}</FeatureSubHeader>
+          <FeatureHeader>{props?.headerText}</FeatureHeader>
+          <FeatureDescription>{props?.description}</FeatureDescription>
+        </FeatureContent>
+      </FeatureContainer>
+    </FeatureWrapper>
   );
 }

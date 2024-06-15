@@ -22,7 +22,7 @@ export default function Partners({ props, style, id }) {
           {props?.headerText}
         </h2>
         <div className="grid grid-cols-2 gap-6 @sm:grid-cols-[repeat(auto-fit,_minmax(140px,1fr))] place-items-center @xl:px-0 px-8 items-center w-full">
-          {props?.logos?.map(
+          {props?.imageSrc?.map(
             (logo, index) =>
               index < 5 && (
                 <div

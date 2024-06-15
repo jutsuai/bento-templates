@@ -1,44 +1,124 @@
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const CTAWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const CTAContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 48rem;
+  border-radius: 1.5rem;
+
+  margin-inline: auto;
+`;
+
+const CTAHeader = styled.h2`
+  font-size: 1.875rem;
+  color: black;
+  font-weight: 600;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.md}) {
+    font-size: 2.4rem;
+  }
+`;
+const CTASubHeader = styled.p`
+  font-size: 0.875rem;
+  color: #4b5563;
+
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+
+  @media (min-width: ${bp.md}) {
+    font-size: 1rem;
+  }
+`;
+const CTABtnContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (min-width: ${bp.md}) {
+    width: 50%;
+  }
+`;
+
 export default function CTA({ props, style, id }) {
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-800"
-    >
+    <CTAWrapper id={id} style={style}>
       <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="container mx-auto flex flex-col items-center justify-center gap-6 px-8 py-20 text-center"
+        style={{
+          maxWidth: "96rem",
+          marginInline: "auto",
+          padding: "5rem 1rem",
+        }}
       >
-        <h2 className="text-3xl font-semibold text-black dark:text-white md:text-4xl">
-          {props?.headerText}
-        </h2>
-        <p className="text-sm text-gray-600 dark:text-gray-200 md:text-base">
-          {props?.subHeaderText}
-        </p>
-        <div className="flex items-center justify-end gap-4">
-          <button
-            style={{
-              borderColor: style?.accent,
-              backgroundColor: style?.accent,
-            }}
-            className="rounded-2xl border border-purple-700 bg-purple-700 px-4 py-1 text-sm font-medium text-white"
-          >
-            {props?.primaryButtonText}
-          </button>
-          <button
-            style={{
-              borderColor: style?.accent,
-              color: style?.accent,
-            }}
-            className="rounded-2xl border border-purple-700 bg-transparent px-4 py-1 text-sm font-medium text-purple-700"
-          >
-            {props?.secondaryButtonText}
-          </button>
-        </div>
+        <CTAContainer>
+          <CTAHeader>{props?.headerText}</CTAHeader>
+          <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
+          <CTABtnContainer>
+            <button
+              style={{
+                backgroundColor: style?.accent,
+                borderColor: style?.accent,
+                border: "1px solid transparent",
+                color: "white",
+                borderRadius: "9999px",
+                paddingBlock: "0.5rem",
+                paddingInline: "2rem",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+              }}
+            >
+              {props?.primaryButtonText}
+            </button>
+            <button
+              style={{
+                borderColor: style?.accent,
+                border: "1px solid",
+                color: style?.accent,
+                borderRadius: "9999px",
+                paddingBlock: "0.5rem",
+                paddingInline: "2rem",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+              }}
+            >
+              {props?.secondaryButtonText}
+            </button>
+          </CTABtnContainer>
+        </CTAContainer>
       </div>
-    </section>
+    </CTAWrapper>
   );
 }

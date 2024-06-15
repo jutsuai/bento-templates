@@ -93,7 +93,7 @@ export default function Gallery({ props, style, id }) {
           <GallerySubHeader>{props?.subHeaderText}</GallerySubHeader>
         </div>
         <GalleryImageContainer>
-          {props?.galleryImages?.map((image, index) => (
+          {props?.imageSrc?.map((image, index) => (
             <img
               key={index}
               src={image}

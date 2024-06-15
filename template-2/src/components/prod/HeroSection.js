@@ -123,7 +123,7 @@ export default function HeroSection({ props, style, id }) {
           </div>
         </HeroSectionContent>
         <img
-          src={props?.backgroundImageUrl}
+          src={props?.imageSrc}
           alt="hero"
           style={{
             width: "100%",

@@ -106,8 +106,7 @@ const values = {
   },
   heroSection: {
     props: {
-      backgroundImageUrl:
-        "https://source.unsplash.com/random/1920x1080/?chemistry",
+      imageSrc: "https://source.unsplash.com/random/1920x1080/?chemistry",
       headerText: "changing chemistry for good",
       subHeaderText:
         "We are a team of passionate cyclists dedicated to providing high-quality bikes and accessories to our customers.",
@@ -167,8 +166,7 @@ const values = {
   },
   article: {
     props: {
-      backgroundImageUrl:
-        "https://source.unsplash.com/random/1920x1080/?lab%20article",
+      imageSrc: "https://source.unsplash.com/random/1920x1080/?lab%20article",
       headerText: "We need the chemistry industry but it needs to change",
       subHeaderText:
         "Even as the world transitions to renewable energy, we still need the chemistry industry to produce the materials that make modern life possible. But the industry must change to meet sustainability goals.",

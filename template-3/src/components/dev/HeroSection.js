@@ -156,9 +156,9 @@ const HeroImage1 = styled.img`
   border-radius: 0.375rem;
 `;
 export default function HeroSection({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <HeroWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <HeroContainer>
@@ -203,15 +203,15 @@ export default function HeroSection({ props, style, id }) {
           </div>
         </HeroContent>
         <HeroImageContainer>
-          {Array.isArray(props?.backgroundImageUrl) ? (
+          {Array.isArray(props?.imageSrc) ? (
             <>
               <HeroImage1
-                src={props?.backgroundImageUrl[0] || ""}
+                src={props?.imageSrc[0] || ""}
                 alt="hero"
                 loading="lazy"
               />
               <img
-                src={props?.backgroundImageUrl[1] || ""}
+                src={props?.imageSrc[1] || ""}
                 alt="hero"
                 style={{
                   width: "100%",
@@ -227,7 +227,7 @@ export default function HeroSection({ props, style, id }) {
                 loading="lazy"
               />
               <img
-                src={props?.backgroundImageUrl[2] || ""}
+                src={props?.imageSrc[2] || ""}
                 alt="hero"
                 style={{
                   position: "absolute",
@@ -247,7 +247,7 @@ export default function HeroSection({ props, style, id }) {
             </>
           ) : (
             <img
-              src={props?.backgroundImageUrl || ""}
+              src={props?.imageSrc || ""}
               alt="hero"
               style={{
                 width: "100%",

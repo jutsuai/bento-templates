@@ -129,7 +129,7 @@ const values = {
   },
   heroSection: {
     props: {
-      backgroundImageUrl:
+      imageSrc:
         "https://ipfs.near.social/ipfs/bafkreibuoq4pd34vkyv3wqcsyj44ahmhxd5jc6plfk37s4e2xhal2m7fg4",
       headerText: "We Create Beautiful Templates for your dapps",
       subHeaderText:
@@ -154,7 +154,7 @@ const values = {
   partners: {
     props: {
       headerText: "Trusted by the worlds best companies",
-      logos: [
+      imageSrc: [
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/107.webp",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/40626.webp",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/4332857.webp",
@@ -182,7 +182,7 @@ const values = {
       headerText: "Explore Our Bike Gallery",
       subHeaderText:
         "Browse through our collection of high-quality bikes available for sale",
-      galleryImages: [
+      imageSrc: [
         "https://source.unsplash.com/random/315x215/?bike gallery",
         "https://source.unsplash.com/random/320x220/?bike gallery",
         "https://source.unsplash.com/random/325x225/?bike gallery",

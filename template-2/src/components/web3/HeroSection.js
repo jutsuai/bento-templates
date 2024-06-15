@@ -1,7 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -71,72 +70,70 @@ const HeroSectionSubtitle = styled.h6`
   }
 `;
 
-
-  return (
-    <HeroSectionWrapper id={id} style={style}>
-      <HeroSectionContainer>
-        <HeroSectionContent>
-          <HeroSectionTitle>{props?.headerText}</HeroSectionTitle>
+return (
+  <HeroSectionWrapper id={id} style={style}>
+    <HeroSectionContainer>
+      <HeroSectionContent>
+        <HeroSectionTitle>{props?.headerText}</HeroSectionTitle>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <HeroSectionSubtitle>{props?.subHeaderText}</HeroSectionSubtitle>
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              gap: "1.5rem",
+              gap: "1rem",
             }}
           >
-            <HeroSectionSubtitle>{props?.subHeaderText}</HeroSectionSubtitle>
-            <div
+            <button
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "1rem",
+                backgroundColor: style?.accent,
+                color: "white",
+                borderRadius: "1rem",
+                padding: "0.5rem 1.5rem",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                border: "1px solid transparent",
               }}
             >
-              <button
-                style={{
-                  backgroundColor: style?.accent,
-                  color: "white",
-                  borderRadius: "1rem",
-                  padding: "0.5rem 1.5rem",
-                  fontSize: "0.875rem",
-                  fontWeight: "500",
-                  border: "1px solid transparent",
-                }}
-              >
-                {props?.primaryButtonText}
-              </button>
-              <button
-                style={{
-                  color: style?.accent,
-                  borderColor: style?.accent,
-                  border: "1px solid",
-                  backgroundColor: "transparent",
-                  borderRadius: "1rem",
-                  padding: "0.5rem 1.5rem",
-                  fontSize: "0.875rem",
-                }}
-              >
-                {props?.secondaryButtonText}
-              </button>
-            </div>
+              {props?.primaryButtonText}
+            </button>
+            <button
+              style={{
+                color: style?.accent,
+                borderColor: style?.accent,
+                border: "1px solid",
+                backgroundColor: "transparent",
+                borderRadius: "1rem",
+                padding: "0.5rem 1.5rem",
+                fontSize: "0.875rem",
+              }}
+            >
+              {props?.secondaryButtonText}
+            </button>
           </div>
-        </HeroSectionContent>
-        <img
-          src={props?.backgroundImageUrl}
-          alt="hero"
-          style={{
-            width: "100%",
-            borderRadius: "9999px",
-            aspectRatio: "16/9",
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-          loading="lazy"
-        />
-      </HeroSectionContainer>
-    </HeroSectionWrapper>
-  );
-
+        </div>
+      </HeroSectionContent>
+      <img
+        src={props?.imageSrc}
+        alt="hero"
+        style={{
+          width: "100%",
+          borderRadius: "9999px",
+          aspectRatio: "16/9",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        loading="lazy"
+      />
+    </HeroSectionContainer>
+  </HeroSectionWrapper>
+);

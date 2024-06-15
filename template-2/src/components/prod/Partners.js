@@ -80,7 +80,7 @@ export default function Partners({ props, style, id }) {
       >
         <PartnersHeader>{props?.headerText}</PartnersHeader>
         <PartnersLogoContainer>
-          {props?.logos?.map(
+          {props?.imageSrc?.map(
             (logo, index) =>
               index < 5 && (
                 <PartnersImageBox key={index}>

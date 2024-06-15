@@ -64,9 +64,9 @@ const PartnersImageBox = styled.div`
   }
 `;
 export default function Partners({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <PartnersWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
@@ -84,7 +84,7 @@ export default function Partners({ props, style, id }) {
       >
         <PartnersHeader>{props?.headerText}</PartnersHeader>
         <PartnersLogoContainer>
-          {props?.logos?.map(
+          {props?.imageSrc?.map(
             (logo, index) =>
               index < 5 && (
                 <PartnersImageBox key={index}>

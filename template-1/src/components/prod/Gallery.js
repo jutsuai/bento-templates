@@ -1,37 +1,117 @@
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const GalleryWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const GalleryContainer = styled.div`
+  max-width: 96rem;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 5rem 1rem;
+  text-align: center;
+  flex-direction: ${({ style }) => style?.flexDirection || "column"};
+
+  @media (max-width: ${bp.lg}) {
+    flex-direction: column !important;
+  }
+`;
+
+const GalleryHeader = styled.h2`
+  font-size: 1.875rem;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 3rem;
+  }
+`;
+
+const GallerySubHeader = styled.p`
+  font-size: 0.875rem;
+  color: #4b5563;
+
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1.125rem;
+  }
+`;
+
+const GalleryImageContainer = styled.div`
+  display: grid;
+  place-items: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: ${bp.lg}) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+`;
+
 export default function Gallery({ props, style, id }) {
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-800"
-    >
-      <div
-        style={{ flexDirection: style.flexDirection }}
-        className="container mx-auto flex flex-col items-center justify-center gap-6 px-8 py-20 text-center"
-      >
-        <div>
-          <h2 className="mb-4 text-2xl lg:text-4xl font-semibold text-black dark:text-white">
-            {props?.headerText}
-          </h2>
-          <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">
-            {props?.subHeaderText}
-          </p>
+    <GalleryWrapper id={id} style={style}>
+      <GalleryContainer>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "48rem",
+          }}
+        >
+          <GalleryHeader>{props?.headerText}</GalleryHeader>
+          <GallerySubHeader>{props?.subHeaderText}</GallerySubHeader>
         </div>
-        <div className="grid w-full grid-cols-[repeat(auto-fit,_minmax(120px,1fr))] items-center gap-10">
-          {props?.galleryImages?.map((image, index) => (
+
+        <GalleryImageContainer>
+          {props?.imageSrc?.map((image, index) => (
             <img
               key={index}
               src={image}
               alt="bike"
-              className="w-full rounded-md"
+              style={{
+                aspectRatio: "16 / 9",
+                width: "100%",
+                borderRadius: "0.375rem",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
               loading="lazy"
             />
           ))}
-        </div>
-      </div>
-    </section>
+        </GalleryImageContainer>
+      </GalleryContainer>
+    </GalleryWrapper>
   );
 }

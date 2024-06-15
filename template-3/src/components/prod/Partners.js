@@ -60,7 +60,7 @@ const PartnersLogo = styled.img`
   }
 `;
 export default function Partners({ props, style, id }) {
-  const logos = [
+  const imageSrc = [
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/spikeball-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/shapeshift-color.svg",
     "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/goody-color.svg",
@@ -72,7 +72,7 @@ export default function Partners({ props, style, id }) {
     <PartnersContainer id={id} style={style}>
       <PartnersWrapper>
         <PartnersLogoContainer>
-          {(logos || props?.logos)?.map((logo, index) => (
+          {(logos || props?.imageSrc)?.map((logo, index) => (
             <PartnersLogo key={index} src={logo} alt="logos" />
           ))}
         </PartnersLogoContainer>

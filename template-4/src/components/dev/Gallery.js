@@ -27,7 +27,7 @@ export default function Gallery({ props, style, id }) {
           </p>
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,1fr))] @lg:grid-cols-2 items-center gap-6 w-full @lg:w-1/2">
-          {props?.galleryImages?.map((image, index) => (
+          {props?.imageSrc?.map((image, index) => (
             <img
               key={index}
               src={image}

@@ -39,7 +39,7 @@ export default function HeroSection({ props, style, id }) {
 
         <div className="w-full h-full overflow-hidden hidden lg:block flex-1 z-10">
           <img
-            src={props?.backgroundImageUrl}
+            src={props?.imageSrc}
             alt="hero"
             className="object-cover w-full h-full object-center"
             loading="lazy"

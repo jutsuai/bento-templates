@@ -114,7 +114,7 @@ const values = {
   },
   heroSection: {
     props: {
-      backgroundImageUrl:
+      imageSrc:
         "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       headerText: "Welcome to our Bike Showroom",
       subHeaderText: "Explore our widerange of bikes for every type of rider",
@@ -138,7 +138,7 @@ const values = {
   partners: {
     props: {
       headerText: "Trusted by the worlds best companies",
-      logos: [
+      imageSrc: [
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/107.webp",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/40626.webp",
         "https://cdn.jsdelivr.net/gh/adnansid99/theDeployer@master/Jutsu/companyLogos/4332857.webp",
@@ -166,7 +166,7 @@ const values = {
       headerText: "Explore Our Bike Gallery",
       subHeaderText:
         "Browse through our collection of high-quality bikes available for sale",
-      galleryImages: [
+      imageSrc: [
         "https://source.unsplash.com/random/315x215/?bike gallery",
         "https://source.unsplash.com/random/320x220/?bike gallery",
         "https://source.unsplash.com/random/325x225/?bike gallery",

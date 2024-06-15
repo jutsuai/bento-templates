@@ -1,7 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
 
-
 const bp = {
   sm: "40rem",
   md: "48rem",
@@ -18,7 +17,7 @@ const ArticleWrapper = styled.div`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-image: ${({ props }) => `url(${props.imageSrc})`};
   background-size: cover;
   background-position: center;
 `;
@@ -96,68 +95,67 @@ const ArticleMetadataDate = styled.p`
   }
 `;
 
-  return (
-    <ArticleWrapper id={id} style={style} props={props}>
-      <ArticleContent>
-        <ArticleColumn>
+return (
+  <ArticleWrapper id={id} style={style} props={props}>
+    <ArticleContent>
+      <ArticleColumn>
+        <div
+          style={{
+            backgroundColor: style?.accent || "#b9ff81",
+            display: "flex",
+            flexDirection: "column",
+            gap: "4rem",
+            padding: "2rem",
+            width: "100%",
+            maxWidth: "48rem",
+            marginInline: "auto",
+            borderRadius: "0.375rem",
+            boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
+          }}
+        >
+          <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
+          <ArticleSubHeaderText>{props?.subHeaderText}</ArticleSubHeaderText>
           <div
             style={{
-              backgroundColor: style?.accent || "#b9ff81",
               display: "flex",
-              flexDirection: "column",
-              gap: "4rem",
-              padding: "2rem",
-              width: "100%",
-              maxWidth: "48rem",
-              marginInline: "auto",
-              borderRadius: "0.375rem",
-              boxShadow: "0 0.5rem 1rem 0 rgb(0 0 0 / 15%)",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: "auto",
             }}
           >
-            <ArticleHeaderText>{props?.headerText}</ArticleHeaderText>
-            <ArticleSubHeaderText>{props?.subHeaderText}</ArticleSubHeaderText>
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginTop: "auto",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <div
+              <ArticleMetadataTitle>ARTICLES</ArticleMetadataTitle>
+              <ArticleMetadataDate>2024-02-05</ArticleMetadataDate>
+            </div>
+            <div
+              style={{
+                color: style?.accent || "#b9ff81",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "2.5rem",
+                width: "2.5rem",
+                backgroundColor: "#333",
+                borderRadius: "100%",
+              }}
+            >
+              <i
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
+                  fontSize: "0.75rem",
+                  lineHeight: "1rem",
                 }}
-              >
-                <ArticleMetadataTitle>ARTICLES</ArticleMetadataTitle>
-                <ArticleMetadataDate>2024-02-05</ArticleMetadataDate>
-              </div>
-              <div
-                style={{
-                  color: style?.accent || "#b9ff81",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "2.5rem",
-                  width: "2.5rem",
-                  backgroundColor: "#333",
-                  borderRadius: "100%",
-                }}
-              >
-                <i
-                  style={{
-                    fontSize: "0.75rem",
-                    lineHeight: "1rem",
-                  }}
-                  className="fa-solid fa-arrow-right"
-                ></i>
-              </div>
+                className="fa-solid fa-arrow-right"
+              ></i>
             </div>
           </div>
-        </ArticleColumn>
-      </ArticleContent>
-    </ArticleWrapper>
-  );
-
+        </div>
+      </ArticleColumn>
+    </ArticleContent>
+  </ArticleWrapper>
+);
