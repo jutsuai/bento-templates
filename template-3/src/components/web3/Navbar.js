@@ -207,7 +207,7 @@ const MobileButton = styled.button`
         </MenuIcon>
 
         <NavButtomContainer>
-          <Button accnet={style?.accent}>
+          <Button accent={style?.accent}>
             {props?.buttonText}
             <svg
               style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
@@ -236,7 +236,7 @@ const MobileButton = styled.button`
               </li>
             ))}
 
-            <MobileButton accnet={style?.accent}>
+            <MobileButton accent={style?.accent}>
               {props?.buttonText}
               <svg
                 style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}

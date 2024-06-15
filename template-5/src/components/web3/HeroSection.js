@@ -13,7 +13,7 @@ const HeroSectionWrapper = styled.div`
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
-  background-image: ${({ props }) => `url(${props.backgroundImageUrl})`};
+  background-image: ${({ props }) => `url(${props?.backgroundImageUrl})`};
   background-size: cover;
   background-position: center;
 `;

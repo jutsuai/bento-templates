@@ -9,12 +9,28 @@ const bp = {
 };
 
 const socialIcons = [
-  { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/" },
-  { icon: "fa-brands fa-github", href: "" },
-  { icon: "fa-brands fa-x-twitter", href: "https://twitter.com/" },
-  { icon: "fa-brands fa-youtube", href: "https://www.youtube.com/" },
-  { icon: "fa-brands fa-square-facebook", href: "https://www.facebook.com/" },
+  {
+    icon: "https://ipfs.near.social/ipfs/bafkreibyvzdqfnvsy7laykskljbyiscrr5egcygczroc5lvs3jeniz7ope",
+    href: "https://www.linkedin.com/tryjutsu",
+  },
+  {
+    icon: "https://ipfs.near.social/ipfs/bafkreiccsolmo2epnwlzjqufn4w2hy4pr7fg7blfldcyhyebwujidqzsz4",
+    href: "https://github.com/tryjutsu",
+  },
+  {
+    icon: "https://ipfs.near.social/ipfs/bafkreie3unrm66pdzno3peuuahfcpk6ot37gahby2larq5vkqmwaswg6ry",
+    href: "https://twitter.com/tryjutsu",
+  },
+  {
+    icon: "https://ipfs.near.social/ipfs/bafkreigiw3z7tf2szzuegrmvuybmamun5a6arg7lzsiqwaektvgp7osarq",
+    href: "https://www.youtube.com/tryjutsu",
+  },
+  {
+    icon: "https://ipfs.near.social/ipfs/bafkreig44t4oajrwl6deaurchsincm7zhjr6tgwoo23vfmm2phkrvja6hy",
+    href: "https://www.facebook.com/tryjutsu",
+  },
 ];
+
 const FooterWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
@@ -82,14 +98,14 @@ const FooterIconsLink = styled.a`
   padding: 0.5rem;
   border-radius: 9999px;
   aspect-ratio: 1 / 1;
-  width: 2.5rem;
+  width: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(20, 22, 29, 0.07);
+  background-color: #14161d20;
 
   &:not(.light *) {
-    background-color: #14161d;
+    background-color: white;
   }
 `;
 
@@ -146,7 +162,7 @@ const FooterBottomContent = styled.p`
             <FooterIcons>
               {socialIcons.map((item, index) => (
                 <FooterIconsLink key={index} href={item.href}>
-                  <i className={`${item.icon}`} />
+                  <img src={item.icon} alt="logo" />
                 </FooterIconsLink>
               ))}
             </FooterIcons>

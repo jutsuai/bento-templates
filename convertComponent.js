@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const templateVersion = 3;
+const templateVersion = 2;
 
 const directoryPath = path.join(
   `C:\\Users\\asr30\\Desktop\\bento-templates\\template-${templateVersion}\\src\\components\\prod`

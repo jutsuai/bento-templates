@@ -102,16 +102,11 @@ const ScrollDownButton = styled.button`
   border: none;
 `;
 export default function HeroSection({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <HeroSectionWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <HeroSectionWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <SectionContent>
         <ContentColumn>
           <HeaderText>{props?.headerText}</HeaderText>

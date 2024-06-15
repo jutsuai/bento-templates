@@ -95,16 +95,11 @@ const ArticleMetadataDate = styled.p`
   }
 `;
 export default function Article({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <ArticleWrapper
-      id={id}
-      style={style}
-      props={props}
-      ref={(ref) => connect(drag(ref))}
-    >
+    <ArticleWrapper id={id} style={style} props={props} ref={(ref) => connect(drag(ref))}>
       <ArticleContent>
         <ArticleColumn>
           <div

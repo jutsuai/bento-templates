@@ -205,7 +205,7 @@ export default function Navbar({ props, style, id }) {
         </MenuIcon>
 
         <NavButtomContainer>
-          <Button accnet={style?.accent}>
+          <Button accent={style?.accent}>
             {props?.buttonText}
             <svg
               style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
@@ -234,7 +234,7 @@ export default function Navbar({ props, style, id }) {
               </li>
             ))}
 
-            <MobileButton accnet={style?.accent}>
+            <MobileButton accent={style?.accent}>
               {props?.buttonText}
               <svg
                 style={{ width: "0.7rem", transform: "rotate(-0.25turn)" }}
