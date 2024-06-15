@@ -72,7 +72,7 @@ export default function Partners({ props, style, id }) {
     <PartnersContainer id={id} style={style}>
       <PartnersWrapper>
         <PartnersLogoContainer>
-          {(logos || props?.imageSrc)?.map((logo, index) => (
+          {(imageSrc || props?.imageSrc)?.map((logo, index) => (
             <PartnersLogo key={index} src={logo} alt="logos" />
           ))}
         </PartnersLogoContainer>
