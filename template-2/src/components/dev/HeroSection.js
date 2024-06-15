@@ -75,11 +75,7 @@ export default function HeroSection({ props, style, id }) {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <HeroSectionWrapper
-      id={id}
-      style={style}
-      className="bg-white dark:bg-slate-800"
-     ref={(ref) => connect(drag(ref))}>
+    <HeroSectionWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <HeroSectionContainer>
         <HeroSectionContent>
           <HeroSectionTitle>{props?.headerText}</HeroSectionTitle>

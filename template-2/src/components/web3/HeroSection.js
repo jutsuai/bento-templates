@@ -73,11 +73,7 @@ const HeroSectionSubtitle = styled.h6`
 
 
   return (
-    <HeroSectionWrapper
-      id={id}
-      style={style}
-      className="bg-white dark:bg-slate-800"
-    >
+    <HeroSectionWrapper id={id} style={style}>
       <HeroSectionContainer>
         <HeroSectionContent>
           <HeroSectionTitle>{props?.headerText}</HeroSectionTitle>
