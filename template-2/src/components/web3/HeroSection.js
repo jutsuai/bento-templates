@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const HeroSectionWrapper = styled.section`
+const HeroSectionWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -30,7 +31,7 @@ const HeroSectionContainer = styled.div`
   padding: 5rem 1rem;
   gap: 5rem;
 
-  @container (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.sm}) {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
@@ -54,7 +55,7 @@ const HeroSectionTitle = styled.h1`
     color: white;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 4.5rem; // lg:text-7xl
   }
 `;
@@ -65,21 +66,18 @@ const HeroSectionSubtitle = styled.h6`
   &:not(.light *) {
     color: #d1d5db;
   }
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 1.25rem;
   }
 `;
 
-export default function HeroSection({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
     <HeroSectionWrapper
       id={id}
       style={style}
       className="bg-white dark:bg-slate-800"
-     ref={(ref) => connect(drag(ref))}>
+    >
       <HeroSectionContainer>
         <HeroSectionContent>
           <HeroSectionTitle>{props?.headerText}</HeroSectionTitle>
@@ -145,4 +143,4 @@ export default function HeroSection({ props, style, id }) {
       </HeroSectionContainer>
     </HeroSectionWrapper>
   );
-}
+

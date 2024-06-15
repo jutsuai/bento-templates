@@ -7,10 +7,21 @@ import CTA from "./components/prod/CTA";
 import FAQ from "./components/prod/FAQ";
 import Contact from "./components/prod/Contact";
 import Footer from "./components/prod/Footer";
+import { useState } from "react";
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <>
+    <main
+      className={`relative font-sans ${darkMode ? "dark" : "light"}`}
+      // style={{ fontFamily: "revert" }}
+    >
+      <button
+        className="fixed z-50 top-24 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
+        onClick={() => setDarkMode((e) => !e)}
+      >
+        {darkMode ? "Dark" : "Light"}
+      </button>
       <Navbar
         props={values.navbar.props}
         style={values.navbar.style}
@@ -56,7 +67,7 @@ export default function App() {
         style={values.footer.style}
         id={values.footer.node}
       />
-    </>
+    </main>
   );
 }
 
@@ -104,7 +115,7 @@ const values = {
   heroSection: {
     props: {
       backgroundImageUrl:
-        "https://source.unsplash.com/random/1920x900/?bike road",
+        "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       headerText: "Welcome to our Bike Showroom",
       subHeaderText: "Explore our widerange of bikes for every type of rider",
       primaryButtonText: "Contact Us",
@@ -251,7 +262,6 @@ const values = {
       secondaryButtonText: "Contact Us",
     },
     style: {
-      flexDirection: "column",
       paddingTop: 0,
       paddingLeft: 0,
       paddingBottom: 0,

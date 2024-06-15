@@ -1,6 +1,7 @@
+const style = props.style || {};
+const props = props.props || {};
 import React from "react";
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+
 
 const bp = {
   sm: "40rem",
@@ -9,7 +10,7 @@ const bp = {
   xl: "80rem",
 };
 
-const StyledNav = styled.nav`
+const StyledNav = styled.div`
   position: relative;
   width: 100%;
   background-color: white;
@@ -47,7 +48,7 @@ const NavList = styled.ul`
   align-items: center;
   margin-block: auto;
   gap: 1.5rem;
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     display: flex;
   }
   &:not(.light *) {
@@ -58,7 +59,7 @@ const NavList = styled.ul`
 const MenuIcon = styled.svg`
   display: block;
   height: 1.25rem;
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     display: none;
   }
   fill: black;
@@ -70,7 +71,7 @@ const MenuIcon = styled.svg`
 const NavButtomContainer = styled.div`
   display: none;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     display: flex;
   }
   align-items: center;
@@ -117,7 +118,7 @@ const MobileMenu = styled.div`
   transition: all 0.2s;
   display: ${({ showNav }) => (showNav ? "inline-block" : "none")};
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     padding-left: 3rem;
     padding-right: 3rem;
   }
@@ -167,14 +168,11 @@ const MobileButton = styled.button`
   font-weight: 500;
   color: black;
 `;
-export default function Navbar({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   const [showNav, setShowNav] = React.useState(false);
 
   return (
-    <StyledNav id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <StyledNav id={id} style={style}>
       <NavContainer>
         <div
           style={{
@@ -243,4 +241,4 @@ export default function Navbar({ props, style, id }) {
       </NavContainer>
     </StyledNav>
   );
-}
+

@@ -1,55 +1,145 @@
+import styled from "styled-components";
 import { useNode } from "@craftjs/core";
 
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const CTAWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const CTAContainer = styled.div`
+  background-color: ${({ accent }) => accent + 12};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem; // gap-6
+  max-width: 83.3333%; // max-w-10/12
+  border-radius: 1.5rem; // rounded-3xl
+  border: 1px solid transparent;
+  padding: 2.5rem; // p-10
+  margin-inline: auto;
+
+  &:not(.light *) {
+    border-color: #1e293b; // dark:border-slate-800
+  }
+
+  @container (min-width: ${bp.md}) {
+    padding: 5rem; // md:p-20
+  }
+`;
+
+const CTAHeader = styled.h2`
+  font-size: 1.875rem; // text-3xl
+  color: black;
+  font-weight: 600; // font-semibold
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 3rem; // md:text-5xl
+  }
+`;
+const CTASubHeader = styled.p`
+  font-size: 0.875rem;
+  color: #4b5563;
+
+  &:not(.light *) {
+    color: #d1d5db;
+  }
+
+  @container (min-width: ${bp.md}) {
+    font-size: 1rem;
+  }
+`;
+const CTABtnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  @container (min-width: ${bp.sm}) {
+    width: 83.3333%;
+  }
+
+  @container (min-width: ${bp.md}) {
+    width: 50%;
+  }
+`;
+
 export default function CTA({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <section
-      ref={(ref) => connect(drag(ref))}
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-slate-800"
-    >
-      <div className="container mx-auto px-8 py-20">
-        <div
-          style={{
-            flexDirection: style?.flexDirection,
-            backgroundColor: style?.accent + 12,
-          }}
-          className="gap-6 dark:bg-slate-800 max-w-10/12 rounded-3xl border dark:border-slate-800 mx-auto flex flex-col items-center text-center justify-center p-10 @md:p-20"
-        >
-          <h2 className="text-3xl text-black dark:text-white @md:text-5xl font-semibold">
-            {props?.headerText}
-          </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300 @md:text-base">
-            {props?.subHeaderText}
-          </p>
-          <div className="flex flex-col w-full @sm:w-10/12 @md:w-1/2 items-center justify-end gap-4">
+    <CTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+      <div
+        style={{
+          maxWidth: "96rem",
+          marginInline: "auto",
+          padding: "5rem 1rem",
+        }}
+      >
+        <CTAContainer accent={style?.accent}>
+          <CTAHeader>{props?.headerText}</CTAHeader>
+          <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
+          <CTABtnContainer>
             <button
               style={{
                 backgroundColor: style?.accent,
                 borderColor: style?.accent,
+                border: "1px solid transparent",
+                color: "white",
+                borderRadius: "0.75rem",
+                paddingBlock: "0.75rem",
+                paddingInline: "2.5rem",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                width: "100%",
               }}
-              className="border w-full border-teal-600 text-white rounded-xl bg-teal-600 px-10 text-sm font-medium py-3"
             >
               {props?.primaryButtonText}
             </button>
             <button
               style={{
-                color: style?.accent,
                 borderColor: style?.accent,
+                border: "1px solid",
+                color: style?.accent,
+                borderRadius: "0.75rem",
+                paddingBlock: "0.75rem",
+                paddingInline: "2.5rem",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                width: "100%",
               }}
-              className="border w-full bg-transparent border-teal-600 px-10 rounded-xl text-teal-600 text-sm font-medium py-3"
             >
               {props?.secondaryButtonText}
             </button>
-          </div>
-        </div>
+          </CTABtnContainer>
+        </CTAContainer>
       </div>
-    </section>
+    </CTAWrapper>
   );
 }

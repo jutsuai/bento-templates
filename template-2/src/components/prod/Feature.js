@@ -1,42 +1,152 @@
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const FeatureWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
+      style?.paddingBottom || 0
+    }px ${style?.paddingLeft || 0}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
+      style?.marginBottom || 0
+    }px ${style?.marginLeft || 0}px`};
+
+  background-color: white;
+  &:not(.light *) {
+    background-color: #080a11;
+  }
+`;
+
+const FeatureContainer = styled.div`
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 20rem;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  aspect-ratio: auto;
+  width: 100%;
+
+  @media (min-width: ${bp.md}) {
+    width: 100%;
+  }
+
+  @media (min-width: ${bp.xl}) {
+    min-height: 24rem;
+    aspect-ratio: 16 / 5;
+  }
+
+  flex-direction: ${({ style }) => style?.flexDirection || "row"};
+  background-color: ${({ style }) => style?.accent + 12};
+
+  @media (max-width: ${bp.lg}) {
+    flex-direction: column-reverse !important;
+  }
+`;
+
+const FeatureContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2.5rem;
+  gap: 1rem;
+
+  @media (min-width: ${bp.md}) {
+    gap: 2rem;
+  }
+
+  @media (min-width: ${bp.lg}) {
+    width: 50%;
+    padding: 2.5rem;
+  }
+
+  @media (min-width: ${bp.xl}) {
+    padding: 3.5rem;
+  }
+`;
+
+const FeatureSubHeader = styled.p`
+  margin-bottom: -1rem; // -mb-4
+  font-size: 0.875rem; // text-sm
+  color: #4b5563; // text-gray-700
+
+  &:not(.light *) {
+    color: #d1d5db; // dark:text-gray-300
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 1rem; // xl:text-base
+  }
+`;
+const FeatureHeader = styled.h2`
+  font-size: 1.5rem; // text-2xl
+  font-weight: bold;
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 2.5rem; // xl:text-4xl
+  }
+`;
+const FeatureDescription = styled.p`
+  font-size: 0.875rem; // text-sm
+  color: #4b5563; // text-gray-700
+
+  &:not(.light *) {
+    color: #d1d5db; // dark:text-gray-300
+  }
+
+  @media (min-width: ${bp.xl}) {
+    font-size: 1rem; // xl:text-base
+  }
+`;
+
+const FeatureImage = styled.img`
+  width: 100%;
+  aspect-ratio: 16 / 9; // aspect-video
+  object-fit: cover;
+  object-position: center;
+
+  @media (min-width: ${bp.lg}) {
+    aspect-ratio: 1 / 1; // lg:aspect-square
+    width: 50%; // lg:w-1/2
+  }
+`;
+
 export default function Feature({ props, style, id }) {
   return (
-    <section
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-gray-800"
-    >
-      <div className="container mx-auto flex items-center justify-center px-8 py-20">
-        <div
-          style={{
-            flexDirection: style?.flexDirection,
-            backgroundColor: style?.accent + 12,
-          }}
-          className={`flex aspect-auto h-full xl:min-h-96 flex-col-reverse items-center justify-between gap-8 min-h-80 overflow-hidden rounded-3xl md:w-full xl:aspect-[16/5] ${
-            props?.isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
-          }`}
-        >
-          <div className="xl:p-15 flex w-full flex-col gap-4 px-10 pb-10 md:gap-8 lg:w-1/2 lg:p-10">
-            <p className="-mb-4 text-sm text-gray-700 dark:text-gray-300 xl:text-base">
-              {props?.subHeaderText}
-            </p>
-            <h2 className="text-2xl font-bold text-black dark:text-white xl:text-4xl">
-              {props?.headerText}
-            </h2>
-            <p className="text-sm text-gray-700 dark:text-gray-300 xl:text-base">
-              {props?.description}
-            </p>
-          </div>
-          <img
-            src={props?.imageSrc}
-            alt="features"
-            className="aspect-video w-full object-cover object-center lg:aspect-square lg:w-1/2"
-            loading="lazy"
-          />
-        </div>
+    <FeatureWrapper id={id} style={style}>
+      <div
+        style={{
+          maxWidth: "96rem",
+          marginInline: "auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "5rem 1rem",
+        }}
+      >
+        <FeatureContainer style={style}>
+          <FeatureContent>
+            <FeatureSubHeader>{props?.subHeaderText}</FeatureSubHeader>
+            <FeatureHeader>{props?.headerText}</FeatureHeader>
+            <FeatureDescription>{props?.description}</FeatureDescription>
+          </FeatureContent>
+          <FeatureImage src={props?.imageSrc} alt="features" loading="lazy" />
+        </FeatureContainer>
       </div>
-    </section>
+    </FeatureWrapper>
   );
 }

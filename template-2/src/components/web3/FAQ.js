@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const FAQWrapper = styled.section`
+const FAQWrapper = styled.div`
   background-color: white;
   &:not(.light *) {
     background-color: #080a11;
@@ -32,7 +33,7 @@ const FAQContainer = styled.div`
   max-width: 96rem;
   margin-inline: auto;
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -43,7 +44,7 @@ const FAQContent = styled.div`
   text-align: center;
   gap: 1.5rem;
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     text-align: left;
   }
 `;
@@ -57,7 +58,7 @@ const FAQHeader = styled.h2`
     color: white;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 2.25rem; // lg:text-4xl
   }
 `;
@@ -69,7 +70,7 @@ const FAQSubHeader = styled.p`
     color: #d1d5db;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 1rem;
   }
 `;
@@ -83,7 +84,7 @@ const FAQIcon = styled.div`
   border-radius: 1.5rem;
   background-color: ${({ style }) => style?.accent};
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     display: grid;
   }
 `;
@@ -111,7 +112,7 @@ const FAQquestion = styled.h3`
     color: white;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 1rem; // lg:text-base
   }
 `;
@@ -125,18 +126,15 @@ const FAQanswer = styled.p`
     color: #e5e7eb; // dark:text-gray-200
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 0.875rem; // lg:text-sm
     font-weight: 400; // lg:font-normal
   }
 `;
 
-export default function FAQ({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <FAQWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <FAQWrapper id={id} style={style}>
       <FAQContainer>
         <FAQContent>
           <FAQHeader>{props?.headerText}</FAQHeader>
@@ -162,4 +160,4 @@ export default function FAQ({ props, style, id }) {
       </FAQContainer>
     </FAQWrapper>
   );
-}
+

@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -7,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const GalleryWrapper = styled.section`
+const GalleryWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -79,7 +81,7 @@ const GalleryImageContainer = styled.div`
   }
 `;
 
-export default function Gallery({ props, style, id }) {
+
   return (
     <GalleryWrapper id={id} style={style}>
       <GalleryContainer>
@@ -112,4 +114,4 @@ export default function Gallery({ props, style, id }) {
       </GalleryContainer>
     </GalleryWrapper>
   );
-}
+

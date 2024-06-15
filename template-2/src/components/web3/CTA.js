@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -7,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const CTAWrapper = styled.section`
+const CTAWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -88,7 +90,7 @@ const CTABtnContainer = styled.div`
   }
 `;
 
-export default function CTA({ props, style, id }) {
+
   return (
     <CTAWrapper id={id} style={style}>
       <div
@@ -138,4 +140,4 @@ export default function CTA({ props, style, id }) {
       </div>
     </CTAWrapper>
   );
-}
+

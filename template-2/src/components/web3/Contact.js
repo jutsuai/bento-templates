@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const ContactWrapper = styled.section`
+const ContactWrapper = styled.div`
   background-color: white;
   &:not(.light *) {
     background-color: #080a11;
@@ -32,7 +33,7 @@ const ContactHeader = styled.div`
     color: white;
   }
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     font-size: 2.5rem; // md:text-4xl
   }
 `;
@@ -51,7 +52,7 @@ const ContactContainer = styled.div`
   align-items: center;
   gap: 3rem; // gap-12
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     gap: 4rem; // md:gap-16
   }
 `;
@@ -83,12 +84,9 @@ const ContactSubtitle = styled.p`
   }
 `;
 
-export default function Contact({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <ContactWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <ContactWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",
@@ -161,4 +159,4 @@ export default function Contact({ props, style, id }) {
       </div>
     </ContactWrapper>
   );
-}
+

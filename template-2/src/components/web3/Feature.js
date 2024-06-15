@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const FeatureWrapper = styled.section`
+const FeatureWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -37,11 +38,11 @@ const FeatureContainer = styled.div`
   aspect-ratio: auto;
   width: 100%;
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     width: 100%;
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     min-height: 24rem;
     aspect-ratio: 16 / 5;
   }
@@ -49,7 +50,7 @@ const FeatureContainer = styled.div`
   flex-direction: ${({ style }) => style?.flexDirection || "row"};
   background-color: ${({ style }) => style?.accent + 12};
 
-  @container (max-width: ${bp.lg}) {
+  @media (max-width: ${bp.lg}) {
     flex-direction: column-reverse !important;
   }
 `;
@@ -61,16 +62,16 @@ const FeatureContent = styled.div`
   padding: 2.5rem;
   gap: 1rem;
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     gap: 2rem;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     width: 50%;
     padding: 2.5rem;
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     padding: 3.5rem;
   }
 `;
@@ -84,7 +85,7 @@ const FeatureSubHeader = styled.p`
     color: #d1d5db; // dark:text-gray-300
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 1rem; // xl:text-base
   }
 `;
@@ -97,7 +98,7 @@ const FeatureHeader = styled.h2`
     color: white;
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 2.5rem; // xl:text-4xl
   }
 `;
@@ -109,7 +110,7 @@ const FeatureDescription = styled.p`
     color: #d1d5db; // dark:text-gray-300
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 1rem; // xl:text-base
   }
 `;
@@ -120,18 +121,15 @@ const FeatureImage = styled.img`
   object-fit: cover;
   object-position: center;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     aspect-ratio: 1 / 1; // lg:aspect-square
     width: 50%; // lg:w-1/2
   }
 `;
 
-export default function Feature({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <FeatureWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <FeatureWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",
@@ -153,4 +151,4 @@ export default function Feature({ props, style, id }) {
       </div>
     </FeatureWrapper>
   );
-}
+

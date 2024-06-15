@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const PartnersWrapper = styled.section`
+const PartnersWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -34,7 +35,7 @@ const PartnersHeader = styled.h2`
     color: white;
   }
 
-  @container (min-width: ${bp.md}) {
+  @media (min-width: ${bp.md}) {
     font-size: 2.25rem;
   }
 `;
@@ -48,7 +49,7 @@ const PartnersLogoContainer = styled.div`
   width: 100%;
   padding-inline: 1rem;
 
-  @container (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.sm}) {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 `;
@@ -63,12 +64,9 @@ const PartnersImageBox = styled.div`
     background-color: #1e293b;
   }
 `;
-export default function Partners({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <PartnersWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <PartnersWrapper id={id} style={style}>
       <div
         style={{
           flexDirection: style?.flexDirection || "column",
@@ -105,4 +103,4 @@ export default function Partners({ props, style, id }) {
       </div>
     </PartnersWrapper>
   );
-}
+

@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -30,7 +32,7 @@ const socialIcons = [
   },
 ];
 
-const FooterWrapper = styled.footer`
+const FooterWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -135,7 +137,7 @@ const FooterBottomContent = styled.p`
     color: rgb(209 213 219);
   }
 `;
-export default function Footer({ props, style, id }) {
+
   return (
     <FooterWrapper id={id} style={style} props={props}>
       <FooterContent>
@@ -220,4 +222,4 @@ export default function Footer({ props, style, id }) {
       </FooterBottom>
     </FooterWrapper>
   );
-}
+
