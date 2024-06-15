@@ -9,10 +9,7 @@ const bp = {
 };
 
 const ContactWrapper = styled.section`
-  background-color: white;
-  &:not(.light *) {
-    background-color: #080a11;
-  }
+  background-color: ${({ style }) => style?.accent};
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -26,11 +23,11 @@ const ContactWrapper = styled.section`
 const ContactHeader = styled.div`
   font-size: 1.875rem; // text-3xl
   font-weight: 600; // font-semibold
-  color: black;
+  /* color: black; */
 
-  &:not(.light *) {
-    color: white;
-  }
+  color: white;
+  /* &:not(.light *) {
+  } */
 
   @container (min-width: ${bp.md}) {
     font-size: 2.5rem; // md:text-4xl
@@ -38,11 +35,11 @@ const ContactHeader = styled.div`
 `;
 const ContactSubHeader = styled.p`
   font-size: 0.875rem;
-  color: #4b5563;
+  /* color: #4b5563; */
 
-  &:not(.light *) {
-    color: #d1d5db;
-  }
+  color: #d1d5db;
+  /* &:not(.light *) {
+  } */
 `;
 
 const ContactContainer = styled.div`
@@ -58,29 +55,29 @@ const ContactContainer = styled.div`
 
 const ContactSVG = styled.svg`
   width: 2rem;
-  fill: black;
-  &:not(.light *) {
-    fill: white;
-  }
+  /* fill: black; */
+  fill: white;
+  /* &:not(.light *) {
+  } */
 `;
 
 const ContactTitle = styled.h3`
   font-size: 1.25rem; // text-xl
   font-weight: 500; // font-medium
-  color: black;
+  /* color: black; */
 
-  &:not(.light *) {
-    color: white;
-  }
+  color: white;
+  /* &:not(.light *) {
+  } */
 `;
 
 const ContactSubtitle = styled.p`
   font-size: 0.875rem;
-  color: #4b5563;
+  /* color: #4b5563; */
 
-  &:not(.light *) {
-    color: #d1d5db;
-  }
+  color: #d1d5db;
+  /* &:not(.light *) {
+  } */
 `;
 
 export default function Contact({ props, style, id }) {
