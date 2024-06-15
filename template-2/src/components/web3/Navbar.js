@@ -1,5 +1,39 @@
-const style = props.style || {};
-const props = props.props || {};
+const style = props.style ||{
+  paddingTop: 0,
+  paddingLeft: 0,
+  paddingBottom: 0,
+  paddingRight: 0,
+  marginTop: 0,
+  marginLeft: 0,
+  marginBottom: 0,
+  marginRight: 0,
+  accent: "#0d9488",
+};
+const props = props.props || {
+  navItems: [
+    {
+      name: "Home",
+      link: "#",
+    },
+    {
+      name: "Bikes",
+      link: "#",
+    },
+    {
+      name: "Accessories",
+      link: "#",
+    },
+    {
+      name: "About Us",
+      link: "#",
+    },
+    {
+      name: "Contact Us",
+      link: "#",
+    },
+  ],
+  buttonText: "Buy",
+},;
 import React from "react";
 
 

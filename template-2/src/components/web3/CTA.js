@@ -1,6 +1,21 @@
-const style = props.style || {};
-const props = props.props || {};
-
+const style = props.style || {
+  paddingTop: 0,
+  paddingLeft: 0,
+  paddingBottom: 0,
+  paddingRight: 0,
+  marginTop: 0,
+  marginLeft: 0,
+  marginBottom: 0,
+  marginRight: 0,
+  accent: "#0d9488",
+};
+const props = props.props || {
+  headerText: "Find Your Perfect Ride",
+  subHeaderText:
+    "Explore our wide range of bikes and find the one that suits your style and needs.",
+  primaryButtonText: "Browse Bikes",
+  secondaryButtonText: "Contact Us",
+};
 
 const bp = {
   sm: "40rem",
@@ -90,54 +105,52 @@ const CTABtnContainer = styled.div`
   }
 `;
 
-
-  return (
-    <CTAWrapper id={id} style={style}>
-      <div
-        style={{
-          maxWidth: "96rem",
-          marginInline: "auto",
-          padding: "5rem 1rem",
-        }}
-      >
-        <CTAContainer accent={style?.accent}>
-          <CTAHeader>{props?.headerText}</CTAHeader>
-          <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
-          <CTABtnContainer>
-            <button
-              style={{
-                backgroundColor: style?.accent,
-                borderColor: style?.accent,
-                border: "1px solid transparent",
-                color: "white",
-                borderRadius: "0.75rem",
-                paddingBlock: "0.75rem",
-                paddingInline: "2.5rem",
-                fontSize: "0.875rem",
-                fontWeight: "500",
-                width: "100%",
-              }}
-            >
-              {props?.primaryButtonText}
-            </button>
-            <button
-              style={{
-                borderColor: style?.accent,
-                border: "1px solid",
-                color: style?.accent,
-                borderRadius: "0.75rem",
-                paddingBlock: "0.75rem",
-                paddingInline: "2.5rem",
-                fontSize: "0.875rem",
-                fontWeight: "500",
-                width: "100%",
-              }}
-            >
-              {props?.secondaryButtonText}
-            </button>
-          </CTABtnContainer>
-        </CTAContainer>
-      </div>
-    </CTAWrapper>
-  );
-
+return (
+  <CTAWrapper id={id} style={style}>
+    <div
+      style={{
+        maxWidth: "96rem",
+        marginInline: "auto",
+        padding: "5rem 1rem",
+      }}
+    >
+      <CTAContainer accent={style?.accent}>
+        <CTAHeader>{props?.headerText}</CTAHeader>
+        <CTASubHeader>{props?.subHeaderText}</CTASubHeader>
+        <CTABtnContainer>
+          <button
+            style={{
+              backgroundColor: style?.accent,
+              borderColor: style?.accent,
+              border: "1px solid transparent",
+              color: "white",
+              borderRadius: "0.75rem",
+              paddingBlock: "0.75rem",
+              paddingInline: "2.5rem",
+              fontSize: "0.875rem",
+              fontWeight: "500",
+              width: "100%",
+            }}
+          >
+            {props?.primaryButtonText}
+          </button>
+          <button
+            style={{
+              borderColor: style?.accent,
+              border: "1px solid",
+              color: style?.accent,
+              borderRadius: "0.75rem",
+              paddingBlock: "0.75rem",
+              paddingInline: "2.5rem",
+              fontSize: "0.875rem",
+              fontWeight: "500",
+              width: "100%",
+            }}
+          >
+            {props?.secondaryButtonText}
+          </button>
+        </CTABtnContainer>
+      </CTAContainer>
+    </div>
+  </CTAWrapper>
+);
