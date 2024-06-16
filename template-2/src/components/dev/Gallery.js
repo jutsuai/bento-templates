@@ -24,7 +24,7 @@ const GalleryWrapper = styled.section`
 `;
 
 const GalleryContainer = styled.div`
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
   display: flex;
   align-items: center;

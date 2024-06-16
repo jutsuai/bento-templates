@@ -97,7 +97,7 @@ export default function CTA({ props, style, id }) {
     <CTAWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           marginInline: "auto",
           padding: "5rem 1rem",
         }}

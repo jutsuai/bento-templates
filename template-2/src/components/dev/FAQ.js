@@ -29,7 +29,7 @@ const FAQContainer = styled.div`
   gap: 2.5rem;
   width: 100%;
   padding: 5rem 1rem;
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
 
   @container (min-width: ${bp.xl}) {

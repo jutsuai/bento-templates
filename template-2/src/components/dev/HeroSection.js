@@ -21,7 +21,7 @@ const HeroSectionWrapper = styled.section`
   }
 `;
 const HeroSectionContainer = styled.div`
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
