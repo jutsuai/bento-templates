@@ -23,7 +23,7 @@ const PartnersContainer = styled.section`
   }
 `;
 const PartnersWrapper = styled.div`
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
   padding: 5rem 1rem;
   padding-bottom: 7rem;

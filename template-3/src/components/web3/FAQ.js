@@ -1,6 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
-import React from "react";
+
 
 
 const bp = {
@@ -182,7 +182,7 @@ const FAQExpandIconMinus = styled.svg`
   transform: rotate(180deg);
 `;
 function FAQItem({ question, answer }) {
-  const [expand, setExpand] = React.useState(0);
+  const [expand, setExpand] = useState(0);
 
   return (
     <FAQItemContainer onClick={() => setExpand((e) => (e === 0 ? 1 : 0))}>

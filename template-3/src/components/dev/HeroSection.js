@@ -28,7 +28,7 @@ const HeroContainer = styled.div`
   flex-direction: column;
   padding: 5rem 1rem;
   gap: 5rem;
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
 
   @container (min-width: ${bp.sm}) {

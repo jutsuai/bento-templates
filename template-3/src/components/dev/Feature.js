@@ -24,7 +24,7 @@ const FeatureWrapper = styled.section`
   }
 `;
 const FeatureContainer = styled.div`
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
   gap: 2.5rem;
   padding: 5rem 1rem;
