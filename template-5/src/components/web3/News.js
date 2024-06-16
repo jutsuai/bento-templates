@@ -17,7 +17,7 @@ const NewsWrapper = styled.div`
   background-color: white;
 
   &:not(.light *) {
-    background-color: #1f2937;
+    background-color: #080a11;
   }
 `;
 const NewsContent = styled.div`
