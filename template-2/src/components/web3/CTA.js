@@ -130,6 +130,7 @@ const CTABtnContainer = styled.div`
                 paddingInline: "2.5rem",
                 fontSize: "0.875rem",
                 fontWeight: "500",
+                backgroundColor: "transparent",
                 width: "100%",
               }}
             >

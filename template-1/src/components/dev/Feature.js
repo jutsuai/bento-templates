@@ -43,6 +43,7 @@ const FeatureImage = styled.img`
   border-radius: 0.5rem;
   object-fit: cover;
   object-position: center;
+  width: 100%;
 
   @container (min-width: ${bp.lg}) {
     width: 50%;
@@ -52,7 +53,7 @@ const FeatureImage = styled.img`
 const FeatureContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem; // gap-4
+  gap: 2rem; // gap-4
   margin: 1rem;
 
   @container (min-width: ${bp.lg}) {

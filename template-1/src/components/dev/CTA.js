@@ -116,6 +116,7 @@ export default function CTA({ props, style, id }) {
                 paddingInline: "2rem",
                 fontSize: "0.875rem",
                 fontWeight: "500",
+                backgroundColor: "transparent",
               }}
             >
               {props?.secondaryButtonText}

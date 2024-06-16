@@ -46,7 +46,8 @@ const FeatureBorderWhite1 = styled.img`
   position: absolute;
   top: 0;
   ${({ style }) =>
-    style?.flexDirection?.includes("reverse")
+    style?.flexDirection === "row-reverse" ||
+    style?.flexDirection === "column-reverse"
       ? `
     transform: scaleX(-1);
     right: 0;
@@ -61,7 +62,8 @@ const FeatureBorderBlack1 = styled.img`
   position: absolute;
   top: 0;
   ${({ style }) =>
-    style?.flexDirection?.includes("reverse")
+    style?.flexDirection === "row-reverse" ||
+    style?.flexDirection === "column-reverse"
       ? `
         transform: scaleX(-1);
         right: 0;
@@ -78,7 +80,8 @@ const FeatureBorderWhite2 = styled.img`
   }
 
   ${({ style }) =>
-    style?.flexDirection?.includes("reverse")
+    style?.flexDirection === "row-reverse" ||
+    style?.flexDirection === "column-reverse"
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -95,7 +98,8 @@ const FeatureBorderBlack2 = styled.img`
   }
 
   ${({ style }) =>
-    style?.flexDirection?.includes("reverse")
+    style?.flexDirection === "row-reverse" ||
+    style?.flexDirection === "column-reverse"
       ? `
     transform: scaleX(-1);
     right: 0.75rem;
@@ -170,9 +174,11 @@ export default function Feature({ props, style, id }) {
             flex: "1 1 0%",
             position: "relative",
             display: "flex",
-            justifyContent: style?.flexDirection?.includes("reverse")
-              ? "flex-end"
-              : "flex-start",
+            justifyContent:
+              style?.flexDirection === "row-reverse" ||
+              style?.flexDirection === "column-reverse"
+                ? "flex-end"
+                : "flex-start",
           }}
         >
           <FeatureBorderBlack1
@@ -199,12 +205,16 @@ export default function Feature({ props, style, id }) {
             style={{
               zIndex: 9999,
               marginTop: "1.5rem",
-              marginRight: style?.flexDirection?.includes("reverse")
-                ? "1.5rem"
-                : "unset",
-              marginLeft: style?.flexDirection?.includes("reverse")
-                ? "unset"
-                : "1.5rem",
+              marginRight:
+                style?.flexDirection === "row-reverse" ||
+                style?.flexDirection === "column-reverse"
+                  ? "1.5rem"
+                  : "unset",
+              marginLeft:
+                style?.flexDirection === "row-reverse" ||
+                style?.flexDirection === "column-reverse"
+                  ? "unset"
+                  : "1.5rem",
             }}
           >
             <img

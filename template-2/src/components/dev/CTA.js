@@ -132,6 +132,7 @@ export default function CTA({ props, style, id }) {
                 paddingInline: "2.5rem",
                 fontSize: "0.875rem",
                 fontWeight: "500",
+                backgroundColor: "transparent",
                 width: "100%",
               }}
             >

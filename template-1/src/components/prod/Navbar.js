@@ -47,6 +47,7 @@ const NavList = styled.ul`
   align-items: center;
   margin-block: auto;
   gap: 1.5rem;
+  list-style: none;
   @media (min-width: ${bp.lg}) {
     display: flex;
   }
@@ -146,6 +147,7 @@ const MobileNavList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  list-style: none;
 `;
 
 const MobileNavListItem = styled.a`
@@ -166,6 +168,7 @@ const MobileButton = styled.button`
   font-size: 0.8rem;
   font-weight: 500;
   color: white;
+  border: none;
 `;
 
 const defaultLogoSrc =
@@ -218,6 +221,7 @@ export default function Navbar({ props, style, id }) {
                     href={item.link}
                     style={{
                       textWrap: "nowrap",
+                      color: "inherit",
                     }}
                   >
                     {item.name}

@@ -113,9 +113,9 @@ const CTABtnButton = styled.button`
   align-items: center;
   font-size: 0.75rem;
   justify-content: center;
-  border: "1px solid";
-  border-color: ${({ style }) => style?.accent || "#b9ff81"};
-  background-color: ${({ style }) => style?.accent || "#b9ff81"};
+  border: 1px solid;
+  border-color: ${({ accent }) => accent || "#b9ff81"};
+  background-color: ${({ accent }) => accent || "#b9ff81"};
   width: 100%;
   height: 100%;
   max-width: 10rem;
@@ -151,7 +151,7 @@ export default function CTA({ props, style, id }) {
             }}
           >
             <CTAInput placeholder="Enter your email address" />
-            <CTABtnButton style={style}>
+            <CTABtnButton accent={style?.accent}>
               {props?.primaryButtonText}
               <svg
                 style={{

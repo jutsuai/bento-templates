@@ -144,7 +144,7 @@ export default function Feature({ props, style, id }) {
       >
         <FeatureContainer style={style}>
           <FeatureContent>
-            <FeatureSubHeader>{props?.subHeaderTextarea}</FeatureSubHeader>
+            <FeatureSubHeader>{props?.subHeaderText}</FeatureSubHeader>
             <FeatureHeader>{props?.headerText}</FeatureHeader>
             <FeatureDescription>
               {props?.descriptionTextarea}

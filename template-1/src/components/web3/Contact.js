@@ -59,6 +59,7 @@ const ContactContainer = styled.div`
 const ContactSVG = styled.svg`
   width: 2rem;
   fill: black;
+  margin-bottom: 0.5rem;
 
   &:not(.light *) {
     fill: white;

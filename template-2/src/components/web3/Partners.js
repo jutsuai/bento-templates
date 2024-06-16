@@ -90,6 +90,7 @@ const PartnersImageBox = styled.div`
                     src={logo}
                     alt="logos"
                     style={{
+                      width: "100%",
                       aspectRatio: "1 / 1",
                       borderRadius: "0.5rem",
                       objectFit: "cover",

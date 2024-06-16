@@ -98,6 +98,7 @@ const HeroButton1 = styled.button`
   font-weight: 600;
   color: black;
   border-radius: 4px;
+  border: none;
 
   font-size: 0.8rem;
   @media (min-width: ${bp.lg}) {
@@ -114,7 +115,8 @@ const HeroButton2 = styled.button`
   line-height: 1.5rem;
   color: black;
   fill: black;
-
+  background-color: transparent;
+  border: none;
   &:not(.light *) {
     color: white;
     fill: white;

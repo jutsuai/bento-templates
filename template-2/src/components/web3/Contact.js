@@ -50,6 +50,7 @@ const ContactContainer = styled.div`
 const ContactSVG = styled.svg`
   width: 2rem;
   fill: white;
+  margin-bottom: 0.5rem;
 `;
 
 const ContactTitle = styled.h3`
