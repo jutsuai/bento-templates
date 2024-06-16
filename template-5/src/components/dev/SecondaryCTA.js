@@ -112,6 +112,7 @@ export default function SecondaryCTA({ props, style, id }) {
                 fontWeight: "600",
                 width: "fit-content",
                 height: "fit-content",
+                border: "none",
               }}
             >
               {props?.primaryButtonText}

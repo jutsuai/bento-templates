@@ -48,6 +48,7 @@ const NavList = styled.ul`
   align-items: center;
   margin-block: auto;
   gap: 1.5rem;
+  list-style: none;
   @container (min-width: ${bp.lg}) {
     display: flex;
   }
@@ -134,6 +135,7 @@ const MobileNavList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  list-style: none;
 `;
 
 const MobileNavListItem = styled.a`
@@ -153,6 +155,8 @@ const MobileButton = styled.button`
   line-height: 1.25rem;
   font-weight: 600;
   color: black;
+  border: none;
+  background: transparent;
 
   &:not(.light *) {
     color: white;

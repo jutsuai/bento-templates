@@ -138,7 +138,7 @@ const ArticleMetadataDate = styled.p`
               </div>
               <div
                 style={{
-                  color: style?.accent || "#b9ff81",
+                  fill: style?.accent || "#b9ff81",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -152,7 +152,6 @@ const ArticleMetadataDate = styled.p`
                   style={{
                     width: "0.7rem",
                     transform: "rotate(-0.25turn)",
-                    fill: "black",
                   }}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"

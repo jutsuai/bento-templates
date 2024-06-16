@@ -110,6 +110,7 @@ const SecondaryCTADesign = styled.div`
                 fontWeight: "600",
                 width: "fit-content",
                 height: "fit-content",
+                border: "none",
               }}
             >
               {props?.primaryButtonText}

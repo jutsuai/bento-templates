@@ -80,12 +80,14 @@ export default function PrimaryCTA({ props, style, id }) {
             fontWeight: "600",
             width: "fit-content",
             height: "fit-content",
+            border: "none",
+            color: "black",
           }}
         >
           {props?.primaryButtonText}
           <div
             style={{
-              color: style?.accent,
+              fill: style?.accent || "#b9ff81",
               height: "1.5rem",
               width: "1.5rem",
               borderRadius: "100%",
@@ -99,7 +101,6 @@ export default function PrimaryCTA({ props, style, id }) {
               style={{
                 width: "0.7rem",
                 transform: "rotate(-0.25turn)",
-                fill: "black",
               }}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"

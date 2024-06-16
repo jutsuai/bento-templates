@@ -70,6 +70,7 @@ const NewsButton = styled.button`
   justify-content: center;
   gap: 0.75rem;
   font-weight: 600;
+  background-color: transparent;
 
   &:not(.light *) {
     color: white;
@@ -151,7 +152,7 @@ export default function News({ props, style, id }) {
             {props?.buttonText}
             <div
               style={{
-                color: style?.accent || "#b9ff81",
+                fill: style?.accent || "#b9ff81",
                 height: "1.5rem",
                 width: "1.5rem",
                 borderRadius: "100%",
@@ -165,7 +166,6 @@ export default function News({ props, style, id }) {
                 style={{
                   width: "0.7rem",
                   transform: "rotate(-0.25turn)",
-                  fill: "black",
                 }}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 384 512"
