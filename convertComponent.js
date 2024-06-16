@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const prompt = require("prompt-sync")();
 
-const templateVersion = 5;
+const templateVersion = prompt("Enter the template version: ");
 
 const directoryPath = path.join(
   `C:\\Users\\asr30\\Desktop\\bento-templates\\template-${templateVersion}\\src\\components\\prod`
@@ -38,6 +39,7 @@ async function convertToDev(fileName) {
 
     const modifiedData = data
       .replace(/@media/g, "@container")
+      .replace(/96rem/g, "75rem")
       .replace(
         'import styled from "styled-components";',
         'import styled from "styled-components";\nimport { useNode } from "@craftjs/core";'
@@ -62,7 +64,7 @@ async function convertToDev(fileName) {
           console.error("Error writing the new file:", err);
           return;
         }
-        console.log("Dev File was written successfully");
+        console.log(`template-${templateVersion} dev file is written`);
       });
     });
   });
@@ -80,10 +82,12 @@ async function convertToWeb3(fileName) {
 
     const initModifiedData = data
       .replace('import styled from "styled-components";', "")
+      .replace('import React from "react";', "")
       .replace(/export\s+default\s+function\s+(\w+)\s*\(\{.*?\}\)\s*\{/, "")
       .replace("styled.section", "styled.div")
       .replace("styled.nav", "styled.div")
-      .replace("styled.footer", "styled.div");
+      .replace("styled.footer", "styled.div")
+      .replace("React.useState(", "useState(");
 
     const modifiedData = addAndRemoveSome(initModifiedData);
 
@@ -98,7 +102,7 @@ async function convertToWeb3(fileName) {
           console.error("Error writing the new file:", err);
           return;
         }
-        console.log("Web3 File was written successfully");
+        console.log(`template-${templateVersion} web3 file is written`);
       });
     });
   });
