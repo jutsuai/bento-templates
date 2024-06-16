@@ -194,7 +194,7 @@ export default function Navbar({ props, style, id }) {
             </>
           ) : (
             <img
-              style={{ height: "2rem" }}
+              style={{ height: "3rem" }}
               src={props?.logoSrc}
               alt="company logo"
             />

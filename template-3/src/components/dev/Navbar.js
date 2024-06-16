@@ -176,9 +176,9 @@ const MobileButton = styled.button`
 const defaultLogoSrc =
   "https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza";
 export default function Navbar({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   const [showNav, setShowNav] = React.useState(false);
 
   return (
@@ -198,7 +198,7 @@ export default function Navbar({ props, style, id }) {
             </>
           ) : (
             <img
-              style={{ height: "2rem" }}
+              style={{ height: "3rem" }}
               src={props?.logoSrc}
               alt="company logo"
             />
