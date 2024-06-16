@@ -223,7 +223,7 @@ const FeatureDescription = styled.p`
           </div>
         </div>
         <FeatureContent>
-          <FeatureSubHeader>{`// ${props?.subHeaderTextarea}`}</FeatureSubHeader>
+          <FeatureSubHeader>{`// ${props?.subHeaderText}`}</FeatureSubHeader>
           <FeatureHeader>{props?.headerText}</FeatureHeader>
           <FeatureDescription>{props?.descriptionTextarea}</FeatureDescription>
         </FeatureContent>

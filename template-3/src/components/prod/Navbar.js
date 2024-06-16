@@ -10,6 +10,7 @@ const bp = {
 
 const StyledNav = styled.nav`
   position: relative;
+  z-index: 100;
   width: 100%;
   background-color: white;
   &:not(.light *) {
