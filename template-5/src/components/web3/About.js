@@ -145,7 +145,7 @@ const Button = styled.button`
         </AboutLeft>
         <AboutRight>
           <AboutRightContainer>
-            {props?.moreInfo?.map((item, index) => (
+            {props?.aboutInfo?.map((item, index) => (
               <MoreInfoWrapper key={index}>
                 <MoreInfoHeader>{item?.titleText}</MoreInfoHeader>
                 <MoreInfoDescription>

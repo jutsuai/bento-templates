@@ -147,7 +147,7 @@ export default function About({ props, style, id }) {
         </AboutLeft>
         <AboutRight>
           <AboutRightContainer>
-            {props?.moreInfo?.map((item, index) => (
+            {props?.aboutInfo?.map((item, index) => (
               <MoreInfoWrapper key={index}>
                 <MoreInfoHeader>{item?.titleText}</MoreInfoHeader>
                 <MoreInfoDescription>

@@ -192,9 +192,9 @@ const values = {
     props: {
       headerText: "Latest news, events & press",
       buttonText: "View all",
-      news: [
+      articles: [
         {
-          article:
+          articleText:
             "Even as the world transitions to renewable energy, we still need the chemistry industry to produce the materials that make modern life possible. But the industry must change to meet sustainability goals.",
           metadata: {
             title: "ARTICLES",

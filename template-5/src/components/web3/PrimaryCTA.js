@@ -17,8 +17,7 @@ const PrimaryCTAWrapper = styled.div`
   background-image: url("https://ipfs.near.social/ipfs/bafkreicgf3ripaiuwas5basym4m5wkcvtvg2lhoawcbbji6e3smkkcuwkq");
   background-position: right 20% top 0px;
   background-repeat: no-repeat;
-  height: 100dvh;
-  max-height: 100%;
+  height: 100%;
   padding-block: 6rem;
   background-color: #28282c;
 `;
@@ -28,6 +27,8 @@ const PrimaryCTAContent = styled.div`
   justify-content: center;
   height: 100%;
   padding: 1rem;
+  margin: auto 0;
+  padding-block: 4rem;
   gap: 3.5rem;
 
   @media (min-width: ${bp.md}) {
@@ -36,14 +37,13 @@ const PrimaryCTAContent = styled.div`
   }
 `;
 const PrimaryCTAHeader = styled.h2`
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
   max-width: 48rem;
   color: white;
-  word-break: break-word;
 
   @media (min-width: ${bp.md}) {
-    font-size: 8rem;
+    font-size: 4.5rem;
   }
 `;
 const PrimaryCTASubHeader = styled.h6`
@@ -66,7 +66,9 @@ const PrimaryCTASubHeader = styled.h6`
   return (
     <PrimaryCTAWrapper id={id} style={style}>
       <PrimaryCTAContent>
-        <PrimaryCTAHeader>{props?.headerText}</PrimaryCTAHeader>
+        <PrimaryCTAHeader>
+          {props?.headerText}drfgftd ghrytuefw etertyeytsrt
+        </PrimaryCTAHeader>
         <PrimaryCTASubHeader>{props?.subHeaderTextarea}</PrimaryCTASubHeader>
         <button
           style={{
