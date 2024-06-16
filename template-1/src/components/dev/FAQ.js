@@ -90,7 +90,7 @@ export default function FAQ({ props, style, id }) {
       <div
         style={{
           flexDirection: style?.flexDirection || "column",
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           marginInline: "auto",
           display: "flex",
           alignItems: "center",

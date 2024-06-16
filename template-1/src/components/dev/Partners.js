@@ -65,7 +65,7 @@ export default function Partners({ props, style, id }) {
           padding: "5rem 1rem",
           paddingBottom: "7rem",
           marginInline: "auto",
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

@@ -35,7 +35,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 1.5rem 1rem;
 
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
 `;
 

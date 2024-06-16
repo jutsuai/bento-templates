@@ -26,7 +26,7 @@ const FeatureWrapper = styled.section`
 
 const FeatureContainer = styled.div`
   flex-direction: ${({ flexDirection }) => flexDirection || "row"};
-  max-width: 96rem;
+  max-width: 75rem;
   margin-inline: auto;
   display: flex;
   align-items: center;

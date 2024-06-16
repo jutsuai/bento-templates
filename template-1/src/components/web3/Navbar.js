@@ -1,6 +1,6 @@
 const style = props.style || {};
 const props = props.props || {};
-import React from "react";
+
 
 
 const bp = {
@@ -173,7 +173,7 @@ const MobileButton = styled.button`
 const defaultLogoSrc =
   "https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza";
 
-  const [showNav, setShowNav] = React.useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   return (
     <StyledNav id={id} style={style}>
