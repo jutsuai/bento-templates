@@ -142,6 +142,7 @@ const HeroImageContainer = styled.div`
 `;
 
 const HeroImage1 = styled.img`
+  z-index: 999;
   position: absolute;
   top: 3.5rem;
   right: -2rem;
