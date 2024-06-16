@@ -96,6 +96,7 @@ const HeroButton1 = styled.button`
   font-weight: 600;
   color: white;
   border-radius: 9999px;
+  border: none;
 
   font-size: 0.8rem;
   @media (min-width: ${bp.lg}) {
@@ -108,6 +109,7 @@ const HeroButton2 = styled.button`
   gap: 0.5rem;
   padding: 0.7rem 1.8rem;
   border-radius: 9999px;
+  background-color: transparent;
   border: 2px solid ${({ accent }) => accent || "#b9ff81"};
   font-weight: 600;
   line-height: 1.5rem;
