@@ -51,7 +51,7 @@ const FooterAccentImage = styled.img`
   }
 `;
 
-export default function Footer({ props, style, id }) {
+export default function ProtoneFooter({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();

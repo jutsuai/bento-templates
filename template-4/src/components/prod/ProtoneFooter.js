@@ -50,7 +50,7 @@ const FooterAccentImage = styled.img`
   }
 `;
 
-export default function Footer({ props, style, id }) {
+export default function ProtoneFooter({ props, style, id }) {
   return (
     <FooterWrapper>
       <div
