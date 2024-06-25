@@ -1,14 +1,16 @@
 import Navbar from "./components/prod/Navbar";
 import HeroSection from "./components/prod/HeroSection";
-import Numbers from "./components/prod/Statistics";
+
 import Services from "./components/prod/Services";
 import About from "./components/prod/About";
-import Gallery from "./components/prod/Gallery";
-import Footer from "./components/prod/Footer";
-import Testimonials from "./components/prod/Testimonial";
+
 import CTA from "./components/prod/CTA";
 
 import { useState } from "react";
+import Statistics from "./components/prod/Statistics";
+import Protfolio from "./components/prod/Protfolio";
+import Testimonial from "./components/prod/Testimonial";
+import ProtoneFooter from "./components/prod/ProtoneFooter";
 export default function App() {
   const [darkMode, setDarkMode] = useState();
   return (
@@ -32,10 +34,10 @@ export default function App() {
         style={values.heroSection.style}
         id={values.heroSection.node}
       />
-      <Numbers
-        props={values.numbers.props}
-        style={values.numbers.style}
-        id={values.numbers.node}
+      <Statistics
+        props={values.statistics.props}
+        style={values.statistics.style}
+        id={values.statistics.node}
       />
       <Services
         props={values.services.props}
@@ -47,16 +49,16 @@ export default function App() {
         style={values.about.style}
         id={values.about.node}
       />
-      <Gallery
-        props={values.gallery.props}
-        style={values.gallery.style}
-        id={values.gallery.node}
+      <Protfolio
+        props={values.protfolio.props}
+        style={values.protfolio.style}
+        id={values.protfolio.node}
       />
 
-      <Testimonials
-        props={values.testimonials.props}
-        style={values.testimonials.style}
-        id={values.testimonials.node}
+      <Testimonial
+        props={values.testimonial.props}
+        style={values.testimonial.style}
+        id={values.testimonial.node}
       />
       <CTA
         props={values.cta.props}
@@ -64,7 +66,7 @@ export default function App() {
         id={values.cta.node}
       />
 
-      <Footer
+      <ProtoneFooter
         props={values.footer.props}
         style={values.footer.style}
         id={values.footer.node}
@@ -142,19 +144,19 @@ const values = {
       statisticsData: [
         {
           titleText: "PROJECTS",
-          countText: "100+",
+          countText: "100",
         },
         {
           titleText: "AWARDS",
-          countText: "24+",
+          countText: "24",
         },
         {
           titleText: "CLIENTS",
-          countText: "70+",
+          countText: "70",
         },
         {
           titleText: "EXPERIENCE",
-          countText: "10+",
+          countText: "10",
         },
       ],
     },

@@ -174,7 +174,11 @@ const MenuIcon = styled.svg`
   @container (min-width: ${bp.lg}) {
     display: none;
   }
-  fill: white;
+  fill: black;
+
+  &:not(.light *) {
+    fill: white;
+  }
 `;
 
 const NavLinks = styled.a`
