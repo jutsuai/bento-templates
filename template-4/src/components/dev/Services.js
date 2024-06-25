@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const ServicesWrapper = styled.section`
   padding: ${({ style }) =>
@@ -73,11 +74,14 @@ const ServiceDescription = styled.p`
 `;
 
 export default function Services({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <ServicesWrapper>
       <div
         style={{
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           margin: "0 auto",
           padding: "6rem 1rem",
           display: "flex",

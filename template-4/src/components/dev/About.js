@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -26,7 +27,7 @@ const AboutLeftContainer = styled.div`
   height: 100%;
   display: none;
 
-  @media (min-width: ${bp.lg}) {
+  @container (min-width: ${bp.lg}) {
     display: flex;
   }
 `;
@@ -57,7 +58,7 @@ const AboutContainer = styled.div`
   padding-top: 2rem; // py-8
   padding-bottom: 2rem; // py-8
 
-  @media (min-width: ${bp.sm}) {
+  @container (min-width: ${bp.sm}) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -94,11 +95,14 @@ const AboutProjectDescription = styled.p`
 `;
 
 export default function About({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <AboutWrapper id={id} style={style}>
+    <AboutWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           margin: "0 auto",
           padding: "5rem 1rem",
           display: "flex",

@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
 
-const GalleryContainer = styled.section`
+
+const GalleryContainer = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -71,15 +72,12 @@ const GalleryButtonIcon = styled.svg`
   }
 `;
 
-export default function Gallery({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
     <GalleryContainer>
       <div
         style={{
-          maxWidth: "75rem",
+          maxWidth: "96rem",
           margin: "0 auto",
           padding: "5rem 1rem",
           display: "flex",
@@ -174,4 +172,4 @@ export default function Gallery({ props, style, id }) {
       </div>
     </GalleryContainer>
   );
-}
+

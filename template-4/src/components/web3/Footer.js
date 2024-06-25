@@ -1,6 +1,8 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
 
-const FooterWrapper = styled.footer`
+
+const FooterWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -50,7 +52,7 @@ const FooterAccentImage = styled.img`
   }
 `;
 
-export default function Footer({ props, style, id }) {
+
   return (
     <FooterWrapper>
       <div
@@ -149,4 +151,4 @@ export default function Footer({ props, style, id }) {
       />
     </FooterWrapper>
   );
-}
+

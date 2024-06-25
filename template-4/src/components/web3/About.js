@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -7,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const AboutWrapper = styled.section`
+const AboutWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -93,7 +95,7 @@ const AboutProjectDescription = styled.p`
   }
 `;
 
-export default function About({ props, style, id }) {
+
   return (
     <AboutWrapper id={id} style={style}>
       <div
@@ -310,4 +312,4 @@ export default function About({ props, style, id }) {
       </div>
     </AboutWrapper>
   );
-}
+

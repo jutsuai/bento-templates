@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const CTAWrapper = styled.section`
+const CTAWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -36,7 +37,7 @@ const CTAContainer = styled.div`
   border-radius: 0.75rem; // rounded-xl
   margin-inline: auto; // mx-auto
 
-  @container (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.sm}) {
     padding: 6rem; // sm:p-24
     gap: 3rem; // sm:gap-12
   }
@@ -47,20 +48,17 @@ const CTAHeader = styled.h1`
   color: white;
   line-height: 1.5;
 
-  @container (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.sm}) {
     font-size: 3.75rem; // sm:text-6xl
   }
 `;
 
-export default function CTA({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <CTAWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
+    <CTAWrapper style={style} id={id}>
       <div
         style={{
-          maxWidth: "75rem",
+          maxWidth: "96rem",
           margin: "0 auto",
           padding: "5rem 1rem",
         }}
@@ -164,4 +162,4 @@ export default function CTA({ props, style, id }) {
       </div>
     </CTAWrapper>
   );
-}
+

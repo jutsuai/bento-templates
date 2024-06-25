@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { useNode } from "@craftjs/core";
+const style = props.style || {};
+const props = props.props || {};
+
+
 
 const bp = {
   sm: "40rem",
@@ -9,7 +10,7 @@ const bp = {
   xl: "80rem",
 };
 
-const HeroSectionWrapper = styled.section`
+const HeroSectionWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -26,7 +27,7 @@ const HeroSectionWrapper = styled.section`
 
 const SectionContent = styled.div`
   display: flex;
-  max-width: 75rem;
+  max-width: 96rem;
   margin-inline: auto;
   flex-direction: row;
   align-items: center;
@@ -37,7 +38,7 @@ const SectionContent = styled.div`
   gap: 4rem;
   z-index: 20;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     justify-content: space-between;
   }
 `;
@@ -51,7 +52,7 @@ const LeftContent = styled.div`
   gap: 2rem; // gap-8
   z-index: 10;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     align-items: flex-start;
     text-align: left;
   }
@@ -68,11 +69,11 @@ const HeaderText = styled.h1`
     color: white;
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 3rem; // lg:text-5xl
   }
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.xl}) {
     font-size: 3.5rem; // xl:text-6xl
   }
 `;
@@ -85,7 +86,7 @@ const SubHeaderText = styled.p`
     color: #d1d5db; // dark:text-gray-300
   }
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     font-size: 1.125rem; // lg:text-lg
   }
 `;
@@ -95,7 +96,7 @@ const ButtonContainer = styled.button`
   align-items: center;
   gap: 1rem; // gap-4
 
-  @container (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.sm}) {
     flex-direction: row;
   }
 `;
@@ -125,7 +126,7 @@ const ImageContainer = styled.div`
   flex: 1;
   z-index: 10;
 
-  @container (min-width: ${bp.lg}) {
+  @media (min-width: ${bp.lg}) {
     display: block;
   }
 `;
@@ -142,12 +143,9 @@ const BackgroundImage = styled.img`
   }
 `;
 
-export default function HeroSection({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+
   return (
-    <HeroSectionWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <HeroSectionWrapper id={id} style={style}>
       <SectionContent>
         <LeftContent>
           <HeaderText>{props?.headerText}</HeaderText>
@@ -218,4 +216,4 @@ export default function HeroSection({ props, style, id }) {
       />
     </HeroSectionWrapper>
   );
-}
+

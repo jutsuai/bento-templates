@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -7,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const NumbersWrapper = styled.section`
+const NumbersWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -35,7 +37,7 @@ const NumbersContainer = styled.div`
   }
 `;
 
-export default function Numbers({ props, style, id }) {
+
   return (
     <NumbersWrapper id={id} style={style}>
       <div
@@ -98,4 +100,4 @@ export default function Numbers({ props, style, id }) {
       </div>
     </NumbersWrapper>
   );
-}
+

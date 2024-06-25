@@ -1,21 +1,89 @@
-import React from "react";
+import styled from "styled-components";
+
+const bp = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+};
+
+const CTAWrapper = styled.section`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
+
+  background-color: white;
+  min-height: 400px;
+  max-height: 100%;
+
+  &:not(.light *) {
+    background-color: #121212;
+  }
+`;
+const CTAContainer = styled.div`
+  position: relative;
+  background-color: ${({ accent }) => accent || "#412dff"};
+  padding: 2.5rem; // p-10
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; // gap-8
+  text-align: center;
+  width: 100%;
+  border-radius: 0.75rem; // rounded-xl
+  margin-inline: auto; // mx-auto
+
+  @media (min-width: ${bp.sm}) {
+    padding: 6rem; // sm:p-24
+    gap: 3rem; // sm:gap-12
+  }
+`;
+const CTAHeader = styled.h1`
+  font-size: 1.875rem; // text-3xl
+  font-weight: 600; // font-semibold
+  color: white;
+  line-height: 1.5;
+
+  @media (min-width: ${bp.sm}) {
+    font-size: 3.75rem; // sm:text-6xl
+  }
+`;
 
 export default function CTA({ props, style, id }) {
-  const {
-    headerText = "Discover How Design Can Help Your Business",
-    buttonText = "LETS TALK",
-  } = props;
   return (
-    <section className="bg-white dark:bg-[#121212] min-h-[400px] max-h-full">
-      <div className="container mx-auto px-4 py-20">
-        <div className="relative bg-[#412dff] p-10 sm:p-24 flex flex-col items-center justify-center gap-8 sm:gap-12 text-center w-full  rounded-xl mx-auto">
-          <h1 className="text-3xl sm:text-6xl font-semibold text-white leading-normal">
-            {headerText}
-          </h1>
-          <button className="z-20 border-none text-[#412dff] flex gap-2 items-center bg-white py-4 px-8 font-medium rounded-lg">
-            {buttonText}
+    <CTAWrapper style={style} id={id}>
+      <div
+        style={{
+          maxWidth: "96rem",
+          margin: "0 auto",
+          padding: "5rem 1rem",
+        }}
+      >
+        <CTAContainer accent={style?.accent}>
+          <CTAHeader>{props?.headerText}</CTAHeader>
+          <button
+            style={{
+              zIndex: 20,
+              border: "none",
+              color: style?.accent || "#412dff",
+              display: "flex",
+              gap: "0.5rem",
+              alignItems: "center",
+              backgroundColor: "white",
+              padding: "1rem 2rem",
+              fontWeight: 500,
+              borderRadius: "0.5rem",
+            }}
+          >
+            {props?.buttonText}
             <svg
-              className="w-5 h-5 fill-[#412dff]"
+              style={{
+                fill: style?.accent || "#412dff",
+                width: "1rem",
+                height: "1rem",
+              }}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
             >
@@ -23,7 +91,12 @@ export default function CTA({ props, style, id }) {
             </svg>
           </button>
           <svg
-            className="absolute z-0 w-full h-full"
+            style={{
+              position: "absolute",
+              zIndex: 0,
+              width: "100%",
+              height: "100%",
+            }}
             width="1162"
             height="205"
             viewBox="0 0 1162 205"
@@ -83,8 +156,8 @@ export default function CTA({ props, style, id }) {
               fill="white"
             />
           </svg>
-        </div>
+        </CTAContainer>
       </div>
-    </section>
+    </CTAWrapper>
   );
 }

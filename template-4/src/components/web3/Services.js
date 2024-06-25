@@ -1,6 +1,8 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
 
-const ServicesWrapper = styled.section`
+
+const ServicesWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -72,7 +74,7 @@ const ServiceDescription = styled.p`
   }
 `;
 
-export default function Services({ props, style, id }) {
+
   return (
     <ServicesWrapper>
       <div
@@ -131,4 +133,4 @@ export default function Services({ props, style, id }) {
       </div>
     </ServicesWrapper>
   );
-}
+

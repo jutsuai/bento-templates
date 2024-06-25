@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -26,21 +27,24 @@ const NumbersContainer = styled.div`
   border-radius: 0.75rem; // rounded-xl
   position: relative;
 
-  @media (min-width: ${bp.md}) {
+  @container (min-width: ${bp.md}) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @media (min-width: ${bp.lg}) {
+  @container (min-width: ${bp.lg}) {
     border-top-right-radius: 0; // lg:rounded-tr-none
   }
 `;
 
 export default function Numbers({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <NumbersWrapper id={id} style={style}>
+    <NumbersWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           marginInline: "auto",
           paddingInline: "1rem",
         }}

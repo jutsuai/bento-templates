@@ -1,87 +1,156 @@
+import styled from "styled-components";
 import { useNode } from "@craftjs/core";
 
-export default function Footer({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
-  return (
-    <footer
-      ref={(ref) => connect(drag(ref))}
-      id={id}
-      style={{
-        padding: `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`,
-        margin: `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`,
-      }}
-      className="bg-white dark:bg-slate-800"
-    >
-      <div
-        style={{ flexDirection: style?.flexDirection }}
-        className="container py-20 gap-10 flex flex-col @lg:flex-row items-center justify-between px-8 mx-auto"
-      >
-        <div className="opacity-80 p-2">
-          <svg
-            className="max-w-52 h-fit dark:fill-white fill-black"
-            width="517"
-            height="173"
-            viewBox="0 0 517 173"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M130.516 35.8742V99.9947C130.516 111.885 137.028 118.891 148.564 118.891C160.1 118.891 166.54 111.885 166.54 99.9947V35.8742H192.514V102.755C192.514 125.685 175.104 140.76 148.564 140.76C122.024 140.76 104.543 125.685 104.543 102.755V35.8742H130.516ZM266.472 138H240.569V56.7523H211.127V35.8742H295.984V56.7523H266.472V138ZM310.068 108.912H334.839C335.476 116.343 342.907 121.085 353.665 121.085C363.361 121.085 370.013 116.414 370.013 109.691C370.013 104.029 365.555 100.986 353.877 98.6501L340.43 95.9607C321.746 92.422 312.121 82.2307 312.121 66.1651C312.121 46.2071 328.115 33.114 352.745 33.114C376.666 33.114 393.227 46.0655 393.652 64.962H369.659C369.093 57.7431 362.228 52.7182 353.098 52.7182C343.969 52.7182 337.953 57.0354 337.953 63.8296C337.953 69.4207 342.482 72.6763 353.24 74.7995L366.404 77.3473C386.574 81.2398 395.633 90.3696 395.633 106.577C395.633 127.879 379.355 140.76 352.603 140.76C326.771 140.76 310.493 128.587 310.068 108.912ZM441.353 35.8742V99.9947C441.353 111.885 447.864 118.891 459.4 118.891C470.936 118.891 477.376 111.885 477.376 99.9947V35.8742H503.35V102.755C503.35 125.685 485.94 140.76 459.4 140.76C432.86 140.76 415.379 125.685 415.379 102.755V35.8742H441.353Z" />
-            <path d="M0 57.627V35.8418H83.0678V99.303C83.0678 122.984 63.7154 140.842 41.2971 140.842C17.7083 140.842 0 121.148 0 99.303V83.3903H21.7852V99.303C21.7852 111.003 31.588 119.054 41.2971 119.054C52.4085 119.054 61.2827 110.326 61.2827 99.303V57.627H0Z" />
-            <circle cx="10.8919" cy="70.6034" r="7.2933" fill="#FFD37C" />
-          </svg>
-          <div className="flex text-black dark:text-white items-center gap-4 mt-2">
-            <i className="fa-brands fa-linkedin text-2xl"></i>
-            <i className="fa-brands fa-square-facebook text-2xl"></i>
-            <i className="fa-brands fa-github text-2xl"></i>
-            <i className="fa-brands fa-x-twitter text-2xl"></i>
-            <i className="fa-brands fa-youtube text-2xl"></i>
-          </div>
-        </div>
+const FooterWrapper = styled.footer`
+  padding: ${({ style }) =>
+    `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
+  margin: ${({ style }) =>
+    `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-        <div className="grid @sm:text-left text-gray-700 dark:text-gray-300 text-center grid-cols-[repeat(auto-fill,_minmax(220px,1fr))] max-w-4xl w-full text-sm gap-8">
-          <div className="flex flex-col gap-4 px-4">
-            {props?.legal?.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                className="text-gray-700 dark:text-gray-400"
-              >
-                {item.name}
-              </a>
-            ))}
+  position: relative;
+  overflow: hidden;
+  background-color: #f2f2f2;
+
+  &:not(.light *) {
+    background-color: #1e1e1e;
+  }
+`;
+
+const FooterHeader = styled.h2`
+  font-size: 1.875rem; // text-3xl
+  z-index: 10;
+  font-weight: 500; // font-medium
+  color: black;
+
+  &:not(.light *) {
+    color: white;
+  }
+`;
+
+const FooterMoreInfo = styled.p`
+  color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  &:not(.light *) {
+    color: rgba(255, 255, 255, 0.8);
+  }
+`;
+const FooterAccentImage = styled.img`
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 100%;
+  margin-inline: auto; // mx-auto
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.1;
+
+  &:not(.light *) {
+    opacity: 1;
+  }
+`;
+
+export default function Footer({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
+  return (
+    <FooterWrapper>
+      <div
+        style={{
+          maxWidth: "75rem",
+          margin: "0 auto",
+          padding: "5rem 1rem",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            zIndex: "10",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <FooterHeader>{props?.headerText}</FooterHeader>
+          <div
+            style={{
+              width: "100%",
+              zIndex: "10",
+              maxWidth: "150px",
+              height: "2px",
+              backgroundColor: "#6fff93",
+            }}
+          />
+          <div
+            style={{
+              zIndex: "10",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <FooterMoreInfo>{props?.emailText}</FooterMoreInfo>
+            <FooterMoreInfo>{props?.phoneText}</FooterMoreInfo>
+            <FooterMoreInfo>{props?.addressText}</FooterMoreInfo>
           </div>
-          <div className="h-px w-full bg-gray-300 dark:bg-gray-800 @sm:hidden block" />
-          <div className="flex flex-col gap-4 px-4">
-            {props?.service?.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                className="text-gray-700 dark:text-gray-400"
-              >
-                {item.name}
-              </a>
-            ))}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <svg
+              style={{
+                fill: "#6fff93",
+                height: "25px",
+                width: "25px",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+            </svg>
+
+            <svg
+              style={{
+                fill: "#6fff93",
+                height: "25px",
+                width: "25px",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+            </svg>
+
+            <svg
+              style={{
+                fill: "#6fff93",
+                height: "25px",
+                width: "25px",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
+            </svg>
           </div>
-          <div className="h-px w-full bg-gray-300 dark:bg-gray-800 @sm:hidden block" />
-          <div className="flex flex-col gap-4 px-4">
-            {props?.information?.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                className="text-gray-700 dark:text-gray-400"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+          <FooterMoreInfo>{props?.subHeaderTextarea}</FooterMoreInfo>
         </div>
       </div>
-      <div className="text-center py-3 border-t dark:border-slate-800">
-        <p className="text-gray-600 dark:text-gray-300 text-sm">
-          {props?.copyRight}
-        </p>
-      </div>
-    </footer>
+      <FooterAccentImage
+        src="https://ipfs.near.social/ipfs/bafkreihxnynyx5buylxythhytug5w57stzf3ufwwhyz3cmmc2ongvhrdwm"
+        alt="footer"
+      />
+    </FooterWrapper>
   );
 }

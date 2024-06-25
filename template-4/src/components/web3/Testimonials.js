@@ -1,4 +1,6 @@
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
 
 const bp = {
   sm: "40rem",
@@ -7,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const TestimonialsWrapper = styled.section`
+const TestimonialsWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -72,7 +74,7 @@ const TestimonialsAccentImage = styled.svg`
   }
 `;
 
-export default function Testimonials({ props, style, id }) {
+
   return (
     <TestimonialsWrapper id={id} style={style}>
       <div
@@ -272,4 +274,4 @@ export default function Testimonials({ props, style, id }) {
       </div>
     </TestimonialsWrapper>
   );
-}
+

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -57,7 +58,7 @@ const TestimonialsContainer = styled.div`
   position: relative;
   display: none;
 
-  @media (min-width: ${bp.xl}) {
+  @container (min-width: ${bp.xl}) {
     display: block;
   }
 `;
@@ -73,11 +74,14 @@ const TestimonialsAccentImage = styled.svg`
 `;
 
 export default function Testimonials({ props, style, id }) {
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
-    <TestimonialsWrapper id={id} style={style}>
+    <TestimonialsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
-          maxWidth: "96rem",
+          maxWidth: "75rem",
           marginInline: "auto",
           padding: "5rem 1rem",
           display: "flex",

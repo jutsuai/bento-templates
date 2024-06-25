@@ -1,5 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+const style = props.style || {};
+const props = props.props || {};
+
+
 
 const bp = {
   sm: "40rem",
@@ -8,7 +10,7 @@ const bp = {
   xl: "80rem",
 };
 
-const StyledNav = styled.nav`
+const StyledNav = styled.div`
   width: 100%;
 
   padding: ${({ style }) =>
@@ -186,8 +188,8 @@ const NavLinks = styled.a`
 
 const defaultLogoSrc =
   "https://ipfs.near.social/ipfs/bafkreidii2ec3qsi54iknwotmnnqejoe6l6nivbq2ma65v4thyp7w7dhza";
-export default function Navbar({ props, style, id }) {
-  const [showNav, setShowNav] = React.useState(false);
+
+  const [showNav, setShowNav] = useState(false);
   return (
     <StyledNav id={id} style={style}>
       <NavContainer>
@@ -292,4 +294,4 @@ export default function Navbar({ props, style, id }) {
 >
   {props?.buttonText} <i class="fa-regular fa-paper-plane opacity-90 ml-1"></i>
 </button>; */
-}
+
