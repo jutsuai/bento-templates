@@ -4,13 +4,10 @@ import Numbers from "./components/prod/Numbers";
 import Services from "./components/prod/Services";
 import About from "./components/prod/About";
 import Gallery from "./components/prod/Gallery";
-import Partners from "./components/prod/Partners";
-import Feature from "./components/prod/Feature";
-import CTA from "./components/prod/CTA";
-import FAQ from "./components/prod/FAQ";
-import Contact from "./components/prod/Contact";
 import Footer from "./components/prod/Footer";
 import { useState } from "react";
+import Testimonials from "./components/prod/Testimonials";
+import CTA from "./components/prod/CTA";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState();
@@ -50,36 +47,19 @@ export default function App() {
         style={values.partners.style}
         id={values.partners.node}
       />
-      <Partners
-        props={values.partners.props}
+      <Gallery
+        props={{}}
         style={values.partners.style}
         id={values.partners.node}
       />
-      <Gallery
-        props={values.gallery.props}
-        style={values.gallery.style}
-        id={values.gallery.node}
+
+      <Testimonials
+        props={{}}
+        style={values.partners.style}
+        id={values.partners.node}
       />
-      <Feature
-        props={values.features.props}
-        style={values.features.style}
-        id={values.features.node}
-      />
-      <CTA
-        props={values.cta.props}
-        style={values.cta.style}
-        id={values.cta.node}
-      />
-      <FAQ
-        props={values.faq.props}
-        style={values.faq.style}
-        id={values.faq.node}
-      />
-      <Contact
-        props={values.contact.props}
-        style={values.contact.style}
-        id={values.contact.node}
-      />
+      <CTA props={{}} style={values.partners.style} id={values.partners.node} />
+
       <Footer
         props={values.footer.props}
         style={values.footer.style}

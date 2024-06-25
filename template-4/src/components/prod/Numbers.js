@@ -3,10 +3,10 @@ import React from "react";
 export default function Numbers({ props, style, id }) {
   const {
     data = [
-      { number: 100, text: "PROJECTS" },
-      { number: 24, text: "AWARDS" },
-      { number: 70, text: "CLIENTS" },
-      { number: 10, text: "EXPERIENCE" },
+      { numberText: 100, categoryText: "PROJECTS" },
+      { numberText: 24, categoryText: "AWARDS" },
+      { numberText: 70, categoryText: "CLIENTS" },
+      { numberText: 10, categoryText: "EXPERIENCE" },
     ],
   } = props;
   return (
@@ -34,9 +34,11 @@ export default function Numbers({ props, style, id }) {
               className="flex flex-col items-center justify-center gap-3 py-14"
             >
               <h3 className="text-5xl font-bold text-white text-center">
-                {item.number}+
+                {item.numberText}+
               </h3>
-              <p className="text-sm text-white text-center">{item.text}</p>
+              <p className="text-sm text-white text-center">
+                {item.categoryText}
+              </p>
             </div>
           ))}
         </div>

@@ -19,7 +19,7 @@ export default function HeroSection({ props, style, id }) {
           <p className="text-base max-w-xl text-gray-600 lg:text-lg dark:text-gray-300">
             {props?.subHeaderTextarea}
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-col sm:flex-row">
             <button
               style={{
                 borderColor: style?.accent,
