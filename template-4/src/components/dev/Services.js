@@ -78,7 +78,7 @@ export default function Services({ props, style, id }) {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <ServicesWrapper>
+    <ServicesWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
           maxWidth: "75rem",

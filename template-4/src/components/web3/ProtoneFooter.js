@@ -54,7 +54,7 @@ const FooterAccentImage = styled.img`
 
 
   return (
-    <FooterWrapper>
+    <FooterWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",

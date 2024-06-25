@@ -74,7 +74,7 @@ const ServiceDescription = styled.p`
 
 export default function Services({ props, style, id }) {
   return (
-    <ServicesWrapper>
+    <ServicesWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",

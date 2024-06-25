@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useNode } from "@craftjs/core";
 
 const bp = {
   sm: "40rem",
@@ -8,7 +7,7 @@ const bp = {
   xl: "80rem",
 };
 
-const TestimonialsWrapper = styled.section`
+const TestimonialWrapper = styled.section`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -22,7 +21,7 @@ const TestimonialsWrapper = styled.section`
     background-color: #121212;
   }
 `;
-const TestimonialsDescription = styled.p`
+const TestimonialMessage = styled.p`
   font-size: 1.5rem;
   font-weight: 500;
   color: black;
@@ -31,7 +30,7 @@ const TestimonialsDescription = styled.p`
     color: white;
   }
 `;
-const TestimonialsUserImage = styled.img`
+const TestimonialUserImage = styled.img`
   width: 5rem; // w-20
   height: 5rem; // h-20
   aspect-ratio: 1 / 1; // aspect-square
@@ -44,7 +43,7 @@ const TestimonialsUserImage = styled.img`
     border-color: rgba(255, 255, 255, 0.1); // dark:border-white/10
   }
 `;
-const TestimonialsUserName = styled.h4`
+const TestimonialUserName = styled.h4`
   font-size: 1.125rem; // text-lg
   font-weight: 500; // font-medium
   color: black;
@@ -53,16 +52,16 @@ const TestimonialsUserName = styled.h4`
     color: white;
   }
 `;
-const TestimonialsContainer = styled.div`
+const TestimonialContainer = styled.div`
   flex: 1;
   position: relative;
   display: none;
 
-  @container (min-width: ${bp.xl}) {
+  @media (min-width: ${bp.lg}) {
     display: block;
   }
 `;
-const TestimonialsAccentImage = styled.svg`
+const TestimonialAccentImage = styled.svg`
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -73,15 +72,12 @@ const TestimonialsAccentImage = styled.svg`
   }
 `;
 
-export default function Testimonials({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+export default function Testimonial({ props, style, id }) {
   return (
-    <TestimonialsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <TestimonialWrapper id={id} style={style}>
       <div
         style={{
-          maxWidth: "75rem",
+          maxWidth: "96rem",
           marginInline: "auto",
           padding: "5rem 1rem",
           display: "flex",
@@ -107,9 +103,7 @@ export default function Testimonials({ props, style, id }) {
           >
             {props?.headerText}
           </h6>
-          <TestimonialsDescription>
-            {props?.descriptionTextarea}
-          </TestimonialsDescription>
+          <TestimonialMessage>{props?.messageTextarea}</TestimonialMessage>
           <div
             style={{
               display: "flex",
@@ -139,7 +133,7 @@ export default function Testimonials({ props, style, id }) {
               gap: "0.5rem",
             }}
           >
-            <TestimonialsUserImage src={props?.userData?.imageSrc} alt="user" />
+            <TestimonialUserImage src={props?.userData?.imageSrc} alt="user" />
             <div
               style={{
                 display: "flex",
@@ -148,9 +142,9 @@ export default function Testimonials({ props, style, id }) {
                 gap: "0.5rem",
               }}
             >
-              <TestimonialsUserName>
+              <TestimonialUserName>
                 {props?.userData?.nameText}
-              </TestimonialsUserName>
+              </TestimonialUserName>
               <p
                 style={{
                   color: "#4fe173",
@@ -163,8 +157,8 @@ export default function Testimonials({ props, style, id }) {
             </div>
           </div>
         </div>
-        <TestimonialsContainer>
-          <TestimonialsAccentImage
+        <TestimonialContainer>
+          <TestimonialAccentImage
             width="625"
             height="313"
             viewBox="0 0 625 313"
@@ -183,7 +177,7 @@ export default function Testimonials({ props, style, id }) {
               d="M526.455 311.92C526.455 193.824 430.719 98.0881 312.623 98.0881C194.527 98.0881 98.7914 193.824 98.7914 311.92"
               stroke="#363636"
             />
-          </TestimonialsAccentImage>
+          </TestimonialAccentImage>
 
           <svg
             style={{
@@ -272,8 +266,8 @@ export default function Testimonials({ props, style, id }) {
               />
             </>
           )}
-        </TestimonialsContainer>
+        </TestimonialContainer>
       </div>
-    </TestimonialsWrapper>
+    </TestimonialWrapper>
   );
 }

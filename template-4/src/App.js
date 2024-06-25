@@ -1,11 +1,11 @@
 import Navbar from "./components/prod/Navbar";
 import HeroSection from "./components/prod/HeroSection";
-import Numbers from "./components/prod/Numbers";
+import Numbers from "./components/prod/Statistics";
 import Services from "./components/prod/Services";
 import About from "./components/prod/About";
 import Gallery from "./components/prod/Gallery";
 import Footer from "./components/prod/Footer";
-import Testimonials from "./components/prod/Testimonials";
+import Testimonials from "./components/prod/Testimonial";
 import CTA from "./components/prod/CTA";
 
 import { useState } from "react";
@@ -137,13 +137,25 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-  numbers: {
+  statistics: {
     props: {
-      data: [
-        { numberText: 100, categoryText: "PROJECTS" },
-        { numberText: 24, categoryText: "AWARDS" },
-        { numberText: 70, categoryText: "CLIENTS" },
-        { numberText: 10, categoryText: "EXPERIENCE" },
+      statisticsData: [
+        {
+          titleText: "PROJECTS",
+          countText: "100+",
+        },
+        {
+          titleText: "AWARDS",
+          countText: "24+",
+        },
+        {
+          titleText: "CLIENTS",
+          countText: "70+",
+        },
+        {
+          titleText: "EXPERIENCE",
+          countText: "10+",
+        },
       ],
     },
     style: {
@@ -204,41 +216,41 @@ const values = {
   },
   about: {
     props: {
-      headerText: "Who is Adnan Siddiqui?",
+      headerText: "Meet Adnan Siddiqui",
       descriptionTextarea:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Adnan Siddiqui is a seasoned full-stack developer with a track record of transforming ideas into digital solutions that empower businesses and enhance user experiences.",
       subHeaderText: "ABOUT US",
-      buttonText: "KNOW MORE",
+      buttonText: "LEARN MORE",
       imageSrc:
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
       projects: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "Web Design",
+          headerText: "Responsive Web Design",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Adnan specializes in creating visually stunning and highly interactive websites that ensure an optimal user experience on all devices.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "SEO Optimization",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Leveraging the latest SEO strategies, Adnan enhances your digital presence and search engine rankings, ensuring your business gets the visibility it deserves.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "Marketing",
+          headerText: "Digital Marketing",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "From social media campaigns to email marketing, Adnan designs comprehensive digital marketing strategies that drive engagement and increase sales.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "DAPP",
+          headerText: "Decentralized Applications (DApps)",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Adnan develops secure and scalable decentralized applications that leverage blockchain technology to offer innovative solutions to complex problems.",
         },
       ],
     },
@@ -256,13 +268,13 @@ const values = {
     },
     node: "qW8TVT1Ghs",
   },
-  gallery: {
+  protfolio: {
     props: {
       subHeaderText: "PROTFOLIO",
       headerText: "Our Projects",
       descriptionTextarea:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      galleryData: [
+      protfolioData: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
@@ -300,10 +312,10 @@ const values = {
     },
     node: "qW8TVT1Ghs",
   },
-  testimonials: {
+  testimonial: {
     props: {
       headerText: "TESTIMONIALS",
-      descriptionTextarea:
+      messageTextarea:
         "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.”",
       imageSrc: [
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",

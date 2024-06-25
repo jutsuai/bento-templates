@@ -9,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const NumbersWrapper = styled.div`
+const StatisticsWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -21,7 +21,7 @@ const NumbersWrapper = styled.div`
     background-color: #121212;
   }
 `;
-const NumbersContainer = styled.div`
+const StatisticsContainer = styled.div`
   background-color: ${({ accent }) => accent || "#412dff"};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -39,7 +39,7 @@ const NumbersContainer = styled.div`
 
 
   return (
-    <NumbersWrapper id={id} style={style}>
+    <StatisticsWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",
@@ -47,7 +47,7 @@ const NumbersContainer = styled.div`
           paddingInline: "1rem",
         }}
       >
-        <NumbersContainer accent={style?.accent}>
+        <StatisticsContainer accent={style?.accent}>
           <img
             src="https://ipfs.near.social/ipfs/bafkreiest2ftnmktmisw64zkin2zcctdsjf7lxxlaiqgqajonjmyocaftm"
             alt=""
@@ -61,43 +61,46 @@ const NumbersContainer = styled.div`
               objectPosition: "center",
             }}
           />
-          {props?.data?.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                paddingBlock: "3.5rem",
-                gap: "0.75rem",
-              }}
-            >
-              <h3
-                style={{
-                  color: "white",
-                  fontSize: "3rem",
-                  fontWeight: "700",
-                  lineHeight: "1",
-                  textAlign: "center",
-                }}
-              >
-                {item.numberText}+
-              </h3>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  lineHeight: "1.25rem",
-                  color: "white",
-                  textAlign: "center",
-                }}
-              >
-                {item.categoryText}
-              </p>
-            </div>
-          ))}
-        </NumbersContainer>
+          {props?.statisticsData?.map(
+            (item, index) =>
+              index < 4 && (
+                <div
+                  key={index}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingBlock: "3.5rem",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      fontSize: "3rem",
+                      fontWeight: "700",
+                      lineHeight: "1",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item.countText}+
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      lineHeight: "1.25rem",
+                      color: "white",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item.titleText}
+                  </p>
+                </div>
+              )
+          )}
+        </StatisticsContainer>
       </div>
-    </NumbersWrapper>
+    </StatisticsWrapper>
   );
 

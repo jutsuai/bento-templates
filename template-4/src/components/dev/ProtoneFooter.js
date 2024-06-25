@@ -56,7 +56,7 @@ export default function ProtoneFooter({ props, style, id }) {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <FooterWrapper>
+    <FooterWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
           maxWidth: "75rem",

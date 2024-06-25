@@ -46,6 +46,13 @@ const AboutSubHeader = styled.p`
   color: rgba(0, 0, 0, 0.7);
   max-width: 42rem; // max-w-2xl
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+
   &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
   }

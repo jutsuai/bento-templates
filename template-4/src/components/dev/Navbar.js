@@ -77,7 +77,7 @@ const Button = styled.button`
   font-weight: 600;
   color: white;
   border: none;
-  background-color: ${({ style }) => style?.accent || "#412dff"};
+  background-color: ${({ accent }) => accent || "#412dff"};
   border-radius: 0.375rem;
 
   @container (min-width: ${bp.lg}) {
@@ -160,7 +160,7 @@ const MobileButton = styled.button`
   font-weight: 600;
   color: black;
   border: none;
-  background-color: ${({ style }) => style?.accent || "#412dff"};
+  background-color: ${({ accent }) => accent || "#412dff"};
   border-radius: 0.375rem;
 
   &:not(.light *) {
@@ -234,7 +234,7 @@ export default function Navbar({ props, style, id }) {
         </MenuIcon>
 
         <NavButtomContainer>
-          <Button>
+          <Button accent={style?.accent}>
             {props?.buttonText}
             <svg
               style={{
@@ -266,7 +266,7 @@ export default function Navbar({ props, style, id }) {
               </li>
             ))}
 
-            <MobileButton>
+            <MobileButton accent={style?.accent}>
               <svg
                 style={{
                   width: "0.7rem",
@@ -285,15 +285,4 @@ export default function Navbar({ props, style, id }) {
       </NavContainer>
     </StyledNav>
   );
-}
-
-{
-  /* <button
-  style={{
-    backgroundColor: style?.accent,
-  }}
-  className="hidden text-nowrap rounded-md bg-[#412dff] px-4 py-2 text-sm font-medium text-white lg:block"
->
-  {props?.buttonText} <i class="fa-regular fa-paper-plane opacity-90 ml-1"></i>
-</button>; */
 }

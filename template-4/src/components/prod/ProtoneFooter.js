@@ -52,7 +52,7 @@ const FooterAccentImage = styled.img`
 
 export default function ProtoneFooter({ props, style, id }) {
   return (
-    <FooterWrapper>
+    <FooterWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",

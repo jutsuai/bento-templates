@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNode } from "@craftjs/core";
 
-const GalleryContainer = styled.section`
+const ProtfolioContainer = styled.section`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -14,7 +14,7 @@ const GalleryContainer = styled.section`
     background-color: #121212;
   }
 `;
-const GalleryWrapper = styled.div`
+const ProtfolioWrapper = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.05);
@@ -24,7 +24,7 @@ const GalleryWrapper = styled.div`
   }
 `;
 
-const GalleryHeader = styled.h2`
+const ProtfolioHeader = styled.h2`
   font-size: 2.25rem; // text-4xl
   font-weight: 600; // font-semibold
   color: black;
@@ -33,7 +33,7 @@ const GalleryHeader = styled.h2`
     color: white;
   }
 `;
-const GallerySubHeader = styled.p`
+const ProtfolioSubHeader = styled.p`
   font-size: 0.875rem; // text-sm
   color: rgba(0, 0, 0, 0.7);
   max-width: 32rem; // max-w-lg
@@ -44,7 +44,7 @@ const GallerySubHeader = styled.p`
   }
 `;
 
-const GalleryTitle = styled.h4`
+const ProtfolioTitle = styled.h4`
   font-size: 1.125rem;
   font-weight: 500;
   color: black;
@@ -53,7 +53,7 @@ const GalleryTitle = styled.h4`
     color: white;
   }
 `;
-const GalleryDescription = styled.p`
+const ProtfolioDescription = styled.p`
   font-size: 1rem; // text-base
   color: rgba(0, 0, 0, 0.6);
 
@@ -61,7 +61,7 @@ const GalleryDescription = styled.p`
     color: rgba(255, 255, 255, 0.6);
   }
 `;
-const GalleryButtonIcon = styled.svg`
+const ProtfolioButtonIcon = styled.svg`
   fill: rgba(0, 0, 0, 0.8);
   width: 1rem;
   height: 1rem;
@@ -71,12 +71,12 @@ const GalleryButtonIcon = styled.svg`
   }
 `;
 
-export default function Gallery({ props, style, id }) {
+export default function Protfolio({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <GalleryContainer>
+    <ProtfolioContainer id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
           maxWidth: "75rem",
@@ -112,8 +112,8 @@ export default function Gallery({ props, style, id }) {
           >
             {props?.subHeaderText}
           </h6>
-          <GalleryHeader>{props?.headerText}</GalleryHeader>
-          <GallerySubHeader>{props?.descriptionTextarea}</GallerySubHeader>
+          <ProtfolioHeader>{props?.headerText}</ProtfolioHeader>
+          <ProtfolioSubHeader>{props?.descriptionTextarea}</ProtfolioSubHeader>
         </div>
         <div
           style={{
@@ -124,8 +124,8 @@ export default function Gallery({ props, style, id }) {
             width: "100%",
           }}
         >
-          {props?.galleryData?.map((item, index) => (
-            <GalleryWrapper key={index}>
+          {props?.protfolioData?.map((item, index) => (
+            <ProtfolioWrapper key={index}>
               <img
                 src={item?.imageSrc}
                 alt=""
@@ -148,10 +148,10 @@ export default function Gallery({ props, style, id }) {
                   paddingBottom: "2rem",
                 }}
               >
-                <GalleryTitle>{item?.headerText}</GalleryTitle>
-                <GalleryDescription>
+                <ProtfolioTitle>{item?.headerText}</ProtfolioTitle>
+                <ProtfolioDescription>
                   {item?.subHeaderTextarea}
-                </GalleryDescription>
+                </ProtfolioDescription>
                 <div
                   style={{
                     display: "flex",
@@ -159,19 +159,19 @@ export default function Gallery({ props, style, id }) {
                     gap: "0.5rem",
                   }}
                 >
-                  <GalleryButtonIcon
+                  <ProtfolioButtonIcon
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 384 512"
                   >
                     <path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z" />
-                  </GalleryButtonIcon>
+                  </ProtfolioButtonIcon>
                   <p className="text-black dark:text-white text-xs">SEE MORE</p>
                 </div>
               </div>
-            </GalleryWrapper>
+            </ProtfolioWrapper>
           ))}
         </div>
       </div>
-    </GalleryContainer>
+    </ProtfolioContainer>
   );
 }

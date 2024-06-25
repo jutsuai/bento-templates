@@ -76,7 +76,7 @@ const ServiceDescription = styled.p`
 
 
   return (
-    <ServicesWrapper>
+    <ServicesWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",
