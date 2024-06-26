@@ -7,7 +7,7 @@ import About from "./components/prod/About";
 import CTA from "./components/prod/CTA";
 
 import { useState } from "react";
-import Statistics from "./components/prod/Statistics";
+import Statistics from "./components/prod/Metrics";
 import Protfolio from "./components/prod/Protfolio";
 import Testimonial from "./components/prod/Testimonial";
 import ProtoneFooter from "./components/prod/ProtoneFooter";
@@ -139,9 +139,9 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-  statistics: {
+  metrics: {
     props: {
-      statisticsData: [
+      stats: [
         {
           titleText: "PROJECTS",
           countText: "100",

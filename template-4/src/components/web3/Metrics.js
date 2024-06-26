@@ -9,7 +9,7 @@ const bp = {
   xl: "80rem",
 };
 
-const StatisticsWrapper = styled.div`
+const MetricsWrapper = styled.div`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -21,7 +21,7 @@ const StatisticsWrapper = styled.div`
     background-color: #121212;
   }
 `;
-const StatisticsContainer = styled.div`
+const MetricsContainer = styled.div`
   background-color: ${({ accent }) => accent || "#412dff"};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -39,7 +39,7 @@ const StatisticsContainer = styled.div`
 
 
   return (
-    <StatisticsWrapper id={id} style={style}>
+    <MetricsWrapper id={id} style={style}>
       <div
         style={{
           maxWidth: "96rem",
@@ -47,7 +47,7 @@ const StatisticsContainer = styled.div`
           paddingInline: "1rem",
         }}
       >
-        <StatisticsContainer accent={style?.accent}>
+        <MetricsContainer accent={style?.accent}>
           <img
             src="https://ipfs.near.social/ipfs/bafkreiest2ftnmktmisw64zkin2zcctdsjf7lxxlaiqgqajonjmyocaftm"
             alt=""
@@ -61,7 +61,7 @@ const StatisticsContainer = styled.div`
               objectPosition: "center",
             }}
           />
-          {props?.statisticsData?.map(
+          {props?.stats?.map(
             (item, index) =>
               index < 4 && (
                 <div
@@ -84,7 +84,7 @@ const StatisticsContainer = styled.div`
                       textAlign: "center",
                     }}
                   >
-                    {item.countText}+
+                    {item?.countText}+
                   </h3>
                   <p
                     style={{
@@ -94,13 +94,13 @@ const StatisticsContainer = styled.div`
                       textAlign: "center",
                     }}
                   >
-                    {item.titleText}
+                    {item?.titleText}
                   </p>
                 </div>
               )
           )}
-        </StatisticsContainer>
+        </MetricsContainer>
       </div>
-    </StatisticsWrapper>
+    </MetricsWrapper>
   );
 

@@ -8,7 +8,7 @@ const bp = {
   xl: "80rem",
 };
 
-const StatisticsWrapper = styled.section`
+const MetricsWrapper = styled.section`
   padding: ${({ style }) =>
     `${style?.paddingTop}px ${style?.paddingRight}px ${style?.paddingBottom}px ${style?.paddingLeft}px`};
   margin: ${({ style }) =>
@@ -20,7 +20,7 @@ const StatisticsWrapper = styled.section`
     background-color: #121212;
   }
 `;
-const StatisticsContainer = styled.div`
+const MetricsContainer = styled.div`
   background-color: ${({ accent }) => accent || "#412dff"};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -36,12 +36,12 @@ const StatisticsContainer = styled.div`
   }
 `;
 
-export default function Statistics({ props, style, id }) {
+export default function Metrics({ props, style, id }) {
  const {
 		connectors: { connect, drag },
 	} = useNode();
   return (
-    <StatisticsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
+    <MetricsWrapper id={id} style={style} ref={(ref) => connect(drag(ref))}>
       <div
         style={{
           maxWidth: "75rem",
@@ -49,7 +49,7 @@ export default function Statistics({ props, style, id }) {
           paddingInline: "1rem",
         }}
       >
-        <StatisticsContainer accent={style?.accent}>
+        <MetricsContainer accent={style?.accent}>
           <img
             src="https://ipfs.near.social/ipfs/bafkreiest2ftnmktmisw64zkin2zcctdsjf7lxxlaiqgqajonjmyocaftm"
             alt=""
@@ -63,7 +63,7 @@ export default function Statistics({ props, style, id }) {
               objectPosition: "center",
             }}
           />
-          {props?.statisticsData?.map(
+          {props?.stats?.map(
             (item, index) =>
               index < 4 && (
                 <div
@@ -86,7 +86,7 @@ export default function Statistics({ props, style, id }) {
                       textAlign: "center",
                     }}
                   >
-                    {item.countText}+
+                    {item?.countText}+
                   </h3>
                   <p
                     style={{
@@ -96,13 +96,13 @@ export default function Statistics({ props, style, id }) {
                       textAlign: "center",
                     }}
                   >
-                    {item.titleText}
+                    {item?.titleText}
                   </p>
                 </div>
               )
           )}
-        </StatisticsContainer>
+        </MetricsContainer>
       </div>
-    </StatisticsWrapper>
+    </MetricsWrapper>
   );
 }
