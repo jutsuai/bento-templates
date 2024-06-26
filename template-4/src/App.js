@@ -179,23 +179,23 @@ const values = {
       headerText: "Making Magic Happen for Your Business",
       descriptionTextarea:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      servicesData: [
+      dataList: [
         {
-          image:
+          imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "Web Design",
           subHeaderTextarea:
             "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
         },
         {
-          image:
+          imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "SEO Optimization",
           subHeaderTextarea:
             "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
         },
         {
-          image:
+          imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "Marketing",
           subHeaderTextarea:
@@ -325,7 +325,7 @@ const values = {
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
       ],
 
-      userData: {
+      createdBy: {
         imageSrc:
           "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
         nameText: "John Doe",

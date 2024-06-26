@@ -110,10 +110,10 @@ const ServiceDescription = styled.p`
             width: "100%",
           }}
         >
-          {props?.servicesData.map((service, index) => (
+          {props?.dataList.map((service, index) => (
             <ServicesContent key={index}>
               <img
-                src={service.image}
+                src={service.imageSrc}
                 alt={service.headerText}
                 style={{
                   width: "6rem",
