@@ -127,7 +127,7 @@ const ProtfolioButtonIcon = styled.svg`
             width: "100%",
           }}
         >
-          {props?.projects?.map(
+          {props?.projectsList?.map(
             (item, index) =>
               index < 3 && (
                 <ProtfolioWrapper key={index}>
