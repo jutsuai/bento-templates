@@ -112,11 +112,11 @@ export default function Services({ props, style, id }) {
             width: "100%",
           }}
         >
-          {props?.dataList.map((service, index) => (
+          {props?.solutions?.map((solution, index) => (
             <ServicesContent key={index}>
               <img
-                src={service.imageSrc}
-                alt={service.headerText}
+                src={solution?.imageSrc}
+                alt={solution?.headerText}
                 style={{
                   width: "6rem",
                   height: "6rem",
@@ -125,9 +125,9 @@ export default function Services({ props, style, id }) {
                   objectPosition: "center",
                 }}
               />
-              <ServiceHeader>{service.headerText}</ServiceHeader>
+              <ServiceHeader>{solution?.headerText}</ServiceHeader>
               <ServiceDescription>
-                {service.subHeaderTextarea}
+                {solution?.subHeaderTextarea}
               </ServiceDescription>
             </ServicesContent>
           ))}

@@ -179,7 +179,7 @@ const values = {
       headerText: "Making Magic Happen for Your Business",
       descriptionTextarea:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      dataList: [
+      solutions: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
@@ -276,7 +276,7 @@ const values = {
       headerText: "Our Projects",
       descriptionTextarea:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      protfolioData: [
+      projects: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",

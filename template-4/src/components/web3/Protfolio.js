@@ -122,7 +122,7 @@ const ProtfolioButtonIcon = styled.svg`
             width: "100%",
           }}
         >
-          {props?.protfolioData?.map((item, index) => (
+          {props?.projects?.map((item, index) => (
             <ProtfolioWrapper key={index}>
               <img
                 src={item?.imageSrc}

@@ -124,7 +124,7 @@ export default function Protfolio({ props, style, id }) {
             width: "100%",
           }}
         >
-          {props?.protfolioData?.map((item, index) => (
+          {props?.projects?.map((item, index) => (
             <ProtfolioWrapper key={index}>
               <img
                 src={item?.imageSrc}
