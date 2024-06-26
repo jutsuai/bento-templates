@@ -129,7 +129,7 @@ export default function Protfolio({ props, style, id }) {
             width: "100%",
           }}
         >
-          {props?.projectsList?.map(
+          {props?.projects?.map(
             (item, index) =>
               index < 3 && (
                 <ProtfolioWrapper key={index}>

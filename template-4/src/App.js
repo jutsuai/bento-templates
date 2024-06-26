@@ -179,28 +179,28 @@ const values = {
       subHeaderText: "SERVICES",
       headerText: "Making Magic Happen for Your Business",
       descriptionTextarea:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Our expert team designs and develops outstanding templates, tailored to bring your decentralized applications to life.",
       solutions: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "Web Design",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "We craft user-centric web designs that ensure your dApp is intuitive and engaging, making every interaction smooth and enjoyable.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "SEO Optimization",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Optimize your dApp’s reach with our strategic SEO services, designed to increase visibility and drive meaningful traffic.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "Marketing",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Leverage our bespoke marketing strategies to elevate your dApp’s presence in the decentralized world, attracting and retaining users effectively.",
         },
       ],
     },
@@ -219,41 +219,41 @@ const values = {
   },
   about: {
     props: {
-      headerText: "Meet Adnan Siddiqui",
+      headerText: "Who are we?",
       descriptionTextarea:
-        "Adnan Siddiqui is a seasoned full-stack developer with a track record of transforming ideas into digital solutions that empower businesses and enhance user experiences.",
+        "We are a dynamic team dedicated to designing and developing exceptional templates for decentralized applications. Our goal is to enhance user interaction through creative design and functional excellence on blockchain platforms.",
       subHeaderText: "ABOUT US",
-      buttonText: "LEARN MORE",
+      buttonText: "KNOW MORE",
       imageSrc:
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
       projects: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "Responsive Web Design",
+          headerText: "Web Design",
           subHeaderTextarea:
-            "Adnan specializes in creating visually stunning and highly interactive websites that ensure an optimal user experience on all devices.",
+            "Our web designs ensure that your dApp is intuitive, engaging, and perfectly aligned with the user's needs, offering a seamless digital experience.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "SEO Optimization",
           subHeaderTextarea:
-            "Leveraging the latest SEO strategies, Adnan enhances your digital presence and search engine rankings, ensuring your business gets the visibility it deserves.",
+            "Boost your dApp’s visibility with our tailored SEO strategies that propel your project to the top of search results, enhancing user acquisition and retention.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "Digital Marketing",
+          headerText: "Marketing",
           subHeaderTextarea:
-            "From social media campaigns to email marketing, Adnan designs comprehensive digital marketing strategies that drive engagement and increase sales.",
+            "From strategic planning to execution, our marketing services are designed to elevate your dApp’s market presence and connect with your target audience effectively.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
-          headerText: "Decentralized Applications (DApps)",
+          headerText: "DAPP Development",
           subHeaderTextarea:
-            "Adnan develops secure and scalable decentralized applications that leverage blockchain technology to offer innovative solutions to complex problems.",
+            "Leverage our expertise in dApp development to build robust, scalable, and secure applications that drive your business forward in the decentralized world.",
         },
       ],
     },
@@ -273,31 +273,31 @@ const values = {
   },
   protfolio: {
     props: {
-      subHeaderText: "PROTFOLIO",
+      subHeaderText: "PORTFOLIO",
       headerText: "Our Projects",
       descriptionTextarea:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "Explore our portfolio to see how we've transformed ideas into beautifully functional dApps that excel in user experience and aesthetic design.",
       projects: [
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "Web Design",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Our web design projects showcase our commitment to creating user-friendly, visually appealing, and responsive dApp interfaces.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "SEO Optimization",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Our SEO optimization projects highlight our expertise in enhancing dApp visibility and user engagement through targeted strategies.",
         },
         {
           imageSrc:
             "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "Marketing",
           subHeaderTextarea:
-            "Quisque sit amet efficitur mauris. Praesent efficitur leo tellus, a semper elit mollis accumsan.",
+            "Our marketing projects demonstrate how we use innovative strategies to effectively market dApps, ensuring high visibility and user retention.",
         },
       ],
     },
@@ -319,7 +319,7 @@ const values = {
     props: {
       headerText: "TESTIMONIALS",
       messageTextarea:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.”",
+        "“At our core, we design and develop cutting-edge templates for decentralized applications. Our approach combines aesthetic precision with technical functionality to ensure each project not only looks appealing but operates seamlessly across all blockchain platforms.”",
       imageSrc: [
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
         "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
