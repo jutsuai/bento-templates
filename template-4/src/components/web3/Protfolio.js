@@ -132,7 +132,10 @@ const ProtfolioButtonIcon = styled.svg`
               index < 3 && (
                 <ProtfolioWrapper key={index}>
                   <img
-                    src={item?.imageSrc}
+                    src={
+                      props?.imageSrc[index] ||
+                      "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm"
+                    }
                     alt=""
                     style={{
                       aspectRatio: "16 / 9",
