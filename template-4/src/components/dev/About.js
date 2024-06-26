@@ -47,17 +47,11 @@ const AboutSubHeader = styled.p`
   color: rgba(0, 0, 0, 0.7);
   max-width: 42rem; // max-w-2xl
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-
   &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
   }
 `;
+
 const AboutContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -95,6 +89,13 @@ const AboutProjectHeader = styled.h3`
 const AboutProjectDescription = styled.p`
   font-size: 0.75rem; // text-xs
   color: rgba(0, 0, 0, 0.7);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 
   &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
@@ -265,30 +266,38 @@ export default function About({ props, style, id }) {
           <AboutHeader>{props?.headerText}</AboutHeader>
           <AboutSubHeader>{props?.descriptionTextarea}</AboutSubHeader>
           <AboutContainer>
-            {props?.projects?.map((project, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
-                <AboutImage src={project?.imageSrc} alt={project?.headerText} />
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.25rem",
-                  }}
-                >
-                  <AboutProjectHeader>{project?.headerText}</AboutProjectHeader>
-                  <AboutProjectDescription>
-                    {project?.subHeaderTextarea}
-                  </AboutProjectDescription>
-                </div>
-              </div>
-            ))}
+            {props?.projects?.map(
+              (project, index) =>
+                index < 4 && (
+                  <div
+                    key={index}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <AboutImage
+                      src={project?.imageSrc}
+                      alt={project?.headerText}
+                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.25rem",
+                      }}
+                    >
+                      <AboutProjectHeader>
+                        {project?.headerText}
+                      </AboutProjectHeader>
+                      <AboutProjectDescription>
+                        {project?.subHeaderTextarea}
+                      </AboutProjectDescription>
+                    </div>
+                  </div>
+                )
+            )}
           </AboutContainer>
           <button
             style={{

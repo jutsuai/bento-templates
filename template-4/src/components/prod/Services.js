@@ -67,6 +67,12 @@ const ServiceDescription = styled.p`
   color: rgba(0, 0, 0, 0.7);
   text-align: center;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
   &:not(.light *) {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -108,25 +114,28 @@ export default function Services({ props, style, id }) {
             width: "100%",
           }}
         >
-          {props?.solutions?.map((solution, index) => (
-            <ServicesContent key={index}>
-              <img
-                src={solution?.imageSrc}
-                alt={solution?.headerText}
-                style={{
-                  width: "6rem",
-                  height: "6rem",
-                  borderRadius: "0.5rem",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              />
-              <ServiceHeader>{solution?.headerText}</ServiceHeader>
-              <ServiceDescription>
-                {solution?.subHeaderTextarea}
-              </ServiceDescription>
-            </ServicesContent>
-          ))}
+          {props?.solutions?.map(
+            (solution, index) =>
+              index < 3 && (
+                <ServicesContent key={index}>
+                  <img
+                    src={solution?.imageSrc}
+                    alt={solution?.headerText}
+                    style={{
+                      width: "6rem",
+                      height: "6rem",
+                      borderRadius: "0.5rem",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                  <ServiceHeader>{solution?.headerText}</ServiceHeader>
+                  <ServiceDescription>
+                    {solution?.subHeaderTextarea}
+                  </ServiceDescription>
+                </ServicesContent>
+              )
+          )}
         </div>
       </div>
     </ServicesWrapper>

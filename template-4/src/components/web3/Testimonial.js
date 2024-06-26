@@ -135,7 +135,10 @@ const TestimonialAccentImage = styled.svg`
               gap: "0.5rem",
             }}
           >
-            <TestimonialUserImage src={props?.userData?.imageSrc} alt="user" />
+            <TestimonialUserImage
+              src={props?.createdBy?.avatarSrc}
+              alt="user"
+            />
             <div
               style={{
                 display: "flex",
@@ -145,7 +148,7 @@ const TestimonialAccentImage = styled.svg`
               }}
             >
               <TestimonialUserName>
-                {props?.userData?.nameText}
+                {props?.createdBy?.nameText}
               </TestimonialUserName>
               <p
                 style={{
@@ -154,7 +157,7 @@ const TestimonialAccentImage = styled.svg`
                   fontWeight: 400,
                 }}
               >
-                {props?.userData?.designationText}
+                {props?.createdBy?.designationText}
               </p>
             </div>
           </div>

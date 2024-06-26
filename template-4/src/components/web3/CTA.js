@@ -79,7 +79,7 @@ const CTAHeader = styled.h1`
               borderRadius: "0.5rem",
             }}
           >
-            {props?.buttonText}
+            {props?.primaryButtonText}
             <svg
               style={{
                 fill: style?.accent || "#412dff",

@@ -7,10 +7,11 @@ import About from "./components/prod/About";
 import CTA from "./components/prod/CTA";
 
 import { useState } from "react";
-import Statistics from "./components/prod/Metrics";
+
 import Protfolio from "./components/prod/Protfolio";
 import Testimonial from "./components/prod/Testimonial";
 import ProtoneFooter from "./components/prod/ProtoneFooter";
+import Metrics from "./components/prod/Metrics";
 export default function App() {
   const [darkMode, setDarkMode] = useState();
   return (
@@ -34,10 +35,10 @@ export default function App() {
         style={values.heroSection.style}
         id={values.heroSection.node}
       />
-      <Statistics
-        props={values.statistics.props}
-        style={values.statistics.style}
-        id={values.statistics.node}
+      <Metrics
+        props={values.metrics.props}
+        style={values.metrics.style}
+        id={values.metrics.node}
       />
       <Services
         props={values.services.props}
@@ -326,7 +327,7 @@ const values = {
       ],
 
       createdBy: {
-        imageSrc:
+        avatarSrc:
           "https://ipfs.near.social/ipfs/bafkreigerr5ialsoxptjn723r4z6zty75vthnnhovl2txuvjqp3gwlfhoi",
         nameText: "John Doe",
         designationText: "CEO, Company",
@@ -349,7 +350,7 @@ const values = {
   cta: {
     props: {
       headerText: "Discover How Design Can Help Your Business",
-      buttonText: "LETS TALK",
+      primaryButtonText: "LETS TALK",
     },
     style: {
       flexDirection: "column",

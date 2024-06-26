@@ -137,7 +137,10 @@ export default function Testimonial({ props, style, id }) {
               gap: "0.5rem",
             }}
           >
-            <TestimonialUserImage src={props?.userData?.imageSrc} alt="user" />
+            <TestimonialUserImage
+              src={props?.createdBy?.avatarSrc}
+              alt="user"
+            />
             <div
               style={{
                 display: "flex",
@@ -147,7 +150,7 @@ export default function Testimonial({ props, style, id }) {
               }}
             >
               <TestimonialUserName>
-                {props?.userData?.nameText}
+                {props?.createdBy?.nameText}
               </TestimonialUserName>
               <p
                 style={{
@@ -156,7 +159,7 @@ export default function Testimonial({ props, style, id }) {
                   fontWeight: 400,
                 }}
               >
-                {props?.userData?.designationText}
+                {props?.createdBy?.designationText}
               </p>
             </div>
           </div>

@@ -57,7 +57,12 @@ const ProtfolioTitle = styled.h4`
 const ProtfolioDescription = styled.p`
   font-size: 1rem; // text-base
   color: rgba(0, 0, 0, 0.6);
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
   &:not(.light *) {
     color: rgba(255, 255, 255, 0.6);
   }
@@ -122,52 +127,57 @@ const ProtfolioButtonIcon = styled.svg`
             width: "100%",
           }}
         >
-          {props?.projects?.map((item, index) => (
-            <ProtfolioWrapper key={index}>
-              <img
-                src={item?.imageSrc}
-                alt=""
-                style={{
-                  aspectRatio: "16 / 9",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  width: "100%",
-                  height: "66.67%",
-                  border: "1px solid #e5e7eb",
-                  borderBottom: "0",
-                }}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                  padding: "1.5rem",
-                  paddingBottom: "2rem",
-                }}
-              >
-                <ProtfolioTitle>{item?.headerText}</ProtfolioTitle>
-                <ProtfolioDescription>
-                  {item?.subHeaderTextarea}
-                </ProtfolioDescription>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <ProtfolioButtonIcon
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 384 512"
+          {props?.projects?.map(
+            (item, index) =>
+              index < 3 && (
+                <ProtfolioWrapper key={index}>
+                  <img
+                    src={item?.imageSrc}
+                    alt=""
+                    style={{
+                      aspectRatio: "16 / 9",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      width: "100%",
+                      height: "66.67%",
+                      border: "1px solid #e5e7eb",
+                      borderBottom: "0",
+                    }}
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1rem",
+                      padding: "1.5rem",
+                      paddingBottom: "2rem",
+                    }}
                   >
-                    <path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z" />
-                  </ProtfolioButtonIcon>
-                  <p className="text-black dark:text-white text-xs">SEE MORE</p>
-                </div>
-              </div>
-            </ProtfolioWrapper>
-          ))}
+                    <ProtfolioTitle>{item?.headerText}</ProtfolioTitle>
+                    <ProtfolioDescription>
+                      {item?.subHeaderTextarea}
+                    </ProtfolioDescription>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                      }}
+                    >
+                      <ProtfolioButtonIcon
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z" />
+                      </ProtfolioButtonIcon>
+                      <p className="text-black dark:text-white text-xs">
+                        SEE MORE
+                      </p>
+                    </div>
+                  </div>
+                </ProtfolioWrapper>
+              )
+          )}
         </div>
       </div>
     </ProtfolioContainer>

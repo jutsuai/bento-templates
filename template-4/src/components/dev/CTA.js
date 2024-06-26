@@ -81,7 +81,7 @@ export default function CTA({ props, style, id }) {
               borderRadius: "0.5rem",
             }}
           >
-            {props?.buttonText}
+            {props?.primaryButtonText}
             <svg
               style={{
                 fill: style?.accent || "#412dff",
