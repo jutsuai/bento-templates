@@ -246,7 +246,7 @@ const values = {
             "https://ipfs.near.social/ipfs/bafkreiabqdbtejrwgrb3x3rmyv4xqv6xxkdpo64zcrxourox4lc3op7rt4",
           headerText: "Marketing",
           subHeaderTextarea:
-            "From strategic planning to execution, our marketing services are designed to elevate your dApp’s market presence and connect with your target audience effectively.",
+            "From strategic planning to execution, our marketing services are designed to elevate your dApps market presence and connect with your target audience effectively.",
         },
         {
           imageSrc:
@@ -277,23 +277,24 @@ const values = {
       headerText: "Our Projects",
       descriptionTextarea:
         "Explore our portfolio to see how we've transformed ideas into beautifully functional dApps that excel in user experience and aesthetic design.",
-      imageSrc: [
-        "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
-        "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
-        "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
-      ],
       projects: [
         {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "Web Design",
           subHeaderTextarea:
             "Our web design projects showcase our commitment to creating user-friendly, visually appealing, and responsive dApp interfaces.",
         },
         {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "SEO Optimization",
           subHeaderTextarea:
             "Our SEO optimization projects highlight our expertise in enhancing dApp visibility and user engagement through targeted strategies.",
         },
         {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm",
           headerText: "Marketing",
           subHeaderTextarea:
             "Our marketing projects demonstrate how we use innovative strategies to effectively market dApps, ensuring high visibility and user retention.",

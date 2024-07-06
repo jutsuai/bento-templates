@@ -133,7 +133,7 @@ const ProtfolioButtonIcon = styled.svg`
                 <ProtfolioWrapper key={index}>
                   <img
                     src={
-                      props?.imageSrc[index] ||
+                      item?.imageSrc ||
                       "https://ipfs.near.social/ipfs/bafkreibmn35kxn3ncag2otba5jk677scbprmmkvgpdfhgffoziseu6gxhm"
                     }
                     alt=""
