@@ -88,7 +88,7 @@ const SubHeaderText = styled.p`
     font-size: 1.125rem; // lg:text-lg
   }
 `;
-const ButtonContainer = styled.button`
+const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
