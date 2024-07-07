@@ -79,8 +79,8 @@ const SkillItem = styled.p`
             flexWrap: "wrap",
           }}
         >
-          {props?.catagories &&
-            props?.catagories?.map((item, index) => (
+          {props?.categories &&
+            props?.categories?.map((item, index) => (
               <SkillsContent key={index}>
                 <SkillItem>{item?.name || item}</SkillItem>
               </SkillsContent>

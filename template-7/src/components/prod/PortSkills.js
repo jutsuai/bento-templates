@@ -77,8 +77,8 @@ export default function PortSkills({ props, style, id }) {
             flexWrap: "wrap",
           }}
         >
-          {props?.catagories &&
-            props?.catagories?.map((item, index) => (
+          {props?.categories &&
+            props?.categories?.map((item, index) => (
               <SkillsContent key={index}>
                 <SkillItem>{item?.name || item}</SkillItem>
               </SkillsContent>
