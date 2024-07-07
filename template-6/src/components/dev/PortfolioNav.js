@@ -59,9 +59,9 @@ const NavItems = styled.div`
 `;
 
 export default function PortfolioNav({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <NavWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div
