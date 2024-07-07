@@ -11,10 +11,10 @@
 // import SecondaryCTA from "./components/prod/SecondaryCTA";
 
 import { useState } from "react";
-import ProtfolioNav from "./components/ProtfolioNav";
-import ProtfolioHero from "./components/ProtfolioHero";
-import ProtfolioFeatured from "./components/ProtfolioFeatured";
-import ProtfolioContact from "./components/ProtfolioContact";
+import PortfolioNav from "./components/prod/ProtfolioNav";
+import PortfolioHero from "./components/prod/ProtfolioHero";
+import PortfolioFeatured from "./components/prod/ProtfolioFeatured";
+import PortfolioContact from "./components/prod/ProtfolioContact";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,22 +30,22 @@ export default function App() {
       >
         {darkMode ? "Dark" : "Light"}
       </button>
-      <ProtfolioNav
+      <PortfolioNav
         props={values.navbar.props}
         style={values.navbar.style}
         id={values.node}
       />
-      <ProtfolioHero
+      <PortfolioHero
         props={values.heroSection.props}
         style={values.heroSection.style}
         id={values.heroSection.node}
       />
-      <ProtfolioFeatured
+      <PortfolioFeatured
         props={values.feature.props}
         style={values.feature.style}
         id={values.feature.node}
       />
-      <ProtfolioContact
+      <PortfolioContact
         props={values.contact.props}
         style={values.contact.style}
         id={values.contact.node}

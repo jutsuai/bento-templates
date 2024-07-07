@@ -126,7 +126,7 @@ const HeroImage = styled.img`
   }
 `;
 
-export default function ProtfolioHero({ style, props, id }) {
+export default function PortfolioHero({ style, props, id }) {
   return (
     <HeroWrapper style={style} id={id}>
       <HeroContent>

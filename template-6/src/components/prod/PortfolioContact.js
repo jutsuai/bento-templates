@@ -136,7 +136,7 @@ const ContactImage = styled.img`
   height: 200px;
 `;
 
-export default function ProtfolioContact({ style, props, id }) {
+export default function PortfolioContact({ style, props, id }) {
   return (
     <ContactWrapper style={style} id={id}>
       <ContactContent>

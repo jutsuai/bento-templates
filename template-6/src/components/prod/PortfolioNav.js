@@ -57,7 +57,7 @@ const NavItems = styled.div`
   }
 `;
 
-export default function ProtfolioNav({ props, style, id }) {
+export default function PortfolioNav({ props, style, id }) {
   return (
     <NavWrapper style={style} id={id}>
       <div

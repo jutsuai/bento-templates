@@ -83,7 +83,7 @@ const FeaturedBoxSubHeader = styled.p`
   }
 `;
 
-export default function ProtfolioFeatured({ props, style, id }) {
+export default function PortfolioFeatured({ props, style, id }) {
   return (
     <FeaturedWrapper style={style} id={id}>
       <FeaturedContent>

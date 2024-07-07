@@ -127,10 +127,10 @@ const HeroImage = styled.img`
   }
 `;
 
-export default function ProtfolioHero({ style, props, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+export default function PortfolioHero({ style, props, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <HeroWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <HeroContent>

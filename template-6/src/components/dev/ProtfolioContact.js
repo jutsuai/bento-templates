@@ -137,10 +137,10 @@ const ContactImage = styled.img`
   height: 200px;
 `;
 
-export default function ProtfolioContact({ style, props, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+export default function PortfolioContact({ style, props, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <ContactWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <ContactContent>
