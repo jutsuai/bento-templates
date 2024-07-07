@@ -82,7 +82,7 @@ const SkillItem = styled.p`
           {props?.catagories &&
             props?.catagories?.map((item, index) => (
               <SkillsContent key={index}>
-                <SkillItem>{item}</SkillItem>
+                <SkillItem>{item?.name || item}</SkillItem>
               </SkillsContent>
             ))}
         </div>

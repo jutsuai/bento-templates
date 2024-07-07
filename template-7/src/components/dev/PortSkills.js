@@ -84,7 +84,7 @@ export default function PortSkills({ props, style, id }) {
           {props?.catagories &&
             props?.catagories?.map((item, index) => (
               <SkillsContent key={index}>
-                <SkillItem>{item}</SkillItem>
+                <SkillItem>{item?.name || item}</SkillItem>
               </SkillsContent>
             ))}
         </div>
