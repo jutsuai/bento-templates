@@ -121,6 +121,10 @@ const values = {
           link: "#",
         },
         {
+          name: "Experience",
+          link: "#",
+        },
+        {
           name: "Contact",
           link: "#",
         },
