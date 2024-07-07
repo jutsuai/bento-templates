@@ -26,7 +26,7 @@ const FooterWrapper = styled.section`
     color: #ffffff80;
   }
 `;
-export default function ProtFooter({ props, style, id }) {
+export default function PortFooter({ props, style, id }) {
   return (
     <FooterWrapper style={style} id={id}>
       <div

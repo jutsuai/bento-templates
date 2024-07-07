@@ -108,7 +108,7 @@ const ProjectImage = styled.img`
   `};
 `;
 
-export default function ProtFeatured({ props, style, id }) {
+export default function PortFeatured({ props, style, id }) {
   return (
     <FeaturedWrapper style={style} id={id}>
       <div

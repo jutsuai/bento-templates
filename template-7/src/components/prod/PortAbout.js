@@ -46,7 +46,7 @@ const AboutSubHeader = styled.p`
   }
 `;
 
-export default function ProtAbout({ props, style, id }) {
+export default function PortAbout({ props, style, id }) {
   return (
     <AboutWrapper style={style} id={id}>
       <div

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import PortNav from "./components/prod/PortNav";
 import PortHero from "./components/prod/PortHero";
-import ProtAbout from "./components/prod/ProtAbout";
-// import ProtProjects from "./components/prod/ProtFeatured";
-import ProtFeatured from "./components/prod/ProtFeatured";
-import ProtSkills from "./components/prod/ProtSkills";
-import ProtContact from "./components/prod/ProtContact";
-import ProtFooter from "./components/prod/ProtFooter";
+import PortAbout from "./components/prod/PortAbout";
+// import PortProjects from "./components/prod/ProtFeatured";
+import PortFeatured from "./components/prod/PortFeatured";
+import PortSkills from "./components/prod/PortSkills";
+import PortContact from "./components/prod/PortContact";
+import PortFooter from "./components/prod/PortFooter";
 import PortExperience from "./components/prod/PortExperience";
 
 export default function App() {
@@ -34,17 +34,17 @@ export default function App() {
         style={values.heroSection.style}
         id={values.heroSection.node}
       />
-      <ProtAbout
+      <PortAbout
         props={values.about.props}
         style={values.about.style}
         id={values.about.node}
       />
-      <ProtFeatured
+      <PortFeatured
         props={values.featured.props}
         style={values.featured.style}
         id={values.featured.node}
       />
-      <ProtSkills
+      <PortSkills
         props={values.skills.props}
         style={values.skills.style}
         id={values.skills.node}
@@ -54,12 +54,12 @@ export default function App() {
         style={values.experience.style}
         id={values.experience.node}
       />
-      <ProtContact
+      <PortContact
         props={values.contact.props}
         style={values.contact.style}
         id={values.contact.node}
       />
-      <ProtFooter
+      <PortFooter
         props={values.footer.props}
         style={values.footer.style}
         id={values.footer.node}
@@ -185,7 +185,6 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-
   featured: {
     props: {
       headerText: "My Projects",
@@ -285,43 +284,6 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-  contact: {
-    props: {
-      headerText: "Contact Me",
-      subHeaderTextarea:
-        "Please contact me directly at Saidulbadhon@gmail.com or through this form.",
-      buttonText: "Submit",
-    },
-    style: {
-      paddingTop: 0,
-      paddingLeft: 0,
-      paddingBottom: 0,
-      paddingRight: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: 0,
-      accent: "#b9ff81",
-    },
-    node: "eqJ1Le-Eek",
-  },
-  footer: {
-    props: {
-      contentText: "2024 Jutsu. All rights reserved.",
-    },
-    style: {
-      paddingTop: 0,
-      paddingLeft: 0,
-      paddingBottom: 0,
-      paddingRight: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: 0,
-      accent: "#b9ff81",
-    },
-    node: "eqJ1Le-Eek",
-  },
   experience: {
     props: {
       headerText: "Experience",
@@ -348,6 +310,43 @@ const values = {
             "I'm now working as a full-stack software engineer in Jutsu.ai. My stack includes Web2, Web3, Blockchain, AI and ML. I'm open to full-time opportunities.",
         },
       ],
+    },
+    style: {
+      paddingTop: 0,
+      paddingLeft: 0,
+      paddingBottom: 0,
+      paddingRight: 0,
+      marginTop: 0,
+      marginLeft: 0,
+      marginBottom: 0,
+      marginRight: 0,
+      accent: "#b9ff81",
+    },
+    node: "eqJ1Le-Eek",
+  },
+  contact: {
+    props: {
+      headerText: "Contact Me",
+      subHeaderTextarea:
+        "Please contact me directly at Saidulbadhon@gmail.com or through this form.",
+      buttonText: "Submit",
+    },
+    style: {
+      paddingTop: 0,
+      paddingLeft: 0,
+      paddingBottom: 0,
+      paddingRight: 0,
+      marginTop: 0,
+      marginLeft: 0,
+      marginBottom: 0,
+      marginRight: 0,
+      accent: "#b9ff81",
+    },
+    node: "eqJ1Le-Eek",
+  },
+  footer: {
+    props: {
+      contentText: "2024 Jutsu. All rights reserved.",
     },
     style: {
       paddingTop: 0,

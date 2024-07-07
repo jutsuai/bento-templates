@@ -98,7 +98,7 @@ const ContactButton = styled.button`
   }
 `;
 
-export default function ProtContact({ props, style, id }) {
+export default function PortContact({ props, style, id }) {
   return (
     <ContactWrapper style={style} id={id}>
       <div

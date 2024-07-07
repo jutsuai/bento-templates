@@ -99,10 +99,10 @@ const ContactButton = styled.button`
   }
 `;
 
-export default function ProtContact({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+export default function PortContact({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <ContactWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div

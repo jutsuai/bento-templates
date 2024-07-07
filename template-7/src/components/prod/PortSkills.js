@@ -52,7 +52,7 @@ const SkillItem = styled.p`
   opacity: 0.8;
 `;
 
-export default function ProtSkills({ props, style, id }) {
+export default function PortSkills({ props, style, id }) {
   return (
     <SkillsWrapper style={style} id={id}>
       <div

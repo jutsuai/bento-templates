@@ -27,10 +27,10 @@ const FooterWrapper = styled.section`
     color: #ffffff80;
   }
 `;
-export default function ProtFooter({ props, style, id }) {
- const {
-		connectors: { connect, drag },
-	} = useNode();
+export default function PortFooter({ props, style, id }) {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
   return (
     <FooterWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div
