@@ -48,9 +48,9 @@ const AboutSubHeader = styled.p`
 `;
 
 export default function PortAbout({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <AboutWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div

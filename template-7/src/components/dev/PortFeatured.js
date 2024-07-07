@@ -110,9 +110,9 @@ const ProjectImage = styled.img`
 `;
 
 export default function PortFeatured({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <FeaturedWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div

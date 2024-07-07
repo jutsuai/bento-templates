@@ -54,9 +54,9 @@ const SkillItem = styled.p`
 `;
 
 export default function PortSkills({ props, style, id }) {
-  const {
-    connectors: { connect, drag },
-  } = useNode();
+ const {
+		connectors: { connect, drag },
+	} = useNode();
   return (
     <SkillsWrapper style={style} id={id} ref={(ref) => connect(drag(ref))}>
       <div

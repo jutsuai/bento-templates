@@ -11,10 +11,10 @@
 // import SecondaryCTA from "./components/prod/SecondaryCTA";
 
 import { useState } from "react";
-import PortfolioNav from "./components/prod/ProtfolioNav";
-import PortfolioHero from "./components/prod/ProtfolioHero";
-import PortfolioFeatured from "./components/prod/ProtfolioFeatured";
-import PortfolioContact from "./components/prod/ProtfolioContact";
+import PortfolioNav from "./components/prod/PortfolioNav";
+import PortfolioHero from "./components/prod/PortfolioHero";
+import PortfolioFeatured from "./components/prod/PortfolioFeatured";
+import PortfolioContact from "./components/prod/PortfolioContact";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
