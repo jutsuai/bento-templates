@@ -22,6 +22,7 @@ const HeroWrapper = styled.section`
   &:not(.light *) {
     background-color: #111827;
   }
+  overflow: hidden;
 `;
 
 const BackgroundDiv1 = styled.div`
