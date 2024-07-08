@@ -111,7 +111,7 @@ const FeaturedBoxSubHeader = styled.p`
               >
                 <FeaturedBoxHeader>{item?.headerText}</FeaturedBoxHeader>
                 <a
-                  href={item?.url}
+                  href={item?.urlText || "#"}
                   target="_blank"
                   rel="noreferrer"
                   style={{

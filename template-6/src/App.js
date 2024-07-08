@@ -25,7 +25,7 @@ export default function App() {
       // style={{ fontFamily: "revert" }}
     >
       <button
-        className="fixed z-50 top-24 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
+        className="fixed z-50 opacity-0 top-24 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
         onClick={() => setDarkMode((e) => !e)}
       >
         {darkMode ? "Dark" : "Light"}
