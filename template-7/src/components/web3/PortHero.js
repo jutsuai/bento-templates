@@ -199,7 +199,7 @@ const Separator = styled.div`
           }}
         >
           <HeroButton accent={style?.accent}>
-            Contact me
+            {props?.buttonText}
             <svg
               style={{
                 width: "1rem",

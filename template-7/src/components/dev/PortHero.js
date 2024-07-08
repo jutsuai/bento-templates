@@ -201,7 +201,7 @@ export default function PortHero({ style, props, id }) {
           }}
         >
           <HeroButton accent={style?.accent}>
-            Contact me
+            {props?.buttonText}
             <svg
               style={{
                 width: "1rem",
