@@ -34,11 +34,16 @@ const SkillsHeader = styled.h1`
 
 const SkillsContent = styled.div`
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   border: 1px solid #29303d20;
-  padding: 0.7rem 1.2rem;
+  padding: 0.3rem 0.9rem;
   &:not(.light *) {
     background-color: #29303d;
+  }
+
+  @media (min-width: ${bp.sm}) {
+    border-radius: 0.5rem;
+    padding: 0.7rem 1.2rem;
   }
 `;
 
@@ -48,8 +53,12 @@ const SkillItem = styled.p`
     color: #fff;
   }
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 0.875rem;
   opacity: 0.8;
+
+  @media (min-width: ${bp.sm}) {
+    font-size: 1.2rem;
+  }
 `;
 
 export default function PortSkills({ props, style, id }) {

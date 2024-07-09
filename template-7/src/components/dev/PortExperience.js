@@ -85,11 +85,25 @@ const ExperienceDate = styled.p`
   ${({ index }) =>
     index % 2 === 0
       ? `
-    left: 0;
+  left: 0;
   `
       : `
-    right: 0;
+  right: 0;
   `}
+`;
+
+const MobileExperienceDate = styled.p`
+  color: #00000080;
+  &:not(.light *) {
+    color: #ffffff80;
+  }
+  margin-top: 0.875rem;
+  font-size: 0.875rem;
+
+  display: inline-block;
+  @container (min-width: ${bp.md}) {
+    display: none;
+  }
 `;
 
 const ExperiencContent = styled.div`
@@ -120,6 +134,30 @@ const ExperienceTimeline = styled.div`
 
   &:not(.light *) {
     background-color: #1d2432;
+  }
+
+  display: none;
+  @container (min-width: ${bp.md}) {
+    display: inline-block;
+  }
+`;
+
+const ExperienceLineCircle = styled.div`
+  border: 4px solid;
+
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 2rem;
+  left: 55%;
+  transform: translate(-50%, -50%);
+
+  border-color: #1d243280;
+  background-color: #f9fafb;
+  &:not(.light *) {
+    border-color: #e5e7eb80;
+    background-color: #111827;
   }
 `;
 
@@ -167,20 +205,12 @@ export default function PortExperience({ props, style, id }) {
                   <ExperienceDescription>
                     {item?.descriptionTextarea}
                   </ExperienceDescription>
+                  <MobileExperienceDate>
+                    {item?.durationText}
+                  </MobileExperienceDate>
                 </ExperiencContent>
                 <ExperienceTimeline>
-                  <div
-                    style={{
-                      width: "1rem",
-                      height: "1rem",
-                      backgroundColor: "skyblue",
-                      borderRadius: "100%",
-                      position: "absolute",
-                      top: "2rem",
-                      left: "55%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  />
+                  <ExperienceLineCircle />
                 </ExperienceTimeline>
                 <ExperienceDateBox>
                   <ExperienceDate index={index}>

@@ -103,10 +103,10 @@ const ProjectImage = styled.img`
   ${({ index }) =>
     index % 2 === 0
       ? `
-   right: -10rem;
+   right: -8rem;
   `
       : `
-  left: -10rem;
+  left: -8rem;
   `};
 `;
 
@@ -120,7 +120,7 @@ const ProjectImage = styled.img`
           justifyContent: "center",
           alignItems: "center",
           gap: "2rem",
-          maxWidth: bp.sm,
+          maxWidth: bp.md,
           margin: "0 auto",
           padding: "4rem 1rem",
         }}

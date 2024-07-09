@@ -254,7 +254,7 @@ const values = {
   skills: {
     props: {
       headerText: "My Skills",
-      catagories: [
+      categories: [
         "HTML",
         "CSS",
         "JavaScript",
