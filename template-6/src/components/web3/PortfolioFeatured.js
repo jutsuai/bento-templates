@@ -24,11 +24,25 @@ const FeaturedWrapper = styled.div`
   }
 `;
 
-const FeaturedContent = styled.div`
+const FeatureContainer = styled.div`
   max-width: ${bp.xl};
   margin-inline: auto;
-  display: grid;
   padding-inline: 2rem;
+`;
+
+const FeatureHeader = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+
+  color: black;
+  &:not(.light *) {
+    color: white;
+  }
+`;
+
+const FeaturedContent = styled.div`
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 
@@ -88,61 +102,66 @@ const FeaturedBoxSubHeader = styled.p`
 
   return (
     <FeaturedWrapper style={style} id={id}>
-      <FeaturedContent>
-        {props?.projects?.map((item, index) => (
-          <FeaturedBox key={index}>
-            <img
-              src={item?.imageSrc || "https://via.placeholder.com/500"}
-              alt="placeholder"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-            <FeaturedBoxContent>
-              <div
+      <FeatureContainer>
+        <FeatureHeader>{props?.headerText || "Projects"}</FeatureHeader>
+        <FeaturedContent>
+          {props?.projects?.map((item, index) => (
+            <FeaturedBox key={index}>
+              <img
+                src={item?.imageSrc || "https://via.placeholder.com/500"}
+                alt="placeholder"
                 style={{
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "center",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
                 }}
-              >
-                <FeaturedBoxHeader>{item?.headerText}</FeaturedBoxHeader>
-                <a
-                  href={item?.urlText || "#"}
-                  target="_blank"
-                  rel="noreferrer"
+              />
+              <FeaturedBoxContent>
+                <div
                   style={{
-                    display: "inline-block",
-                    background: "#21212180",
-                    padding: "0.8rem",
-                    borderRadius: "100%",
-                    zIndex: "10",
-                    cursor: "pointer",
+                    display: "flex",
+                    gap: "1rem",
+                    alignItems: "center",
                   }}
                 >
-                  <svg
+                  <FeaturedBoxHeader>{item?.headerText}</FeaturedBoxHeader>
+                  <a
+                    href={item?.urlText || "#"}
+                    target="_blank"
+                    rel="noreferrer"
                     style={{
-                      transform: "rotate(320deg)",
-                      width: "1rem",
-                      height: "1rem",
-                      fill: style?.accent + 80,
-                      opacity: "0.8",
+                      display: "inline-block",
+                      background: "#21212180",
+                      padding: "0.8rem",
+                      borderRadius: "100%",
+                      zIndex: "10",
+                      cursor: "pointer",
                     }}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
                   >
-                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                  </svg>
-                </a>
-              </div>
-              <FeaturedBoxSubHeader>{item?.subHeaderText}</FeaturedBoxSubHeader>
-            </FeaturedBoxContent>
-          </FeaturedBox>
-        ))}
-      </FeaturedContent>
+                    <svg
+                      style={{
+                        transform: "rotate(320deg)",
+                        width: "1rem",
+                        height: "1rem",
+                        fill: style?.accent + 80,
+                        opacity: "0.8",
+                      }}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                  </a>
+                </div>
+                <FeaturedBoxSubHeader>
+                  {item?.subHeaderText}
+                </FeaturedBoxSubHeader>
+              </FeaturedBoxContent>
+            </FeaturedBox>
+          ))}
+        </FeaturedContent>
+      </FeatureContainer>
     </FeaturedWrapper>
   );
 
