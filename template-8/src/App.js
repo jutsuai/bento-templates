@@ -1,13 +1,9 @@
 import { useState } from "react";
-import PortNav from "./components/prod/PortNav";
-import PortHero from "./components/prod/PortHero";
-import PortAbout from "./components/prod/PortAbout";
-// import PortProjects from "./components/prod/ProtFeatured";
-import PortFeatured from "./components/prod/PortFeatured";
-import PortSkills from "./components/prod/PortSkills";
-import PortContact from "./components/prod/PortContact";
-import PortFooter from "./components/prod/PortFooter";
-import PortExperience from "./components/prod/PortExperience";
+import MemeNav from "./components/prod/MemeNav";
+
+import MemeHero from "./components/prod/MemeHero";
+import MemeFeatured from "./components/prod/MemeFeatured";
+import MemeAbout from "./components/prod/MemeAbout";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,81 +13,65 @@ export default function App() {
       className={`relative font-sans ${darkMode ? "dark" : "light"}`}
       // style={{ fontFamily: "revert" }}
     >
-      <button
-        className="fixed  z-50  top-24 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
+      {/* <button
+        className="fixed  z-50 top-24 aspect-square bg-orange-600 text-white text-sm font-bold p-2 rounded-full left-12"
         onClick={() => setDarkMode((e) => !e)}
       >
         {darkMode ? "Dark" : "Light"}
-      </button>
+      </button> */}
 
-      <PortNav
+      <MemeNav
         props={values.navbar.props}
         style={values.navbar.style}
         id={values.navbar.node}
       />
-      <PortHero
-        props={values.heroSection.props}
-        style={values.heroSection.style}
-        id={values.heroSection.node}
+      <MemeHero
+        props={values.hero.props}
+        style={values.hero.style}
+        id={values.hero.node}
       />
-      <PortAbout
+      <MemeAbout
         props={values.about.props}
         style={values.about.style}
         id={values.about.node}
       />
-      <PortFeatured
+      <MemeFeatured
         props={values.featured.props}
         style={values.featured.style}
         id={values.featured.node}
       />
-      <PortSkills
-        props={values.skills.props}
-        style={values.skills.style}
-        id={values.skills.node}
-      />
-      <PortExperience
-        props={values.experience.props}
-        style={values.experience.style}
-        id={values.experience.node}
-      />
-      <PortContact
-        props={values.contact.props}
-        style={values.contact.style}
-        id={values.contact.node}
-      />
-      <PortFooter
-        props={values.footer.props}
-        style={values.footer.style}
-        id={values.footer.node}
-      />
-      {/* 
-      <About
+
+      {/* <PortHero
+        props={values.heroSection.props}
+        style={values.heroSection.style}
+        id={values.heroSection.node}
+      /> */}
+      {/* <PortAbout
         props={values.about.props}
         style={values.about.style}
         id={values.about.node}
-      />
-      <Article
-        props={values.article.props}
-        style={values.article.style}
-        id={values.article.node}
-      />
-      <News
-        props={values.news.props}
-        style={values.news.style}
-        id={values.news.node}
-      />
-      <PrimaryCTA
-        props={values.primaryCTA.props}
-        style={values.primaryCTA.style}
-        id={values.primaryCTA.node}
-      />
-      <SecondaryCTA
-        props={values.secondaryCTA.props}
-        style={values.secondaryCTA.style}
-        id={values.secondaryCTA.node}
-      />
-
-      <Footer
+      /> */}
+      {/* <PortFeatured
+        props={values.featured.props}
+        style={values.featured.style}
+        id={values.featured.node}
+      /> */}
+      {/* <PortSkills
+        props={values.skills.props}
+        style={values.skills.style}
+        id={values.skills.node}
+      /> */}
+      {/* <PortExperience
+        props={values.experience.props}
+        style={values.experience.style}
+        id={values.experience.node}
+      /> */}
+      {/* <PortContact
+        props={values.contact.props}
+        style={values.contact.style}
+        id={values.contact.node}
+      /> */}
+      {/* <PortFooter
         props={values.footer.props}
         style={values.footer.style}
         id={values.footer.node}
@@ -103,32 +83,26 @@ export default function App() {
 const values = {
   navbar: {
     props: {
+      headerText: "TRUMP INU",
       navItems: [
         {
           name: "Home",
           link: "#",
         },
         {
-          name: "Projects",
-          link: "#",
-        },
-        {
-          name: "Present",
-          link: "#",
-        },
-        {
-          name: "Skills",
-          link: "#",
-        },
-        {
-          name: "Experience",
+          name: "Whitepaper",
           link: "#",
         },
         {
           name: "Contact",
           link: "#",
         },
+        {
+          name: "Dextools",
+          link: "#",
+        },
       ],
+      buttonText: "Buy Trump Menu",
     },
     style: {
       paddingTop: 0,
@@ -143,15 +117,16 @@ const values = {
     },
     node: "7YoXE88zl3",
   },
-  heroSection: {
+  hero: {
     props: {
       avatarSrc:
-        "https://ipfs.near.social/ipfs/bafkreifdqo3c7fg2qazsf32da7nchldfyupghi2y4quxuo2qsndkoqxmta",
-      headerText:
-        "Hello, I'm Saidul Badhon! I'm a Full Stack Software Engineer with 4 years of experience. I enjoy building sites & apps. My focus is Web3, Blockchain & AI.",
-      buttonText: "Contact me",
-      linkedinUrlText: "https://www.linkedin.com/in/saidulbadhon/",
-      twitterUrlText: "https://twitter.com/saidulbadhon",
+        "https://ipfs.near.social/ipfs/bafkreidzejtmgg2pwce7rznwmz3aqnmew4en5q75345xg4kyc7ioiyvah4",
+      headerText: "Welcome to",
+      subHeaderText: "TRUMP INU",
+      descriptionTextarea:
+        "There is nothing more bulish then Trump and a Doge in 2024",
+      primaryButtonText: "Whitepaper",
+      secondaryButtonText: "Chart",
     },
     style: {
       paddingTop: 0,
@@ -168,9 +143,26 @@ const values = {
   },
   about: {
     props: {
-      headerText: "About Me",
+      headerText: "1% Tax donated to maga",
       subHeaderTextarea:
-        "Hi, I'm a Full Stack Web & App Developer with 4 years of experience. I have worked with multiple technologies to build websites, web applications, and native applications. I've completed many projects with 100% client satisfaction. For me as a professional developer, learning new technologies in web and mobile is my passion. I have worked with PHP, Python, Java, C# and now in React JS, React Native & Node JS. Right now, I am working as a MERN stack engineer on a different platform.",
+        "We will make weekly donations to the Wounded Warrior Project and Veterans For Child Rescue non-profits via trade fees.",
+      cards: [
+        {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreidzejtmgg2pwce7rznwmz3aqnmew4en5q75345xg4kyc7ioiyvah4",
+          backgroundColor: "#5b8bee",
+        },
+        {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreidzejtmgg2pwce7rznwmz3aqnmew4en5q75345xg4kyc7ioiyvah4",
+          backgroundColor: "#feef32",
+        },
+        {
+          imageSrc:
+            "https://ipfs.near.social/ipfs/bafkreidzejtmgg2pwce7rznwmz3aqnmew4en5q75345xg4kyc7ioiyvah4",
+          backgroundColor: "#e01eff",
+        },
+      ],
     },
     style: {
       paddingTop: 0,
@@ -187,57 +179,28 @@ const values = {
   },
   featured: {
     props: {
-      headerText: "My Projects",
-      projects: [
+      headerText: " How to get Coin Trump INU",
+      subHeaderTextarea:
+        "Coin Trump INU is a decentralized meme token that grows in value through the community's efforts. The more you hold, the more you earn. The more you earn, the more you can hold. It's a cycle that rewards the community for their support.",
+      cards: [
         {
-          headerText: "Jutsu | Web3 Copilot",
-          subHeaderTextarea:
-            "# Deploy Forever | Jutsu: Revolutionizing Blockchain Development ## Overview **Deploy Forever | Jutsu** is a cutting-edge developer platform",
-          tags: ["Next.js", "Near VM", "Blockchain", "Web3"],
-          imageSrc:
-            "https://saidulbadhon.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjutsu-web.a51b85e5.png&w=3840&q=95",
+          titleText: "ETH",
+          descriptionTextarea:
+            "Buy ETH on Coinbase or Binance. Send ETH to your Metamask wallet.",
         },
         {
-          headerText: "Jutsu IDE",
-          subHeaderTextarea:
-            "# Deploy Forever | Jutsu: Revolutionizing Blockchain Development ## Overview **Deploy Forever | Jutsu** is a cutting-edge developer platform...",
-          tags: [
-            "Codemirror",
-            "Near Protocol",
-            "Blockchain",
-            "Web3",
-            "Web3",
-            "Web3",
-          ],
-          imageSrc:
-            "https://saidulbadhon.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjutsu-web.a51b85e5.png&w=3840&q=95",
+          titleText: "Uniswap",
+          descriptionTextarea:
+            "Go to Uniswap and connect your Metamask wallet. Swap ETH for Trump INU.",
         },
         {
-          headerText: "CorpComment",
-          subHeaderTextarea:
-            "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-          tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-          imageSrc:
-            "https://saidulbadhon.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjutsu-web.a51b85e5.png&w=3840&q=95",
-        },
-        {
-          headerText: "rmtDev",
-          subHeaderTextarea:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-          tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-          imageSrc:
-            "https://saidulbadhon.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjutsu-web.a51b85e5.png&w=3840&q=95",
-        },
-        {
-          headerText: "Word Analytics",
-          subHeaderTextarea:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-          tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-          imageSrc:
-            "https://saidulbadhon.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjutsu-web.a51b85e5.png&w=3840&q=95",
+          titleText: "Hodl",
+          descriptionTextarea:
+            "Hold your Trump INU tokens in your Metamask wallet. The more you hold, the more you earn.",
         },
       ],
     },
+
     style: {
       paddingTop: 0,
       paddingLeft: 0,
