@@ -16,11 +16,11 @@ const HeroWrapper = styled.nav`
     `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
-  background-color: #000000;
+  background-color: #000000 !important;
 `;
 
 const HeroContainer = styled.div`
-  background-color: #fbe901;
+  background-color: #fbe901 !important;
 
   border-radius: 0 0 2rem 2rem;
 
@@ -91,7 +91,7 @@ const ButtonWrapper = styled.div`
 export default function MemeHero({ props, style, id }) {
   return (
     <HeroWrapper style={style} id={id}>
-      <HeroContainer style={style}>
+      <HeroContainer>
         <HeroContent>
           <div
             style={{

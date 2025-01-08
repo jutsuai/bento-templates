@@ -17,7 +17,7 @@ const MemeHowToGetWrapper = styled.nav`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #5b8bee;
+  background-color: #5b8bee !important;
   position: relative;
   overflow-x: hidden;
 `;

@@ -13,7 +13,6 @@ const StyledNav = styled.nav`
   z-index: 100;
   position: relative;
   width: 100%;
-  background-color: #fbe901;
 
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
@@ -23,6 +22,8 @@ const StyledNav = styled.nav`
     `${style?.marginTop || 0}px ${style?.marginRight || 0}px ${
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
+
+  background-color: #fbe901 !important;
 `;
 
 const NavContainer = styled.div`
@@ -74,36 +75,13 @@ const NavButtomContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const Button = styled.button`
-  white-space: nowrap;
-  border-radius: 9999px;
-  background-color: ${({ accent }) => accent || "#b9ff81"};
-  padding: 0.5rem 1.2rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const NavImageLight = styled.img`
-  width: 2rem;
-  display: none;
-`;
-
-const NavImageDark = styled.img`
-  width: 2rem;
-  display: inline-block;
-`;
-
 const MobileMenu = styled.div`
   position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   border-bottom: 1px solid;
-  background-color: #fbe901;
+  background-color: #fbe901 !important;
   padding: 1.75rem;
   transition: all 0.2s;
   border-bottom: 1px solid #000000;

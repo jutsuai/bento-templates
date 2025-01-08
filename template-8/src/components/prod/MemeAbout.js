@@ -17,7 +17,7 @@ const AboutWrapper = styled.nav`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #000000;
+  background-color: #000000 !important;
 `;
 
 const AboutContent = styled.div`
@@ -97,7 +97,7 @@ export default function MemeAbout({ props, style, id }) {
                     alt="placeholder"
                     style={{
                       objectFit: "contain",
-                      objectPosition: "top",
+                      objectPosition: "center",
                       width: "100%",
                       height: "100%",
                       padding: "1rem",

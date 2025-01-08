@@ -17,7 +17,7 @@ const MemeFeaturedWrapper = styled.nav`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #000000;
+  background-color: #000000 !important;
 `;
 
 const MemeFeaturedContent = styled.div`
@@ -96,6 +96,9 @@ export default function MemeFeatured({ props, style, id }) {
                   <img
                     style={{
                       width: "100%",
+                      aspectRatio: "1/1",
+                      objectFit: "cover",
+                      objectPosition: "center",
                       borderRadius: "1rem",
                     }}
                     alt=""
