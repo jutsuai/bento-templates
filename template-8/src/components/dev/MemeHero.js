@@ -21,7 +21,7 @@ const HeroWrapper = styled.nav`
 `;
 
 const HeroContainer = styled.div`
-  background-color: ${({ style }) => style?.accent || "#fbe901"};
+  background-color: #fbe901;
 
   border-radius: 0 0 2rem 2rem;
 

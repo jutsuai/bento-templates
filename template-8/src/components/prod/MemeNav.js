@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   z-index: 100;
   position: relative;
   width: 100%;
-  background-color: ${({ style }) => style?.accent || "#fbe901"};
+  background-color: #fbe901;
 
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
