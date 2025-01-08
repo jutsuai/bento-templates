@@ -24,7 +24,7 @@ const StyledNav = styled.div`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #fbe901 !important;
+  background-color: #fbe901;
 `;
 
 const NavContainer = styled.div`
@@ -82,7 +82,7 @@ const MobileMenu = styled.div`
   top: 0;
   width: 100%;
   border-bottom: 1px solid;
-  background-color: #fbe901 !important;
+  background-color: #fbe901;
   padding: 1.75rem;
   transition: all 0.2s;
   border-bottom: 1px solid #000000;
@@ -114,20 +114,6 @@ const MobileNavList = styled.ul`
 
 const MobileNavListItem = styled.a`
   color: #4b5563;
-`;
-
-const MobileButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  border-radius: 9999px;
-  background-color: ${({ accent }) => accent || "#b9ff81"};
-  padding: 0.25rem 1.2rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: white;
-  border: none;
 `;
 
 const NavHead = styled.h1`

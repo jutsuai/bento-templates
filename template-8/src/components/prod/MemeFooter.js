@@ -35,7 +35,7 @@ const MemeFooterWrapper = styled.footer`
   margin: ${({ style }) =>
     `${style?.marginTop}px ${style?.marginRight}px ${style?.marginBottom}px ${style?.marginLeft}px`};
 
-  background-color: #f63fd7 !important;
+  background-color: #f63fd7;
 `;
 const MemeFooterContent = styled.div`
   padding: 6rem 1rem;

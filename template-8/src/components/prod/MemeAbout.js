@@ -17,7 +17,7 @@ const AboutWrapper = styled.nav`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #000000 !important;
+  background-color: #000000;
 `;
 
 const AboutContent = styled.div`

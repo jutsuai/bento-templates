@@ -19,7 +19,7 @@ const MemeFeaturedWrapper = styled.div`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #000000 !important;
+  background-color: #000000;
 `;
 
 const MemeFeaturedContent = styled.div`

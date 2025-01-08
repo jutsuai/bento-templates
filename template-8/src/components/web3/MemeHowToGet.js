@@ -19,7 +19,7 @@ const MemeHowToGetWrapper = styled.div`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #5b8bee !important;
+  background-color: #5b8bee;
   position: relative;
   overflow-x: hidden;
 `;
