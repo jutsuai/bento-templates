@@ -7,7 +7,7 @@ const bp = {
   xl: "80rem",
 };
 
-const FeaaturedWrapper = styled.nav`
+const MemeFeaturedWrapper = styled.nav`
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
       style?.paddingBottom || 0
@@ -17,12 +17,10 @@ const FeaaturedWrapper = styled.nav`
       style?.marginBottom || 0
     }px ${style?.marginLeft || 0}px`};
 
-  background-color: #5b8bee;
-  position: relative;
-  overflow-x: hidden;
+  background-color: #000000;
 `;
 
-const FeaaturedContent = styled.div`
+const MemeFeaturedContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -35,29 +33,8 @@ const FeaaturedContent = styled.div`
 
 export default function MemeFeatured({ props, style, id }) {
   return (
-    <FeaaturedWrapper style={style} id={id}>
-      <img
-        src="https://ipfs.near.social/ipfs/bafkreigphy57rzcp45rhgi7va3rbpp5phcgrhfi3lswsrfxfnk7qd46ddy"
-        alt="headerImage"
-        style={{
-          position: "absolute",
-          top: "10",
-          right: "0",
-          transform: "translateX(40px) translateY(40px)",
-        }}
-      />
-      <img
-        src="https://ipfs.near.social/ipfs/bafkreia6r47lw5bioff2yaswnkjaenre33w33npjg5ddpbmcfiailtomfq"
-        alt="headersdImage"
-        style={{
-          position: "absolute",
-          top: "10",
-          right: "0",
-          left: "0",
-          transform: "translateX(50%) translateY(40px)",
-        }}
-      />
-      <FeaaturedContent>
+    <MemeFeaturedWrapper style={style} id={id}>
+      <MemeFeaturedContent>
         <div
           style={{
             display: "flex",
@@ -77,15 +54,12 @@ export default function MemeFeatured({ props, style, id }) {
           >
             {props?.headerText}
           </h1>
-
           <p
             style={{
-              color: "#ffffffCC",
-              fontSize: "1.1rem",
-              lineHeight: 2,
-              fontWeight: 500,
+              fontSize: "1.2rem",
+              color: "gray",
+
               maxWidth: bp?.sm,
-              marginLeft: "auto",
             }}
           >
             {props?.subHeaderTextarea}
@@ -93,80 +67,38 @@ export default function MemeFeatured({ props, style, id }) {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-              width: "100%",
-              gap: "2rem",
-              maxWidth: `${bp.lg}`,
-              marginTop: "6rem",
-              marginInline: "auto",
+              marginTop: "3rem",
+              gap: "3rem",
+
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              paddingBottom: "2rem",
             }}
           >
-            {props?.cards &&
-              props?.cards?.length > 0 &&
-              props?.cards?.map((item, index) => (
+            {props?.featuredImages &&
+              props?.featuredImages?.length > 0 &&
+              props?.featuredImages?.map((item, intex) => (
                 <div
-                  key={index}
+                  key={intex}
                   style={{
-                    position: "relative",
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "#ffffff",
-                    padding: "2rem",
-                    gap: "0.5rem",
-                    borderRadius: "3rem",
-                    borderTopLeftRadius: "2.4rem",
-                    borderBottomRightRadius: "2.4rem",
-                    boxShadow: "8px 8px 0px 0px #000000",
+                    backgroundColor: "#0edc7e",
+                    boxShadow: "5px 5px 0px 0 #ffffff",
+                    borderRadius: "1rem",
+                    minWidth: "300px",
                   }}
                 >
-                  <p
+                  <img
                     style={{
-                      padding: "0.875rem",
-                      borderRadius: "100%",
-                      backgroundColor: "#feef32",
-                      width: "4rem",
-                      height: "4rem",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      fontSize: "2rem",
-                      fontFamily: "Sword-Art",
-                      position: "absolute",
-                      top: "-1rem",
-                      left: "-1rem",
-                      border: "2px solid #000000",
-                      boxShadow: "3px 3px 0px 0px #000000",
+                      width: "100%",
+                      borderRadius: "1rem",
                     }}
-                  >
-                    {index + 1}
-                  </p>
-                  <h2
-                    style={{
-                      marginTop: "1.7rem",
-                      fontSize: "1.8rem",
-                      color: "#000000",
-                      fontFamily: "Sword-Art",
-                      textTransform: "uppercase",
-                      maxWidth: bp?.sm,
-                    }}
-                  >
-                    {item?.titleText}
-                  </h2>
-                  <p
-                    style={{
-                      color: "gray",
-                      fontSize: "0.875rem",
-
-                      fontWeight: 500,
-                    }}
-                  >
-                    {item?.descriptionTextarea}
-                  </p>
+                    alt=""
+                    src={item}
+                  />
                 </div>
               ))}
           </div>
         </div>
-      </FeaaturedContent>
-    </FeaaturedWrapper>
+      </MemeFeaturedContent>
+    </MemeFeaturedWrapper>
   );
 }

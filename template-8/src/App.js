@@ -2,8 +2,10 @@ import { useState } from "react";
 import MemeNav from "./components/prod/MemeNav";
 
 import MemeHero from "./components/prod/MemeHero";
-import MemeFeatured from "./components/prod/MemeFeatured";
+import MemeHowToGet from "./components/prod/MemeHowToGet";
 import MemeAbout from "./components/prod/MemeAbout";
+import MemeFeatured from "./components/prod/MemeFeatured";
+import MemeFooter from "./components/prod/MemeFooter";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -35,47 +37,21 @@ export default function App() {
         style={values.about.style}
         id={values.about.node}
       />
+      <MemeHowToGet
+        props={values.howtoget.props}
+        style={values.howtoget.style}
+        id={values.howtoget.node}
+      />
       <MemeFeatured
         props={values.featured.props}
         style={values.featured.style}
         id={values.featured.node}
       />
-
-      {/* <PortHero
-        props={values.heroSection.props}
-        style={values.heroSection.style}
-        id={values.heroSection.node}
-      /> */}
-      {/* <PortAbout
-        props={values.about.props}
-        style={values.about.style}
-        id={values.about.node}
-      /> */}
-      {/* <PortFeatured
-        props={values.featured.props}
-        style={values.featured.style}
-        id={values.featured.node}
-      /> */}
-      {/* <PortSkills
-        props={values.skills.props}
-        style={values.skills.style}
-        id={values.skills.node}
-      /> */}
-      {/* <PortExperience
-        props={values.experience.props}
-        style={values.experience.style}
-        id={values.experience.node}
-      /> */}
-      {/* <PortContact
-        props={values.contact.props}
-        style={values.contact.style}
-        id={values.contact.node}
-      /> */}
-      {/* <PortFooter
+      <MemeFooter
         props={values.footer.props}
         style={values.footer.style}
         id={values.footer.node}
-      /> */}
+      />
     </main>
   );
 }
@@ -177,7 +153,7 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-  featured: {
+  howtoget: {
     props: {
       headerText: " How to get Coin Trump INU",
       subHeaderTextarea:
@@ -214,85 +190,17 @@ const values = {
     },
     node: "eqJ1Le-Eek",
   },
-  skills: {
+  featured: {
     props: {
-      headerText: "My Skills",
-      categories: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "Node.js",
-        "Git",
-        "MongoDB",
-        "Express",
-        "PostgreSQL",
-        "Python",
-        "Web3",
-        "Blockchain",
-      ],
-    },
-    style: {
-      paddingTop: 0,
-      paddingLeft: 0,
-      paddingBottom: 0,
-      paddingRight: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: 0,
-      accent: "#b9ff81",
-    },
-    node: "eqJ1Le-Eek",
-  },
-  experience: {
-    props: {
-      headerText: "Experience",
-      timeline: [
-        {
-          durationText: 2019,
-          titleText: "Graduated Bootcamp",
-          locationText: "Miami, FL",
-          descriptionTextarea:
-            "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-        },
-        {
-          durationText: "2019 - 2021",
-          titleText: "Front-End Developer",
-          locationText: "Orlando, FL",
-          descriptionTextarea:
-            "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-        },
-        {
-          durationText: "2023 - present",
-          titleText: "Full-Stack Software Engineer",
-          locationText: "Concord, CF",
-          descriptionTextarea:
-            "I'm now working as a full-stack software engineer in Jutsu.ai. My stack includes Web2, Web3, Blockchain, AI and ML. I'm open to full-time opportunities.",
-        },
-      ],
-    },
-    style: {
-      paddingTop: 0,
-      paddingLeft: 0,
-      paddingBottom: 0,
-      paddingRight: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: 0,
-      accent: "#b9ff81",
-    },
-    node: "eqJ1Le-Eek",
-  },
-  contact: {
-    props: {
-      headerText: "Contact Me",
+      headerText: "Team Members",
       subHeaderTextarea:
-        "Please contact me directly at Saidulbadhon@gmail.com or through this form.",
-      buttonText: "Submit",
+        "Our team is made up of experienced professionals who are passionate about blockchain technology and its potential to change the world.",
+      featuredImages: [
+        "https://ipfs.near.social/ipfs/bafkreihjjyq5fhtcmtkc7mtuxkzi3nq7bszurkcu3odmgicg3zwefqtvpi",
+        "https://ipfs.near.social/ipfs/bafkreihjjyq5fhtcmtkc7mtuxkzi3nq7bszurkcu3odmgicg3zwefqtvpi",
+        "https://ipfs.near.social/ipfs/bafkreihjjyq5fhtcmtkc7mtuxkzi3nq7bszurkcu3odmgicg3zwefqtvpi",
+        "https://ipfs.near.social/ipfs/bafkreihjjyq5fhtcmtkc7mtuxkzi3nq7bszurkcu3odmgicg3zwefqtvpi",
+      ],
     },
     style: {
       paddingTop: 0,
@@ -309,7 +217,63 @@ const values = {
   },
   footer: {
     props: {
-      contentText: "2024 Jutsu. All rights reserved.",
+      headerText: "TRUMP INU",
+      subHeaderText:
+        "We will make weekly donations to the Wounded Warrior Project and Veterans For Child Rescue",
+      buttonText: "Buy Trump Menu",
+
+      legal: {
+        titleText: "Legal",
+        data: [
+          {
+            name: "Privacy Policy",
+            link: "#",
+          },
+          {
+            name: "Terms and Conditions",
+            link: "#",
+          },
+          {
+            name: "Cookies Policy",
+            link: "#",
+          },
+          {
+            name: "Disclaimer",
+            link: "#",
+          },
+          {
+            name: "Refund Policy",
+            link: "#",
+          },
+        ],
+      },
+      service: {
+        titleText: "Service",
+        data: [
+          {
+            name: "FAQ",
+            link: "#",
+          },
+          {
+            name: "Contact Us",
+            link: "#",
+          },
+          {
+            name: "Support",
+            link: "#",
+          },
+          {
+            name: "Live Chat",
+            link: "#",
+          },
+          {
+            name: "Community Forum",
+            link: "#",
+          },
+        ],
+      },
+
+      copyRight: "2023 Bike Showroom. All Rights Reserved.",
     },
     style: {
       paddingTop: 0,
@@ -320,8 +284,8 @@ const values = {
       marginLeft: 0,
       marginBottom: 0,
       marginRight: 0,
-      accent: "#b9ff81",
+      accent: "#94cc67",
     },
-    node: "eqJ1Le-Eek",
+    node: "WLZFjGp2JT",
   },
 };
