@@ -20,7 +20,7 @@ const HeroWrapper = styled.nav`
 `;
 
 const HeroContainer = styled.div`
-  background-color: #fbe901;
+  background-color: ${({ style }) => style?.accent || "#fbe901"};
 
   border-radius: 0 0 2rem 2rem;
 
@@ -91,7 +91,7 @@ const ButtonWrapper = styled.div`
 export default function MemeHero({ props, style, id }) {
   return (
     <HeroWrapper style={style} id={id}>
-      <HeroContainer>
+      <HeroContainer style={style}>
         <HeroContent>
           <div
             style={{

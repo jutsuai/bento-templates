@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   z-index: 100;
   position: relative;
   width: 100%;
-  background-color: #fbe901;
+  background-color: ${({ style }) => style?.accent || "#fbe901"};
 
   padding: ${({ style }) =>
     `${style?.paddingTop || 0}px ${style?.paddingRight || 0}px ${
@@ -26,12 +26,11 @@ const StyledNav = styled.nav`
 
 const NavContainer = styled.div`
   display: flex;
-
   flex-direction: ${({ style }) => style?.flexDirection || "row"};
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1rem;
-  max-width: 96rem;
+  max-width: ${bp?.xl};
   margin-inline: auto;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 
