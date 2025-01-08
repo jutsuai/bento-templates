@@ -133,6 +133,7 @@ const InfoSection = styled.div`
                 fontSize: "2rem",
                 color: "black",
                 fontWeight: 800,
+                lineHeight: "1.2",
               }}
             >
               {props?.headerText}

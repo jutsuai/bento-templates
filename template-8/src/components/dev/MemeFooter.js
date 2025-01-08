@@ -135,6 +135,7 @@ export default function MemeFooter({ props, style, id }) {
                 fontSize: "2rem",
                 color: "black",
                 fontWeight: 800,
+                lineHeight: "1.2",
               }}
             >
               {props?.headerText}
