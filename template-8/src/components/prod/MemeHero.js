@@ -19,26 +19,79 @@ const HeroWrapper = styled.nav`
   background-color: #000000;
 `;
 
+const HeroContainer = styled.div`
+  background-color: #fbe901;
+
+  border-radius: 0 0 2rem 2rem;
+
+  @media (min-width: ${bp.lg}) {
+    border-radius: 0 0 6rem 6rem;
+  }
+`;
+
 const HeroContent = styled.div`
   margin: 0 auto;
   display: flex;
+  text-align: center;
   padding-inline: 1rem;
-  justify-content: space-between;
-  @media (min-width: ${bp.sm}) {
+  padding: 8rem 1rem;
+  justify-content: center;
+  @media (min-width: ${bp.lg}) {
+    justify-content: space-between;
     max-width: ${bp.xl};
     padding: 8rem 1rem;
+    text-align: left;
+  }
+`;
+
+const HeroImage = styled.img`
+  display: none;
+
+  @media (min-width: ${bp.lg}) {
+    display: block;
+  }
+`;
+
+const HeroText = styled.h1`
+  @media (min-width: ${bp.xl}) {
+    font-size: 2rem;
+  }
+  line-height: 1.2;
+  font-size: 1.5rem;
+  color: #f533e3;
+  font-family: Sword-Art;
+`;
+
+const HeroSubText = styled.h2`
+  @media (min-width: ${bp.xl}) {
+    font-size: 8rem;
+    line-height: 1.2;
+    margin: 0 0;
+  }
+  font-size: 6rem;
+  margin-block: -0.875rem;
+  font-family: Sword-Art;
+  line-height: normal;
+  margin: 1rem 0;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  align-items: center;
+
+  justify-content: center;
+
+  @media (min-width: ${bp.lg}) {
+    justify-content: flex-start;
   }
 `;
 
 export default function MemeHero({ props, style, id }) {
   return (
     <HeroWrapper style={style} id={id}>
-      <div
-        style={{
-          backgroundColor: "#fbe901",
-          borderRadius: " 0 0 6rem 6rem",
-        }}
-      >
+      <HeroContainer>
         <HeroContent>
           <div
             style={{
@@ -47,26 +100,8 @@ export default function MemeHero({ props, style, id }) {
               justifyContent: "center",
             }}
           >
-            <h1
-              style={{
-                fontSize: "2rem",
-                color: "#f533e3",
-                fontFamily: "Sword-Art",
-                lineHeight: "1.2",
-              }}
-            >
-              {props?.headerText}
-            </h1>
-            <h2
-              style={{
-                fontSize: "8rem",
-                marginBlock: "-0.875rem",
-
-                fontFamily: "Sword-Art",
-              }}
-            >
-              {props?.subHeaderText}
-            </h2>
+            <HeroText>{props?.headerText}</HeroText>
+            <HeroSubText>{props?.subHeaderText}</HeroSubText>
             <p
               style={{
                 fontSize: "1.2rem",
@@ -76,14 +111,7 @@ export default function MemeHero({ props, style, id }) {
             >
               {props?.descriptionTextarea}
             </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "0.5rem",
-                marginTop: "1.2rem",
-                alignItems: "center",
-              }}
-            >
+            <ButtonWrapper>
               <button
                 style={{
                   borderBottom: "2px solid #000000",
@@ -139,9 +167,9 @@ export default function MemeHero({ props, style, id }) {
                   {props?.secondaryButtonText}
                 </div>
               </button>
-            </div>
+            </ButtonWrapper>
           </div>
-          <img
+          <HeroImage
             src={props?.avatarSrc}
             alt="Trump Icon"
             style={{
@@ -154,7 +182,7 @@ export default function MemeHero({ props, style, id }) {
             }}
           />
         </HeroContent>
-      </div>
+      </HeroContainer>
     </HeroWrapper>
   );
 }

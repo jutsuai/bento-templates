@@ -24,10 +24,37 @@ const MemeFeaturedContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 8rem 1rem;
   @media (min-width: ${bp.sm}) {
     max-width: ${bp.xl};
+  }
+`;
 
-    padding: 8rem 1rem;
+const HeaderText = styled.h1`
+  @media (min-width: ${bp.lg}) {
+    font-size: 4rem;
+    text-align: left;
+  }
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: Sword-Art;
+  text-transform: uppercase;
+  max-width: ${bp?.sm};
+`;
+
+const SubheaderText = styled.p`
+  color: gray;
+  font-size: 0.875rem;
+
+  line-height: 1.7;
+  max-width: ${bp?.sm};
+
+  text-align: center;
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1.1rem;
+    text-align: left;
   }
 `;
 
@@ -42,35 +69,15 @@ export default function MemeFeatured({ props, style, id }) {
             justifyContent: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "4rem",
-              color: "#ffffff",
-              fontFamily: "Sword-Art",
-
-              textTransform: "uppercase",
-              maxWidth: bp?.sm,
-            }}
-          >
-            {props?.headerText}
-          </h1>
-          <p
-            style={{
-              fontSize: "1.2rem",
-              color: "gray",
-
-              maxWidth: bp?.sm,
-            }}
-          >
-            {props?.subHeaderTextarea}
-          </p>
+          <HeaderText>{props?.headerText}</HeaderText>
+          <SubheaderText>{props?.subHeaderTextarea}</SubheaderText>
           <div
             style={{
               display: "grid",
               marginTop: "3rem",
-              gap: "3rem",
+              gap: "2rem",
 
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
               paddingBottom: "2rem",
             }}
           >
@@ -83,7 +90,7 @@ export default function MemeFeatured({ props, style, id }) {
                     backgroundColor: "#0edc7e",
                     boxShadow: "5px 5px 0px 0 #ffffff",
                     borderRadius: "1rem",
-                    minWidth: "300px",
+                    // minWidth: "300px",
                   }}
                 >
                   <img

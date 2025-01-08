@@ -51,31 +51,23 @@ const MemeFooterContent = styled.div`
   }
 `;
 const MemeFooterGrid = styled.div`
-  display: flex;
+  display: grid;
   width: 100%;
 
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   width: 100%;
   text-align: center;
   color: rgb(55 65 81);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  gap: 2rem;
+  gap: 2.6rem;
 
-  @media (min-width: ${bp.sm}) {
+  @media (min-width: ${bp.lg}) {
     text-align: left;
+
+    gap: 2rem;
   }
-`;
-
-const MemeFooterImageLight = styled.img`
-  height: 4rem;
-  display: none;
-`;
-
-const MemeFooterImageDark = styled.img`
-  height: 4rem;
-  display: inline-block;
 `;
 
 const MemeFooterIcons = styled.div`
@@ -115,19 +107,25 @@ const MemeFooterBottomContent = styled.p`
   text-align: center;
 `;
 
+const InfoSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  opacity: 0.8;
+  align-items: center;
+
+  @media (min-width: ${bp.lg}) {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+`;
+
 export default function MemeFooter({ props, style, id }) {
   return (
     <MemeFooterWrapper id={id} style={style}>
       <MemeFooterContent>
         <MemeFooterGrid>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-              opacity: 0.8,
-            }}
-          >
+          <InfoSection>
             <h2
               style={{
                 fontSize: "2rem",
@@ -172,7 +170,7 @@ export default function MemeFooter({ props, style, id }) {
                 {props?.buttonText}
               </div>
             </button>
-          </div>
+          </InfoSection>
           <div
             style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
@@ -181,6 +179,7 @@ export default function MemeFooter({ props, style, id }) {
                 fontSize: "1rem",
                 color: "black",
                 fontWeight: 700,
+                textAlign: "center",
               }}
             >
               {props?.legal?.titleText}
@@ -191,7 +190,7 @@ export default function MemeFooter({ props, style, id }) {
                 flexDirection: "column",
 
                 gap: "1rem",
-                textAlign: "left",
+                textAlign: "center",
               }}
             >
               {props?.legal?.data?.map((item, index) => (
@@ -210,6 +209,7 @@ export default function MemeFooter({ props, style, id }) {
                 fontSize: "1rem",
                 color: "black",
                 fontWeight: 700,
+                textAlign: "center",
               }}
             >
               {props?.service?.titleText}
@@ -219,6 +219,7 @@ export default function MemeFooter({ props, style, id }) {
                 display: "flex",
                 flexDirection: "column",
                 gap: "1rem",
+                textAlign: "center",
               }}
             >
               {props?.service?.data?.map((item, index) => (
@@ -230,7 +231,12 @@ export default function MemeFooter({ props, style, id }) {
           </div>
 
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              alignItems: "center",
+            }}
           >
             <h3
               style={{

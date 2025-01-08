@@ -23,12 +23,37 @@ const AboutWrapper = styled.nav`
 const AboutContent = styled.div`
   margin: 0 auto;
   display: flex;
-  padding-inline: 1rem;
-  flex-direction: column;
-  @media (min-width: ${bp.sm}) {
-    max-width: ${bp.xl};
 
-    padding: 8rem 1rem;
+  padding: 8rem 1rem;
+  flex-direction: column;
+  @media (min-width: ${bp.lg}) {
+    max-width: ${bp.xl};
+  }
+`;
+
+const AboutHeader = styled.h1`
+  color: #ffffff;
+  font-family: Sword-Art;
+
+  font-size: 2rem;
+  text-align: center;
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 4rem;
+    text-align: left;
+  }
+`;
+
+const AboutSubHeader = styled.p`
+  color: gray;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
+  max-width: ${bp.sm};
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1rem;
   }
 `;
 
@@ -44,31 +69,12 @@ export default function MemeAbout({ props, style, id }) {
             alignItems: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "4rem",
-              color: "#ffffff",
-              fontFamily: "Sword-Art",
-            }}
-          >
-            {props?.headerText}
-          </h1>
-          <p
-            style={{
-              color: "gray",
-              fontSize: "1rem",
-              fontWeight: 500,
-              textAlign: "center",
-              padding: "1rem",
-              maxWidth: `${bp.sm}`,
-            }}
-          >
-            {props?.subHeaderTextarea}
-          </p>
+          <AboutHeader>{props?.headerText}</AboutHeader>
+          <AboutSubHeader>{props?.subHeaderTextarea}</AboutSubHeader>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
               width: "100%",
               gap: "2rem",
               maxWidth: `${bp.lg}`,

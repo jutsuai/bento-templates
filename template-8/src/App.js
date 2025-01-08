@@ -47,6 +47,7 @@ export default function App() {
         style={values.featured.style}
         id={values.featured.node}
       />
+
       <MemeFooter
         props={values.footer.props}
         style={values.footer.style}

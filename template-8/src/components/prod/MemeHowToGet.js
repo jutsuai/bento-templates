@@ -26,36 +26,78 @@ const MemeHowToGetContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  @media (min-width: ${bp.sm}) {
+  padding: 8rem 1rem;
+  @media (min-width: ${bp.lg}) {
     max-width: ${bp.xl};
 
     padding: 8rem 1rem;
   }
 `;
 
+const Image1 = styled.img`
+  position: absolute;
+  top: 10;
+  right: 0;
+  transform: translateX(30px) translateY(40px);
+
+  width: 7rem;
+  @media (min-width: ${bp.lg}) {
+    width: auto;
+    transform: translateX(40px) translateY(40px);
+  }
+`;
+
+const Image2 = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(30px);
+  left: 0;
+
+  width: 6rem;
+  @media (min-width: ${bp.lg}) {
+    width: auto;
+  }
+`;
+
+const HeaderText = styled.h1`
+  @media (min-width: ${bp.lg}) {
+    font-size: 4rem;
+    text-align: left;
+  }
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: Sword-Art;
+  text-transform: uppercase;
+  max-width: ${bp?.sm};
+`;
+
+const SubheaderText = styled.p`
+  color: #ffffffcc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.7;
+  max-width: ${bp?.sm};
+  margin-left: auto;
+  text-align: center;
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+`;
+
 export default function MemeHowToGet({ props, style, id }) {
   return (
     <MemeHowToGetWrapper style={style} id={id}>
-      <img
+      <Image1
         src="https://ipfs.near.social/ipfs/bafkreigphy57rzcp45rhgi7va3rbpp5phcgrhfi3lswsrfxfnk7qd46ddy"
         alt="headerImage"
-        style={{
-          position: "absolute",
-          top: "10",
-          right: "0",
-          transform: "translateX(40px) translateY(40px)",
-        }}
       />
-      <img
+      <Image2
         src="https://ipfs.near.social/ipfs/bafkreia6r47lw5bioff2yaswnkjaenre33w33npjg5ddpbmcfiailtomfq"
         alt="headersdImage"
-        style={{
-          position: "absolute",
-          top: "10",
-          right: "0",
-          left: "0",
-          transform: "translateX(50%) translateY(40px)",
-        }}
       />
       <MemeHowToGetContent>
         <div
@@ -65,31 +107,9 @@ export default function MemeHowToGet({ props, style, id }) {
             justifyContent: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "4rem",
-              color: "#ffffff",
-              fontFamily: "Sword-Art",
+          <HeaderText>{props?.headerText}</HeaderText>
 
-              textTransform: "uppercase",
-              maxWidth: bp?.sm,
-            }}
-          >
-            {props?.headerText}
-          </h1>
-
-          <p
-            style={{
-              color: "#ffffffCC",
-              fontSize: "1.1rem",
-              lineHeight: 2,
-              fontWeight: 500,
-              maxWidth: bp?.sm,
-              marginLeft: "auto",
-            }}
-          >
-            {props?.subHeaderTextarea}
-          </p>
+          <SubheaderText>{props?.subHeaderTextarea}</SubheaderText>
           <div
             style={{
               display: "grid",
@@ -99,6 +119,7 @@ export default function MemeHowToGet({ props, style, id }) {
               maxWidth: `${bp.lg}`,
               marginTop: "6rem",
               marginInline: "auto",
+              paddingInline: "1rem",
             }}
           >
             {props?.cards &&
