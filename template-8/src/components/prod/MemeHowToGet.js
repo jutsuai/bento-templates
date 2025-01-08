@@ -64,6 +64,7 @@ const HeaderText = styled.h1`
   @media (min-width: ${bp.lg}) {
     font-size: 4rem;
     text-align: left;
+    line-height: normal;
   }
   font-size: 2rem;
   text-align: center;
@@ -77,7 +78,7 @@ const SubheaderText = styled.p`
   color: #ffffffcc;
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.5;
   max-width: ${bp?.sm};
   margin-left: auto;
   text-align: center;
