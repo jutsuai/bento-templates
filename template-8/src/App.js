@@ -274,7 +274,7 @@ const values = {
         ],
       },
 
-      copyRight: "2023 Bike Showroom. All Rights Reserved.",
+      copyRight: "2025 TRUMP INU. All Rights Reserved.",
     },
     style: {
       paddingTop: 0,
